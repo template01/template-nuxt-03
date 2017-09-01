@@ -1,0 +1,47 @@
+html{
+  background: black !important;
+}
+
+h1{
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 500;
+}
+
+
+.hugeLetters {
+    font-size: 8vw !important;
+    font-weight: 600;
+}
+
+
+.killPadding{
+  margin-left: calc(-30 * 4px);
+  margin-right: calc(-30 * 4px);
+}
+
+
+
+/*.nuxt-link-active>*{
+
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: inherit;
+}*/
+.nuxt-link-exact-active{
+  text-decoration: underline;
+}
+
+.bounce-enter-active {
+  animation: bounce-in .8s;
+}
+.bounce-leave-active {
+  animation: bounce-out .8s;
+}
+@keyframes bounce-in {
+  0% { transform: translateY(100vh) }
+  100% { transform: translateY(0) }
+}
+@keyframes bounce-out {
+  0% { transform: translateY(0) }
+  100% { transform: translateY(-100vh) }
+}

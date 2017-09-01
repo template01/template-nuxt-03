@@ -1,0 +1,32 @@
+{
+  "message": {
+    "hello": "hoi"
+  },
+  "menu":{
+    "topmenu":{
+      "work":"Work",
+      "how":"Services",
+      "about":"About",
+      "contact":"Contact"
+    }
+  },
+
+  "clock":{
+
+    "modes": {
+      "sleep": ["Sleeping.", "Dreaming...zzz..."],
+      "beforework": ["Just getting up.", "Dressing for work."],
+      "morning": ["Probably having coffee.", "Pre-work discussion.", "Just spacing out..."],
+      "lunch": ["Having eats...", "Eating a cucumber."],
+      "work": ["Deep work session.", "GoT.... \"work\"...", "Staring at the screen. Too hard."],
+      "afterwork": ["Chilling after work.", "2% chance that we\"re partying."]
+    },
+    "timedesc":"Local time:",
+    "statusdesc":"Now up to:"
+  },
+  "nowlistening":{
+    "desc":"Now listening:",
+    "none":"Nothing... Just brainwaves."
+  }
+
+}

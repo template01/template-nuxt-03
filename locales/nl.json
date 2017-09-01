@@ -1,0 +1,29 @@
+{
+  "message": {
+    "hello": "hoi"
+  },
+  "menu":{
+    "topmenu":{
+      "work":"Werk",
+      "how":"Werkwijze",
+      "about":"Over",
+      "contact":"Contact"
+    }
+  },
+  "clock":{
+    "modes": {
+      "sleep": ["Sleeping.", "Dreaming...zzz..."],
+      "beforework": ["Just getting up.", "Dressing for work."],
+      "morning": ["Probably having coffee.", "Pre-work discussion.", "Just spacing out..."],
+      "lunch": ["lunchen", "Eteen."],
+      "work": ["Diep werken.", "GoT an het dissusieren tidens \"werk\"...", "Te hard starren aan de schrem."],
+      "afterwork": ["Chilling after work.", "2% chance that we\"re partying."]
+    },
+    "timedesc":"Lokale tijd:",
+    "statusdesc":"Aan het doen:"
+  },
+  "nowlistening":{
+    "desc":"Nu aan het luisteren:",
+    "none":"Niets..."
+  }
+}

@@ -1,0 +1,45 @@
+<template>
+  <defaultpage id="over">
+    <div class="">
+      <h1 style="font-weight:800">over</h1>
+    </div>
+  </defaultpage>
+<!-- <section id="over" class="container">
+  <div class="uk-padding uk-padding-remove-bottom" id="menusplash">
+    <menuitems></menuitems>
+  </div>
+
+  <div class="uk-padding uk-padding-remove-top">
+    <div class="uk-padding uk-padding-remove-top">
+      <div class="">
+        <h1 style="font-weight:800">over</h1>
+      </div>
+    </div>
+  </div>
+
+  <templatefooter></templatefooter>
+</section> -->
+</template>
+
+<script>
+import defaultpage from '~/components/defaultpage.vue'
+
+export default {
+
+  components: {
+    defaultpage,
+  },
+  transition:'bounce'
+
+  // transition(to, from) {
+  //   if (!from) return 'slide-left'
+  //   return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+  // },
+}
+</script>
+
+<style>
+  #over{
+    background: white;
+  }
+</style>
