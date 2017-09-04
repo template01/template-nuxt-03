@@ -8,12 +8,12 @@
           <nowlistening></nowlistening>
         </div>
 
-        <div class="uk-flex uk-flex-bottom">
+        <!-- <div class="uk-flex uk-flex-bottom">
           <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/contact', query: { lang: 'en' }}">
             <h1 class="uk-margin-remove">{{$t("menu.topmenu.contact")}}</h1></nuxt-link>
           <nuxt-link v-else :to="{path:'/contact'}">
             <h1 class="uk-margin-remove">{{$t("menu.topmenu.contact")}}</h1></nuxt-link>
-        </div>
+        </div> -->
 
       </div>
     </div>

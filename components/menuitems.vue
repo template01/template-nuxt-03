@@ -16,10 +16,10 @@
     </div>
 
     <div>
-      <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/over', query: { lang: 'en' }}">
-        <h1>{{$t("menu.topmenu.about")}}</h1></nuxt-link>
-      <nuxt-link v-else :to="{path:'/over'}">
-        <h1>{{$t("menu.topmenu.about")}}</h1></nuxt-link>
+      <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/contact', query: { lang: 'en' }}">
+        <h1>{{$t("menu.topmenu.contact")}}</h1></nuxt-link>
+      <nuxt-link v-else :to="{path:'/contact'}">
+        <h1>{{$t("menu.topmenu.contact")}}</h1></nuxt-link>
     </div>
     <!--
     <div>
@@ -29,9 +29,22 @@
         <h1>{{$t("menu.topmenu.contact")}}</h1></nuxt-link>
     </div>
     -->
-    <div>
+    <div  class="uk-padding-small uk-padding-remove-horizontal uk-padding-remove-bottom">
 
-      <h1><nuxt-link :to="{}" replace>NL</nuxt-link> / <nuxt-link :to="{query: { lang: 'en' }}">EN</nuxt-link></h1>
+      <h3><nuxt-link :to="{}" replace>NL</nuxt-link> / <nuxt-link :to="{query: { lang: 'en' }}">EN</nuxt-link></h3>
+
+      <div>
+        <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/over', query: { lang: 'en' }}">
+          <h3>{{$t("menu.topmenu.about")}}</h3></nuxt-link>
+        <nuxt-link v-else :to="{path:'/over'}">
+          <h3>{{$t("menu.topmenu.about")}}</h3></nuxt-link>
+      </div>
+      <div  v-if="$route.path != '/'">
+        <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/', query: { lang: 'en' }}">
+          <h3>{{$t("menu.topmenu.index")}}</h3></nuxt-link>
+        <nuxt-link v-else :to="{path:'/'}">
+          <h3>{{$t("menu.topmenu.index")}}</h3></nuxt-link>
+      </div>
 
     </div>
 
@@ -48,7 +61,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-h1 {
+h1,h3 {
     color: inherit;
 }
 a {

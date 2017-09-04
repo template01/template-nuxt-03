@@ -1,5 +1,5 @@
 <template>
-<div>
+<h3>
   {{$t("nowlistening.desc")}}
   <transition name="fade">
     <span v-if="showtune">
@@ -14,7 +14,7 @@
     </span>
     </span>
   </transition>
-</div>
+</h3>
 </template>
 <script>
 import axios from 'axios'
@@ -62,6 +62,11 @@ export default {
 </script>
 
 <style scoped>
+
+h3{
+  margin: 0;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity .5s

@@ -6,8 +6,9 @@
     "topmenu":{
       "work":"Werk",
       "how":"Werkwijze",
-      "about":"Over",
-      "contact":"Contact"
+      "about":"Over Template Studio",
+      "contact":"Contact",
+      "index":"Terug naar index"
     }
   },
   "clock":{
