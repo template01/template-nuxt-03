@@ -59,6 +59,10 @@ module.exports = {
       ssr: false
     },
     {
+      src: '~/plugins/slideout.js',
+      ssr: false
+    },
+    {
       src: '~/plugins/translation.js',
       // ssr: false
     }
@@ -73,7 +77,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    vendor: ['axios', 'vue-i18n']
+    vendor: ['axios', 'vue-i18n','slideout']
     /*
      ** Run ESLINT on save
      */

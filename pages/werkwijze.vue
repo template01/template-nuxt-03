@@ -1,6 +1,6 @@
 <template>
 <defaultpage id="werkwijze">
-  <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+  <div id="intro" class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
       <h1 style="font-weight:800">Incididunt occaecat fugiat id consequat eu proident reprehenderit esse eiusmod. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor. Aliquip id anim consequat dolore adipisicing sint esse non cillum est. Irure exercitation et anim proident irure anim irure proident duis fugiat consectetur labore. Sit minim aliquip do officia aliqua qui qui voluptate aute occaecat elit qui. Anim dolor esse ad elit officia mollit cillum officia. Esse amet voluptate Lorem id consectetur aliquip nisi enim sint aliqua anim deserunt. Sunt aliqua excepteur veniam laboris id. Laborum mollit reprehenderit laboris fugiat excepteur deserunt.
 </h1>
@@ -75,6 +75,11 @@ export default {
 <style lang="scss" scoped>
 #werkwijze {
     background: beige;
+
+    #intro{
+      background: beige;
+      
+    }
 
     #branding {
         background: orange;
