@@ -1,8 +1,10 @@
 <template>
-<div class="uk-padding uk-container uk-container-center" id="splashtopmenu">
+<div class="uk-container uk-container-center" id="splashtopmenu">
   <div class="uk-padding">
+    <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-bottom">
 
-    <menuitems :passedmenucolor="menucolor"></menuitems>
+      <menuitems :passedmenucolor="menucolor"></menuitems>
+    </div>
   </div>
 </div>
 </template>

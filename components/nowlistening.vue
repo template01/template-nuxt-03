@@ -1,5 +1,5 @@
 <template>
-<h3>
+<h4>
   {{$t("nowlistening.desc")}}
   <transition name="fade">
     <span v-if="showtune">
@@ -14,7 +14,7 @@
     </span>
     </span>
   </transition>
-</h3>
+</h4>
 </template>
 <script>
 import axios from 'axios'
@@ -63,7 +63,7 @@ export default {
 
 <style scoped>
 
-h3{
+h4{
   margin: 0;
 }
 

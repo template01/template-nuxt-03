@@ -1,11 +1,13 @@
 <template>
 <div class="uk-padding uk-container uk-container-center" id="splashbottommenu">
   <div class="uk-padding">
-    <div class="uk-padding">
       <div :style="{'color':menucolor}" class="uk-grid uk-child-width-expand@s" uk-grid>
         <div>
+
+          <menuitemsmobile :floatleft="true" class="uk-hidden@m"></menuitemsmobile>
           <clock></clock>
           <nowlistening></nowlistening>
+
         </div>
 
         <!-- <div class="uk-flex uk-flex-bottom">
@@ -16,17 +18,18 @@
         </div> -->
 
       </div>
-    </div>
   </div>
 </div>
 </template>
 <script>
+import menuitemsmobile from '~/components/menuitemsmobile.vue'
 import nowlistening from '~/components/nowlistening.vue'
 import clock from '~/components/clock.vue'
 
 export default {
   components: {
     nowlistening,
+    menuitemsmobile,
     clock
   },
   data: function() {
@@ -42,7 +45,7 @@ export default {
     bottom: 0;
     width: calc(100% - 80px);
 
-    h1 {
+    * {
         color: inherit;
     }
     a {

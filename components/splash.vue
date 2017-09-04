@@ -3,19 +3,32 @@
 
   <div class="uk-container uk-container-center ">
 
-  <splashtopmenu :menucolor="functionArray[functionIndex].textcolor"></splashtopmenu>
+  <splashtopmenu class="uk-visible@m" :menucolor="functionArray[functionIndex].textcolor"></splashtopmenu>
   <splashbottommenu :menucolor="functionArray[functionIndex].textcolor"></splashbottommenu>
 
-  <div class="uk-padding uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
-    <div class="uk-padding">
+  <div class="uk-visible@m uk-padding uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
+    <div class="">
       <div class="" :class="{'uk-animation-slide-bottom':begin, 'uk-animation-reverse':!begin, 'uk-animation-slide-top':!begin, 'uk-animation-reverse':begin}">
         <h1 class="hugeLetters" :style="{'color':functionArray[functionIndex].textcolor}">{{functionArray[functionIndex].title}}</h1>
       </div>
     </div>
-    <div class="uk-padding uk-padding-remove-left">
+    <div class="">
       <h1 class="hugeLetters" :style="{'color':functionArray[functionIndex].textcolor}">Studio</h1>
     </div>
   </div>
+
+  <div id="splashMobile" class="uk-hidden@m uk-padding  uk-height-viewport">
+    <div class="">
+      <div class="" :class="{'uk-animation-slide-left-medium':begin, 'uk-animation-reverse':!begin, 'uk-animation-slide-right-medium':!begin, 'uk-animation-reverse':begin}">
+        <h1 class="hugeLetters" :style="{'color':functionArray[functionIndex].textcolor}">{{functionArray[functionIndex].title}}</h1>
+      </div>
+    </div>
+    <div class="">
+      <h1 class="hugeLetters" :style="{'color':functionArray[functionIndex].textcolor}">Studio</h1>
+    </div>
+  </div>
+
+
 
   <div>
   </div>
@@ -90,5 +103,8 @@ export default {
 #splash {
   position: relative;
     transition: background 1s;
+}
+#splashMobile{
+  overflow: hidden;
 }
 </style>

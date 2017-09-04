@@ -1,5 +1,5 @@
 <template>
-<h3>
+<h4>
 
   <!-- <button @click="$store.commit('SET_LANG', 'nl'); $i18n.locale = 'nl'"> NL</button> -->
   <!-- <button @click="$store.commit('SET_LANG', 'en'); $i18n.locale = 'en'"> EN</button> -->
@@ -17,7 +17,7 @@
   <span>{{$t("clock.statusdesc")}} {{status}}</span>
 
   <!-- </transition> -->
-</h3>
+</h4>
 </template>
 <script>
 import VueI18n from 'vue-i18n'
@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style scoped>
-h3{
+h4{
   margin-bottom: 0;
 }
 .fade-enter-active,

@@ -6,7 +6,7 @@
     "topmenu":{
       "work":"Work",
       "how":"Services",
-      "about":"About",
+      "about":"About Template Studio",
       "contact":"Contact",
       "index":"Index"
     }
@@ -20,7 +20,7 @@
       "morning": ["Probably having coffee.", "Pre-work discussion.", "Just spacing out..."],
       "lunch": ["Having eats...", "Eating a cucumber."],
       "work": ["Deep work session.", "GoT.... \"work\"...", "Staring at the screen. Too hard."],
-      "afterwork": ["Chilling after work.", "2% chance that we\"re partying."]
+      "afterwork": ["Chilling after work.", "2% chance that we're partying."]
     },
     "timedesc":"Local time:",
     "statusdesc":"Now up to:"

@@ -1,5 +1,5 @@
 <template>
-<div class="uk-padding">
+<div class="">
   <div :style="{'color':passedmenucolor}" class="uk-grid uk-child-width-expand@s" uk-grid>
     <div>
       <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/werk', query: { lang: 'en' }}">
@@ -30,22 +30,22 @@
     </div>
     -->
     <div  class="uk-padding-small uk-padding-remove-horizontal uk-padding-remove-bottom">
-
-      <h3><nuxt-link :to="{}" replace>NL</nuxt-link> / <nuxt-link :to="{query: { lang: 'en' }}">EN</nuxt-link></h3>
+<h4>
+      <span><nuxt-link :to="{}" replace>NL</nuxt-link> / <nuxt-link :to="{query: { lang: 'en' }}">EN</nuxt-link></span>
 
       <div>
         <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/over', query: { lang: 'en' }}">
-          <h3>{{$t("menu.topmenu.about")}}</h3></nuxt-link>
+          <span>{{$t("menu.topmenu.about")}}</span></nuxt-link>
         <nuxt-link v-else :to="{path:'/over'}">
-          <h3>{{$t("menu.topmenu.about")}}</h3></nuxt-link>
+          <span>{{$t("menu.topmenu.about")}}</span></nuxt-link>
       </div>
       <div  v-if="$route.path != '/'">
         <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/', query: { lang: 'en' }}">
-          <h3>{{$t("menu.topmenu.index")}}</h3></nuxt-link>
+          <span>{{$t("menu.topmenu.index")}}</span></nuxt-link>
         <nuxt-link v-else :to="{path:'/'}">
-          <h3>{{$t("menu.topmenu.index")}}</h3></nuxt-link>
+          <span>{{$t("menu.topmenu.index")}}</span></nuxt-link>
       </div>
-
+</h4>
     </div>
 
   </div>
@@ -61,7 +61,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-h1,h3 {
+h1,h4 {
     color: inherit;
 }
 a {

@@ -46,6 +46,7 @@ module.exports = {
     '~assets/css/main.css',
     // uikit customized
     '~assets/css/site.css',
+    '~assets/fonts/relative/stylesheet.css',
     //'bootstrap/dist/css/bootstrap.css',
     //'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -65,7 +66,8 @@ module.exports = {
     {
       src: '~/plugins/translation.js',
       // ssr: false
-    }
+    },
+    '~/plugins/lodash-plugin.js'
 
   ],
   // generate: {
@@ -77,7 +79,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    vendor: ['axios', 'vue-i18n','slideout']
+    vendor: ['axios', 'vue-i18n', 'slideout','lodash']
     /*
      ** Run ESLINT on save
      */
