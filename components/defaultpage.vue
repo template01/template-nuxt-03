@@ -147,6 +147,8 @@ export default {
   position: fixed;
   top: 15px;
   right: 15px;
+  z-index: 99999 !important;
+
 }
 
 .toggle-button,
