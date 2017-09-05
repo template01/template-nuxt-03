@@ -1,7 +1,6 @@
 <template>
 <div>
-
-
+  <!-- {{$store.state.smallscreen}} {{$store.getters}} {{$store.getters.getsmallscreen}}{{getsmallscreen}} -->
   <Slideout menu="#menu" panel="#panel" side="right" :toggleSelectors="['.toggle-button','.toggle-button-menu']" @on-close="close" @on-open="open">
 
     <nav class="" id="menu">
@@ -27,7 +26,7 @@
         </div>
 
         <div class="uk-padding">
-          <div :class="{'uk-padding':windowsizem}" class="uk-padding-remove-bottom uk-padding-remove-horizontal">
+          <div :class="{'uk-padding':getsmallscreen}" class="uk-padding-remove-bottom uk-padding-remove-horizontal">
             <!-- SLOT AREA -->
             <slot>
 
@@ -54,6 +53,10 @@ import templatefooter from '~/components/templatefooter.vue'
 
 import _ from 'lodash'
 
+import {
+  mapGetters
+} from 'vuex'
+
 
 export default {
 
@@ -63,6 +66,13 @@ export default {
     menuitemsside,
     templatefooter,
   },
+
+  computed: {
+    ...mapGetters({
+     getsmallscreen: "getsmallscreen",
+   }),
+  },
+
   methods: {
     open: function() {
       this.menuopenshow = false
@@ -83,14 +93,16 @@ export default {
 
     handleScroll() {
       this.scrolled = window.scrollY > 0;
-      if (window.innerWidth > 960) {
+      if (!this.getsmallscreen) {
         if (window.scrollY > 100) {
           this.menuopenshow = true
         } else {
           this.menuopenshow = false
         }
       }
-    }
+    },
+
+
 
   },
   data: function() {
@@ -98,8 +110,6 @@ export default {
       menuopenshow: false,
       mounted: false,
       scrolled: false,
-      windowsizem: null
-
     }
   },
   destroyed() {
@@ -108,20 +118,28 @@ export default {
   },
   mounted() {
     this.mounted = true
-    if (window.innerWidth < 960) {
-      this.menuopenshow = true
-      this.windowsizem = true
-    } else {
-      this.windowsizem = false
-    }
-    var vm = this
     window.addEventListener('scroll', this.handleScroll);
+    if (this.getsmallscreen) {
+      this.menuopenshow = true
+    }
 
+  },
 
-    // window.addEventListener('scroll', _.throttle(() => {
-    //    vm.handleScroll()
-    //  }, 500))
+  watch:{
+    getsmallscreen:function(val){
+      if(val){
+        this.menuopenshow = true
+      }else{
+        if (window.scrollY < 100) {
+          this.menuopenshow = false
+        }
 
+      }
+    }
+  },
+
+  beforeDestroy: function() {
+    // window.removeEventListener('resize', this.handleWindowResize)
   }
 }
 </script>
@@ -148,7 +166,6 @@ export default {
   top: 15px;
   right: 15px;
   z-index: 99999 !important;
-
 }
 
 .toggle-button,

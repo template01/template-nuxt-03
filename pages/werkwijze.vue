@@ -1,14 +1,12 @@
 <template>
 <defaultpage id="werkwijze">
 
-
-
   <div id="intro" class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
 
       <div class="uk-child-width-expand uk-flex-center" uk-grid>
         <!-- <div></div> -->
-        <div class="uk-width-3-4">
+        <div :class="{'uk-width-3-4':!getsmallscreen}">
           <div>
             <h1 style="font-weight:800">Incididunt occaecat fugiat id consequat eu proident reprehenderit esse eiusmod. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor
             </h1></div>
@@ -20,7 +18,7 @@
     </div>
   </div>
 
-  <div id="branding" class="uk-height-viewport killPadding" uk-parallax="y: 300,0; viewport: 0.4">
+  <div id="branding" class="uk-height-viewport killPadding" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
 
     <div class="slantTopRight"></div>
 
@@ -51,7 +49,7 @@
   </div>
 
 
-  <div id="code" class="uk-height-viewport killPadding"  uk-parallax="y: 300,0; viewport: 0.4">
+  <div id="code" class="uk-height-viewport killPadding"  :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
 
     <div class="slantTopLeft slantTopLeftBlack"></div>
 
@@ -90,12 +88,31 @@
 <script>
 import defaultpage from '~/components/defaultpage.vue'
 
+import {
+  mapGetters
+} from 'vuex'
+
+
 export default {
+
 
   components: {
     defaultpage,
   },
-  transition: 'bounce'
+  computed: {
+    ...mapGetters({
+     getsmallscreen: "getsmallscreen",
+   }),
+  },
+
+  data: function() {
+    return {
+      paralaxy: '500,0',
+    }
+  },
+
+  transition: 'bounce',
+
 
   // transition(to, from) {
   //   if (!from) return 'slide-left'

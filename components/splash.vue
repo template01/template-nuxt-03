@@ -65,20 +65,20 @@ export default {
       functionTitle: '',
       functionArray: [{
         title: 'Template',
-        color: 'orange',
+        color: '#F7F5E7',
         textcolor: 'black'
       }, {
         title: 'Branding',
-        color: 'green',
-        textcolor: 'white'
+        color: '#075945',
+        textcolor: '#F7F5E7'
       }, {
         title: 'Design',
-        color: 'beige',
+        color: '#F8E6F7',
         textcolor: 'black'
       }, {
         title: 'Code',
-        color: 'black',
-        textcolor: 'lime'
+        color: '#0008A1',
+        textcolor: '#F8E6F7'
       }],
       functionIndex: 0
     }

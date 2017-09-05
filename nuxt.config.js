@@ -67,7 +67,8 @@ module.exports = {
       src: '~/plugins/translation.js',
       // ssr: false
     },
-    '~/plugins/lodash-plugin.js'
+    '~/plugins/lodash-plugin.js',
+    '~/plugins/resizer.js'
 
   ],
   // generate: {
