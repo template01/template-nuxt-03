@@ -1,7 +1,6 @@
 <template>
 <div>
   <Slideout menu="#menu" panel="#panel" side="right" :toggleSelectors="['.toggle-button','.toggle-button-menu']" @on-close="close" @on-open="open">
-
     <nav class="" id="menu">
       <div :class="{'hideSidebarContent':!mounted}">
         <div class="uk-padding-small uk-padding-remove-bottom">
@@ -49,7 +48,7 @@ import menuitems from '~/components/menuitems.vue'
 import menuitemsmobile from '~/components/menuitemsmobile.vue'
 import menuitemsside from '~/components/menuitemsside.vue'
 import templatefooter from '~/components/templatefooter.vue'
-import computedresizer from '~/mixins/computedresizer.js'
+// import computedresizer from '~/mixins/computedresizer.js'
 
 import _ from 'lodash'
 
@@ -61,6 +60,7 @@ export default {
     menuitemsside,
     templatefooter,
   },
+
 
   methods: {
     open: function() {
@@ -94,7 +94,7 @@ export default {
 
 
   },
-  mixins:[computedresizer],
+  // mixins:[computedresizer],
   data: function() {
     return {
       menuopenshow: false,

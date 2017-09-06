@@ -1,6 +1,5 @@
 <template>
 <defaultpage id="werkwijze">
-
   <div id="intro" class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
 
@@ -87,15 +86,11 @@
 
 <script>
 import defaultpage from '~/components/defaultpage.vue'
-import computedresizer from '~/mixins/computedresizer.js'
 
 export default {
-
-
   components: {
     defaultpage,
   },
-  mixins:[computedresizer],
   data: function() {
     return {
       paralaxy: '500,0',

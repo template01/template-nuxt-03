@@ -69,6 +69,7 @@ module.exports = {
     },
     '~/plugins/lodash-plugin.js',
     '~/plugins/resizer.js',
+    '~/mixins/computedresizerglobalmixin.js',
   ],
   // generate: {
   //   routes: ['/', '/werk', '/fr', '/fr/werk']
