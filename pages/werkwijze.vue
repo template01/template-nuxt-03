@@ -87,11 +87,7 @@
 
 <script>
 import defaultpage from '~/components/defaultpage.vue'
-
-import {
-  mapGetters
-} from 'vuex'
-
+import computedresizer from '~/mixins/computedresizer.js'
 
 export default {
 
@@ -99,12 +95,7 @@ export default {
   components: {
     defaultpage,
   },
-  computed: {
-    ...mapGetters({
-     getsmallscreen: "getsmallscreen",
-   }),
-  },
-
+  mixins:[computedresizer],
   data: function() {
     return {
       paralaxy: '500,0',

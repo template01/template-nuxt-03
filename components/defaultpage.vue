@@ -1,6 +1,5 @@
 <template>
 <div>
-  <!-- {{$store.state.smallscreen}} {{$store.getters}} {{$store.getters.getsmallscreen}}{{getsmallscreen}} -->
   <Slideout menu="#menu" panel="#panel" side="right" :toggleSelectors="['.toggle-button','.toggle-button-menu']" @on-close="close" @on-open="open">
 
     <nav class="" id="menu">
@@ -50,13 +49,9 @@ import menuitems from '~/components/menuitems.vue'
 import menuitemsmobile from '~/components/menuitemsmobile.vue'
 import menuitemsside from '~/components/menuitemsside.vue'
 import templatefooter from '~/components/templatefooter.vue'
+import computedresizer from '~/mixins/computedresizer.js'
 
 import _ from 'lodash'
-
-import {
-  mapGetters
-} from 'vuex'
-
 
 export default {
 
@@ -65,12 +60,6 @@ export default {
     menuitemsmobile,
     menuitemsside,
     templatefooter,
-  },
-
-  computed: {
-    ...mapGetters({
-     getsmallscreen: "getsmallscreen",
-   }),
   },
 
   methods: {
@@ -105,6 +94,7 @@ export default {
 
 
   },
+  mixins:[computedresizer],
   data: function() {
     return {
       menuopenshow: false,

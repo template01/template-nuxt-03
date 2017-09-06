@@ -68,8 +68,7 @@ module.exports = {
       // ssr: false
     },
     '~/plugins/lodash-plugin.js',
-    '~/plugins/resizer.js'
-
+    '~/plugins/resizer.js',
   ],
   // generate: {
   //   routes: ['/', '/werk', '/fr', '/fr/werk']
