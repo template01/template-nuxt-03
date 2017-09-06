@@ -67,9 +67,18 @@ module.exports = {
       src: '~/plugins/translation.js',
       // ssr: false
     },
+    {
+      src: '~/plugins/scrollbarwidth.js',
+      ssr: false
+    },
     '~/plugins/lodash-plugin.js',
     '~/plugins/resizer.js',
+    //GLOBAL MIXINS
     '~/mixins/computedresizerglobalmixin.js',
+    {
+      src: '~/mixins/computedscrollbarwidth.js',
+      ssr: false
+    },
   ],
   // generate: {
   //   routes: ['/', '/werk', '/fr', '/fr/werk']

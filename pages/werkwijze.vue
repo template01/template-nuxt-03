@@ -1,7 +1,7 @@
 <template>
 <defaultpage id="werkwijze">
-  <div id="intro" class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
-    <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+  <div id="intro beige-background" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+    <div class="uk-padding uk-padding-remove-top">
 
       <div class="uk-child-width-expand uk-flex-center" uk-grid>
         <!-- <div></div> -->
@@ -17,52 +17,107 @@
     </div>
   </div>
 
-  <div id="branding" class="uk-height-viewport killPadding" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
+  <div id="branding" class="green-background green-color" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
+    <div class="slantTopRight" :style="{'border-width':'0 0 40px calc(100vw - '+datascrollbarwidth+'px)'}"></div>
 
-    <div class="slantTopRight"></div>
 
-    <div class="uk-padding">
-      <div class="uk-padding">
+    <div class="uk-container">
+
+
+      <div class="uk-padding beige-color-force">
 
         <div uk-grid>
           <div class="uk-width-2-3@m">
             <h1 class="hugeLetters" uk-parallax="opacity: 0,2; y: 100,0; viewport: 0.5">Branding</h1>
           </div>
-          <div class="uk-width-1-3@m">
-            <h4>
+
+          <div class="uk-width-1-3@m ">
+
+
+            <h3 class="">
             Incididunt occaecat fugiat id consequat eu proident reprehenderit esse eiusmod. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor. Aliquip id anim consequat dolore adipisicing sint esse non cillum est. Irure exercitation et anim proident irure anim irure proident duis fugiat consectetur labore. Sit minim aliquip do officia aliqua qui qui voluptate aute occaecat elit qui. Anim dolor esse ad elit officia mollit cillum officia. Esse amet voluptate Lorem id consectetur aliquip nisi enim sint aliqua anim deserunt. Sunt aliqua excepteur veniam laboris id. Laborum mollit reprehenderit laboris fugiat excepteur deserunt.
-          </h4></div>
+          </h3>
+            <div class="uk-paddding green-color-force uk-padding">
+              <div class="uk-align-center uk-paddding green-color-force uk-padding beige-background uk-width-5-6@m">
+                <img uk-scrollspy="cls: uk-animation-fade; repeat: true" class="uk-align-center uk-margin-remove-bottom " src="https://i2.wp.com/aa-mktg.com/wp-content/uploads/2016/08/chanel.png
+              " />
+              </div>
+            </div>
+
+          </div>
 
           <div class="uk-width-1-3@m">
-            <h4>
+            <h3>
             Incididunt occaecat fugiat id consequat eu proident reprehenderit esse eiusmod. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor. Aliquip id anim consequat dolore adipisicing sint esse non cillum est. Irure exercitation et anim proident irure anim irure proident duis fugiat consectetur labore. Sit minim aliquip do officia aliqua qui qui voluptate aute occaecat elit qui. Anim dolor esse ad elit officia mollit cillum officia. Esse amet voluptate Lorem id consectetur aliquip nisi enim sint aliqua anim deserunt. Sunt aliqua excepteur veniam laboris id. Laborum mollit reprehenderit laboris fugiat excepteur deserunt.
-          </h4></div>
+          </h3></div>
           <div class="uk-width-2-3@m">
             <h1 class="hugeLetters" uk-parallax="opacity: 0,2; y: 100,0; viewport: 0.5">Branding</h1>
+          </div>
+
+
+          <div class="uk-width-1-3@m ">
+
+            <div class="uk-paddding green-color-force uk-padding">
+              <div class="uk-align-center uk-paddding green-color-force uk-padding beige-background uk-width-5-6@m">
+                <img uk-scrollspy="cls: uk-animation-fade; repeat: true" class="uk-align-center uk-margin-remove-bottom " src="https://scontent-amt2-1.cdninstagram.com/t51.2885-15/e15/11049256_807228486020798_1964534238_n.jpg" />
+              </div>
+            </div>
+
           </div>
 
         </div>
 
       </div>
     </div>
+
   </div>
 
 
-  <div id="code" class="uk-height-viewport killPadding"  :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
+  <div id="code" class="blue-background blue-color uk-height-viewport" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
 
-    <div class="slantTopLeft slantTopLeftBlack"></div>
+    <div class="slantTopLeft" :style="{'border-width':'0 0 40px calc(100vw - '+datascrollbarwidth+'px)'}"></div>
+    <div class="uk-container">
 
-    <div class="uk-padding">
-      <div class="uk-padding ">
-        <h1 class="hugeLetters uk-text-center" uk-parallax="opacity: 0,2; y: 100,0; viewport: 0.5">Code</h1>
+      <div class="uk-padding pink-color-force">
+        <div uk-grid>
+          <div class="uk-width-1-1@m">
+            <h1 class="hugeLetters uk-text-center" uk-parallax="opacity: 0,2; y: 100,0; viewport: 0.5">Code</h1>
+          </div>
+          <div class="uk-width-1-3@m">
+            <h3 class="">
+            Incididunt occaecat fugiat id consequat eu proident reprehenderit esse eiusmod. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor. Aliquip id anim consequat dolore adipisicing sint esse non cillum est. Irure exercitation et anim proident irure anim irure proident duis fugiat consectetur labore. Sit minim aliquip do officia aliqua qui qui voluptate aute occaecat elit qui. Anim dolor esse ad elit officia mollit cillum officia. Esse amet voluptate Lorem id consectetur aliquip nisi enim sint aliqua anim deserunt. Sunt aliqua excepteur veniam laboris id. Laborum mollit reprehenderit laboris fugiat excepteur deserunt.
+          </h3></div>
+
+          <div class="uk-width-1-3@m">
+            <h3>
+            Incididunt occaecat fugiat id consequat eu proident reprehenderit esse eiusmod. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor. Aliquip id anim consequat dolore adipisicing sint esse non cillum est. Irure exercitation et anim proident irure anim irure proident duis fugiat consectetur labore. Sit minim aliquip do officia aliqua qui qui voluptate aute occaecat elit qui. Anim dolor esse ad elit officia mollit cillum officia. Esse amet voluptate Lorem id consectetur aliquip nisi enim sint aliqua anim deserunt. Sunt aliqua excepteur veniam laboris id. Laborum mollit reprehenderit laboris fugiat excepteur deserunt.
+          </h3></div>
+        </div>
+
       </div>
     </div>
   </div>
 
-  <div id="design" class="uk-height-viewport killPadding">
-    <div class="uk-padding">
-      <div class="uk-padding">
-        <h1 class="hugeLetters uk-text-right">Design</h1>
+  <div id="design" class="pink-background pink-color uk-height-viewport" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
+    <div class="slantTopRight" :style="{'border-width':'0 0 40px calc(100vw - '+datascrollbarwidth+'px)'}"></div>
+    <div class="uk-container">
+
+      <div class="uk-padding black-color-force">
+        <div uk-grid>
+          <div class="uk-width-1-1@m">
+            <h1 class="hugeLetters uk-text-center" uk-parallax="opacity: 0,2; y: 100,0; viewport: 0.5">Design</h1>
+          </div>
+          <div class="uk-width-1-3@m">
+            <h3 class="">
+            Incididunt occaecat fugiat id consequat eu proident reprehenderit esse eiusmod. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor. Aliquip id anim consequat dolore adipisicing sint esse non cillum est. Irure exercitation et anim proident irure anim irure proident duis fugiat consectetur labore. Sit minim aliquip do officia aliqua qui qui voluptate aute occaecat elit qui. Anim dolor esse ad elit officia mollit cillum officia. Esse amet voluptate Lorem id consectetur aliquip nisi enim sint aliqua anim deserunt. Sunt aliqua excepteur veniam laboris id. Laborum mollit reprehenderit laboris fugiat excepteur deserunt.
+          </h3></div>
+
+          <div class="uk-width-1-3@m">
+            <h3>
+            Incididunt occaecat fugiat id consequat eu proident reprehenderit esse eiusmod. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor. Aliquip id anim consequat dolore adipisicing sint esse non cillum est. Irure exercitation et anim proident irure anim irure proident duis fugiat consectetur labore. Sit minim aliquip do officia aliqua qui qui voluptate aute occaecat elit qui. Anim dolor esse ad elit officia mollit cillum officia. Esse amet voluptate Lorem id consectetur aliquip nisi enim sint aliqua anim deserunt. Sunt aliqua excepteur veniam laboris id. Laborum mollit reprehenderit laboris fugiat excepteur deserunt.
+          </h3></div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -97,6 +152,7 @@ export default {
     }
   },
 
+
   transition: 'bounce',
 
 
@@ -110,67 +166,25 @@ export default {
 <style lang="scss" scoped>
 #werkwijze {
 
-
-    // the slant classes does not work without paralax ( because position relative is not set)
-    .slantTopLeft {
-        height: 0;
-        border-width: 0 0 40px calc(100vw - 15px);
-        position: absolute;
-        top: -40px;
-        border-style: solid;
-        border-color: transparent orange orange transparent;
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-
-    }
-
-    .slantTopRight {
-        height: 0;
-        border-width: 0 0 40px calc(100vw - 15px);
-        position: absolute;
-        top: -40px;
-        border-style: solid;
-        border-color: transparent orange orange transparent;
-    }
-
-    .slantTopRightBlack,.slantTopLeftBlack{
-      border-color: transparent black black transparent;
-    }
-
-
-
-    background: beige;
-
     #intro {
-        background: beige;
         overflow-y: hidden;
     }
 
     #branding {
-        background: orange;
-        * {
-            // color: lime;
-        }
 
-        -webkit-box-shadow: 0px 300px 0px 0px orange;
--moz-box-shadow: 0px 300px 0px 0px orange;
-box-shadow: 0px 300px 0px 0px orange;
+        -webkit-box-shadow: 0 300px 0 0;
+        -moz-box-shadow: 0 300px 0 0;
+        box-shadow: 0 300px 0 0;
 
     }
-    #design {
-        background: green;
-        * {
-            color: white;
-        }
-    }
+
+    #design {}
 
     #code {
-        background: black;
-        * {
-            color: lime;
-        }
+        -webkit-box-shadow: 0 300px 0 0;
+        -moz-box-shadow: 0 300px 0 0;
+        box-shadow: 0 300px 0 0;
+
     }
 }
 </style>

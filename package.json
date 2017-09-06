@@ -26,6 +26,7 @@
 		"node-sass": "^4.5.3",
 		"nuxt": "^1.0.0-rc3",
 		"sass-loader": "^6.0.6",
+		"scrollbar-width": "^3.1.1",
 		"uikit": "^3.0.0-beta.30",
 		"vue-i18n": "^7.2.0",
 		"vue-moment": "^2.0.2",

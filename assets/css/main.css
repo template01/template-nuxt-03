@@ -1,11 +1,140 @@
 html {
   background: black !important;
 }
-.black-text{
+
+/* COLORS AND BACKGRONDCOLRS */
+/* NOTE: the slant classes does not work without paralax ( because position relative is not set)*/
+
+
+.black-color{
   color: #101010;
+}
+
+.black-color-force *{
+  color: #101010
+}
+
+.black-border-color{
+  border-color: #101010;
 }
 .black-background{
   color: #101010;
+}
+
+.black-background .slantTopRight,.black-background .slantTopLeft{
+  border-color: transparent #101010 #101010 transparent;
+}
+
+
+.beige-color{
+  color: #F7F5E7
+}
+
+.beige-color-force *{
+  color: #F7F5E7
+}
+
+.beige-border-color{
+  border-color: #F7F5E7
+}
+
+
+.beige-background{
+  background-color: #F7F5E7
+}
+
+.beige-background .slantTopRight,.beige-background .slantTopLeft{
+  border-color: transparent #F7F5E7 #F7F5E7 transparent;
+}
+
+.green-color{
+  color: #075945
+}
+
+.green-color-force *{
+  color: #075945
+}
+
+.green-border-color{
+  color: #075945
+}
+
+.green-background{
+  background-color: #075945
+}
+
+.green-background .slantTopRight,.green-background .slantTopLeft{
+  border-color: transparent #075945 #075945 transparent;
+}
+
+.pink-color{
+  color: #F8E6F7
+}
+
+.pink-color-force *{
+  color: #F8E6F7
+}
+
+.pink-border-color{
+  border-color: #F8E6F7
+}
+
+.pink-background{
+  background-color: #F8E6F7
+}
+
+.pink-background .slantTopRight,.pink-background .slantTopLeft{
+  border-color: transparent #F8E6F7 #F8E6F7 transparent;
+}
+
+.blue-color{
+  color: #0008A1
+}
+
+.blue-color-force *{
+  color: #0008A1
+}
+
+
+.blue-border-color{
+  border-color: #0008A1
+}
+
+.blue-background{
+  background-color: #0008A1
+}
+
+.blue-background .slantTopRight,.blue-background .slantTopLeft{
+  border-color: transparent #0008A1 #0008A1 transparent;
+}
+
+
+/*SLANTED TOPS*/
+
+.slantTopLeft {
+    height: 0;
+    border-width: 0 0 40px 100vw;
+    position: absolute;
+    left:0;
+    top: -40px;
+    border-style: solid;
+    border-color: transparent inherit inherit transparent;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+
+}
+
+.slantTopRight {
+    height: 0;
+    border-width: 0 0 40px 100vw;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: -40px;
+    border-style: solid;
+
 }
 
 
@@ -26,7 +155,7 @@ h1 {
 
 }
 
-.killPadding {
+/*.killPadding {
   margin-left: -80px;
   margin-right:-80px;
 
@@ -46,7 +175,7 @@ h1 {
   }
 
 }
-
+*/
 
 /*.nuxt-link-active>*{
 

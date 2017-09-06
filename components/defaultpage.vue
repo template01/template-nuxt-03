@@ -9,22 +9,22 @@
         <menuitemsside></menuitemsside>
       </div>
     </nav>
-    <main id="panel">
+    <main class="beige-background" id="panel">
 
       <div id="fixme" class="slide-button" :class="{ 'slide-out-button': !menuopenshow }">
         <button class="toggle-button black-background"><span uk-icon="icon: menu"></span></button>
       </div>
 
-      <section class="uk-container uk-container-center defaultpage">
-        <div class="uk-padding uk-visible@m" id="">
-          <div id="menudefault">
+      <section class="defaultpage">
+        <div class="uk-container uk-visible@m" id="">
+          <div class="uk-padding" id="menudefault">
             <menuitems class=""></menuitems>
             <!-- <menuitemsmobile class="uk-hidden@m"></menuitemsmobile> -->
           </div>
         </div>
 
-        <div class="uk-padding">
-          <div :class="{'uk-padding':getsmallscreen}" class="uk-padding-remove-bottom uk-padding-remove-horizontal">
+        <div class="">
+          <div>
             <!-- SLOT AREA -->
             <slot>
 
@@ -210,8 +210,6 @@ export default {
 }
 
 .slideout-panel {
-  background: beige;
-
   position: relative;
   z-index: 1;
   /*will-change: transform;*/
