@@ -9,10 +9,10 @@
     </div>
 
     <div>
-      <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/werkwijze', query: { lang: 'en' }}">
-        <h4>{{$t("menu.topmenu.how")}}</h4></nuxt-link>
-      <nuxt-link v-else :to="{path:'/werkwijze'}">
-        <h4>{{$t("menu.topmenu.how")}}</h4></nuxt-link>
+      <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/over', query: { lang: 'en' }}">
+        <h4>{{$t("menu.topmenu.about")}}</h4></nuxt-link>
+      <nuxt-link v-else :to="{path:'/over'}">
+        <h4>{{$t("menu.topmenu.about")}}</h4></nuxt-link>
     </div>
 
     <div>
@@ -31,12 +31,6 @@
     -->
     <div class="">
 
-
-        <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/over', query: { lang: 'en' }}">
-          <h4>{{$t("menu.topmenu.about")}}</h4></nuxt-link>
-        <nuxt-link v-else :to="{path:'/over'}">
-          <h4>{{$t("menu.topmenu.about")}}</h4></nuxt-link>
-      </h4>
       <span  v-if="$route.path != '/'">
         <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/', query: { lang: 'en' }}">
           <h4>{{$t("menu.topmenu.index")}}</h4></nuxt-link>

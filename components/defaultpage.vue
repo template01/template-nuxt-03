@@ -15,7 +15,7 @@
         <button class="toggle-button black-background"><span uk-icon="icon: menu"></span></button>
       </div>
 
-      <section class="defaultpage">
+      <section class="defaultpage" :class="{'fadein':loaded}">
         <div class="uk-container uk-visible@m" id="">
           <div class="uk-padding" id="menudefault">
             <menuitems class=""></menuitems>
@@ -100,6 +100,7 @@ export default {
       menuopenshow: false,
       mounted: false,
       scrolled: false,
+      loaded: false
     }
   },
   destroyed() {
@@ -113,13 +114,19 @@ export default {
       this.menuopenshow = true
     }
 
+    this.$nextTick(() => {
+      this.loaded = true
+    })
+
   },
 
-  watch:{
-    getsmallscreen:function(val){
-      if(val){
+
+
+  watch: {
+    getsmallscreen: function(val) {
+      if (val) {
         this.menuopenshow = true
-      }else{
+      } else {
         if (window.scrollY < 100) {
           this.menuopenshow = false
         }
@@ -135,94 +142,101 @@ export default {
 </script>
 
 
-<style>
-.defaultpage {}
+<style lang="scss">
+.defaultpage {
+    opacity: 0;
+    transition: opacity 0.25s;
+    // transition-delay: 0.25s;
+    &.fadein {
+        opacity: 1;
+    }
+
+}
+
 
 .hideSidebarContent {
-  display: none;
+    display: none;
 }
 
 .slide-button {
-  transition: opacity 0.25s, transform 0.25s;
+    transition: opacity 0.25s, transform 0.25s;
 }
 
 .slide-out-button {
-  opacity: 0;
-  transform: translateX(30px);
+    opacity: 0;
+    transform: translateX(30px);
 }
 
 #fixme {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 99999 !important;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 99999 !important;
 }
 
 .toggle-button,
 .toggle-button-menu {
-  cursor: pointer;
-  border: 0;
-  background: 0;
-  font-size: 20px;
-  color: beige;
-  outline: none;
-  background: black;
-  border-radius: 100%;
-  padding: 2px;
-  width: 30px;
-  height: 30px;
-  line-height: 20px;
-  margin: 0;
-  transition: transform 0.25s;
+    cursor: pointer;
+    border: 0;
+    background: 0;
+    font-size: 20px;
+    color: beige;
+    outline: none;
+    background: black;
+    border-radius: 100%;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    line-height: 20px;
+    margin: 0;
+    transition: transform 0.25s;
 }
 
 .toggle-button-menu {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
-
 .toggle-button-menu:hover {
-  transform: rotate(0deg);
+    transform: rotate(0deg);
 }
-
 .toggle-button:hover {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .slideout-menu {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 256px;
-  height: 1000vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  z-index: 0;
-  display: none;
-  background-color: orange;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 256px;
+    height: 1000vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 0;
+    display: none;
+    background-color: orange;
 }
 
 .slideout-menu-left {
-  left: 0;
+    left: 0;
 }
 
 .slideout-menu-right {
-  right: 0;
+    right: 0;
 }
 
 .slideout-panel {
-  position: relative;
-  z-index: 1;
-  /*will-change: transform;*/
-  min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    /*will-change: transform;*/
+    min-height: 100vh;
 }
 
 .slideout-open,
-.slideout-open body,
-.slideout-open .slideout-panel {
-  overflow: hidden;
+.slideout-open .slideout-panel,
+.slideout-open body {
+    overflow: hidden;
 }
 
 .slideout-open .slideout-menu {
-  display: block;
+    display: block;
 }
 </style>
