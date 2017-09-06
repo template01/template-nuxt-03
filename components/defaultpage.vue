@@ -1,5 +1,6 @@
 <template>
 <div>
+  <loadingsingle v-if="!loaded"></loadingsingle>
   <Slideout menu="#menu" panel="#panel" side="right" :toggleSelectors="['.toggle-button','.toggle-button-menu']" @on-close="close" @on-open="open">
     <nav class="" id="menu">
       <div :class="{'hideSidebarContent':!mounted}">
@@ -48,7 +49,10 @@ import menuitems from '~/components/menuitems.vue'
 import menuitemsmobile from '~/components/menuitemsmobile.vue'
 import menuitemsside from '~/components/menuitemsside.vue'
 import templatefooter from '~/components/templatefooter.vue'
+import loadingsingle from '~/components/loadingsingle.vue'
 // import computedresizer from '~/mixins/computedresizer.js'
+
+
 
 import _ from 'lodash'
 
@@ -58,6 +62,7 @@ export default {
     menuitems,
     menuitemsmobile,
     menuitemsside,
+    loadingsingle,
     templatefooter,
   },
 
