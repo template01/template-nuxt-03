@@ -42,7 +42,7 @@
                 <img uk-scrollspy="cls: uk-animation-fade; repeat: true" class="uk-align-center uk-margin-remove-bottom " src="https://i2.wp.com/aa-mktg.com/wp-content/uploads/2016/08/chanel.png
               " />
               </div>
-            </div>
+            </div> 
 
           </div>
 
