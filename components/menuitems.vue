@@ -9,10 +9,10 @@
     </div>
 
     <div>
-      <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/werkwijze', query: { lang: 'en' }}">
-        <h1>{{$t("menu.topmenu.how")}}</h1></nuxt-link>
-      <nuxt-link v-else :to="{path:'/werkwijze'}">
-        <h1>{{$t("menu.topmenu.how")}}</h1></nuxt-link>
+      <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/over', query: { lang: 'en' }}">
+        <h1>{{$t("menu.topmenu.about")}}</h1></nuxt-link>
+      <nuxt-link v-else :to="{path:'/over'}">
+        <h1>{{$t("menu.topmenu.about")}}</h1></nuxt-link>
     </div>
 
     <div>
@@ -29,21 +29,25 @@
         <h1>{{$t("menu.topmenu.contact")}}</h1></nuxt-link>
     </div>
     -->
-    <div  class="uk-padding-small uk-padding-remove-horizontal uk-padding-remove-bottom">
-<h4>
+    <div class="uk-padding-small uk-padding-remove-horizontal uk-padding-remove-bottom">
+      <h4>
       <span><nuxt-link :to="{}" replace>NL</nuxt-link> / <nuxt-link :to="{query: { lang: 'en' }}">EN</nuxt-link></span>
-
+<!--
       <div>
         <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/over', query: { lang: 'en' }}">
           <span>{{$t("menu.topmenu.about")}}</span></nuxt-link>
         <nuxt-link v-else :to="{path:'/over'}">
           <span>{{$t("menu.topmenu.about")}}</span></nuxt-link>
-      </div>
+      </div> -->
       <div  v-if="$route.path != '/'">
         <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/', query: { lang: 'en' }}">
-          <span>{{$t("menu.topmenu.index")}}</span></nuxt-link>
+          <span>{{$t("menu.topmenu.index")}}</span>
+          <span uk-icon="icon: arrow-up"></span>
+        </nuxt-link>
         <nuxt-link v-else :to="{path:'/'}">
-          <span>{{$t("menu.topmenu.index")}}</span></nuxt-link>
+          <span>{{$t("menu.topmenu.index")}}</span>
+          <span uk-icon="icon: arrow-up"></span>
+        </nuxt-link>
       </div>
 </h4>
     </div>
@@ -61,7 +65,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-h1,h4 {
+h1,
+h4 {
     color: inherit;
 }
 a {
