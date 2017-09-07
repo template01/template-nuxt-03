@@ -13,6 +13,9 @@ export const state = () => ({
 export const getters = {
   getsmallscreen (state) {
     return state.smallscreen
+  },
+  getlocale (state) {
+    return state.locale
   }
 }
 

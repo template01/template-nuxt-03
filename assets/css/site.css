@@ -262,7 +262,7 @@ h3, .uk-h3 {
   line-height: 1.4; }
 
 h4, .uk-h4 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   line-height: 1.4; }
 
 h5, .uk-h5 {
@@ -331,7 +331,7 @@ address {
  ========================================================================== */
 blockquote {
   margin: 0 0 20px 0;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   line-height: 1.5;
   font-style: italic;
   color: #101010; }
@@ -1463,7 +1463,7 @@ button.uk-icon:not(:disabled) {
  * Large
  */
 .uk-form-large {
-  font-size: 1.25rem; }
+  font-size: 1.3rem; }
 
 .uk-form-large:not(textarea):not([multiple]):not([size]) {
   height: 55px;
@@ -3280,7 +3280,7 @@ select.uk-form-width-xsmall {
 /* Title
  ========================================================================== */
 .uk-comment-title {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   line-height: 1.4; }
 
 /* Meta
@@ -4671,7 +4671,7 @@ ul.uk-nav-sub {
  ========================================================================== */
 .uk-accordion-title {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   line-height: 1.4;
   cursor: pointer;
   overflow: hidden; }
@@ -5585,7 +5585,7 @@ ul.uk-nav-sub {
   padding: 15px;
   background: #f8f8f8;
   color: #101010;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   line-height: 1.4;
   cursor: pointer; }
 

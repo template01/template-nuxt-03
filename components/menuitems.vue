@@ -42,11 +42,11 @@
       <div  v-if="$route.path != '/'">
         <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/', query: { lang: 'en' }}">
           <span>{{$t("menu.topmenu.index")}}</span>
-          <span uk-icon="icon: arrow-up"></span>
+          <span uk-icon="icon: arrow-up; ratio: 1.1"></span>
         </nuxt-link>
         <nuxt-link v-else :to="{path:'/'}">
           <span>{{$t("menu.topmenu.index")}}</span>
-          <span uk-icon="icon: arrow-up"></span>
+          <span uk-icon="icon: arrow-up; ratio: 1.1"></span>
         </nuxt-link>
       </div>
 </h4>

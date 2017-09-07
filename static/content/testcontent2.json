@@ -1,0 +1,38 @@
+{
+  "en": {
+    "body": [{
+        "size": "half",
+        "type": "header",
+        "content":"Aaaan.net"
+      },
+      {
+        "size": "full",
+        "type": "image",
+        "content":"/content/img/overlay_aaaan1.jpg"
+      },
+      {
+        "size": "full",
+        "type": "text",
+        "content":"Also, significant syntax errors in the original JSON data have been corrected: All key names in a JSON object must be in double quotes, and all string values in a JSON object or a JSON array must be in double quotes as well."
+      }
+    ]
+  },
+  "nl": {
+    "body": [{
+        "size": "half",
+        "type": "header",
+        "content":"Aaaan.net"
+      },
+      {
+        "size": "full",
+        "type": "image",
+        "content":"/content/img/overlay_aaaan1.jpg"
+      },
+      {
+        "size": "full",
+        "type": "text",
+        "content":"Een deel van de ochtend en de middag was het 0900-nummer van de politie niet goed bereikbaar. De politie in Rotterdam sprak op Twitter in de loop van de ochtend van een landelijke storing, die zeker al sinds 10.30 uur duurt. De oorzaak was een stroomstoring, die inmiddels is verholpen. Op het moment dat iemand 0900-8844 belt en er niet doorheen komt, speelt er een bandje af, zei een woordvoerder eerder vandaag. Het noodnummer 112 is tijdens de storing wel bereikbaar geweest. De politie in Rotterdam sprak op Twitter in de loop van de ochtend van een landelijke storing, die zeker al sinds 10.30 uur duurt."
+      }
+    ]
+  }
+}

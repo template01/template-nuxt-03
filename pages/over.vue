@@ -1,7 +1,7 @@
 <template>
 <defaultpage id="over">
   <div id="intro beige-background" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
-    <div class="uk-padding uk-padding-remove-top">
+    <div class="uk-padding">
 
       <div class="uk-child-width-expand uk-flex-center" uk-grid>
         <!-- <div></div> -->
