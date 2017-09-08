@@ -1,6 +1,5 @@
 <template>
-<h4>
-
+<p class="uk-h4" :class="{'uk-h5':footer}">
   <!-- <button @click="$store.commit('SET_LANG', 'nl'); $i18n.locale = 'nl'"> NL</button> -->
   <!-- <button @click="$store.commit('SET_LANG', 'en'); $i18n.locale = 'en'"> EN</button> -->
 
@@ -17,7 +16,7 @@
   <span>{{$t("clock.statusdesc")}} {{status}}</span>
 
   <!-- </transition> -->
-</h4>
+</p>
 </template>
 <script>
 import VueI18n from 'vue-i18n'
@@ -33,6 +32,7 @@ export default {
       // locale: 'en'
     }
   },
+  props:['footer'],
   methods: {
     getTime: function() {
       return moment().tz('Europe/Amsterdam').format('MMMM Do YYYY, H:mm:ss')
@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style scoped>
-h4{
+.uk-h4,.uk-h5 {
   margin-bottom: 0;
 }
 .fade-enter-active,

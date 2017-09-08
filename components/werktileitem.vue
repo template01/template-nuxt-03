@@ -1,15 +1,18 @@
 <template>
-<div v-if="showcontent" class="uk-width-1-2@m pink-background uk-padding uk-inline uk-transition-toggle">
+<div :style="{'background-color':datainput.acf['background-color']}"class="werktile uk-width-1-2@m pink-background uk-padding uk-inline uk-transition-toggle">
+
+
+  <h5>Webdesign / Strategy</h5>
 
   <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top" >
     <nuxt-link  :to="$i18n.locale === 'en' ? {path:'/werk/item', query: { lang: $i18n.locale }}:{path:'/contact'}">
 
       <div class="uk-padding" uk-grid>
 
-        <div v-for="item in actualContent.body" :class="[item.size === 'half' ? {'uk-width-1-2@m':true}:{'uk-width-1-1@m':true}, item.type === 'image' ? 'uk-flex uk-flex-center uk-flex-middle':'']">
-          <h1 v-if="item.type === 'header'" class="uk-text-left hugeLetters" v-html="item.content"></h1>
-          <img v-if="item.type === 'image'" :class="item.size === 'full' ? 'uk-padding uk-padding-remove-vertical' : ''" :src="item.content" />
-          <p v-if="item.type === 'text'" class="uk-text-left uk-h4"  v-html="item.content"></p>
+        <div v-for="item in datainput.acf.tile" :class="[item.size === 'half' ? {'uk-width-1-2@m':true}:{'uk-width-1-1@m':true}, item.type === 'image' ? 'uk-flex uk-flex-center uk-flex-middle':'']">
+          <h1 v-if="item.acf_fc_layout === 'header'" class="uk-text-left hugeLetters" v-html="datainput.title.rendered"></h1>
+          <img v-if="item.acf_fc_layout  === 'image'" :class="item.size === 'full' ? 'uk-padding uk-padding-remove-vertical' : ''" :src="item.image.sizes.large" />
+          <p v-if="item.acf_fc_layout === 'text'" class="uk-text-left uk-h4"  v-html="item.text"></p>
         </div>
 
       </div>
@@ -35,50 +38,20 @@ import {
 export default {
   data: function() {
     return {
-      showcontent: false,
-      content:null,
-      actualContent: null,
-      apiendpoint:null
-
-
     }
   },
-  props: ['itemurl','menucolor'],
+  props: ['datainput'],
   computed: {
     ...mapGetters({
      getlocale: "getlocale",
    }),
  },
 
- methods:{
-   setlanguage:function(){
-     if(this.$i18n.locale === 'en' ){
-       // alert('en')
-       this.actualContent = this.content.en
-     }else{
-       // alert('nl')
-       this.actualContent = this.content.nl
-
-     }
-   }
- },
-
-  mounted() {
-
-    axios.get(this.itemurl)
-    .then(response => {
-      // JSON responses are automatically parsed.
-      this.content = response.data
-      this.setlanguage()
-      this.showcontent = true
-
-    })
-    .catch(e => {
-      this.errors.push(e)
-    })
-
-  }
 }
 </script>
 <style lang="scss" scoped>
+.werktile{
+  overflow-x: hidden;
+
+}
 </style>

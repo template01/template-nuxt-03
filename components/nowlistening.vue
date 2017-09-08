@@ -1,5 +1,5 @@
 <template>
-<h4>
+<p class="uk-h4" :class="{'uk-h5':footer}">
   {{$t("nowlistening.desc")}}
   <transition name="fade">
     <span v-if="showtune">
@@ -14,7 +14,7 @@
     </span>
     </span>
   </transition>
-</h4>
+</p>
 </template>
 <script>
 import axios from 'axios'
@@ -26,10 +26,12 @@ export default {
     return {
       tune: Object,
       showtune: false,
-      tuneInterval:null
+      tuneInterval: null
 
     }
   },
+  props:['footer'],
+
   methods: {
     getTune: function() {
       axios.get('http://spotify.template01.info/output/output.json')
@@ -62,8 +64,7 @@ export default {
 </script>
 
 <style scoped>
-
-h4{
+.uk-h4,.uk-h5 {
   margin: 0;
 }
 

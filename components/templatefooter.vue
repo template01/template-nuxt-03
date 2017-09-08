@@ -3,13 +3,13 @@
   <div class="uk-padding">
     <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
       <div>
-        <clock></clock>
-        <nowlistening></nowlistening>
+        <clock :footer="true"></clock>
+        <nowlistening :footer="true"></nowlistening>
       </div>
       <div>
-        <h4>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4></div>
+        <h5>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5></div>
       <div>
-        <h4>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h4></div>
+        <h5>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h5></div>
     </div>
   </div>
 </div>
