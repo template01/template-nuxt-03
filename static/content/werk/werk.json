@@ -1,0 +1,14 @@
+{
+  "en": {
+    "body": [{
+      "intro" : "Work intro. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor",
+      "tiles":["/content/werk/testcontent.json","/content/werk/testcontent2.json"]
+    }]
+  },
+  "nl": {
+    "body": [{
+      "intro" : "Werk intro. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor",
+      "tiles":["/content/werk/testcontent.json","/content/werk/testcontent2.json"]
+    }]
+  }
+}

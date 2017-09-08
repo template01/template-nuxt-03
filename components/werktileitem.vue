@@ -63,10 +63,8 @@ export default {
    }
  },
 
-
-
   mounted() {
-  
+
     axios.get(this.itemurl)
     .then(response => {
       // JSON responses are automatically parsed.
