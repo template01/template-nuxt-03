@@ -1,8 +1,22 @@
 <template>
   <defaultpage id="contact">
-    <div class="">
-      <h1 style="font-weight:800">contact</h1>
+    <div id="intro beige-background" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+      <div class="uk-padding">
+
+        <div class="uk-child-width-expand uk-flex-center" uk-grid>
+          <!-- <div></div> -->
+          <div :class="{'uk-width-3-4':!getsmallscreen}">
+            <div>
+              <h1 v-html="'contact'" style="font-weight:800"></h1>
+            </div>
+          </div>
+          <!-- <div></div> -->
+        </div>
+
+
+      </div>
     </div>
+
   </defaultpage>
 <!-- <section id="over" class="container">
   <div class="uk-padding uk-padding-remove-bottom" id="menusplash">

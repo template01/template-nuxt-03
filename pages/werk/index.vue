@@ -24,7 +24,7 @@
       <!-- {{tiles[0]}} -->
 
       <div class=" uk-grid-collapse uk-text-center" uk-grid uk-height-match>
-        <werktileitem v-for="tile in tiles" :datainput="tile"></werktileitem>
+        <werktileitem v-bind:key="tile.id" v-for="tile in tiles" :datainput="tile"></werktileitem>
 
       </div>
     </div>

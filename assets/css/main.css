@@ -1,5 +1,7 @@
 html {
   background: black !important;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* COLORS AND BACKGRONDCOLRS */
@@ -123,7 +125,6 @@ html {
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-
 }
 
 .slantTopRight {
@@ -134,7 +135,6 @@ html {
     width: 100%;
     top: -40px;
     border-style: solid;
-
 }
 
 
@@ -188,7 +188,7 @@ h1 {
   text-decoration: underline;
 }
 
-.bounce-enter-active {
+/*.bounce-enter-active {
   animation: bounce-in .8s;
 }
 
@@ -212,4 +212,4 @@ h1 {
   100% {
     transform: translateY(-100vh)
   }
-}
+}*/

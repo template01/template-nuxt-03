@@ -1,45 +1,7 @@
 <template>
 <div>
   <loadingsingle v-if="!loaded"></loadingsingle>
-
-  <nav id="menu">
-    <div :class="{'hideSidebarContent':!mounted}">
-      <div class="uk-padding-small uk-padding-remove-bottom" @click="toggleMenu">
-        <button class="toggle-button-menu black-background"><span uk-icon="icon: menu"></span></button>
-      </div>
-      <menuitemsside></menuitemsside>
-    </div>
-  </nav>
-
-  <main class="beige-background" id="panel">
-
-          <div id="fixme" class="slide-button" @click="toggleMenu" :class="{ 'slide-out-button': !menuopenshow }">
-            <button class="toggle-button black-background" ><span uk-icon="icon: menu"></span></button>
-          </div>
-
-          <section class="defaultpage" :class="{'fadein':loaded}">
-            <div class="uk-container uk-visible@m" id="">
-              <div class="uk-padding" id="menudefault">
-                <menuitems class=""></menuitems>
-              </div>
-            </div>
-
-            <div class="">
-              <div>
-                <slot>
-
-                </slot>
-              </div>
-
-            </div>
-
-            <templatefooter></templatefooter>
-          </section>
-
-  </main>
-
-
-  <!-- <Slideout menu="#menu" panel="#panel" side="right" :toggleSelectors="['.toggle-button','.toggle-button-menu']" @on-close="close" @on-open="open">
+  <Slideout menu="#menu" panel="#panel" side="right" :toggleSelectors="['.toggle-button','.toggle-button-menu']" @on-close="close" @on-open="open">
     <nav class="" id="menu">
       <div :class="{'hideSidebarContent':!mounted}">
         <div class="uk-padding-small uk-padding-remove-bottom">
@@ -58,11 +20,13 @@
         <div class="uk-container uk-visible@m" id="">
           <div class="uk-padding" id="menudefault">
             <menuitems class=""></menuitems>
+            <!-- <menuitemsmobile class="uk-hidden@m"></menuitemsmobile> -->
           </div>
         </div>
 
         <div class="">
           <div>
+            <!-- SLOT AREA -->
             <slot>
 
             </slot>
@@ -74,7 +38,7 @@
       </section>
 
     </main>
-  </Slideout> -->
+  </Slideout>
 
 
 
@@ -104,22 +68,6 @@ export default {
 
 
   methods: {
-
-    closeMenu: function() {
-      this.slideoutObj.close();
-
-    },
-
-    openMenu: function() {
-      this.slideoutObj.open();
-
-    },
-
-    toggleMenu: function() {
-      this.slideoutObj.toggle();
-    },
-
-
     open: function() {
       this.menuopenshow = false
 
@@ -131,7 +79,7 @@ export default {
     },
 
     closeSidebar: function() {
-      // this.$children[0].slideout.close()
+      this.$children[0].slideout.close()
     },
     test: function() {
       console.log('scroll')
@@ -157,42 +105,15 @@ export default {
       menuopenshow: false,
       mounted: false,
       scrolled: false,
-      loaded: false,
-      slideoutObj: null,
-
+      loaded: false
     }
   },
-
   destroyed() {
-
-    this.closeMenu()
-
+    this.closeSidebar()
     window.removeEventListener('scroll', this.handleScroll);
   },
   mounted() {
-    var slideout = new Slideout({
-      'panel': document.getElementById('panel'),
-      'menu': document.getElementById('menu'),
-      'padding': 256,
-      'tolerance': 70,
-      'side':'right'
-    });
-
-    this.slideoutObj = slideout
-
-
-    var vm = this
-    slideout.on('open', function() {
-      vm.menuopenshow = false
-    });
-
-    slideout.on('close', function() {
-      vm.menuopenshow = true
-    });
-
     this.mounted = true
-
-
     window.addEventListener('scroll', this.handleScroll);
     if (this.getsmallscreen) {
       this.menuopenshow = true
@@ -200,7 +121,6 @@ export default {
 
     this.$nextTick(() => {
       this.loaded = true
-
     })
 
   },
@@ -237,6 +157,7 @@ export default {
     }
 
 }
+
 
 .hideSidebarContent {
     display: none;
@@ -291,12 +212,12 @@ export default {
     top: 0;
     bottom: 0;
     width: 256px;
-    min-height: 100vh;
-    // overflow-y: scroll;
+    height: 1000vh;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 0;
     display: none;
-    background: orange;
+    background-color: orange;
 }
 
 .slideout-menu-left {
@@ -310,9 +231,7 @@ export default {
 .slideout-panel {
     position: relative;
     z-index: 1;
-    // will-change: transform;
-    // background-color: red;
-    /* A background-color is required */
+    /*will-change: transform;*/
     min-height: 100vh;
 }
 
@@ -325,42 +244,4 @@ export default {
 .slideout-open .slideout-menu {
     display: block;
 }
-
-// .slideout-menu {
-//     position: fixed;
-//     top: 0;
-//     bottom: 0;
-//     width: 256px;
-//     height: 1000vh;
-//     overflow-y: auto;
-//     -webkit-overflow-scrolling: touch;
-//     z-index: 0;
-//     display: none;
-//     background-color: orange;
-// }
-//
-// .slideout-menu-left {
-//     left: 0;
-// }
-//
-// .slideout-menu-right {
-//     right: 0;
-// }
-//
-// .slideout-panel {
-//     position: relative;
-//     z-index: 1;
-//     /*will-change: transform;*/
-//     min-height: 100vh;
-// }
-//
-// .slideout-open,
-// .slideout-open .slideout-panel,
-// .slideout-open body {
-//     overflow: hidden;
-// }
-//
-// .slideout-open .slideout-menu {
-//     display: block;
-// }
 </style>

@@ -26,6 +26,9 @@ module.exports = {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Poppins'
       }
+    ],
+    script:[
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.js'}
     ]
 
   },
@@ -60,10 +63,6 @@ module.exports = {
       ssr: false
     },
     {
-      src: '~/plugins/slideout.js',
-      ssr: false
-    },
-    {
       src: '~/plugins/translation.js',
       // ssr: false
     },
@@ -84,12 +83,12 @@ module.exports = {
   //   routes: ['/', '/werk', '/fr', '/fr/werk']
   // },
 
-  loading: '~/components/loading.vue',
+  // loading: '~/components/loading.vue',
   /*
    ** Build configuration
    */
   build: {
-    vendor: ['axios', 'vue-i18n', 'slideout','lodash']
+    vendor: ['axios', 'vue-i18n','lodash', 'uikit']
     /*
      ** Run ESLINT on save
      */

@@ -7,8 +7,8 @@
         <!-- <div></div> -->
         <div :class="{'uk-width-3-4':!getsmallscreen}">
           <div>
-            <h1 style="font-weight:800">Incididunt occaecat fugiat id consequat eu proident reprehenderit esse eiusmod. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor
-            </h1></div>
+            <h1 v-html="content" style="font-weight:800"></h1>
+          </div>
         </div>
         <!-- <div></div> -->
       </div>
@@ -17,8 +17,9 @@
     </div>
   </div>
 
+
   <div id="branding" class="green-background green-color" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
-    <div class="slantTopRight" :style="{'border-width':'0 0 40px calc(100vw - '+datascrollbarwidth+'px)'}"></div>
+    <div class="slantTopRight" ></div>
 
 
     <div class="uk-container">
@@ -75,7 +76,7 @@
 
   <div id="code" class="blue-background blue-color uk-height-viewport" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
 
-    <div class="slantTopLeft" :style="{'border-width':'0 0 40px calc(100vw - '+datascrollbarwidth+'px)'}"></div>
+    <div class="slantTopLeft"></div>
     <div class="uk-container">
 
       <div class="uk-padding pink-color-force">
@@ -99,7 +100,7 @@
   </div>
 
   <div id="design" class="pink-background pink-color uk-height-viewport" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
-    <div class="slantTopRight" :style="{'border-width':'0 0 40px calc(100vw - '+datascrollbarwidth+'px)'}"></div>
+    <div class="slantTopRight"></div>
     <div class="uk-container">
 
       <div class="uk-padding black-color-force">
@@ -122,21 +123,7 @@
     </div>
   </div>
 </defaultpage>
-<!-- <section id="over" class="container">
-  <div class="uk-padding uk-padding-remove-bottom" id="menusplash">
-    <menuitems></menuitems>
-  </div>
 
-  <div class="uk-padding uk-padding-remove-top">
-    <div class="uk-padding uk-padding-remove-top">
-      <div class="">
-        <h1 style="font-weight:800">over</h1>
-      </div>
-    </div>
-  </div>
-
-  <templatefooter></templatefooter>
-</section> -->
 </template>
 
 <script>
@@ -149,6 +136,7 @@ export default {
   data: function() {
     return {
       paralaxy: '500,0',
+      content:"Incididunt occaecat fugiat id consequat eu proident reprehenderit esse eiusmod. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor. Aliquip id anim consequat dolore adipisicing sint esse non cillum est. Irure exercitation et anim proident irure anim irure proident duis fugiat consectetur labore. Sit minim aliquip do officia aliqua qui qui voluptate aute occaecat elit qui. Anim dolor esse ad elit officia mollit cillum officia. Esse amet voluptate Lorem id consectetur aliquip nisi enim sint aliqua anim deserunt. Sunt aliqua excepteur veniam laboris id. Laborum mollit reprehenderit laboris fugiat excepteur deserunt."
     }
   },
 

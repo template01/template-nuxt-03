@@ -8,7 +8,9 @@ Vue.mixin({
   },
 
   mounted(){
+    var vm = this
     this.datascrollbarwidth  =  window.getScrollbarWidth()
+
   }
 
 })

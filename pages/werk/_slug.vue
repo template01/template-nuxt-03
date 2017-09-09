@@ -1,25 +1,31 @@
 <template>
 <defaultpage id="">
-  <div class="">
-    <h1 style="font-weight:800">werk {{$route.path}}</h1> {{content}}
-    <br /> {{p}}
-  </div>
-</defaultpage>
-<!-- <section id="over" class="container">
-  <div class="uk-padding uk-padding-remove-bottom" id="menusplash">
-    <menuitems></menuitems>
-  </div>
 
-  <div class="uk-padding uk-padding-remove-top">
-    <div class="uk-padding uk-padding-remove-top">
-      <div class="">
-        <h1 style="font-weight:800">over</h1>
+  <div id="beige-background" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+    <div class="uk-padding">
+
+      <div class="uk-child-width-expand uk-flex-center" uk-grid>
+        <!-- <div></div> -->
+        <div :class="{'uk-width-3-4':!getsmallscreen}">
+          <div>
+            <h1 class="hugeLetters">{{content.title.rendered}}</h1>
+          </div>
+        </div>
+<!--
+        <div v-for="item in content.acf.tile" :class="[item.size === 'half' ? {'uk-width-1-2@m':true}:{'uk-width-1-1@m':true}, item.type === 'image' ? 'uk-flex uk-flex-center uk-flex-middle':'']">
+          <h1 v-if="item.acf_fc_layout === 'header'" class="uk-text-left hugeLetters" v-html="datainput.title.rendered"></h1>
+          <img v-if="item.acf_fc_layout  === 'image'" :class="item.size === 'full' ? 'uk-padding uk-padding-remove-vertical' : ''" :src="item.image.sizes.large" />
+          <div v-if="item.acf_fc_layout === 'text'" class="uk-text-left uk-h4" v-html="item.text"></div>
+        </div>
+         -->
       </div>
+
+
     </div>
   </div>
 
-  <templatefooter></templatefooter>
-</section> -->
+
+</defaultpage>
 </template>
 
 <script>
