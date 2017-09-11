@@ -1,16 +1,41 @@
 <template>
 <div id="test">
-  <nav id="menu">
-    <header>
-      <h2>Menu</h2>
-    </header>
-  </nav>
+  <div class="loading-page beige-background" @click="testslide=!testslide">
+    <!-- <div class="uk-padding uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport"> -->
+    <div class="uk-padding uk-height-viewport">
 
-  <main id="panel">
-    <header>
-      <h2 @click="toggleMenu">Panel</h2>
-    </header>
-  </main>
+      <div id="toploading" style="height:33vh;" class="uk-flex uk-flex-center uk-flex-middle " :class="{'slideouttop':testslide}">
+
+        <h1 class=" uk-text-center loading green-color">Awaiting awesome</h1>
+      </div>
+
+
+
+    </div>
+
+    <canvas id="myCanvas" resize></canvas>
+
+    <!-- <div id="svgwrapper" :class="{'slideoutbottom':testslide}">
+      <svg viewbox="0 0 40 20">
+            <defs>
+              <pattern id="wave" x="0" y="0" width="120" height="24" patternUnits="userSpaceOnUse">
+                <path id="wavePath" d="M-80 2 Q-30 7 -20 2 T0 2 T20 2 T80 2 T60 2 T80 2 T100 2 T120 2 V20 H-80z" mask="url(#mask)" fill="#075945">
+                  <animateTransform
+                      attributeName="transform"
+                      begin="0s"
+                      dur="1.5s"
+                      type="translate"
+                      from="0,0"
+                      to="40,0"
+                      repeatCount="indefinite" />
+                </path>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#wave)" />
+          </svg>
+
+    </div> -->
+  </div>
 
 </div>
 </template>
@@ -21,38 +46,26 @@ export default {
   components: {},
 
   data: () => ({
-    slideoutObj: null,
+    testslide: false
   }),
   transition: 'bounce',
   mounted() {
-
-    this.slideoutObj = new Slideout({
-      'panel': document.getElementById('panel'),
-      'menu': document.getElementById('menu'),
-      'padding': 256,
-      'tolerance': 70
-    });
-
-
-    // this.slideoutObj.open();
-
+    // Create a Paper.js Path to draw a line into it:
+  	var path = new Path();
+  	// Give the stroke a color
+  	path.strokeColor = 'black';
+  	var start = new Point(100, 100);
+  	// Move to start and draw a line from there
+  	path.moveTo(start);
+  	// Note the plus operator on Point objects.
+  	// PaperScript does that for us, and much more!
+  	path.lineTo(start + [ 100, -50 ]);
   },
 
   methods: {
-    closeMenu: function() {
-      this.slideoutObj.close();
-    },
-
-    openMenu: function() {
-      this.slideoutObj.open();
-    },
-
-    toggleMenu: function() {
-      this.slideoutObj.toggle();
-    },
 
 
-    test: function(){
+    test: function() {
       alert('heyeyey')
     }
   }
@@ -65,43 +78,63 @@ export default {
 </script>
 
 <style scoped>
-.slideout-menu {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 256px;
-  min-height: 100vh;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  z-index: 0;
-  display: none;
-  background: green;
+#test {
+
+  background: white;
 }
 
-.slideout-menu-left {
-  left: 0;
-}
 
-.slideout-menu-right {
-  right: 0;
-}
 
-.slideout-panel {
-  position: relative;
-  z-index: 1;
-  will-change: transform;
-  background-color: red;
-  /* A background-color is required */
-  min-height: 100vh;
-}
-
-.slideout-open,
-.slideout-open body,
-.slideout-open .slideout-panel {
+.loading:after {
   overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+  animation: ellipsis steps(4, end) 900ms infinite;
+  content: "…";
+  /* ascii code for the ellipsis character */
+  width: 0px;
+  position: absolute;
+  font-family: serif;
 }
 
-.slideout-open .slideout-menu {
-  display: block;
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+#svgwrapper {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  /*height: 100%;*/
+  bottom: 0;
+  transition: all 1000ms;
+}
+
+#toploading {
+  transition: all 1000ms;
+  transition-delay: 500ms;
+}
+
+.slideoutbottom {
+  margin-bottom: -100vh;
+}
+
+.slideouttop {
+  margin-top: -100vh;
+}
+
+svg {
+  font-weight: bold;
+  width: 100vw;
+  height: auto;
 }
 </style>

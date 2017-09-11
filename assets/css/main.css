@@ -113,12 +113,16 @@ html {
 
 /*SLANTED TOPS*/
 
+.slantContainer{
+  position: relative;
+}
+
 .slantTopLeft {
     height: 0;
-    border-width: 0 0 40px 100vw;
+    border-width: 0 0 50px 100vw;
     position: absolute;
     left:0;
-    top: -40px;
+    top: -50px;
     border-style: solid;
     border-color: transparent inherit inherit transparent;
     -moz-transform: scaleX(-1);
@@ -129,11 +133,11 @@ html {
 
 .slantTopRight {
     height: 0;
-    border-width: 0 0 40px 100vw;
+    border-width: 0 0 50px 100vw;
     position: absolute;
     left: 0;
     width: 100%;
-    top: -40px;
+    top: -50px;
     border-style: solid;
 }
 

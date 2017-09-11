@@ -1,27 +1,51 @@
 <template>
-<defaultpage id="">
-
-  <div id="beige-background" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+<defaultpage id="" >
+  <div class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding">
 
-      <div class="uk-child-width-expand uk-flex-center" uk-grid>
+      <div class="uk-child-width-expand uk-flex-center uk-grid" uk-grid>
         <!-- <div></div> -->
         <div :class="{'uk-width-3-4':!getsmallscreen}">
+
+          <!-- <div :class="wide ? 'uk-width-3-4' : 'uk-width-1-1'"> -->
           <div>
             <h1 class="hugeLetters">{{content.title.rendered}}</h1>
           </div>
+
         </div>
-<!--
-        <div v-for="item in content.acf.tile" :class="[item.size === 'half' ? {'uk-width-1-2@m':true}:{'uk-width-1-1@m':true}, item.type === 'image' ? 'uk-flex uk-flex-center uk-flex-middle':'']">
-          <h1 v-if="item.acf_fc_layout === 'header'" class="uk-text-left hugeLetters" v-html="datainput.title.rendered"></h1>
-          <img v-if="item.acf_fc_layout  === 'image'" :class="item.size === 'full' ? 'uk-padding uk-padding-remove-vertical' : ''" :src="item.image.sizes.large" />
-          <div v-if="item.acf_fc_layout === 'text'" class="uk-text-left uk-h4" v-html="item.text"></div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="slantContainer" :style="{'background-color':content.acf['background-color']}">
+
+    <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf['background-color']+' '+content.acf['background-color']+' transparent'}"></div>
+    <div v-for="item in content.acf.single">
+
+
+      <div class="uk-padding">
+
+
+        <div v-if="item.acf_fc_layout === 'single_large_text_centered'" class="uk-child-width-expand uk-flex uk-flex-center" uk-grid>
+          <div :class="{'uk-width-3-4':!getsmallscreen}">
+          <h1 v-html="item.large_text_centered"></h1>
+          </div>
         </div>
-         -->
+
+
+        <div v-if="item.acf_fc_layout === 'single_gallery'" class="uk-child-width-expand@m uk-flex uk-flex-center uk-flex-middle " uk-grid>
+
+          <div v-for="image in item.gallery">
+            <img class="uk-align-center" :src="image.url" />
+          </div>
+        </div>
       </div>
 
-
     </div>
+
+
   </div>
 
 
@@ -38,7 +62,11 @@ export default {
     defaultpage,
   },
   transition: 'bounce',
-
+  data: function() {
+    return {
+      wide: null,
+    }
+  },
 
   async asyncData({
     params,
@@ -49,7 +77,7 @@ export default {
       let [contentRes] = await Promise.all([
         // axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_' + query.lang),
         // axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_' + query.lang),
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_'+query.lang+'?slug=' + params.slug),
+        axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang + '?slug=' + params.slug),
 
       ])
       return {
@@ -68,13 +96,13 @@ export default {
       }
     }
 
-    }
-
-    // transition(to, from) {
-    //   if (!from) return 'slide-left'
-    //   return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
-    // },
   }
+
+  // transition(to, from) {
+  //   if (!from) return 'slide-left'
+  //   return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+  // },
+}
 </script>
 
 <style scoped>

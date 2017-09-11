@@ -63,11 +63,6 @@ module.exports = {
       ssr: false
     },
     {
-      src: '~/plugins/paper.js',
-      ssr: false
-    },
-
-    {
       src: '~/plugins/translation.js',
       // ssr: false
     },
@@ -88,7 +83,7 @@ module.exports = {
   //   routes: ['/', '/werk', '/fr', '/fr/werk']
   // },
 
-  loading: '~/components/loading.vue',
+  // loading: '~/components/loading.vue',
   /*
    ** Build configuration
    */

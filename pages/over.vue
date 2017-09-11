@@ -17,7 +17,6 @@
     </div>
   </div>
 
-
   <div id="branding" class="green-background green-color" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
     <div class="slantTopRight" ></div>
 
@@ -97,6 +96,7 @@
 
       </div>
     </div>
+    <div class="slantBottomLeft"></div>
   </div>
 
   <div id="design" class="pink-background pink-color uk-height-viewport" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">

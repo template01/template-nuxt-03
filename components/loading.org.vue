@@ -1,14 +1,12 @@
 <template lang="html">
   <!-- <transition name="fade"> -->
-  <div class="loading-page beige-background">
+  <div class="loading-page" v-if="loading" :style="{'opacity':opacity}">
     <!-- <div class="uk-padding uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport"> -->
       <div class="uk-padding  uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
         <div class="" >
-          <h1 class="">Loading...</h1>
-
-        <!-- <div class="loader" > -->
+        <div class="loader" >
           <!-- <h1 class="splashSize">Loading...</h1> -->
-        <!-- </div> -->
+        </div>
         </div>
       </div>
 
@@ -20,36 +18,36 @@
 
 <script>
 export default {
-  //
-  // data: () => ({
-  //   loading: false,
-  //   opacity: 0
-  // }),
-  // methods: {
-  //   start() {
-  //     var vm = this
-  //     vm.loading = true
-  //     setTimeout(function() {
-  //       vm.opacity = 1
-  //       // alert('start')
-  //     }, 200)
-  //
-  //
-  //   },
-  //   finish() {
-  //     var vm = this
-  //
-  //     setTimeout(function() {
-  //       vm.opacity = 0
-  //     }, 1000)
-  //
-  //
-  //     setTimeout(function() {
-  //       vm.loading = false
-  //     }, 1500)
-  //
-  //   }
-  // }
+
+  data: () => ({
+    loading: false,
+    opacity: 0
+  }),
+  methods: {
+    start() {
+      var vm = this
+      vm.loading = true
+      setTimeout(function() {
+        vm.opacity = 1
+        // alert('start')
+      }, 200)
+
+
+    },
+    finish() {
+      var vm = this
+
+      setTimeout(function() {
+        vm.opacity = 0
+      }, 1000)
+
+
+      setTimeout(function() {
+        vm.loading = false
+      }, 1500)
+
+    }
+  }
 }
 </script>
 
@@ -61,11 +59,12 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
+    background: black;
 
     text-align: center;
     z-index: 9999;
     h1 {
-        // color: white;
+        color: white;
     }
 
 

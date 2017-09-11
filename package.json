@@ -25,6 +25,7 @@
 		"moment-timezone": "^0.5.13",
 		"node-sass": "^4.5.3",
 		"nuxt": "^1.0.0-rc3",
+		"paper": "^0.11.4",
 		"sass-loader": "^6.0.6",
 		"scrollbar-width": "^3.1.1",
 		"uikit": "^3.0.0-beta.30",

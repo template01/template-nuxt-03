@@ -11,72 +11,32 @@
     </div>
   </nav>
 
-  <main class="beige-background" id="panel">
+  <main class="beige-background" id="panel" v-if="reinitiateUikit">
 
-          <div id="fixme" class="slide-button" @click="toggleMenu" :class="{ 'slide-out-button': !menuopenshow }">
-            <button class="toggle-button black-background" ><span uk-icon="icon: menu"></span></button>
-          </div>
+    <div id="fixme" class="slide-button" @click="toggleMenu" :class="{ 'slide-out-button': !menuopenshow }">
+      <button class="toggle-button black-background"><span uk-icon="icon: menu"></span></button>
+    </div>
 
-          <section class="defaultpage" :class="{'fadein':loaded}">
-            <div class="uk-container uk-visible@m" id="">
-              <div class="uk-padding" id="menudefault">
-                <menuitems class=""></menuitems>
-              </div>
-            </div>
+    <section class="defaultpage" :class="{'fadein':loaded}">
+      <div class="uk-container uk-visible@m" id="">
+        <div class="uk-padding" id="menudefault">
+          <menuitems class=""></menuitems>
+        </div>
+      </div>
 
-            <div class="">
-              <div>
-                <slot>
+      <div class="">
+        <div>
+          <slot>
 
-                </slot>
-              </div>
+          </slot>
+        </div>
 
-            </div>
+      </div>
 
-            <templatefooter></templatefooter>
-          </section>
+      <templatefooter></templatefooter>
+    </section>
 
   </main>
-
-
-  <!-- <Slideout menu="#menu" panel="#panel" side="right" :toggleSelectors="['.toggle-button','.toggle-button-menu']" @on-close="close" @on-open="open">
-    <nav class="" id="menu">
-      <div :class="{'hideSidebarContent':!mounted}">
-        <div class="uk-padding-small uk-padding-remove-bottom">
-          <button class="toggle-button-menu black-background"><span uk-icon="icon: menu"></span></button>
-        </div>
-        <menuitemsside></menuitemsside>
-      </div>
-    </nav>
-    <main class="beige-background" id="panel">
-
-      <div id="fixme" class="slide-button" :class="{ 'slide-out-button': !menuopenshow }">
-        <button class="toggle-button black-background"><span uk-icon="icon: menu"></span></button>
-      </div>
-
-      <section class="defaultpage" :class="{'fadein':loaded}">
-        <div class="uk-container uk-visible@m" id="">
-          <div class="uk-padding" id="menudefault">
-            <menuitems class=""></menuitems>
-          </div>
-        </div>
-
-        <div class="">
-          <div>
-            <slot>
-
-            </slot>
-          </div>
-
-        </div>
-
-        <templatefooter></templatefooter>
-      </section>
-
-    </main>
-  </Slideout> -->
-
-
 
 </div>
 </template>
@@ -104,6 +64,34 @@ export default {
 
 
   methods: {
+
+
+    initSlideout: function(){
+      var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70,
+        'side': 'right'
+      });
+
+      this.slideoutObj = slideout
+
+
+      var vm = this
+      slideout.on('open', function() {
+        vm.menuopenshow = false
+      });
+
+      slideout.on('close', function() {
+        vm.menuopenshow = true
+      });
+    },
+
+
+    destroySlideout: function(){
+      this.slideoutObj.destroy();
+    },
 
     closeMenu: function() {
       this.slideoutObj.close();
@@ -159,7 +147,7 @@ export default {
       scrolled: false,
       loaded: false,
       slideoutObj: null,
-
+      reinitiateUikit: true
     }
   },
 
@@ -169,26 +157,10 @@ export default {
 
     window.removeEventListener('scroll', this.handleScroll);
   },
+
   mounted() {
-    var slideout = new Slideout({
-      'panel': document.getElementById('panel'),
-      'menu': document.getElementById('menu'),
-      'padding': 256,
-      'tolerance': 70,
-      'side':'right'
-    });
 
-    this.slideoutObj = slideout
-
-
-    var vm = this
-    slideout.on('open', function() {
-      vm.menuopenshow = false
-    });
-
-    slideout.on('close', function() {
-      vm.menuopenshow = true
-    });
+    this.initSlideout()
 
     this.mounted = true
 
@@ -206,7 +178,6 @@ export default {
   },
 
 
-
   watch: {
     getsmallscreen: function(val) {
       if (val) {
@@ -217,7 +188,25 @@ export default {
         }
 
       }
+
+      var vm = this
+      var savedScrollPos = window.scrollY
+      vm.reinitiateUikit = false
+      vm.destroySlideout()
+      setTimeout(function() {
+        vm.reinitiateUikit = true
+        setTimeout(function() {
+          window.scrollTo(0, savedScrollPos)
+          vm.initSlideout()
+        }, 10)
+
+      }, 1)
+
+
     }
+
+
+
   },
 
   beforeDestroy: function() {
