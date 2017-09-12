@@ -1,36 +1,76 @@
-<template lang="html">
-  <!-- <transition name="fade"> -->
-  <div class="loading-page" v-if="loading" :style="{'opacity':opacity}">
-    <!-- <div class="uk-padding uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport"> -->
-      <div class="uk-padding  uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
-        <div class="" >
-        <div class="loader" >
-          <!-- <h1 class="splashSize">Loading...</h1> -->
-        </div>
-        </div>
+<template>
+<div class="loading-page beige-background" v-if="loading" :class="{'fadeloadcontainer':fadeloadcontaineractive}">
+  <!-- <div class="uk-padding uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport"> -->
+  <div class="opacityWrapper" :style="{'opacity':opacity}">
+
+    <div class="uk-padding uk-height-viewport">
+
+      <div id="toploading" style="height:33vh;" class="uk-flex uk-flex-center uk-flex-middle " :class="{'slideouttop':testslide}">
+
+        <h1 class=" uk-text-center loading green-color">Awaiting awesome</h1>
       </div>
 
-    <!-- </div> -->
 
+
+    </div>
+    <div>
+
+      <canvas id="myCanvas" resize :class="{'slideoutbottom':testslide}"></canvas>
+    </div>
   </div>
-  <!-- </transition> -->
+
+  <!-- <div v-if="initWave" id="svgwrapper" :class="{'slideoutbottom':testslide}">
+      <svg height="210" width="500">
+            <defs>
+              <pattern id="wave" x="0" y="0" width="120" height="24" patternUnits="userSpaceOnUse">
+                <path id="wavePath" d="M-80 2 Q-30 7 -20 2 T0 2 T20 2 T80 2 T60 2 T80 2 T100 2 T120 2 V20 H-80z" mask="url(#mask)" fill="#075945">
+                  <animateTransform
+                      attributeName="transform"
+                      begin="0s"
+                      dur="1.5s"
+                      type="translate"
+                      from="0,0"
+                      to="40,0"
+                      repeatCount="indefinite" />
+                </path>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#wave)" />
+          </svg>
+
+    </div> -->
+</div>
 </template>
 
 <script>
 export default {
 
+  components: {},
+
   data: () => ({
+    testslide: false,
     loading: false,
+    fadeloadcontaineractive: false,
     opacity: 0
   }),
+  transition: 'bounce',
+  destroyed(){
+    this.testslide = false
+    this.fadeloadcontaineractive = false
+  },
   methods: {
     start() {
+      this.testslide = false
+      this.fadeloadcontaineractive = false
+
       var vm = this
       vm.loading = true
       setTimeout(function() {
+        vm.paperjs()
         vm.opacity = 1
         // alert('start')
-      }, 200)
+        // vm.initWave = true
+      }, 1)
 
 
     },
@@ -38,134 +78,154 @@ export default {
       var vm = this
 
       setTimeout(function() {
+        vm.testslide = true
+
+      }, 500)
+
+      setTimeout(function() {
         vm.opacity = 0
-      }, 1000)
+        vm.fadeloadcontaineractive = true
+
+      }, 1100)
 
 
       setTimeout(function() {
         vm.loading = false
       }, 1500)
 
+    },
+
+    test: function() {
+      alert('heyeyey')
+    },
+
+    paperjs: function() {
+      var canvas = document.getElementById('myCanvas');
+      // Create an empty project and a view for the canvas:
+      paper.setup(canvas);
+      // Create a Paper.js Path to draw a line into it:
+
+      // The amount of segment points we want to create:
+      var amount = 10;
+
+      // The maximum height of the wave:
+      var height = 40;
+
+      // Create a new path and style it:
+      var path = new paper.Path({
+        fillColor: '#075945'
+      });
+
+      for (var i = 0; i <= amount; i++) {
+        path.add(new paper.Point((i / amount) * paper.view.size.width, 1 * paper.view.size.height));
+      }
+
+      path.add(new paper.Point(paper.view.size.width, paper.view.size.height));
+      path.add(new paper.Point(0, paper.view.size.height));
+      // path.add(new paper.Point(0,0));
+
+      path.closed = true;
+
+      paper.view.onFrame = function(event) {
+        // Loop through the segments of the path:
+        for (var i = 0; i <= amount; i++) {
+          var segment = path.segments[i];
+
+          // A cylic value between -1 and 1
+          var sinus = Math.sin(event.time * 3 + i);
+
+          // Change the y position of the segment point:
+          segment.point.y = sinus * height + 100;
+        }
+        // Uncomment the following line and run the script again
+        // to smooth the path:
+        path.smooth({
+          type: 'continuous',
+          from: 0,
+          to: 10
+        });
+      }
+
+      paper.view.draw();
     }
+
   }
+
+  // transition(to, from) {
+  //   if (!from) return 'slide-left'
+  //   return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+  // },
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
+#myCanvas {
+  transform: scaleX(2);
+  width: 100vw;
+  height: 75vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 1000ms;
+}
+
+.fadeloadcontainer{
+  opacity: 0;
+}
+
 .loading-page {
+  transition: all 0.4s !important;
+  position: fixed;
+  z-index: 9999999999999;
+  width: 100%;
+  height: 100%
+}
+
+.opacityWrapper{
     transition: all 0.4s !important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
+}
 
-    text-align: center;
-    z-index: 9999;
-    h1 {
-        color: white;
-    }
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+  animation: ellipsis steps(4, end) 900ms infinite;
+  content: "…";
+  /* ascii code for the ellipsis character */
+  width: 0px;
+  position: absolute;
+  font-family: serif;
+}
 
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
 
-    .loader {
-      font-size: 10px;
-      margin: 50px auto;
-      text-indent: -9999em;
-      width: 20vw;
-      height: 20vw;
-      border-radius: 50%;
-      background: #ffffff;
-      background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-      background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-      background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-      background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-      background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-      position: relative;
-      -webkit-animation: load3 1.4s infinite linear;
-      animation: load3 1.4s infinite linear;
-      -webkit-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    .loader:before {
-      width: 50%;
-      height: 50%;
-      background: #ffffff;
-      border-radius: 100% 0 0 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: '';
-    }
-    .loader:after {
-      background: black;
-      width: 75%;
-      height: 75%;
-      border-radius: 50%;
-      content: '';
-      margin: auto;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-    }
-    @-webkit-keyframes load3 {
-      0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-      }
-    }
-    @keyframes load3 {
-      0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-      }
-    }
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
 
+#toploading {
+  transition: all 1000ms;
+}
 
-    .spinner {
-        width:100px;
-        height:100px;
-        background-color: white;
-        margin: 100px auto;
-        -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
-        animation: sk-rotateplane 1.2s infinite ease-in-out;
-    }
-    @-webkit-keyframes sk-rotateplane {
-        0% {
-            -webkit-transform: perspective(120px);
-        }
-        50% {
-            -webkit-transform: perspective(120px) rotateY(180deg);
-        }
-        100% {
-            -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
-        }
-    }
-    @keyframes sk-rotateplane {
-        0% {
-            transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-            -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-        }
-        50% {
-            transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-            -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-        }
-        100% {
-            transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-            -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-        }
-    }
+.slideoutbottom {
+  transform: translateY(100vh) scaleX(2) !important;
+  transition-delay: 300ms;
+}
 
+.slideouttop {
+  transform: translateY(-100vh)
+}
+
+svg {
+  font-weight: bold;
+  width: 100vw;
+  height: auto;
 }
 </style>

@@ -1,7 +1,8 @@
 <template>
 <div>
-  <loadingsingle v-if="!loaded"></loadingsingle>
-
+  <transition name="fade">
+    <loadingsingle class="loadingsingle" v-if="!getinitiated"></loadingsingle>
+  </transition>
   <nav id="menu">
     <div :class="{'hideSidebarContent':!mounted}">
       <div class="uk-padding-small uk-padding-remove-bottom" @click="toggleMenu">
@@ -12,7 +13,6 @@
   </nav>
 
   <main class="beige-background" id="panel" v-if="reinitiateUikit">
-
     <div id="fixme" class="slide-button" @click="toggleMenu" :class="{ 'slide-out-button': !menuopenshow }">
       <button class="toggle-button black-background"><span uk-icon="icon: menu"></span></button>
     </div>
@@ -49,6 +49,9 @@ import loadingsingle from '~/components/loadingsingle.vue'
 // import computedresizer from '~/mixins/computedresizer.js'
 
 
+import {
+  mapGetters
+} from 'vuex'
 
 import _ from 'lodash'
 
@@ -63,10 +66,16 @@ export default {
   },
 
 
+  computed: {
+    ...mapGetters({
+      getinitiated: "getinitiated",
+    }),
+  },
+
   methods: {
 
 
-    initSlideout: function(){
+    initSlideout: function() {
       var slideout = new Slideout({
         'panel': document.getElementById('panel'),
         'menu': document.getElementById('menu'),
@@ -89,7 +98,7 @@ export default {
     },
 
 
-    destroySlideout: function(){
+    destroySlideout: function() {
       this.slideoutObj.destroy();
     },
 
@@ -171,15 +180,37 @@ export default {
     }
 
     this.$nextTick(() => {
-      this.loaded = true
-
+      var vm = this
+      vm.loaded = true
+      setTimeout(function() {
+        vm.$store.commit('SET_INITIATED')
+      }, 3000)
     })
+
+
+    if(this.getsmallscreen && !this.getinitiated){
+      var vm = this
+      var savedScrollPos = window.scrollY
+      vm.reinitiateUikit = false
+      vm.destroySlideout()
+      setTimeout(function() {
+        vm.reinitiateUikit = true
+        setTimeout(function() {
+          window.scrollTo(0, savedScrollPos)
+          vm.initSlideout()
+        }, 10)
+
+      }, 1)
+    }
+
 
   },
 
 
   watch: {
     getsmallscreen: function(val) {
+
+
       if (val) {
         this.menuopenshow = true
       } else {
@@ -217,14 +248,23 @@ export default {
 
 
 <style lang="scss">
-.defaultpage {
-    opacity: 0;
+.loadingsingle {
+    opacity: 1;
     transition: opacity 0.25s;
     // transition-delay: 0.25s;
-    &.fadein {
-        opacity: 1;
+    &.fadeout {
+        opacity: 0;
     }
 
+}
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.25s;
+}
+/* .fade-leave-active below version 2.1.8 */
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
 }
 
 .hideSidebarContent {

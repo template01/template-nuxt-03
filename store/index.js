@@ -2,7 +2,8 @@ export const state = () => ({
   locales: ['en', 'nl'],
   locale: 'nl',
   n: 1,
-  smallscreen:false
+  smallscreen:false,
+  initiated: false
 })
 //
 // export const getters = () => ({
@@ -16,6 +17,10 @@ export const getters = {
   },
   getlocale (state) {
     return state.locale
+  },
+
+  getinitiated (state) {
+    return state.initiated
   }
 }
 
@@ -30,5 +35,9 @@ export const mutations = {
       state.smallscreen = small;
   },
 
+
+    SET_INITIATED (state, initiated) {
+        state.initiated = true;
+    },
 
 }

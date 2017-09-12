@@ -109,7 +109,12 @@ export default {
       var amount = 10;
 
       // The maximum height of the wave:
-      var height = 40;
+
+      if(this.getsmallscreen){
+        var height = 20
+      }else{
+        var height = 40;
+      }
 
       // Create a new path and style it:
       var path = new paper.Path({
