@@ -1,6 +1,7 @@
 <template>
 <p class="uk-h4" :class="{'uk-h5':footer}">
   {{$t("nowlistening.desc")}}
+
   <transition name="fade">
     <span v-if="showtune">
         <span v-if="tune.playing">
@@ -9,11 +10,14 @@
         </span>
     <!-- <span v-html="tune.song"></span> -->
     </span>
-    <span v-else>
-        <span>{{$t("nowlistening.none")}}</span>
-    </span>
     </span>
   </transition>
+  <transition name="fade">
+  <span v-if="!showtune">
+        <span>{{$t("nowlistening.none")}}</span>
+  </span>
+</transition>
+
 </p>
 </template>
 <script>
@@ -30,7 +34,7 @@ export default {
 
     }
   },
-  props:['footer'],
+  props: ['footer'],
 
   methods: {
     getTune: function() {
@@ -38,8 +42,12 @@ export default {
         .then((res) => {
           console.log(res)
           this.tune = res.data
-          if (res.data.artist.length > 0) {
-            this.showtune = true
+          console.log(res.data.artist)
+
+          if (res.data.artist != null) {
+            if (res.data.artist.length > 0) {
+              this.showtune = true
+            }
           }
         })
     },
@@ -64,7 +72,8 @@ export default {
 </script>
 
 <style scoped>
-.uk-h4,.uk-h5 {
+.uk-h4,
+.uk-h5 {
   margin: 0;
 }
 

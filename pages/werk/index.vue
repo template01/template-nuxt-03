@@ -52,22 +52,6 @@ export default {
   },
 
 
-  // asyncData({
-  //   app
-  // }) {
-  //   return axios.get(`http://template-studio.nl/content/werk/werk.json`)
-  //     .then((res) => {
-  //       return {
-  //         actualContent:werk_nl
-  //       }
-  //
-  //     })
-  // },
-  //
-
-
-
-
   async asyncData({
     params,
     query,

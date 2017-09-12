@@ -7,7 +7,7 @@
         <!-- <div></div> -->
         <div :class="{'uk-width-3-4':!getsmallscreen}">
           <div>
-            <h1 v-html="content" style="font-weight:800"></h1>
+            <h1 v-html="content.content.rendered" style="font-weight:800"></h1>
           </div>
         </div>
         <!-- <div></div> -->
@@ -18,15 +18,55 @@
   </div>
 
   <div id="branding" class="green-background green-color" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
-    <div class="slantTopRight" ></div>
+    <div class="slantTopRight"></div>
 
 
     <div class="uk-container">
 
-
       <div class="uk-padding beige-color-force">
 
-        <div uk-grid>
+
+        <!-- :class="{'uk-width-3-4':!getsmallscreen}" -->
+
+        <div uk-grid >
+          <!-- <div class="" v-for="section in content.acf.section"> -->
+            <div v-if="section.align === 'float'" :class="[setWidth(section.width)]" v-for="section in content.acf.section">
+
+              <div v-if="section.acf_fc_layout === 'title'">
+                <h1 class="hugeLetters" v-html="section.content"></h1>
+              </div>
+
+              <div v-if="section.acf_fc_layout === 'text_column'">
+                <h3 class="" v-html="section.content"></h3>
+              </div>
+
+              <div v-if="section.acf_fc_layout === 'image'">
+                <img class="uk-padding uk-padding-remove-vertical" :src="section.content.sizes.large"/>
+              </div>
+            </div>
+
+            <div v-else class="uk-width-1-1@m uk-inline">
+              <div :class="[setWidth(section.width), setAlign(section.align)]">
+
+                <div v-if="section.acf_fc_layout === 'title'">
+                  <h1 class="hugeLetters" v-html="section.content"></h1>
+                </div>
+
+                <div v-if="section.acf_fc_layout === 'text_column'">
+                  <h3 class="" v-html="section.content"></h3>
+                </div>
+
+                <div v-if="section.acf_fc_layout === 'image'">
+                  <img class="uk-padding uk-padding-remove-vertical" :src="section.content.url"/>
+                </div>
+              </div>
+            </div>
+          <!-- </div> -->
+        </div>
+
+        <!-- <div uk-grid>
+
+
           <div class="uk-width-2-3@m">
             <h1 class="hugeLetters" uk-parallax="opacity: 0,2; y: 100,0; viewport: 0.5">Branding</h1>
           </div>
@@ -65,7 +105,7 @@
 
           </div>
 
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -123,11 +163,11 @@
     </div>
   </div>
 </defaultpage>
-
 </template>
 
 <script>
 import defaultpage from '~/components/defaultpage.vue'
+import axios from 'axios'
 
 export default {
   components: {
@@ -136,18 +176,81 @@ export default {
   data: function() {
     return {
       paralaxy: '500,0',
-      content:"Incididunt occaecat fugiat id consequat eu proident reprehenderit esse eiusmod. Esse reprehenderit consequat nostrud culpa et amet enim. Duis ad ipsum velit nisi eiusmod non quis aliqua eiusmod non aute. Aliqua in ut ipsum incididunt consectetur veniam irure ut excepteur labore voluptate. Anim labore nostrud laborum dolor. Aliquip id anim consequat dolore adipisicing sint esse non cillum est. Irure exercitation et anim proident irure anim irure proident duis fugiat consectetur labore. Sit minim aliquip do officia aliqua qui qui voluptate aute occaecat elit qui. Anim dolor esse ad elit officia mollit cillum officia. Esse amet voluptate Lorem id consectetur aliquip nisi enim sint aliqua anim deserunt. Sunt aliqua excepteur veniam laboris id. Laborum mollit reprehenderit laboris fugiat excepteur deserunt."
+    }
+  },
+
+  methods:{
+    setWidth: function(width){
+      if(width === "1/3"){
+        return{
+          'uk-width-1-3@m': true
+        }
+      }
+      if(width === "2/3"){
+        return{
+          'uk-width-2-3@m': true
+        }
+      }
+      if(width === "3/3"){
+        return{
+          'uk-width-1-1@m': true
+        }
+      }
+    },
+
+    setAlign: function(align){
+      if(align === "float"){
+        return{
+          '': true
+        }
+      }
+      if(align === "left"){
+        return{
+          'uk-align-left': true
+        }
+      }
+      if(align === "right"){
+        return{
+          'uk-align-right': true
+        }
+      }
+      if(align === "center"){
+        return{
+          'uk-align-center': true
+        }
+      }
     }
   },
 
 
   transition: 'bounce',
 
+  async asyncData({
+    params,
+    query,
+    error
+  }) {
+    if (query.hasOwnProperty('lang')) {
+      let [contentRes] = await Promise.all([
+        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=over_' + query.lang),
+      ])
+      return {
+        content: contentRes.data[0],
+      }
+      // }
+    } else {
 
-  // transition(to, from) {
-  //   if (!from) return 'slide-left'
-  //   return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
-  // },
+      let [contentRes] = await Promise.all([
+        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=over_nl'),
+      ])
+      return {
+        content: contentRes.data[0],
+      }
+
+
+    }
+  },
+
 }
 </script>
 
