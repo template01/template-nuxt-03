@@ -1,6 +1,8 @@
 <template>
-  <div class="loading-page beige-background"  v-if="loading" >
-    <!-- <div class="uk-padding uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport"> -->
+<div class="loading-page beige-background" v-if="loading" :class="{'fadeloadcontainer':fadeloadcontaineractive}">
+  <!-- <div class="uk-padding uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport"> -->
+  <div class="opacityWrapper" :style="{'opacity':opacity}">
+
     <div class="uk-padding uk-height-viewport">
 
       <div id="toploading" style="height:33vh;" class="uk-flex uk-flex-center uk-flex-middle " :class="{'slideouttop':testslide}">
@@ -11,8 +13,13 @@
 
 
     </div>
+    <div>
 
-    <div v-if="initWave" id="svgwrapper" :class="{'slideoutbottom':testslide}">
+      <canvas id="myCanvas" resize :class="{'slideoutbottom':testslide}"></canvas>
+    </div>
+  </div>
+
+  <!-- <div v-if="initWave" id="svgwrapper" :class="{'slideoutbottom':testslide}">
       <svg height="210" width="500">
             <defs>
               <pattern id="wave" x="0" y="0" width="120" height="24" patternUnits="userSpaceOnUse">
@@ -31,9 +38,8 @@
             <rect width="100%" height="100%" fill="url(#wave)" />
           </svg>
 
-    </div>
-  </div>
-
+    </div> -->
+</div>
 </template>
 
 <script>
@@ -44,19 +50,27 @@ export default {
   data: () => ({
     testslide: false,
     loading: false,
-    initWave: false
+    fadeloadcontaineractive: false,
+    opacity: 0
   }),
   transition: 'bounce',
-
+  destroyed(){
+    this.testslide = false
+    this.fadeloadcontaineractive = false
+  },
   methods: {
     start() {
+      this.testslide = false
+      this.fadeloadcontaineractive = false
+
       var vm = this
       vm.loading = true
       setTimeout(function() {
-        // vm.opacity = 1
+        vm.paperjs()
+        vm.opacity = 1
         // alert('start')
-        vm.initWave = true
-      }, 1000)
+        // vm.initWave = true
+      }, 1)
 
 
     },
@@ -64,19 +78,77 @@ export default {
       var vm = this
 
       setTimeout(function() {
-        // vm.opacity = 0
-      }, 1000)
+        vm.testslide = true
+
+      }, 500)
+
+      setTimeout(function() {
+        vm.opacity = 0
+        vm.fadeloadcontaineractive = true
+
+      }, 1100)
 
 
       setTimeout(function() {
         vm.loading = false
-      }, 150000)
+      }, 1500)
 
     },
 
     test: function() {
       alert('heyeyey')
+    },
+
+    paperjs: function() {
+      var canvas = document.getElementById('myCanvas');
+      // Create an empty project and a view for the canvas:
+      paper.setup(canvas);
+      // Create a Paper.js Path to draw a line into it:
+
+      // The amount of segment points we want to create:
+      var amount = 10;
+
+      // The maximum height of the wave:
+      var height = 40;
+
+      // Create a new path and style it:
+      var path = new paper.Path({
+        fillColor: '#075945'
+      });
+
+      for (var i = 0; i <= amount; i++) {
+        path.add(new paper.Point((i / amount) * paper.view.size.width, 1 * paper.view.size.height));
+      }
+
+      path.add(new paper.Point(paper.view.size.width, paper.view.size.height));
+      path.add(new paper.Point(0, paper.view.size.height));
+      // path.add(new paper.Point(0,0));
+
+      path.closed = true;
+
+      paper.view.onFrame = function(event) {
+        // Loop through the segments of the path:
+        for (var i = 0; i <= amount; i++) {
+          var segment = path.segments[i];
+
+          // A cylic value between -1 and 1
+          var sinus = Math.sin(event.time * 3 + i);
+
+          // Change the y position of the segment point:
+          segment.point.y = sinus * height + 100;
+        }
+        // Uncomment the following line and run the script again
+        // to smooth the path:
+        path.smooth({
+          type: 'continuous',
+          from: 0,
+          to: 10
+        });
+      }
+
+      paper.view.draw();
     }
+
   }
 
   // transition(to, from) {
@@ -87,12 +159,30 @@ export default {
 </script>
 
 <style scoped>
+#myCanvas {
+  transform: scaleX(2);
+  width: 100vw;
+  height: 75vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 1000ms;
+}
 
-.loading-page{
+.fadeloadcontainer{
+  opacity: 0;
+}
+
+.loading-page {
+  transition: all 0.4s !important;
   position: fixed;
   z-index: 9999999999999;
   width: 100%;
   height: 100%
+}
+
+.opacityWrapper{
+    transition: all 0.4s !important;
 }
 
 .loading:after {
@@ -120,26 +210,17 @@ export default {
   }
 }
 
-#svgwrapper {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  /*height: 100%;*/
-  bottom: 0;
-  transition: all 1000ms;
-}
-
 #toploading {
   transition: all 1000ms;
-  transition-delay: 500ms;
 }
 
 .slideoutbottom {
-  margin-bottom: -100vh;
+  transform: translateY(100vh) scaleX(2) !important;
+  transition-delay: 300ms;
 }
 
 .slideouttop {
-  margin-top: -100vh;
+  transform: translateY(-100vh)
 }
 
 svg {
