@@ -6,18 +6,21 @@
   <splashtopmenu class="uk-visible@m" :menucolor="functionArray[functionIndex].textcolor"></splashtopmenu>
   <splashbottommenu :menucolor="functionArray[functionIndex].textcolor"></splashbottommenu>
 
-  <div class="uk-visible@m uk-padding uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
+  <div class="uk-visible@m uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
+    <div class="uk-width-5-6 uk-align-center  uk-child-width-expand@s  uk-flex uk-flex-center uk-flex-middle ">
+
     <div class="">
       <div class="" :class="{'uk-animation-slide-bottom':begin, 'uk-animation-reverse':!begin, 'uk-animation-slide-top':!begin, 'uk-animation-reverse':begin}">
         <h1 class="hugeLetters" :style="{'color':functionArray[functionIndex].textcolor}">{{functionArray[functionIndex].title}}</h1>
       </div>
     </div>
     <div class="">
-      <h1 class="hugeLetters" :style="{'color':functionArray[functionIndex].textcolor}">Studio</h1>
+      <h1 class="hugeLetters uk-text-center" :style="{'color':functionArray[functionIndex].textcolor}">Studio</h1>
     </div>
   </div>
+  </div>
 
-  <div id="splashMobile" class="uk-hidden@m uk-padding  uk-height-viewport">
+  <div id="splashMobile" class="uk-hidden@m  uk-height-viewport">
     <div class="">
       <div class="" :class="{'uk-animation-slide-left-medium':begin, 'uk-animation-reverse':!begin, 'uk-animation-slide-right-medium':!begin, 'uk-animation-reverse':begin}">
         <h1 class="hugeLetters" :style="{'color':functionArray[functionIndex].textcolor}">{{functionArray[functionIndex].title}}</h1>
@@ -65,12 +68,12 @@ export default {
       functionTitle: '',
       functionArray: [{
         title: 'Template',
-        color: '#F7F5E7',
+        color: 'yellow',
         textcolor: 'black'
       }, {
         title: 'Branding',
-        color: '#075945',
-        textcolor: '#F7F5E7'
+        color: '#101010',
+        textcolor: 'yellow'
       }, {
         title: 'Design',
         color: '#F8E6F7',

@@ -5,7 +5,7 @@
 
       <div class="uk-child-width-expand uk-flex-center" uk-grid>
         <!-- <div></div> -->
-        <div :class="{'uk-width-3-4':!getsmallscreen}">
+        <div :class="{'uk-width-2-3':!getsmallscreen}">
           <div>
             <h1 v-html="content.content.rendered" style="font-weight:800"></h1>
           </div>
@@ -145,9 +145,7 @@ export default {
 <style lang="scss">
 #werk {
 
-    a {
-        text-decoration: none;
-    }
+
     /*background: red;*/
 }
 </style>

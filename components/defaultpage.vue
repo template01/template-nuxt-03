@@ -17,10 +17,20 @@
       <button class="toggle-button black-background"><span uk-icon="icon: menu"></span></button>
     </div>
 
+
+    <!-- <div class="uk-child-width-expand uk-flex-center" uk-grid>
+      <div :class="{'uk-width-2-3':!getsmallscreen}">
+        <div>
+          <h1 v-html="'contact'" style="font-weight:800"></h1>
+        </div>
+      </div>
+      </div> -->
+
+
     <section class="defaultpage" :class="{'fadein':loaded}">
       <div class="uk-container uk-visible@m" id="">
-        <div class="uk-padding" id="menudefault">
-          <menuitems class=""></menuitems>
+        <div class="uk-padding uk-padding-remove-horizontal" id="menudefault">
+          <menuitems class="uk-width-5-6 uk-align-center"></menuitems>
         </div>
       </div>
 

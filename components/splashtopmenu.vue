@@ -1,12 +1,14 @@
 <template>
 <div class="uk-container uk-container-center" id="splashtopmenu">
-  <div class="uk-padding">
-    <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-bottom">
+  <div class="uk-padding uk-padding-remove-horizontal">
 
-      <menuitems :passedmenucolor="menucolor"></menuitems>
-    </div>
+
+      <menuitems class="uk-width-5-6 uk-align-center" :passedmenucolor="menucolor"></menuitems>
   </div>
 </div>
+
+
+
 </template>
 <script>
 import menuitems from '~/components/menuitems.vue'

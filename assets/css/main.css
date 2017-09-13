@@ -28,6 +28,10 @@ html {
 }
 
 
+
+
+
+
 .beige-color{
   color: #F7F5E7
 }
@@ -44,10 +48,10 @@ html {
 .beige-background{
   background-color: #F7F5E7
 }
-
+/*
 .beige-background .slantTopRight,.beige-background .slantTopLeft{
   border-color: transparent #F7F5E7 #F7F5E7 transparent;
-}
+}*/
 
 .green-color{
   color: #075945
@@ -110,6 +114,15 @@ html {
   border-color: transparent #0008A1 #0008A1 transparent;
 }
 
+
+/*SLANTED TOPS NEW*/
+/*source:http://bennettfeely.com/clippy/*/
+/*DOES NOT WORK NICELY - performance lag. Perhaps ui-kit related/conflic*/
+/*.slantedTop{
+  padding-top: 7.5%;
+  -webkit-clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);
+  }*/
 
 /*SLANTED TOPS*/
 

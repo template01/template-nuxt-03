@@ -1,8 +1,14 @@
 <template>
 <div class="uk-padding uk-container uk-container-center" id="splashbottommenu">
-  <div class="uk-padding">
-      <div :style="{'color':menucolor}" class="uk-grid uk-child-width-expand@s" uk-grid>
+  <div class="">
+      <div :style="{'color':menucolor}" class="uk-width-5-6 uk-align-center">
         <div>
+
+          <!-- <div class="uk-container uk-visible@m" id="">
+            <div class="uk-padding uk-padding-remove-horizontal" id="menudefault">
+              <menuitems class="uk-width-5-6 uk-align-center"></menuitems>
+            </div>
+          </div> -->
 
           <menuitemsmobile :floatleft="true" class="uk-hidden@m"></menuitemsmobile>
           <clock></clock>

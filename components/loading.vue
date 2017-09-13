@@ -5,10 +5,10 @@
 
     <div class="uk-padding uk-height-viewport">
 
-      <div id="toploading" style="height:33vh;" class="uk-flex uk-flex-center uk-flex-middle " :class="{'slideouttop':testslide}">
+      <!-- <div id="toploading" style="height:33vh;" class="uk-flex uk-flex-center uk-flex-middle " :class="{'slideouttop':testslide}">
 
-        <h1 class=" uk-text-center loading green-color">Awaiting awesome</h1>
-      </div>
+        <h1 class=" uk-text-center loading black-color">Awaiting awesome</h1>
+      </div> -->
 
 
 
@@ -118,7 +118,7 @@ export default {
 
       // Create a new path and style it:
       var path = new paper.Path({
-        fillColor: '#075945'
+        fillColor: '#101010'
       });
 
       for (var i = 0; i <= amount; i++) {
@@ -167,7 +167,7 @@ export default {
 #myCanvas {
   transform: scaleX(2);
   width: 100vw;
-  height: 75vh;
+  height: 60vh;
   position: absolute;
   bottom: 0;
   left: 0;
