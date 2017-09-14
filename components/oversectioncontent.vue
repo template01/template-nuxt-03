@@ -1,12 +1,8 @@
 <template>
-<div uk-grid>
+<div class=" uk-padding uk-padding-remove-horizontal" uk-grid>
 
-  <div v-if="section.align === 'float'" :class="[setWidth(section.width)]" v-for="section in acfsection">
-    <oversectioncontentinner :section="section"></oversectioncontentinner>
-  </div>
-
-  <div v-else class="uk-width-1-1@m uk-inline">
-    <div :class="[setWidth(section.width), setAlign(section.align)]">
+  <div class="uk-width-1-1@m"  v-for="section in acfsection">
+    <div class="uk-align-center" :class="[setWidth(section.width)]">
       <oversectioncontentinner :section="section"></oversectioncontentinner>
     </div>
   </div>
@@ -40,49 +36,7 @@ export default {
           'uk-width-1-1@m': true
         }
       }
-    },
-
-    setAlign: function(align) {
-      if (align === "float") {
-        return {
-          '': true
-        }
-      }
-      if (align === "left") {
-        return {
-          'uk-align-left': true
-        }
-      }
-      if (align === "right") {
-        return {
-          'uk-align-right': true
-        }
-      }
-      if (align === "center") {
-        return {
-          'uk-align-center': true
-        }
-      }
-    },
-
-    setTextAlign: function(align) {
-      if (align === "left") {
-        return {
-          '': true
-        }
-      }
-      if (align === "right") {
-        return {
-          'uk-text-right': true
-        }
-      }
-      if (align === "center") {
-        return {
-          'uk-text-center': true
-        }
-      }
-    },
-
+    }
 
 
   },

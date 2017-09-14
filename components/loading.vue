@@ -167,7 +167,7 @@ export default {
 #myCanvas {
   transform: scaleX(2);
   width: 100vw;
-  height: 60vh;
+  height: 65vh;
   position: absolute;
   bottom: 0;
   left: 0;

@@ -1,6 +1,6 @@
 <template>
   <section class="">
-    <splash></splash>
+    <splash :slideContent="content.acf.slides"></splash>
   </section>
 </template>
 
@@ -19,7 +19,22 @@ export default {
 
   mounted(){
     this.$store.commit('SET_INITIATED')
-  }
+  },
+
+  async asyncData({
+    params,
+    query,
+    error
+  }) {
+      let [contentRes] = await Promise.all([
+        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=splash'),
+      ])
+      return {
+        content: contentRes.data[0],
+      }
+      // }
+  },
+
 }
 </script>
 

@@ -1,8 +1,8 @@
 <template>
 <div class="uk-container" id="templatefooter">
-  <div class="uk-padding">
-    <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
-      <div>
+  <div class="uk-padding uk-align-center " :class="{'uk-width-5-6 ':!getsmallscreen}">
+    <div class="uk-child-width-expand@s" uk-grid>
+      <div class="uk-visible@m">
         <clock :footer="true"></clock>
         <nowlistening :footer="true"></nowlistening>
       </div>

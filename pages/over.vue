@@ -3,10 +3,11 @@
   <div id="intro beige-background" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding">
 
-      <div class="uk-child-width-expand uk-flex-center" uk-grid>
+      <div>
         <!-- <div></div> -->
-        <div :class="{'uk-width-2-3':!getsmallscreen}">
+        <div class="uk-align-center" :class="{'uk-width-2-3':!getsmallscreen}">
           <div>
+            <h1 class="uk-hidden@m uk-text-center" style="text-decoration:underline">OVER</h1>
             <h1 v-html="content.content.rendered" style="font-weight:800"></h1>
           </div>
         </div>
@@ -49,6 +50,31 @@
 
     </div>
   </div>
+
+
+
+
+  <div id="intro beige-background pos" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative">
+    <div class="slantTopLeft"></div>
+
+    <div class="uk-padding">
+
+      <div>
+        <!-- <div></div> -->
+        <div class="uk-align-center" :class="{'uk-width-2-3':!getsmallscreen}">
+          <div>
+            <h1 class="uk-hidden@m uk-text-center" style="text-decoration:underline">OVER</h1>
+            <h1 v-html="content.acf.content_bottom" style="font-weight:800"></h1>
+          </div>
+        </div>
+        <!-- <div></div> -->
+      </div>
+
+
+    </div>
+  </div>
+
+
 </defaultpage>
 </template>
 

@@ -1,15 +1,17 @@
 import _ from 'lodash'
 
-export default ({ isClient, store }) => {
+export default ({
+  isClient,
+  store
+}) => {
   if (isClient) {
     const detectSmallDevice = () => {
 
-      if(window.innerWidth< 960){
+      if (window.innerWidth < 960) {
         store.commit('SET_SMALLSCREEN', true)
 
-      }else{
+      } else {
         store.commit('SET_SMALLSCREEN', false)
-
       }
 
       console.log('heya')
@@ -20,5 +22,15 @@ export default ({ isClient, store }) => {
     detectSmallDevice();
 
     window.addEventListener('resize', _.debounce(detectSmallDevice, 100));
+
+
+    if (window.innerWidth < 960) {
+      store.commit('SET_SMALLSCREEN', true)
+
+
+    } else {
+      store.commit('SET_SMALLSCREEN', false)
+    }
+
   }
 };

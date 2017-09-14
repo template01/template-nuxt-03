@@ -1,21 +1,22 @@
 <template>
-<div class="loading-page beige-background" >
+<div class="loading-page black-background" >
   <!-- <div class="uk-padding uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport"> -->
   <div class="opacityWrapper">
 
     <div class="uk-padding uk-height-viewport">
-
+<!--
       <div id="toploading" style="height:33vh;" class="uk-flex uk-flex-center uk-flex-middle " >
 
         <h1 class=" uk-text-center loading green-color" >Initiating awesome</h1>
       </div>
-
+ -->
 
 
     </div>
     <div>
 
-      <canvas id="myCanvas" resize :class="{expandtoMiddle:tomiddle,expandtoTop:totop}" :style="{'opacity':opacity}"></canvas>
+      <canvas id="myCanvas" resize :class="{expandtoTop:totop}" :style="{'opacity':opacity}"></canvas>
+      <!-- <canvas id="myCanvas" resize :class="{expandtoMiddle:tomiddle,expandtoTop:totop}" :style="{'opacity':opacity}"></canvas> -->
     </div>
   </div>
 
@@ -71,15 +72,14 @@ export default {
     var vm = this
 
 
+    // setTimeout(function(){
+    //
+    //   vm.tomiddle = true
+    // },1000)
+
     setTimeout(function(){
-
-      vm.tomiddle = true
-    },1000)
-
-    setTimeout(function(){
-
       vm.totop = true
-    },2500)
+    },1500)
   },
 
   methods: {
@@ -96,7 +96,7 @@ export default {
 
       // The amount of segment points we want to create:
       var amount = 10;
-      
+
       if(this.getsmallscreen){
         var height = 20
       }else{
@@ -106,7 +106,7 @@ export default {
 
       // Create a new path and style it:
       var path = new paper.Path({
-        fillColor: '#075945'
+        fillColor: '#F7F5E7'
       });
 
       for (var i = 0; i <= amount; i++) {
@@ -142,11 +142,7 @@ export default {
       paper.view.draw();
       var vm = this
 
-      setTimeout(function(){
-
-        vm.opacity = 1
-      },1000)
-
+      vm.opacity = 1
     }
 
   }
@@ -160,13 +156,13 @@ export default {
 
 <style scoped>
 #myCanvas {
-  transform: scaleX(2);
+  transform: scaleX(2) translateY(120vh);
   width: 100vw;
-  height:0vh;
+  height:120vh;
   position: absolute;
   bottom: 0;
   left: 0;
-  transition: height 1000ms;
+  transition: all 1s;
 }
 
 .expandtoMiddle {
@@ -175,7 +171,8 @@ export default {
 
 
 .expandtoTop {
-  height: 130vh !important;
+    transform: scaleX(2) translateY(0) !important;
+
 }
 
 .fadeloadcontainer{

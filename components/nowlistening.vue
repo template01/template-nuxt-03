@@ -13,10 +13,10 @@
     </span>
   </transition>
   <transition name="fade">
-  <span v-if="!showtune">
+    <span v-if="!showtune">
         <span>{{$t("nowlistening.none")}}</span>
-  </span>
-</transition>
+    </span>
+  </transition>
 
 </p>
 </template>
@@ -45,7 +45,7 @@ export default {
           console.log(res.data.artist)
 
           if (res.data.artist != null) {
-            if (res.data.artist.length > 0) {
+            if (res.data.artist.length > 0 && res.data.playing) {
               this.showtune = true
             }
           }
@@ -83,10 +83,7 @@ export default {
 }
 
 .fade-enter,
-.fade-leave-to
-/* .fade-leave-active below version 2.1.8 */
-
-{
+.fade-leave-to {
   opacity: 0
 }
 </style>

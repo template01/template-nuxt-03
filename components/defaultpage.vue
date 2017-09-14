@@ -1,7 +1,7 @@
 <template>
 <div>
   <transition name="fade">
-    <!-- <loadingsingle class="loadingsingle" v-if="!getinitiated"></loadingsingle> -->
+    <loadingsingle class="loadingsingle" v-if="!getinitiated"></loadingsingle>
   </transition>
   <nav id="menu">
     <div :class="{'hideSidebarContent':!mounted}">
@@ -292,8 +292,8 @@ export default {
 
 #fixme {
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 16px;
+    right: 16px;
     z-index: 99999 !important;
 }
 
@@ -301,11 +301,9 @@ export default {
 .toggle-button-menu {
     cursor: pointer;
     border: 0;
-    background: 0;
     font-size: 20px;
     color: beige;
     outline: none;
-    background: black;
     border-radius: 100%;
     padding: 2px;
     width: 30px;

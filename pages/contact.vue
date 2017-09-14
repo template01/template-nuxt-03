@@ -3,9 +3,9 @@
     <div id="intro beige-background" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
       <div class="uk-padding">
 
-        <div class="uk-child-width-expand uk-flex-center" uk-grid>
+        <div >
           <!-- <div></div> -->
-          <div :class="{'uk-width-2-3':!getsmallscreen}">
+          <div class="uk-align-center"  :class="{'uk-width-2-3':!getsmallscreen}">
             <div>
               <h1 v-html="'contact'" style="font-weight:800"></h1>
             </div>

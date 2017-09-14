@@ -11,9 +11,13 @@
   <!-- <span v-html="$t('clock.timedesc')"></span>
     <span v-html="$t('clock.statusdesc')"></span> -->
   <!-- {{$t("clock.statusdesc")}} -->
-  <span>{{$t("clock.timedesc")}} {{momentstamp}}</span>
+  <!-- <span>{{$t("clock.timedesc")}} {{momentstamp}}</span>
   <br />
-  <span>{{$t("clock.statusdesc")}} {{status}}</span>
+  <span>{{$t("clock.statusdesc")}} {{status}}</span> -->
+
+  <span>{{$t("clock.timedesc")}}<transition name="fade"> <span v-if="clockloaded" v-html="' '+momentstamp"></span></transition></span>
+  <br />
+  <span>{{$t("clock.statusdesc")}}<transition name="fade"> <span v-if="clockloaded" v-html="' '+status"></span></transition></span>
 
   <!-- </transition> -->
 </p>
@@ -29,6 +33,7 @@ export default {
       momentstamp: '',
       status: '',
       clockObj: null,
+      clockloaded: false
       // locale: 'en'
     }
   },
@@ -95,6 +100,7 @@ export default {
     this.getStatus(this.getTimeHour())
     this.momentstamp = this.getTime()
     this.setClock()
+    this.clockloaded = true
   },
   destroyed: function() {
     this.stopClock()

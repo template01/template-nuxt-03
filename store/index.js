@@ -2,7 +2,7 @@ export const state = () => ({
   locales: ['en', 'nl'],
   locale: 'nl',
   n: 1,
-  smallscreen:false,
+  smallscreen:null,
   initiated: false
 })
 //
