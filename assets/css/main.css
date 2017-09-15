@@ -23,11 +23,9 @@ html {
   background-color: #101010;
 }
 
-.black-background .slantTopRight,.black-background .slantTopLeft{
+.black-background>.slantTopRight,.black-background>.slantTopLeft{
   border-color: transparent #101010 #101010 transparent;
 }
-
-
 
 
 
@@ -49,7 +47,7 @@ html {
   background-color: #F7F5E7
 }
 
-.beige-background .slantTopRight,.beige-background .slantTopLeft{
+.beige-background>.slantTopRight,.beige-background>.slantTopLeft{
   border-color: transparent #F7F5E7 #F7F5E7 transparent;
 }
 
@@ -69,7 +67,7 @@ html {
   background-color: #075945
 }
 
-.green-background .slantTopRight,.green-background .slantTopLeft{
+.green-background>.slantTopRight,.green-background>.slantTopLeft{
   border-color: transparent #075945 #075945 transparent;
 }
 
@@ -89,7 +87,7 @@ html {
   background-color: #F8E6F7
 }
 
-.pink-background .slantTopRight,.pink-background .slantTopLeft{
+.pink-background>.slantTopRight,.pink-background>.slantTopLeft{
   border-color: transparent #F8E6F7 #F8E6F7 transparent;
 }
 
@@ -110,7 +108,7 @@ html {
   background-color: #0008A1
 }
 
-.blue-background .slantTopRight,.blue-background .slantTopLeft{
+.blue-background>.slantTopRight,.blue-background>.slantTopLeft{
   border-color: transparent #0008A1 #0008A1 transparent;
 }
 
@@ -154,6 +152,10 @@ html {
     border-style: solid;
 }
 
+
+em{
+  color: inherit !important;
+}
 
 h1 {
   /*font-family: 'Poppins', sans-serif !important;*/

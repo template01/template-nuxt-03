@@ -7,6 +7,7 @@
         <!-- <div></div> -->
         <div class="uk-align-center"  :class="{'uk-width-2-3':!getsmallscreen}">
           <div>
+            <h1 class="uk-hidden@m uk-text-center" style="text-decoration:underline">WERK</h1>
             <h1 v-html="content.content.rendered" style="font-weight:800"></h1>
           </div>
         </div>

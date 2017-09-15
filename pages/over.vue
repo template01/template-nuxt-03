@@ -18,43 +18,45 @@
     </div>
   </div>
 
-  <div id="branding" class="black-background black-color" :uk-parallax="getsmallscreen ? 'y: 0,0; viewport: 0.4' : 'y: 0,0; viewport: 0.4'">
-    <div class="slantTopRight"></div>
-
-    <div class="uk-container beige-color-force">
 
 
-        <oversectioncontent :acfsection="content.acf.section"></oversectioncontent>
+  <div id="" class="section" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}" :uk-parallax="getsmallscreen ? 'y: 0,0; viewport: 0.4' : 'y: 0,0; viewport: 0.4'">
+    <div class="slantTopRight" :style="{'border-color': 'transparent '+content.acf.section_a.background_color+' '+content.acf.section_a.background_color+' transparent'}"></div>
+
+    <div class="uk-container" :style="{'color':content.acf.section_a.font_color}">
+        <oversectioncontent :acfsection="content.acf.section_a.content"></oversectioncontent>
 
     </div>
 
   </div>
 
 
-  <div id="code" class="blue-background blue-color uk-height-viewport" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
+  <div id="" class="section" :style="{'color':content.acf.section_b.background_color,'background-color':content.acf.section_b.background_color}" :uk-parallax="getsmallscreen ? 'y: 300,0; viewport: 0.4' : 'y: 100,0; viewport: 0.4'">
+    <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_b.background_color+' '+content.acf.section_b.background_color+' transparent'}"></div>
 
-    <div class="slantTopLeft"></div>
-    <div class="uk-container pink-color-force">
-
-      <oversectioncontent :acfsection="content.acf.section_b"></oversectioncontent>
-
-    </div>
-    <div class="slantBottomLeft"></div>
-  </div>
-
-  <div id="design" class="pink-background pink-color uk-height-viewport" :uk-parallax="getsmallscreen ? 'y: 100,0; viewport: 0.4' : 'y: 300,0; viewport: 0.4'">
-    <div class="slantTopRight"></div>
-    <div class="uk-container">
-
-      <oversectioncontent :acfsection="content.acf.section_c"></oversectioncontent>
+    <div class="uk-container" :style="{'color':content.acf.section_b.font_color}">
+        <oversectioncontent :acfsection="content.acf.section_b.content"></oversectioncontent>
 
     </div>
+
   </div>
 
 
 
+  <div id="" class="section section-last" :style="{'color':content.acf.section_c.background_color,'background-color':content.acf.section_c.background_color}" :uk-parallax="getsmallscreen ? 'y: 300,0; viewport: 0.4' : 'y: 100,0; viewport: 0.4'">
+    <div class="slantTopRight" :style="{'border-color': 'transparent '+content.acf.section_c.background_color+' '+content.acf.section_c.background_color+' transparent'}"></div>
 
-  <div id="intro beige-background pos" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative">
+    <div class="uk-container" :style="{'color':content.acf.section_c.font_color}">
+        <oversectioncontent :acfsection="content.acf.section_c.content"></oversectioncontent>
+
+    </div>
+
+  </div>
+
+
+
+
+  <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative">
     <div class="slantTopLeft"></div>
 
     <div class="uk-padding">
@@ -80,7 +82,7 @@
 
 <script>
 import defaultpage from '~/components/defaultpage.vue'
-import oversectioncontent from '~/components/oversectioncontent.vue'
+import oversectioncontent from '~/components/over/oversectioncontent.vue'
 import axios from 'axios'
 
 export default {
@@ -130,25 +132,22 @@ export default {
 <style lang="scss" scoped>
 #over {
 
+    .section{
+      &:not(.section-last){
+        -webkit-box-shadow: 0 300px 0 0;
+        -moz-box-shadow: 0 300px 0 0;
+        box-shadow: 0 300px 0 0;
+
+      }
+
+      &.section-last{
+        padding-bottom: 40px;
+      }
+    }
+
     #intro {
         overflow-y: hidden;
     }
 
-    #branding {
-
-        -webkit-box-shadow: 0 300px 0 0;
-        -moz-box-shadow: 0 300px 0 0;
-        box-shadow: 0 300px 0 0;
-
-    }
-
-    #design {}
-
-    #code {
-        -webkit-box-shadow: 0 300px 0 0;
-        -moz-box-shadow: 0 300px 0 0;
-        box-shadow: 0 300px 0 0;
-
-    }
 }
 </style>

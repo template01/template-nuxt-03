@@ -7,7 +7,7 @@
     </div>
 
     <div v-if="section.acf_fc_layout === 'text_column'">
-      <h2 class="" v-html="section.content"></h2>
+      <h2 class="" :style="{'color':'inherit'}" v-html="section.content"></h2>
     </div>
 
     <div v-if="section.acf_fc_layout === 'image'">
@@ -50,6 +50,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
+*{
+  color: inherit;
+}
 .forcestretch{
   width: 100%;
 }

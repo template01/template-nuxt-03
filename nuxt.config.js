@@ -50,6 +50,7 @@ module.exports = {
     // uikit customized
     '~assets/css/site.css',
     '~assets/fonts/relative/stylesheet.css',
+     'swiper/dist/css/swiper.css'
     //'bootstrap/dist/css/bootstrap.css',
     //'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -60,6 +61,10 @@ module.exports = {
     },
     {
       src: '~/plugins/moment.js',
+      ssr: false
+    },
+    {
+      src: '~/plugins/vueawesomeswiper-plugin.js',
       ssr: false
     },
     {

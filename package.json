@@ -29,6 +29,7 @@
 		"sass-loader": "^6.0.6",
 		"scrollbar-width": "^3.1.1",
 		"uikit": "^3.0.0-beta.30",
+		"vue-awesome-swiper": "^2.6.4",
 		"vue-i18n": "^7.2.0",
 		"vue-moment": "^2.0.2",
 		"vue-moment-tz": "^2.1.1"

@@ -1,23 +1,22 @@
 <template>
-<defaultpage id="" >
+<defaultpage id="">
   <div class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding">
 
-      <div class="uk-child-width-expand uk-flex-center uk-grid" uk-grid>
-        <!-- <div></div> -->
-        <div :class="{'uk-width-3-4':!getsmallscreen}">
+      <!-- <div></div> -->
+      <div class="uk-align-center" :class="{'uk-width-2-3':!getsmallscreen}">
 
-          <!-- <div :class="wide ? 'uk-width-3-4' : 'uk-width-1-1'"> -->
-          <div>
-            <h1 class="hugeLetters">{{content.title.rendered}}</h1>
-          </div>
-
+        <!-- <div :class="wide ? 'uk-width-3-4' : 'uk-width-1-1'"> -->
+        <div>
+          <h1 class="uk-hidden@m uk-text-center" style="text-decoration:underline">CASE</h1>
+          <h1 class="hugeLetters">{{content.title.rendered}}</h1>
         </div>
 
       </div>
+
     </div>
   </div>
-
+  <!-- You can find this swiper instance object in current component by the "mySwiper"  -->
 
   <div class="slantContainer" :style="{'background-color':content.acf['background-color']}">
 
@@ -28,22 +27,26 @@
       <div class="uk-padding">
 
 
-        <div v-if="item.acf_fc_layout === 'single_large_text_centered'" class="uk-child-width-expand uk-flex uk-flex-center" uk-grid>
-          <div :class="{'uk-width-3-4':!getsmallscreen}">
-          <h1 v-html="item.large_text_centered"></h1>
+        <div v-if="item.acf_fc_layout === 'single_large_text_centered'">
+          <div class="uk-align-center" :class="{'uk-width-2-3':!getsmallscreen}">
+            <h2 v-html="item.large_text_centered"></h2>
           </div>
         </div>
 
-
-        <div v-if="item.acf_fc_layout === 'single_gallery'" class="uk-child-width-expand@m uk-flex uk-flex-center uk-flex-middle " uk-grid>
-
-          <div v-for="image in item.gallery">
-            <img class="uk-align-center" :src="image.url" />
-          </div>
+        <div v-if="item.acf_fc_layout === 'slideshow'" :class="{'uk-width-5-6':!getsmallscreen}"  class="uk-align-center">
+            <slideshow :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshow>
         </div>
+
+        <div v-if="item.acf_fc_layout === 'single_gallery'" :class="{'uk-width-5-6':!getsmallscreen}"  class="uk-align-center">
+            <div v-for="image in item.gallery">
+              <img class="uk-align-center" :src="image.url" />
+            </div>
+        </div>
+
       </div>
-
     </div>
+
+  </div>
 
 
   </div>
@@ -54,12 +57,14 @@
 
 <script>
 import defaultpage from '~/components/defaultpage.vue'
+import slideshow from '~/components/werk/_slug/slideshow.vue'
 import axios from 'axios'
 
 export default {
 
   components: {
     defaultpage,
+    slideshow
   },
   transition: 'bounce',
   data: function() {
@@ -67,6 +72,7 @@ export default {
       wide: null,
     }
   },
+
 
   async asyncData({
     params,
@@ -104,13 +110,3 @@ export default {
   // },
 }
 </script>
-
-<style scoped>
-#contact {
-  background: white;
-}
-
-#map {
-  background: orange;
-}
-</style>

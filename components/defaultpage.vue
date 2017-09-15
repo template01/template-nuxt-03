@@ -1,7 +1,7 @@
 <template>
 <div>
   <transition name="fade">
-    <loadingsingle class="loadingsingle" v-if="!getinitiated"></loadingsingle>
+    <!-- <loadingsingle class="loadingsingle" v-if="!getinitiated"></loadingsingle> -->
   </transition>
   <nav id="menu">
     <div :class="{'hideSidebarContent':!mounted}">

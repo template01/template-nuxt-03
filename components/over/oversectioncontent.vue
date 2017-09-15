@@ -45,8 +45,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.werktile {
-    overflow-x: hidden;
-
+*{
+  color: inherit;
+}
+em{
+  color: blue;
 }
 </style>
