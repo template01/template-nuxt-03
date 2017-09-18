@@ -198,6 +198,14 @@ h2 {
 
 }
 
+
+.ignoreWidthSmallScreen{
+  @media (max-width: 1400px){
+    width: 100% !important;
+  }
+
+}
+
 .killPadding {
   margin-left: -40px;
   margin-right:-40px;

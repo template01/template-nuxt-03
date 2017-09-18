@@ -33,14 +33,14 @@
           </div>
         </div>
 
-        <div v-if="item.acf_fc_layout === 'slideshow'" :class="{'uk-width-5-6':!getsmallscreen}"  class="uk-align-center">
-            <slideshow :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshow>
+        <div v-if="item.acf_fc_layout === 'slideshow'" :class="{'uk-width-5-6':!getsmallscreen}" class="uk-align-center">
+          <slideshow :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshow>
         </div>
 
-        <div v-if="item.acf_fc_layout === 'single_gallery'" :class="{'uk-width-5-6':!getsmallscreen}"  class="uk-align-center">
-            <div v-for="image in item.gallery">
-              <img class="uk-align-center" :src="image.url" />
-            </div>
+        <div v-if="item.acf_fc_layout === 'single_gallery'" :class="{'uk-width-5-6':!getsmallscreen}" class="uk-align-center">
+          <div v-for="image in item.gallery">
+            <img class="uk-align-center" :src="image.url" />
+          </div>
         </div>
 
       </div>

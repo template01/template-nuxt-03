@@ -30,7 +30,9 @@
     <section class="defaultpage" :class="{'fadein':loaded}">
       <div class="uk-container uk-visible@m" id="">
         <div class="uk-padding uk-padding-remove-horizontal" id="menudefault">
-          <menuitems class="uk-width-5-6 uk-align-center"></menuitems>
+          <div class="uk-width-5-6 uk-align-center ignoreWidthSmallScreen" >
+            <menuitems :passedmenucolor="menucolor"></menuitems>
+          </div>
         </div>
       </div>
 
@@ -301,16 +303,23 @@ export default {
 .toggle-button-menu {
     cursor: pointer;
     border: 0;
-    font-size: 20px;
     color: beige;
     outline: none;
     border-radius: 100%;
     padding: 2px;
+    font-size: 20px;
     width: 30px;
     height: 30px;
     line-height: 20px;
     margin: 0;
     transition: transform 0.25s;
+    @media (min-width: 1400px){
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      line-height: 20px;
+    }
+
 }
 
 .toggle-button-menu {

@@ -64,6 +64,10 @@ module.exports = {
       ssr: false
     },
     {
+      src: '~/plugins/preloader.js',
+      ssr: false
+    },
+    {
       src: '~/plugins/vueawesomeswiper-plugin.js',
       ssr: false
     },

@@ -2,8 +2,10 @@
 <div class="uk-container uk-container-center" id="splashtopmenu">
   <div class="uk-padding uk-padding-remove-horizontal">
 
+    <div class="uk-width-5-6 uk-align-center ignoreWidthSmallScreen" >
 
-      <menuitems class="uk-width-5-6 uk-align-center" :passedmenucolor="menucolor"></menuitems>
+      <menuitems :passedmenucolor="menucolor"></menuitems>
+    </div>
   </div>
 </div>
 

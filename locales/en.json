@@ -5,8 +5,7 @@
   "menu":{
     "topmenu":{
       "work":"Work",
-      "how":"Services",
-      "about":"About",
+      "about":"Services",
       "contact":"Contact",
       "index":"Index"
     }
