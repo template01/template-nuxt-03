@@ -1,9 +1,8 @@
 <template>
 <div class=" uk-padding uk-padding-remove-horizontal" uk-grid>
-
   <div class="uk-width-1-1@m"  v-for="section in acfsection">
     <div class="uk-align-center" :class="[setWidth(section.width)]">
-      <oversectioncontentinner :section="section"></oversectioncontentinner>
+      <sectioncontentinner :topcontent="topcontent" :section="section"></sectioncontentinner>
     </div>
   </div>
 
@@ -11,13 +10,13 @@
 </div>
 </template>
 <script>
-import oversectioncontentinner from '~/components/over/oversectioncontentinner.vue'
+import sectioncontentinner from '~/components/sections_component/sectioncontentinner.vue'
 
 
 export default {
-  props: ['acfsection'],
+  props: ['acfsection','topcontent'],
   components: {
-    oversectioncontentinner
+    sectioncontentinner
   },
   methods: {
     setWidth: function(width) {

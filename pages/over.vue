@@ -1,6 +1,6 @@
 <template>
-<defaultpage id="over">
-  <div id="intro beige-background" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+<defaultpage class="beige-background" id="over">
+  <div id="intro" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding">
 
       <div>
@@ -24,7 +24,7 @@
     <div class="slantTopRight" :style="{'border-color': 'transparent '+content.acf.section_a.background_color+' '+content.acf.section_a.background_color+' transparent'}"></div>
 
     <div class="uk-container" :style="{'color':content.acf.section_a.font_color}">
-        <oversectioncontent :acfsection="content.acf.section_a.content"></oversectioncontent>
+        <sectioncontent :acfsection="content.acf.section_a.content"></sectioncontent>
 
     </div>
 
@@ -35,7 +35,7 @@
     <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_b.background_color+' '+content.acf.section_b.background_color+' transparent'}"></div>
 
     <div class="uk-container" :style="{'color':content.acf.section_b.font_color}">
-        <oversectioncontent :acfsection="content.acf.section_b.content"></oversectioncontent>
+        <sectioncontent :acfsection="content.acf.section_b.content"></sectioncontent>
 
     </div>
 
@@ -47,7 +47,7 @@
     <div class="slantTopRight" :style="{'border-color': 'transparent '+content.acf.section_c.background_color+' '+content.acf.section_c.background_color+' transparent'}"></div>
 
     <div class="uk-container" :style="{'color':content.acf.section_c.font_color}">
-        <oversectioncontent :acfsection="content.acf.section_c.content"></oversectioncontent>
+        <sectioncontent :acfsection="content.acf.section_c.content"></sectioncontent>
 
     </div>
 
@@ -65,7 +65,6 @@
         <!-- <div></div> -->
         <div class="uk-align-center" :class="{'uk-width-2-3':!getsmallscreen}">
           <div>
-            <h1 class="uk-hidden@m uk-text-center" style="text-decoration:underline">OVER</h1>
             <h1 v-html="content.acf.content_bottom" style="font-weight:800"></h1>
           </div>
         </div>
@@ -82,13 +81,13 @@
 
 <script>
 import defaultpage from '~/components/defaultpage.vue'
-import oversectioncontent from '~/components/over/oversectioncontent.vue'
+import sectioncontent from '~/components/sections_component/sectioncontent.vue'
 import axios from 'axios'
 
 export default {
   components: {
     defaultpage,
-    oversectioncontent
+    sectioncontent
   },
   data: function() {
     return {

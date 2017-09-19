@@ -16,7 +16,10 @@
 
       <div v-for="item in datainput.acf.tile" :class="[item.size === 'half' ? {'uk-width-1-2@m':true}:{'uk-width-1-1@m':true}, item.type === 'image' ? 'uk-flex uk-flex-center uk-flex-middle':'']">
         <h1 v-if="item.acf_fc_layout === 'header'" class="uk-text-left hugeLetters" v-html="datainput.title.rendered"></h1>
-        <img v-if="item.acf_fc_layout  === 'image' && item.image.sizes" :class="item.size === 'full' ? 'uk-padding uk-padding-remove-vertical' : ''" :src="item.image.sizes.large" />
+        <!-- <img v-if="item.acf_fc_layout  === 'image' && item.image.sizes" :class="item.size === 'full' ? 'uk-padding uk-padding-remove-vertical' : ''" :src="item.image.sizes.large" /> -->
+
+        <img v-if="item.acf_fc_layout  === 'image' && item.image.sizes" width="100%" :setwidth="item.image.sizes['large-width']" :setheight="item.image.sizes['large-height']" v-lazy="item.image.sizes.large" class="lazyload"  :class="item.size === 'full' ? 'uk-padding uk-padding-remove-vertical' : ''"/>
+
         <div v-if="item.acf_fc_layout === 'text'" class="uk-text-left uk-h4" v-html="item.text"></div>
       </div>
 

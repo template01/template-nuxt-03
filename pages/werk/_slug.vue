@@ -1,5 +1,5 @@
 <template>
-<defaultpage id="">
+<defaultpage class="beige-background" id="">
   <div class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding">
 
@@ -39,7 +39,7 @@
 
         <div v-if="item.acf_fc_layout === 'single_gallery'" :class="{'uk-width-5-6':!getsmallscreen}" class="uk-align-center">
           <div v-for="image in item.gallery">
-            <img class="uk-align-center" :src="image.url" />
+            <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" v-lazy="image.sizes.large"  class="lazyload uk-align-center"/>
           </div>
         </div>
 

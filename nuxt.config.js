@@ -75,7 +75,9 @@ module.exports = {
       src: '~/plugins/paper.js',
       ssr: false
     },
-
+    {
+      src: '~/plugins/lazyload.js'
+    },
     {
       src: '~/plugins/translation.js',
       // ssr: false
@@ -88,6 +90,7 @@ module.exports = {
     '~/plugins/resizer.js',
     //GLOBAL MIXINS
     '~/mixins/computedresizerglobalmixin.js',
+    '~/mixins/setlazyloadimages.js',
     {
       src: '~/mixins/computedscrollbarwidth.js',
       ssr: false
@@ -102,7 +105,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    vendor: ['axios', 'vue-i18n','lodash', 'uikit']
+    vendor: ['axios', 'vue-i18n','lodash', 'uikit','vue-lazyload']
     /*
      ** Run ESLINT on save
      */

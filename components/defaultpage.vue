@@ -6,32 +6,23 @@
   <nav id="menu">
     <div :class="{'hideSidebarContent':!mounted}">
       <div class="uk-padding-small uk-padding-remove-bottom" @click="toggleMenu">
-        <button class="toggle-button-menu black-background"><span uk-icon="icon: menu"></span></button>
+        <button class="toggle-button-menu black-background"><img class="uk-visible@l" src="/hamburger.svg"/><img class="uk-hidden@l" src="/hamburgerSm.svg"/></button>
       </div>
       <menuitemsside></menuitemsside>
     </div>
   </nav>
 
-  <main class="beige-background" id="panel" v-if="reinitiateUikit">
+  <main class="" id="panel" v-if="reinitiateUikit">
     <div id="fixme" class="slide-button" @click="toggleMenu" :class="{ 'slide-out-button': !menuopenshow }">
-      <button class="toggle-button black-background"><span uk-icon="icon: menu"></span></button>
+      <button class="toggle-button black-background"><img class="uk-visible@l"  src="/hamburger.svg"/><img class="uk-hidden@l" src="/hamburgerSm.svg"/></button>
     </div>
-
-
-    <!-- <div class="uk-child-width-expand uk-flex-center" uk-grid>
-      <div :class="{'uk-width-2-3':!getsmallscreen}">
-        <div>
-          <h1 v-html="'contact'" style="font-weight:800"></h1>
-        </div>
-      </div>
-      </div> -->
 
 
     <section class="defaultpage" :class="{'fadein':loaded}">
       <div class="uk-container uk-visible@m" id="">
         <div class="uk-padding uk-padding-remove-horizontal" id="menudefault">
           <div class="uk-width-5-6 uk-align-center ignoreWidthSmallScreen" >
-            <menuitems :passedmenucolor="menucolor"></menuitems>
+            <menuitems></menuitems>
           </div>
         </div>
       </div>
@@ -313,7 +304,7 @@ export default {
     line-height: 20px;
     margin: 0;
     transition: transform 0.25s;
-    @media (min-width: 1400px){
+    @media (min-width: 1200px){
       font-size: 20px;
       width: 40px;
       height: 40px;

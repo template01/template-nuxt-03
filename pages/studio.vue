@@ -1,64 +1,121 @@
 <template>
-  <defaultpage id="studio">
-    <div id="intro beige-background" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
-      <div class="uk-padding">
+<defaultpage class="pink-background" id="studio">
+  <div id="intro" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+    <div class="uk-padding">
 
-        <div >
-          <!-- <div></div> -->
-          <div class="uk-align-center"  :class="{'uk-width-2-3':!getsmallscreen}">
-            <div>
-              <h1 v-html="'studio'" style="font-weight:800"></h1>
-            </div>
+      <div>
+        <!-- <div></div> -->
+        <div class="uk-align-center uk-hidden@m" :class="{'uk-width-2-3':!getsmallscreen}">
+          <div>
+            <h1 class="uk-text-center" style="text-decoration:underline">STUDIO</h1>
+            <!-- <h1 v-html="content.content.rendered" style="font-weight:800"></h1> -->
           </div>
-          <!-- <div></div> -->
         </div>
 
+        <!-- {{content.acf.topcontent}} -->
+
+        <sectioncontent :acfsection="content.acf.topcontent.content" :topcontent="true"></sectioncontent>
+
 
       </div>
-    </div>
 
-  </defaultpage>
-<!-- <section id="over" class="container">
-  <div class="uk-padding uk-padding-remove-bottom" id="menusplash">
-    <menuitems></menuitems>
-  </div>
 
-  <div class="uk-padding uk-padding-remove-top">
-    <div class="uk-padding uk-padding-remove-top">
-      <div class="">
-        <h1 style="font-weight:800">over</h1>
-      </div>
     </div>
   </div>
 
-  <templatefooter></templatefooter>
-</section> -->
+
+
+  <div id="" class="section section-last" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}" :uk-parallax="getsmallscreen ? 'y: 0,0; viewport: 0.4' : 'y: 0,0; viewport: 0.4'">
+    <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_a.background_color+' '+content.acf.section_a.background_color+' transparent'}"></div>
+
+    <div class="uk-container" :style="{'color':content.acf.section_a.font_color}">
+        <sectioncontent :acfsection="content.acf.section_a.content"></sectioncontent>
+
+    </div>
+
+  </div>
+
+
+
+
+  <div class="pink-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative">
+    <div class="slantTopRight"></div>
+
+  </div>
+
+
+</defaultpage>
 </template>
 
 <script>
 import defaultpage from '~/components/defaultpage.vue'
+import sectioncontent from '~/components/sections_component/sectioncontent.vue'
+import axios from 'axios'
 
 export default {
-
   components: {
     defaultpage,
+    sectioncontent
   },
-  transition:'bounce'
+  data: function() {
+    return {
+      paralaxy: '500,0',
+    }
+  },
 
-  // transition(to, from) {
-  //   if (!from) return 'slide-left'
-  //   return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
-  // },
+
+
+  transition: 'bounce',
+
+  async asyncData({
+    params,
+    query,
+    error
+  }) {
+    if (query.hasOwnProperty('lang')) {
+      let [contentRes] = await Promise.all([
+        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=studio_' + query.lang),
+      ])
+      return {
+        content: contentRes.data[0],
+      }
+      // }
+    } else {
+
+      let [contentRes] = await Promise.all([
+        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=studio_nl'),
+      ])
+      return {
+        content: contentRes.data[0],
+      }
+
+
+    }
+  },
+
 }
 </script>
 
-<style scoped>
-  #contact{
-    background: white;
-  }
+<style lang="scss" scoped>
 
-  #map{
-    background: orange;
-  }
+#studio {
 
+    .section{
+      &:not(.section-last){
+        -webkit-box-shadow: 0 300px 0 0;
+        -moz-box-shadow: 0 300px 0 0;
+        box-shadow: 0 300px 0 0;
+
+      }
+
+      &.section-last{
+        padding-bottom: 40px;
+      }
+    }
+
+    #intro {
+        overflow-y: hidden;
+    }
+
+}
 </style>

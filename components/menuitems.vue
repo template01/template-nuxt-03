@@ -1,10 +1,10 @@
-<template>
+ <template>
 <div id="" :style="{'color':passedmenucolor}" uk-grid>
 
   <div class="uk-width-1-3">
 
-    <h1 v-if="$i18n.locale === 'en'">Template <nuxt-link :to="{path:'/studio', query: { lang: 'en' }}">Studio</nuxt-link></h1>
-    <h1 v-else>Template <nuxt-link :to="{path:'/studio'}">Studio</nuxt-link></h1>
+    <h1 v-if="$i18n.locale === 'en'"><nuxt-link class="ignoreUnderline" :to="{path:'/studio', query: { lang: 'en' }}">Template </nuxt-link><nuxt-link :to="{path:'/studio', query: { lang: 'en' }}">Studio</nuxt-link></h1>
+    <h1 v-else><nuxt-link class="ignoreUnderline" :to="{path:'/studio'}">Template </nuxt-link><nuxt-link :to="{path:'/studio'}">Studio</nuxt-link></h1>
   </div>
 
   <div class="uk-width-1-5  ">
@@ -64,6 +64,11 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
+.ignoreUnderline{
+  text-decoration: none;
+}
+
 h1,
 h4 {
     color: inherit;
