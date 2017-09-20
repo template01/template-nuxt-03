@@ -1,7 +1,7 @@
 <template>
 <div class="uk-padding uk-container uk-container-center" id="splashbottommenu">
   <div class="">
-    <div :style="{'color':menucolor}" class="uk-align-center uk-width-5-6 uk-visible@m ignoreWidthSmallScreen">
+    <div :style="{'color':menucolor}" class="uk-align-center uk-width-1-1 uk-visible@m ignoreWidthSmallScreen uk-margin-remove-bottom">
       <div>
         <clock></clock>
         <nowlistening></nowlistening>

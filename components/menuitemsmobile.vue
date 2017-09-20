@@ -9,10 +9,10 @@
     </div>
 
     <div>
-      <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/over', query: { lang: 'en' }}">
-        <h4>{{$t("menu.topmenu.about")}}</h4></nuxt-link>
-      <nuxt-link v-else :to="{path:'/over'}">
-        <h4>{{$t("menu.topmenu.about")}}</h4></nuxt-link>
+      <nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/services', query: { lang: 'en' }}">
+        <h4>{{$t("menu.topmenu.services")}}</h4></nuxt-link>
+      <nuxt-link v-else :to="{path:'/services'}">
+        <h4>{{$t("menu.topmenu.services")}}</h4></nuxt-link>
     </div>
 
     <div>

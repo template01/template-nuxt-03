@@ -1,7 +1,7 @@
 <template>
 <div id="splash" :style="{'background':slideContent[slideIndex].background_color}">
   <transition name="fade">
-    <div id="splashBackgroundImage" v-if="slideContent[slideIndex].background_image" class="" :style="{'background-image':'url('+slideContent[slideIndex].background_image.sizes.large+')'}"></div>
+    <div id="splashBackgroundImage" v-if="slideContent[slideIndex].background_image" class="" :style="{'background-image':'url('+slideContent[slideIndex].background_image.sizes.xlarge+')'}"></div>
   </transition>
 
 
@@ -13,13 +13,13 @@
     <splashbottommenu :menucolor="slideContent[slideIndex].font_color"></splashbottommenu>
 
     <div class="uk-visible@m uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
-      <div v-if="!slideContent[slideIndex].background_image" class=" uk-animation-fade uk-width-5-6  ignoreWidthSmallScreen uk-align-center  uk-child-width-expand@s  uk-flex uk-flex-center uk-flex-middle ">
+      <div v-if="!slideContent[slideIndex].background_image" class=" uk-animation-fade uk-width-1-1  ignoreWidthSmallScreen uk-align-center  uk-child-width-expand@s  uk-flex uk-flex-center uk-flex-middle ">
 
         <div class="">
           <h1 :class="{'uk-animation-slide-top':begin, 'uk-animation-reverse':!begin, 'uk-animation-slide-bottom':!begin, 'uk-animation-reverse':begin}" class="hugeLetters" :style="{'animation-delay':slideContent[slideIndex].speed/2+'ms', 'color':slideContent[slideIndex].font_color}" v-html="slideContent[slideIndex].slide[0].content"></h1>
         </div>
         <div class="">
-          <h1 class="hugeLetters uk-text-center" :style="{'animation-delay':slideContent[slideIndex].speed/2+'ms', 'color':slideContent[slideIndex].font_color}">
+          <h1 class="hugeLetters" style="padding-left:1vw" :style="{'animation-delay':slideContent[slideIndex].speed/2+'ms', 'color':slideContent[slideIndex].font_color}">
               <span >Studio</span>
             </h1>
         </div>
@@ -131,7 +131,6 @@ export default {
       function inittimeout() {
 
         setTimeout(function() {
-          console.log(vm.slideContent[vm.slideIndex].speed)
 
           if(vm.begin){
             vm.slideIndex = vm.slideIndex + 1

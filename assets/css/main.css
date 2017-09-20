@@ -243,8 +243,22 @@ h2 {
   border-bottom-color: inherit;
 }*/
 
+
+
 .nuxt-link-exact-active {
-  text-decoration: underline;
+  display: inline-block;
+  -webkit-box-shadow: inset 0px -3px 0px 0px;
+  -moz-box-shadow: inset 0px -3px 0px 0px;
+  box-shadow: inset 0px -3px 0px 0px;
+  transition: box-shadow 0.25s;
+}
+
+a:hover{
+  text-decoration: none !important;
+  -webkit-box-shadow: inset 0px -3px 0px 0px;
+  -moz-box-shadow: inset 0px -3px 0px 0px;
+  box-shadow: inset 0px -3px 0px 0px;
+  transition: box-shadow 0.25s;
 }
 
 /*.bounce-enter-active {

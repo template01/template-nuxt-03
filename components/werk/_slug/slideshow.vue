@@ -3,7 +3,8 @@
   <div class="swiper-wrapper">
     <!-- <div class="swiper-pagination swiper-pagination-bullets"></div> -->
     <div :style="{'background-color':backgroundcolor}" class="swiper-slide" v-for="slide in slides">
-      <img :src="slide.url">
+      <img :src="slide.url" :srcset="slide.sizes.small + ' 480w, ' + slide.sizes.medium + ' 1024w, ' + slide.sizes.large + ' 1600w, ' + slide.sizes.xlarge + ' 1920w'">
+
     </div>
   </div>
 </div>
@@ -22,10 +23,10 @@ export default {
         pagination: '.swiper-pagination',
         paginationElement: 'li',
         onSlideChangeEnd: swiper => {
-          console.log('onSlideChangeEnd', swiper.realIndex)
+          // console.log('onSlideChangeEnd', swiper.realIndex)
         },
         onTap: swiper => {
-          console.log('onTap', swiper.realIndex)
+          // console.log('onTap', swiper.realIndex)
         },
         onClick: swiper => {
           swiper.slideNext();

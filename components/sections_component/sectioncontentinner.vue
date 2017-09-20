@@ -18,7 +18,11 @@
     <!-- {{section.content.sizes.large}} -->
     <!-- {{section.content.sizes['large-width']}} -->
     <!-- {{section.content.sizes['large-height']}} -->
-    <img width="100%" :setwidth="section.content.sizes['large-width']" :setheight="section.content.sizes['large-height']" v-lazy="section.content.sizes.large"  class="lazyload uk-padding uk-padding-remove-vertical uk-align-center"/>
+
+
+    <img width="100%" :setwidth="section.content.sizes['large-width']" :setheight="section.content.sizes['large-height']" v-lazy="section.content.url"  :data-srcset="section.content.sizes.small + ' 480w, ' + section.content.sizes.medium + ' 1024w, ' + section.content.sizes.large + ' 1600w, ' + section.content.sizes.xlarge + ' 1920w'" class="lazyload uk-padding uk-padding-remove-vertical uk-align-center"/>
+
+
 
 
     <!-- <img  width="100%" height="20px" v-lazy="section.content.sizes.large" :class="{'forcestretch':section.force_stretch}" uk-scrollspy="cls: uk-animation-fade; repeat: true" class="uk-padding uk-padding-remove-vertical uk-align-center"/> -->

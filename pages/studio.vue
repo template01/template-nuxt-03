@@ -1,6 +1,6 @@
 <template>
 <defaultpage class="pink-background" id="studio">
-  <div id="intro" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+  <div id="intro" class="pink-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding">
 
       <div>

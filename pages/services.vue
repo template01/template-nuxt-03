@@ -1,6 +1,6 @@
 <template>
 <defaultpage class="beige-background" id="over">
-  <div id="intro" class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+  <div id="intro" class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding">
 
       <div>
@@ -106,7 +106,7 @@ export default {
   }) {
     if (query.hasOwnProperty('lang')) {
       let [contentRes] = await Promise.all([
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=over_' + query.lang),
+        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=services_' + query.lang),
       ])
       return {
         content: contentRes.data[0],
@@ -115,7 +115,7 @@ export default {
     } else {
 
       let [contentRes] = await Promise.all([
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=over_nl'),
+        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=services_nl'),
       ])
       return {
         content: contentRes.data[0],

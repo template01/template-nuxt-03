@@ -1,5 +1,6 @@
 <template>
-<p class="uk-h4" :class="{'uk-h5':footer}">
+<p class="uk-h4">
+  <!-- <p class="uk-h4" :class="{'uk-h5':footer}"> -->
   {{$t("nowlistening.desc")}}
 
   <transition name="fade">

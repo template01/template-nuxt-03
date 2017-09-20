@@ -1,19 +1,6 @@
 <template>
-<p class="uk-h4" :class="{'uk-h5':footer}">
-  <!-- <button @click="$store.commit('SET_LANG', 'nl'); $i18n.locale = 'nl'"> NL</button> -->
-  <!-- <button @click="$store.commit('SET_LANG', 'en'); $i18n.locale = 'en'"> EN</button> -->
-
-  <!-- <button @click="$i18n.locale = 'en'"><nuxt-link :to="{query:'hey'}" replace>chang lang</nuxt-link></button> -->
-  <!-- <button @click="store.commit('SET_LANG', 'en')"> chang lang</button> -->
-  <!-- <p>{{ $t("message.hello") }}</p> -->
-  <!-- <p>{{ $t("clock.modes.work")[0] }}</p> -->
-  <!-- {{$t("clock.timedesc")}} -->
-  <!-- <span v-html="$t('clock.timedesc')"></span>
-    <span v-html="$t('clock.statusdesc')"></span> -->
-  <!-- {{$t("clock.statusdesc")}} -->
-  <!-- <span>{{$t("clock.timedesc")}} {{momentstamp}}</span>
-  <br />
-  <span>{{$t("clock.statusdesc")}} {{status}}</span> -->
+  <p class="uk-h4">
+    <!-- <p class="uk-h4" :class="{'uk-h5':footer}"> -->
 
   <span>{{$t("clock.timedesc")}}<transition name="fade"> <span v-if="clockloaded" v-html="' '+momentstamp"></span></transition></span>
   <br />

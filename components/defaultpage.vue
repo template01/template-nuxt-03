@@ -21,7 +21,7 @@
     <section class="defaultpage" :class="{'fadein':loaded}">
       <div class="uk-container uk-visible@m" id="">
         <div class="uk-padding uk-padding-remove-horizontal" id="menudefault">
-          <div class="uk-width-5-6 uk-align-center ignoreWidthSmallScreen" >
+          <div class="uk-width-1-1 uk-align-center ignoreWidthSmallScreen" >
             <menuitems></menuitems>
           </div>
         </div>
@@ -30,7 +30,7 @@
       <div class="">
         <div>
           <slot>
-
+            
           </slot>
         </div>
 
