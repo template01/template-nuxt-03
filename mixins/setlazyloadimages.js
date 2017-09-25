@@ -23,6 +23,7 @@ Vue.mixin({
     })
 
     this.$Lazyload.$on('loaded', function ({ el, src }) {
+        el.style.width = 'auto'
         el.style.height = 'auto'
     })
 

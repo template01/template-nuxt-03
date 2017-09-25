@@ -28,9 +28,9 @@
       </div>
 
       <div class="">
-        <div>
+        <div class="offsetSlantTop">
           <slot>
-            
+
           </slot>
         </div>
 

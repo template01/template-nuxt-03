@@ -1,22 +1,34 @@
 <template>
 <defaultpage class="beige-background" id="werk">
-  <div id="intro " class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+
+
+  <div id="" class="section section-last" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}" :uk-parallax="getsmallscreen ? 'y: 0,0; viewport: 0.4' : 'y: 0,0; viewport: 0.4'">
+    <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_a.background_color+' '+content.acf.section_a.background_color+' transparent'}"></div>
+
+    <div class="uk-container" :style="{'color':content.acf.section_a.font_color}">
+        <sectioncontent :acfsection="content.acf.section_a.content"></sectioncontent>
+
+    </div>
+
+  </div>
+
+
+
+
+  <!-- <div id="intro " class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding">
 
       <div>
-        <!-- <div></div> -->
         <div class="uk-align-center"  :class="{'uk-width-2-3':!getsmallscreen}">
           <div>
             <h1 class="uk-hidden@m uk-text-center" style="text-decoration:underline">WERK</h1>
             <h1 v-html="content.content.rendered" style="font-weight:800"></h1>
           </div>
         </div>
-        <!-- <div></div> -->
       </div>
 
-
     </div>
-  </div>
+  </div> -->
 
   <div class="uk-container ">
     <div class="killPadding ">
@@ -37,12 +49,16 @@
 import axios from 'axios'
 
 import defaultpage from '~/components/defaultpage.vue'
+import sectioncontent from '~/components/sections_component/sectioncontent.vue'
 import werktileitem from '~/components/werktileitem.vue'
+
+
 
 export default {
 
   components: {
     defaultpage,
+    sectioncontent,
     werktileitem
   },
   data: function() {

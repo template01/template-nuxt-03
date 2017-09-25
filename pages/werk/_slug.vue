@@ -16,33 +16,52 @@
 
     </div>
   </div>
+<!--
+
+  <div class="uk-container">
+
+
+    <div class=" uk-padding uk-padding-remove-horizontal">
+      <div class="uk-align-center" :class="{'uk-width-5-6':!getsmallscreen}">
+
+
+      </div>
+    </div>
+
+
+  </div>
+  </div> -->
   <!-- You can find this swiper instance object in current component by the "mySwiper"  -->
 
-  <div class="slantContainer" :style="{'background-color':content.acf['background-color']}">
+
+  <div class="uk-container slantContainer" :style="{'background-color':content.acf['background-color']}">
 
     <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf['background-color']+' '+content.acf['background-color']+' transparent'}"></div>
     <div v-for="item in content.acf.single">
 
 
-      <div class="uk-padding">
+      <div class="">
+        <div class="uk-width-1-1@m">
 
 
-        <div v-if="item.acf_fc_layout === 'single_large_text_centered'">
-          <div class="uk-align-center" :class="{'uk-width-2-3':!getsmallscreen}">
-            <h2 v-html="item.large_text_centered"></h2>
+
+          <div v-if="item.acf_fc_layout === 'single_large_text_centered'">
+            <div class="uk-align-center" :class="{'uk-width-2-3':!getsmallscreen}">
+              <h2 v-html="item.large_text_centered"></h2>
+            </div>
           </div>
-        </div>
 
-        <div v-if="item.acf_fc_layout === 'slideshow'" :class="{'uk-width-5-6':!getsmallscreen}" class="uk-align-center">
-          <slideshow :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshow>
-        </div>
-
-        <div v-if="item.acf_fc_layout === 'single_gallery'" :class="{'uk-width-5-6':!getsmallscreen}" class="uk-align-center">
-          <div v-for="image in item.gallery">
-            <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" v-lazy="image.sizes.large"  class="lazyload uk-align-center"/>
+          <div v-if="item.acf_fc_layout === 'slideshow'" :class="{'uk-width-5-6':!getsmallscreen}" class="uk-align-center uk-padding">
+            <slideshow :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshow>
           </div>
-        </div>
 
+          <div v-if="item.acf_fc_layout === 'single_gallery'" :class="{'uk-width-5-6':!getsmallscreen}" class="uk-align-center uk-padding">
+            <div v-for="image in item.gallery">
+              <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" v-lazy="image.sizes.large" class="lazyload uk-align-center" />
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 

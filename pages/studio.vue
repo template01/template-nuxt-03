@@ -1,29 +1,5 @@
 <template>
 <defaultpage class="pink-background" id="studio">
-  <div id="intro" class="pink-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
-    <div class="uk-padding">
-
-      <div>
-        <!-- <div></div> -->
-        <div class="uk-align-center uk-hidden@m" :class="{'uk-width-2-3':!getsmallscreen}">
-          <div>
-            <h1 class="uk-text-center" style="text-decoration:underline">STUDIO</h1>
-            <!-- <h1 v-html="content.content.rendered" style="font-weight:800"></h1> -->
-          </div>
-        </div>
-
-        <!-- {{content.acf.topcontent}} -->
-
-        <sectioncontent :acfsection="content.acf.topcontent.content" :topcontent="true"></sectioncontent>
-
-
-      </div>
-
-
-    </div>
-  </div>
-
-
 
   <div id="" class="section section-last" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}" :uk-parallax="getsmallscreen ? 'y: 0,0; viewport: 0.4' : 'y: 0,0; viewport: 0.4'">
     <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_a.background_color+' '+content.acf.section_a.background_color+' transparent'}"></div>
@@ -40,9 +16,7 @@
 
   <div class="pink-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative">
     <div class="slantTopRight"></div>
-
   </div>
-
 
 </defaultpage>
 </template>

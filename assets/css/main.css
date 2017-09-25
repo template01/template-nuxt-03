@@ -31,24 +31,24 @@ html {
 
 
 .beige-color{
-  color: #F7F5E7
+  color: #fffef5
 }
 
 .beige-color-force *{
-  color: #F7F5E7
+  color: #fffef5
 }
 
 .beige-border-color{
-  border-color: #F7F5E7
+  border-color: #fffef5
 }
 
 
 .beige-background{
-  background-color: #F7F5E7
+  background-color: #fffef5
 }
 
 .beige-background>.slantTopRight,.beige-background>.slantTopLeft{
-  border-color: transparent #F7F5E7 #F7F5E7 transparent;
+  border-color: transparent #fffef5 #fffef5 transparent;
 }
 
 .green-color{
@@ -130,10 +130,10 @@ html {
 
 .slantTopLeft {
     height: 0;
-    border-width: 0 0 50px 100vw;
+    border-width: 0 0 40px 100vw;
     position: absolute;
     left:0;
-    top: -50px;
+    top: -40px;
     border-style: solid;
     border-color: transparent inherit inherit transparent;
     -moz-transform: scaleX(-1);
@@ -144,12 +144,16 @@ html {
 
 .slantTopRight {
     height: 0;
-    border-width: 0 0 50px 100vw;
+    border-width: 0 0 40px 100vw;
     position: absolute;
     left: 0;
     width: 100%;
-    top: -50px;
+    top: -40px;
     border-style: solid;
+}
+
+.offsetSlantTop{
+  padding-top: 60px;
 }
 
 
@@ -195,10 +199,15 @@ h2 {
 
 
 .hugeLetters {
-  font-size: 8vw !important;
   line-height: 0.95;
+
+  font-size: 8vw !important;
   font-family: 'Poppins', sans-serif !important;
   font-weight: 600 !important;
+
+  /*font-size: 9vw !important;
+  font-family: 'Relative', sans-serif !important;
+  font-weight: bold !important;*/
 
   @media (max-width: 960px){
     font-size: 12vw !important;

@@ -106,7 +106,7 @@ export default {
 
       // Create a new path and style it:
       var path = new paper.Path({
-        fillColor: '#F7F5E7'
+        fillColor: '#fffef5'
       });
 
       for (var i = 0; i <= amount; i++) {

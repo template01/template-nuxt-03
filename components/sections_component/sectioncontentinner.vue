@@ -20,7 +20,7 @@
     <!-- {{section.content.sizes['large-height']}} -->
 
 
-    <img width="100%" :setwidth="section.content.sizes['large-width']" :setheight="section.content.sizes['large-height']" v-lazy="section.content.url"  :data-srcset="section.content.sizes.small + ' 480w, ' + section.content.sizes.medium + ' 1024w, ' + section.content.sizes.large + ' 1600w, ' + section.content.sizes.xlarge + ' 1920w'" class="lazyload uk-padding uk-padding-remove-vertical uk-align-center"/>
+    <img width="100%" :setwidth="section.content.sizes['large-width']" :setheight="section.content.sizes['large-height']" v-lazy="section.content.url" :class="{'forcestretch':section.force_stretch}" :data-srcset="section.content.sizes.small + ' 480w, ' + section.content.sizes.medium + ' 1024w, ' + section.content.sizes.large + ' 1600w, ' + section.content.sizes.xlarge + ' 1920w'" class="lazyload uk-padding uk-padding-remove-vertical uk-align-center"/>
 
 
 
@@ -75,6 +75,6 @@ export default {
     color: inherit;
 }
 .forcestretch {
-    width: 100%;
+    width: 100% !important;
 }
 </style>
