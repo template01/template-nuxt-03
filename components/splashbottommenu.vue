@@ -1,7 +1,7 @@
 <template>
 <div class="uk-padding uk-container uk-container-center" id="splashbottommenu">
   <div class="">
-    <div :style="{'color':menucolor}" class="uk-align-center uk-width-1-1 uk-visible@m ignoreWidthSmallScreen uk-margin-remove-bottom">
+    <div :style="{'color':menucolor}" id="splashbottommenuDefault" class="uk-align-center uk-width-1-1 uk-visible@m ignoreWidthSmallScreen uk-margin-remove-bottom">
       <div>
         <clock></clock>
         <nowlistening></nowlistening>
@@ -44,6 +44,20 @@ export default {
 </script>
 <style lang="scss">
 #splashbottommenu {
+
+
+  #splashbottommenuDefault{
+    transition: color 0.10s;
+    transition-delay: 0.25s;
+  }
+
+
+    #splashbottommenuMobile{
+      transition: color 0.10s;
+      transition-delay: 0.25s;
+    }
+
+
     position: absolute;
     bottom: 0;
     width: calc(100% - 80px);

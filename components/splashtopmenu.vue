@@ -32,7 +32,8 @@ export default {
     position: absolute;
     width: calc(100% - 80px);
     // left: 0;
-
+    transition: color 0.10s;
+    transition-delay: 0.25s;
     h1 {
         color: inherit;
     }

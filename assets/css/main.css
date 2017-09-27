@@ -5,117 +5,119 @@ html {
 }
 
 /* COLORS AND BACKGRONDCOLRS */
+
 /* NOTE: the slant classes does not work without paralax ( because position relative is not set)*/
 
-
-.black-color{
+.black-color {
   color: #101010;
 }
 
-.black-color-force *{
+.black-color-force * {
   color: #101010
 }
 
-.black-border-color{
+.black-border-color {
   border-color: #101010;
 }
-.black-background{
+
+.black-background {
   background-color: #101010;
 }
 
-.black-background>.slantTopRight,.black-background>.slantTopLeft{
+.black-background>.slantTopRight, .black-background>.slantTopLeft {
   border-color: transparent #101010 #101010 transparent;
 }
 
-
-
-
-.beige-color{
+.beige-color {
+  /*color: #ffffff;*/
   color: #fffef5
 }
 
-.beige-color-force *{
+.beige-color-force * {
+  /*color: #ffffff;*/
   color: #fffef5
 }
 
-.beige-border-color{
+.beige-border-color {
+  /*border-color: #ffffff;*/
   border-color: #fffef5
 }
 
-
-.beige-background{
+.beige-background {
+  /*background-color: #ffffff;*/
   background-color: #fffef5
 }
 
-.beige-background>.slantTopRight,.beige-background>.slantTopLeft{
+.beige-background>.slantTopRight, .beige-background>.slantTopLeft {
   border-color: transparent #fffef5 #fffef5 transparent;
 }
 
-.green-color{
+.green-color {
   color: #075945
 }
 
-.green-color-force *{
+.green-color-force * {
   color: #075945
 }
 
-.green-border-color{
+.green-border-color {
   color: #075945
 }
 
-.green-background{
+.green-background {
   background-color: #075945
 }
 
-.green-background>.slantTopRight,.green-background>.slantTopLeft{
+.green-background>.slantTopRight, .green-background>.slantTopLeft {
   border-color: transparent #075945 #075945 transparent;
 }
 
-.pink-color{
+.pink-color {
   color: #F8E6F7
 }
 
-.pink-color-force *{
+.pink-color-force * {
   color: #F8E6F7
 }
 
-.pink-border-color{
+.pink-border-color {
   border-color: #F8E6F7
 }
 
-.pink-background{
+.pink-background {
   background-color: #F8E6F7
 }
 
-.pink-background>.slantTopRight,.pink-background>.slantTopLeft{
+.pink-background>.slantTopRight, .pink-background>.slantTopLeft {
   border-color: transparent #F8E6F7 #F8E6F7 transparent;
 }
 
-.blue-color{
+.blue-color {
   color: #0008A1
 }
 
-.blue-color-force *{
+.blue-color-force * {
   color: #0008A1
 }
 
-
-.blue-border-color{
+.blue-border-color {
   border-color: #0008A1
 }
 
-.blue-background{
+.blue-background {
   background-color: #0008A1
 }
 
-.blue-background>.slantTopRight,.blue-background>.slantTopLeft{
+.blue-background>.slantTopRight, .blue-background>.slantTopLeft {
   border-color: transparent #0008A1 #0008A1 transparent;
 }
 
-
 /*SLANTED TOPS NEW*/
+
 /*source:http://bennettfeely.com/clippy/*/
+
 /*DOES NOT WORK NICELY - performance lag. Perhaps ui-kit related/conflic*/
+
 /*.slantedTop{
   padding-top: 7.5%;
   -webkit-clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);
@@ -124,126 +126,125 @@ html {
 
 /*SLANTED TOPS*/
 
-.slantContainer{
+.slantContainer {
   position: relative;
 }
 
 .slantTopLeft {
-    height: 0;
-    border-width: 0 0 40px 100vw;
-    position: absolute;
-    left:0;
-    top: -40px;
-    border-style: solid;
-    border-color: transparent inherit inherit transparent;
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+  height: 0;
+  border-width: 0 0 40px 100vw;
+  position: absolute;
+  left: 0;
+  top: -40px;
+  border-style: solid;
+  border-color: transparent inherit inherit transparent;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .slantTopRight {
-    height: 0;
-    border-width: 0 0 40px 100vw;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    top: -40px;
-    border-style: solid;
+  height: 0;
+  border-width: 0 0 40px 100vw;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: -40px;
+  border-style: solid;
 }
 
-.offsetSlantTop{
+.offsetSlantTop {
   padding-top: 60px;
 }
 
+.section {
+  position: relative;
+}
 
-em{
+@media (max-width: 640px) {
+  .slantTopLeft {
+    border-width: 0 0 20px 100vw;
+    top: -20px;
+  }
+  .slantTopRight {
+    border-width: 0 0 20px 100vw;
+    top: -20px;
+  }
+}
+
+em {
   color: inherit !important;
 }
 
-h1 {
+h1, .uk-h1 {
   /*font-family: 'Poppins', sans-serif !important;*/
   /*font-family: 'Relative Book', sans-serif !important;*/
   font-weight: normal !important;
-
-  @media (max-width: 1600px){
+  @media (max-width: 1600px) {
     font-size: 2.3rem !important;
   }
-
-  @media (max-width: 960px){
+  @media (max-width: 960px) {
     font-size: 2rem !important;
   }
-  @media (max-width: 640px){
-    font-size: 1.2rem !important;
+  @media (max-width: 640px) {
+    font-size: 1.4rem !important;
   }
-
 }
 
-h2 {
+h2, .uk-h2 {
   /*font-family: 'Poppins', sans-serif !important;*/
   /*font-family: 'Relative Book', sans-serif !important;*/
   font-weight: normal !important;
-
-  @media (max-width: 1600px){
+  @media (max-width: 1600px) {
     font-size: 1.8rem !important;
   }
-
-  @media (max-width: 960px){
+  @media (max-width: 960px) {
     font-size: 1.6rem !important;
   }
-  @media (max-width: 640px){
-    font-size: 1.0rem !important;
+  @media (max-width: 640px) {
+    font-size: 1.2rem !important;
   }
-
 }
-
 
 .hugeLetters {
   line-height: 0.95;
-
   font-size: 8vw !important;
   font-family: 'Poppins', sans-serif !important;
   font-weight: 600 !important;
-
   /*font-size: 9vw !important;
   font-family: 'Relative', sans-serif !important;
   font-weight: bold !important;*/
-
-  @media (max-width: 960px){
+  @media (max-width: 960px) {
     font-size: 12vw !important;
   }
-
+  @media (min-width: 1921px) {
+    font-size: 140px !important;
+  }
 }
 
-
-.ignoreWidthSmallScreen{
-  @media (max-width: 1400px){
+.ignoreWidthSmallScreen {
+  @media (max-width: 1400px) {
     width: 100% !important;
   }
-
 }
 
 .killPadding {
   margin-left: -40px;
-  margin-right:-40px;
-
-  @media (min-width: 960px) and (max-width: 1200px){
+  margin-right: -40px;
+  @media (min-width: 960px) and (max-width: 1200px) {
     margin-left: -40px;
     margin-right: -40px;
   }
-
-  @media (min-width: 641px) and (max-width: 959px){
+  @media (min-width: 641px) and (max-width: 959px) {
     margin-left: -20px;
     margin-right: -20px;
   }
-
   @media (max-width: 640px) {
     margin-left: -15px;
     margin-right: -15px;
   }
-
 }
-
 
 /*.nuxt-link-active>*{
 
@@ -253,16 +254,7 @@ h2 {
 }*/
 
 
-
-.nuxt-link-exact-active {
-  display: inline-block;
-  -webkit-box-shadow: inset 0px -3px 0px 0px;
-  -moz-box-shadow: inset 0px -3px 0px 0px;
-  box-shadow: inset 0px -3px 0px 0px;
-  transition: box-shadow 0.25s;
-}
-
-a:hover{
+a:hover {
   text-decoration: none !important;
   -webkit-box-shadow: inset 0px -3px 0px 0px;
   -moz-box-shadow: inset 0px -3px 0px 0px;
@@ -296,16 +288,23 @@ a:hover{
   }
 }*/
 
-
-
 /*Lazy loading*/
 
-
-img.lazyload{
+img.lazyload {
   transition: opacity 1s;
   opacity: 0;
 }
 
 img[lazy=loaded] {
   opacity: 1;
+}
+
+/*img optimization*/
+img{
+  image-rendering: optimizeSpeed;             /*                     */
+  image-rendering: -moz-crisp-edges;          /* Firefox             */
+  image-rendering: -o-crisp-edges;            /* Opera               */
+  image-rendering: -webkit-optimize-contrast; /* Chrome (and Safari) */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed       */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
 }

@@ -1,53 +1,42 @@
 <template>
-<defaultpage class="beige-background" id="werk">
+<defaultpage class="pink-background" id="werk">
+
+
+  <div class="pink-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top  uk-hidden@m ">
+      <h1 class="uk-text-center uk-padding" style="text-decoration:underline">WERK</h1>
+  </div>
 
 
   <div id="" class="section section-last" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}" :uk-parallax="getsmallscreen ? 'y: 0,0; viewport: 0.4' : 'y: 0,0; viewport: 0.4'">
     <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_a.background_color+' '+content.acf.section_a.background_color+' transparent'}"></div>
 
     <div class="uk-container" :style="{'color':content.acf.section_a.font_color}">
-        <sectioncontent :acfsection="content.acf.section_a.content"></sectioncontent>
-
+        <sectioncontent :ignorePaddingBottom="true" :acfsection="content.acf.section_a.content"></sectioncontent>
+        <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+          <p class="uk-text-center uk-h2 uk-margin-remove uk-padding uk-padding-remove-top" style="padding-right:20px; user-select: none;"><span style="cursor:pointer;" @click="goToWorkItems" id="slideMeDownHover" >Recente projecten <span uk-icon="icon: arrow-down; ratio: 1.5" class="uk-icon"></span></span></p>
+        </div>
     </div>
 
   </div>
 
+  <div  class="section section-last" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}">
 
+    <div class="uk-container " :style="{'background':content.acf.section_a.background_color}"  >
+      <div class="killPadding " id="workitems" :uk-parallax="getsmallscreen ? '' : 'y: 300,0; viewport: 0.2'" :style="getsmallscreen ? {} :{'margin-top':'-300px'}">
 
+        <div class=" uk-grid-collapse uk-text-center" uk-grid uk-height-match>
+          <werktileitem v-bind:key="tile.id" v-for="tile in tiles" :datainput="tile"></werktileitem>
 
-  <!-- <div id="intro " class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
-    <div class="uk-padding">
-
-      <div>
-        <div class="uk-align-center"  :class="{'uk-width-2-3':!getsmallscreen}">
-          <div>
-            <h1 class="uk-hidden@m uk-text-center" style="text-decoration:underline">WERK</h1>
-            <h1 v-html="content.content.rendered" style="font-weight:800"></h1>
-          </div>
         </div>
       </div>
-
     </div>
-  </div> -->
 
-  <div class="uk-container ">
-    <div class="killPadding ">
-
-
-      <!-- {{tiles[0]}} -->
-
-      <div class=" uk-grid-collapse uk-text-center" uk-grid uk-height-match>
-        <werktileitem v-bind:key="tile.id" v-for="tile in tiles" :datainput="tile"></werktileitem>
-
-      </div>
-    </div>
   </div>
 </defaultpage>
 </template>
 
 <script>
 import axios from 'axios'
-
 import defaultpage from '~/components/defaultpage.vue'
 import sectioncontent from '~/components/sections_component/sectioncontent.vue'
 import werktileitem from '~/components/werktileitem.vue'
@@ -99,55 +88,11 @@ export default {
     }
   },
 
-  //
-  // async asyncData({
-  //   query,
-  //   error
-  // }) {
-  //   let [werk_enRes, werk_nlRes] = await Promise.all([
-  //     axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_en'),
-  //     axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_nl'),
-  //     // axios.get('https://jsonplaceholder.typicode.com/posts'),
-  //     // axios.get('http://werkt.template01.info/json/referenties.json'),
-  //   ])
-  //   return {
-  //     werk_en: werk_enRes.data,
-  //     werk_nl: werk_nlRes.data
-  //   }
-  // },
-
-  //
-  // mounted() {
-  //   this.setlanguage()
-  // },
-  //
-  // methods: {
-  //   setlanguage: function() {
-  //     if (this.$i18n.locale === 'en') {
-  //       // alert('en')
-  //       // this.actualContent = this.werk_en
-  //
-  //       axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_en')
-  //       .then(response => {
-  //         // JSON responses are automatically parsed.
-  //         this.content = response.data[0]
-  //         this.showcontent = true
-  //
-  //       })
-  //       .catch(e => {
-  //         this.errors.push(e)
-  //       })
-  //
-  //     } else {
-  //       // alert('nl')
-  //       // this.actualContent = this.werk_nl
-  //
-  //     }
-  //   }
-  // },
-
-
-
+  methods:{
+    goToWorkItems: function(){
+      window.scroll({ top: this.$el.querySelector("#workitems").getBoundingClientRect().top + this.$el.querySelector("#workitems").offsetTop, left: 0, behavior: 'smooth' });
+    }
+  },
 
 
   transition: 'bounce',
@@ -159,10 +104,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#werk {
-
-
-    /*background: red;*/
+<style lang="scss" scoped>
+#slideMeDownHover{
+  display: inline-block;
+  transition: all 0.25s ease-in-out;
+  &:hover{
+    transform:translateY(10px);
+  }
 }
 </style>

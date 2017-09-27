@@ -1,6 +1,6 @@
 <template>
 <defaultpage class="beige-background" id="">
-  <div class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+  <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
     <div class="uk-padding">
 
       <!-- <div></div> -->
@@ -16,34 +16,18 @@
 
     </div>
   </div>
-<!--
-
-  <div class="uk-container">
 
 
-    <div class=" uk-padding uk-padding-remove-horizontal">
-      <div class="uk-align-center" :class="{'uk-width-5-6':!getsmallscreen}">
 
 
-      </div>
-    </div>
-
-
-  </div>
-  </div> -->
-  <!-- You can find this swiper instance object in current component by the "mySwiper"  -->
-
-
-  <div class="uk-container slantContainer" :style="{'background-color':content.acf['background-color']}">
+  <div id="" class="section section-last" :style="[getsmallscreen ? {} :{'margin-top':'-300px'},{'background-color':content.acf['background-color']}]" :uk-parallax="getsmallscreen ? '' : 'y: 300,0; viewport: 0.2'">
 
     <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf['background-color']+' '+content.acf['background-color']+' transparent'}"></div>
-    <div v-for="item in content.acf.single">
 
+    <div class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-bottom">
+      <div v-for="item in content.acf.single">
 
-      <div class="">
-        <div class="uk-width-1-1@m">
-
-
+        <div class="uk-width-1-1@m uk-padding ">
 
           <div v-if="item.acf_fc_layout === 'single_large_text_centered'">
             <div class="uk-align-center" :class="{'uk-width-2-3':!getsmallscreen}">
@@ -55,15 +39,39 @@
             <slideshow :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshow>
           </div>
 
-          <div v-if="item.acf_fc_layout === 'single_gallery'" :class="{'uk-width-5-6':!getsmallscreen}" class="uk-align-center uk-padding">
-            <div v-for="image in item.gallery">
-              <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" v-lazy="image.sizes.large" class="lazyload uk-align-center" />
+
+
+          <div v-if="item.acf_fc_layout === 'single_gallery'" :class="{'uk-width-5-6':!getsmallscreen}" class="uk-align-center">
+
+            <div class="uk-visible@m uk-child-width-expand uk-flex uk-flex-middle" :class="item.collapsed_gallery ? 'uk-grid-collapse':''" uk-grid>
+
+              <div v-for="image in item.gallery">
+
+                <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
+                />
+
+              </div>
             </div>
+
+
+            <div class="uk-hidden@m ">
+
+              <div v-for="image in item.gallery" class="uk-align-center uk-width-1-1@s">
+
+                <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
+                />
+
+              </div>
+            </div>
+
+
           </div>
 
         </div>
       </div>
+
     </div>
+
 
   </div>
 

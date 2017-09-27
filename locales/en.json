@@ -29,6 +29,10 @@
     "desc":"Now listening:",
     "none":"Nothing... Just brainwaves."
   },
+  "contact":{
+    "a":"Nu aan het luisteren:",
+    "b":"Niets..."
+  },
   "readmore":"Read more"
 
 }

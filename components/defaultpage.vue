@@ -1,14 +1,17 @@
 <template>
 <div>
   <transition name="fade">
-    <!-- <loadingsingle class="loadingsingle" v-if="!getinitiated"></loadingsingle> -->
+    <loadingsingle class="loadingsingle" v-if="!getinitiated"></loadingsingle>
   </transition>
   <nav id="menu">
     <div :class="{'hideSidebarContent':!mounted}">
       <div class="uk-padding-small uk-padding-remove-bottom" @click="toggleMenu">
         <button class="toggle-button-menu black-background"><img class="uk-visible@l" src="/hamburger.svg"/><img class="uk-hidden@l" src="/hamburgerSm.svg"/></button>
       </div>
-      <menuitemsside></menuitemsside>
+      <div style="padding:15px;">
+        <menuitems :sidebar=true></menuitems>
+      </div>
+
     </div>
   </nav>
 
@@ -28,7 +31,7 @@
       </div>
 
       <div class="">
-        <div class="offsetSlantTop">
+        <div :class="getsmallscreen ? '':'offsetSlantTop'">
           <slot>
 
           </slot>
@@ -37,6 +40,7 @@
       </div>
 
       <templatefooter></templatefooter>
+      <contactslider></contactslider>
     </section>
 
   </main>
@@ -49,6 +53,7 @@ import menuitemsmobile from '~/components/menuitemsmobile.vue'
 import menuitemsside from '~/components/menuitemsside.vue'
 import templatefooter from '~/components/templatefooter.vue'
 import loadingsingle from '~/components/loadingsingle.vue'
+import contactslider from '~/components/contactslider.vue'
 // import computedresizer from '~/mixins/computedresizer.js'
 
 
@@ -66,6 +71,7 @@ export default {
     menuitemsside,
     loadingsingle,
     templatefooter,
+    contactslider,
   },
 
 

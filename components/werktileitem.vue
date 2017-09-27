@@ -30,7 +30,7 @@
 
     </div>
     <div class="uk-width-1-1@m uk-padding  uk-transition-slide-right-medium uk-position-bottom">
-      <p class="uk-text-left uk-h1 uk-text-right uk-margin-remove-bottom">{{$t("readmore")}}<span uk-icon="icon: arrow-down; ratio: 2"></span></p>
+      <p class="uk-text-left uk-h2 uk-text-right uk-margin-remove-bottom">{{$t("readmore")}}<span uk-icon="icon: arrow-right; ratio: 1.5"></span></p>
     </div>
 
   </div>
@@ -53,5 +53,6 @@ export default {
 .werktile {
     overflow-x: hidden;
     text-decoration: none;
+    color: #101010;
 }
 </style>

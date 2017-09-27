@@ -86,6 +86,10 @@ module.exports = {
       src: '~/plugins/scrollbarwidth.js',
       ssr: false
     },
+    {
+      src: '~/plugins/smoothscroll.js',
+      ssr: false
+    },
     '~/plugins/lodash-plugin.js',
     '~/plugins/resizer.js',
     //GLOBAL MIXINS
@@ -105,7 +109,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    vendor: ['axios', 'vue-i18n','lodash', 'uikit','vue-lazyload']
+    vendor: ['axios','vue-i18n','lodash', 'uikit','vue-lazyload']
     /*
      ** Run ESLINT on save
      */

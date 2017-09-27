@@ -1,13 +1,19 @@
 <template>
-  <p class="uk-h4">
-    <!-- <p class="uk-h4" :class="{'uk-h5':footer}"> -->
+<div>
 
-  <span>{{$t("clock.timedesc")}}<transition name="fade"> <span v-if="clockloaded" v-html="' '+momentstamp"></span></transition></span>
-  <br />
-  <span>{{$t("clock.statusdesc")}}<transition name="fade"> <span v-if="clockloaded" v-html="' '+status"></span></transition></span>
+  <div class="container">
+      <p class="uk-h4 content" ><span><transition name="fade"> <span v-if="clockloaded" v-html="' '+momentstamp"></span></transition>
+      </span></transition>
+      </span></p>
+  </div>
 
-  <!-- </transition> -->
-</p>
+
+  <div class="container">
+      <p class="uk-h4 content" ><span>{{$t("clock.statusdesc")}}<transition name="fade"> <span class="dontBreakString" v-if="clockloaded" v-html="' '+status"></span></transition>
+      </span></p>
+  </div>
+
+</div>
 </template>
 <script>
 import VueI18n from 'vue-i18n'
@@ -24,7 +30,7 @@ export default {
       // locale: 'en'
     }
   },
-  props:['footer'],
+  props: ['footer'],
   methods: {
     getTime: function() {
       return moment().tz('Europe/Amsterdam').format('MMMM Do YYYY, H:mm:ss')
@@ -97,9 +103,47 @@ export default {
 </script>
 
 <style scoped>
-.uk-h4,.uk-h5 {
+
+
+.container {
+    overflow: hidden;
+
+    /* To make the width of the container exact. */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.content {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;    /* Required to make ellipsis work */
+    text-overflow: ellipsis;
+
+    /* Starting transition */
+    left: 0%;
+    width: 100%;
+
+    transition-timing-function: linear;
+    /* Tweak 'till your heart's content */
+    -webkit-transition: left 6s, width 6s;
+    -moz-transition: left 6s, width 6s;
+    transition: left 6s, width 6s;
+}
+
+/* The magic! */
+.container:hover .content {
+    /* This is not completely accurate. It resizes to 2x the current width. */
+    left: -100%;
+    width: 200%;
+}
+
+
+.uk-h4,
+.uk-h5 {
   margin-bottom: 0;
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity .5s
@@ -109,7 +153,7 @@ export default {
 .fade-leave-to
 /* .fade-leave-active below version 2.1.8 */
 
-{
+  {
   opacity: 0
 }
 </style>

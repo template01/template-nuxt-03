@@ -1,5 +1,5 @@
 <template>
-<div class=" uk-padding uk-padding-remove-horizontal">
+<div class=" uk-padding uk-padding-remove-horizontal" :class="ignorePaddingBottom ? 'uk-padding-remove-bottom' : ''">
   <div class="uk-width-1-1@m"  v-for="section in acfsection">
     <div class="uk-align-center" :class="[setWidth(section.width)]">
       <sectioncontentinner :topcontent="topcontent" :section="section"></sectioncontentinner>
@@ -14,7 +14,7 @@ import sectioncontentinner from '~/components/sections_component/sectioncontenti
 
 
 export default {
-  props: ['acfsection','topcontent'],
+  props: ['acfsection','topcontent','ignorePaddingBottom'],
   components: {
     sectioncontentinner
   },
