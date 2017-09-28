@@ -7,6 +7,7 @@
 <script>
 import splash from '~/components/splash.vue'
 import templatefooter from '~/components/templatefooter.vue'
+
 import axios from 'axios'
 
 export default {
@@ -19,6 +20,7 @@ export default {
 
   mounted(){
     this.$store.commit('SET_INITIATED')
+    window.scrollTo(0,0)
   },
 
   async asyncData({

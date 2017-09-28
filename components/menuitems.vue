@@ -1,6 +1,5 @@
  <template>
 <div id="menuitems" :style="{'color':passedmenucolor}" :class="sidebar ? 'sidebar':''">
-
   <div id="mainMenuItems">
 
     <!-- {{getlocale}} -->
@@ -46,8 +45,8 @@
 
   <div id="langChange" :class="sidebar ? 'sidebarItem' :'uk-align-right'">
     <p :class="sidebar ? 'uk-h4' : 'uk-h2 uk-text-right'" >
-      <span  :class="sidebar ? 'sidebarItem':''"><nuxt-link v-if="$i18n.locale === 'en'" :to="{hash:'#contact', query: { lang: 'en' }}">{{$t("menu.topmenu.contact")}}</nuxt-link>
-        <nuxt-link v-else :to="{hash:'#contact'}">{{$t("menu.topmenu.contact")}}</nuxt-link>
+      <span  :class="sidebar ? 'sidebarItem':''"><nuxt-link v-if="$i18n.locale === 'en'" :to="{path:'/contact', query: { lang: 'en' }}">{{$t("menu.topmenu.contact")}}</nuxt-link>
+        <nuxt-link v-else :to="{path:'/contact'}">{{$t("menu.topmenu.contact")}}</nuxt-link>
       </span>
       <span :class="sidebar ? '' :'uk-padding  uk-padding-remove-right  uk-padding-remove-vertical'"><nuxt-link :class="getlocale ==='nl' ? 'nuxt-link-exact-active':''" :to="{}">NL</nuxt-link> / <nuxt-link :class="getlocale ==='en' ? 'nuxt-link-exact-active':''" :to="{query: { lang: 'en' }}">EN</nuxt-link></span>
     </p>

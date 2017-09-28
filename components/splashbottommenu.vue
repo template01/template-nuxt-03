@@ -8,16 +8,6 @@
       </div>
     </div>
 
-    <div :style="{'color':menucolor}" class="uk-align-center uk-hidden@m">
-
-      <div>
-        <h1 class="hugeLetters" :style="{'color':menucolor}">Studio</h1>
-        <menuitemsmobile :floatleft="true" ></menuitemsmobile>
-        <!-- <clock></clock> -->
-        <!-- <nowlistening></nowlistening> -->
-      </div>
-    </div>
-
   </div>
 </div>
 </template>

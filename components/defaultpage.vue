@@ -38,9 +38,8 @@
         </div>
 
       </div>
-
-      <templatefooter></templatefooter>
-      <contactslider></contactslider>
+      <templatefooter v-if="$route.path != '/contact'"></templatefooter>
+      <templatefooter v-else ignoreSecondColumn=true></templatefooter>
     </section>
 
   </main>
@@ -49,12 +48,8 @@
 </template>
 <script>
 import menuitems from '~/components/menuitems.vue'
-import menuitemsmobile from '~/components/menuitemsmobile.vue'
-import menuitemsside from '~/components/menuitemsside.vue'
 import templatefooter from '~/components/templatefooter.vue'
 import loadingsingle from '~/components/loadingsingle.vue'
-import contactslider from '~/components/contactslider.vue'
-// import computedresizer from '~/mixins/computedresizer.js'
 
 
 import {
@@ -67,11 +62,8 @@ export default {
 
   components: {
     menuitems,
-    menuitemsmobile,
-    menuitemsside,
     loadingsingle,
     templatefooter,
-    contactslider,
   },
 
 
@@ -118,30 +110,29 @@ export default {
 
     openMenu: function() {
       this.slideoutObj.open();
-
     },
 
     toggleMenu: function() {
       this.slideoutObj.toggle();
     },
 
-
-    open: function() {
-      this.menuopenshow = false
-
-    },
-
-    close: function() {
-      this.menuopenshow = true
-
-    },
-
-    closeSidebar: function() {
-      // this.$children[0].slideout.close()
-    },
-    test: function() {
-      console.log('scroll')
-    },
+    //
+    // open: function() {
+    //   this.menuopenshow = false
+    //
+    // },
+    //
+    // close: function() {
+    //   this.menuopenshow = true
+    //
+    // },
+    //
+    // closeSidebar: function() {
+    //   // this.$children[0].slideout.close()
+    // },
+    // test: function() {
+    //   console.log('scroll')
+    // },
 
     handleScroll() {
       this.scrolled = window.scrollY > 0;
@@ -257,6 +248,10 @@ export default {
 
 
 <style lang="scss">
+
+#panel{
+  background: inherit;
+}
 .loadingsingle {
     opacity: 1;
     transition: opacity 0.25s;

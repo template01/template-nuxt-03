@@ -1,12 +1,15 @@
 <template>
-<div class="container">
+<div>
+  <div class="text-scroll-container">
 
-  <p class="content uk-h4">
-    <!-- <p class="uk-h4" :class="{'uk-h5':footer}"> -->
-    {{$t("nowlistening.desc")}}
+    <p class="text-scroll-content uk-h4">
+      <!-- <p class="uk-h4" :class="{'uk-h5':footer}"> -->
+      <span class="text-scroll-inner">
 
-    <transition name="fade">
-      <span v-if="showtune">
+        {{$t("nowlistening.desc")}}
+
+        <transition name="fade">
+          <span v-if="showtune">
         <span v-if="tune.playing">
         <span>
           <a :href="'https://www.google.nl/search?q='+tune.artist+', '+tune.song" target="_blank">{{tune.artist}}, {{tune.song}}</a>
@@ -14,15 +17,17 @@
       <!-- <span v-html="tune.song"></span> -->
       </span>
       </span>
-    </transition>
-    <transition name="fade">
-      <span v-if="!showtune">
+      </transition>
+      <transition name="fade">
+        <span v-if="!showtune">
         <span>{{$t("nowlistening.none")}}</span>
+        </span>
+      </transition>
       </span>
-    </transition>
 
-  </p>
+    </p>
 
+  </div>
 </div>
 </template>
 <script>
@@ -42,6 +47,20 @@ export default {
   props: ['footer'],
 
   methods: {
+
+
+    disableTextScroll() {
+
+      for (var i = 0, len = this.$el.querySelectorAll(".text-scroll-container").length; i < len; i++) {
+        if (this.$el.querySelectorAll(".text-scroll-container")[i].offsetWidth > this.$el.querySelectorAll(".text-scroll-inner")[i].offsetWidth) {
+          this.$el.querySelectorAll(".text-scroll-container")[i].classList.add("text-scroll-disable");
+        } else {
+          this.$el.querySelectorAll(".text-scroll-container")[i].classList.remove("text-scroll-disable");
+        }
+      }
+    },
+
+
     getTune: function() {
       axios.get('http://spotify.template01.info/output/output.json')
         .then((res) => {
@@ -54,6 +73,10 @@ export default {
               this.showtune = true
             }
           }
+          var vm = this
+          setTimeout(function() {
+            vm.disableTextScroll()
+          }, 500)
         })
     },
     setTuneInterval: function() {
@@ -69,6 +92,9 @@ export default {
   mounted() {
     this.getTune()
     this.setTuneInterval()
+    var vm = this
+    window.addEventListener('resize', _.debounce(function(){vm.disableTextScroll()}, 100));
+
   },
   destroyed: function() {
     this.stopTuneInterval()
@@ -77,43 +103,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  overflow: hidden;
-
-  /* To make the width of the container exact. */
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.content {
-  white-space: nowrap;
-  position: relative;
-  overflow: hidden;
-  /* Required to make ellipsis work */
-  text-overflow: ellipsis;
-
-  /* Starting transition */
-  left: 0%;
-  width: 100%;
-
-  transition-timing-function: linear;
-
-  /* Tweak 'till your heart's content */
-  -webkit-transition: left 6s, width 6s;
-  -moz-transition: left 6s, width 6s;
-  transition: left 6s, width 6s;
-}
-
-/* The magic! */
-
-.container:hover .content {
-  /* This is not completely accurate. It resizes to 2x the current width. */
-  left: -100%;
-  width: 200%;
-}
-
-
 .uk-h4,
 .uk-h5 {
   margin: 0;

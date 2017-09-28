@@ -31,7 +31,9 @@
   },
   "contact":{
     "a":"Nu aan het luisteren:",
-    "b":"Niets..."
+    "b":"Niets...",
+    "thanks":"Bedankt voor het bezoek!"
+
   },
   "readmore":"Read more"
 

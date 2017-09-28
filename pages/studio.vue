@@ -19,7 +19,7 @@
   </div>
 
 
-  <div class="pink-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative">
+  <div class="pink-background uk-container uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative" :class="{'uk-padding ':getsmallscreen}">
     <div class="slantTopRight"></div>
   </div>
 

@@ -9,7 +9,7 @@
         <!-- <div :class="wide ? 'uk-width-3-4' : 'uk-width-1-1'"> -->
         <div>
           <h1 class="uk-hidden@m uk-text-center" style="text-decoration:underline">CASE</h1>
-          <h1 class="hugeLetters">{{content.title.rendered}}</h1>
+          <h1 class="hugeLetters" v-html="content.title.rendered"></h1>
         </div>
 
       </div>
@@ -49,6 +49,7 @@
 
                 <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
                 />
+                <p v-if="image.caption" class="uk-h4 uk-text-center uk-margin uk-margin-remove-horizontal uk-margin-remove-bottom" v-html="image.caption"></p>
 
               </div>
             </div>
@@ -60,6 +61,8 @@
 
                 <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
                 />
+                <p v-if="image.caption" class="uk-h4 uk-text-center uk-margin uk-margin-remove-horizontal uk-margin-remove-bottom" v-html="image.caption"></p>
+
 
               </div>
             </div>
@@ -75,6 +78,10 @@
 
   </div>
 
+
+  <div class="beige-background uk-container uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative" :class="{'uk-padding ':getsmallscreen}">
+    <div class="slantTopLeft"></div>
+  </div>
 
   </div>
 

@@ -42,7 +42,7 @@
   </div>
 
 
-  <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative">
+  <div class="beige-background uk-container uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative" :class="{'uk-padding ':getsmallscreen}">
     <div class="slantTopLeft"></div>
   </div>
 

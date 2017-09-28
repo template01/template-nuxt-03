@@ -308,3 +308,39 @@ img{
   image-rendering: optimize-contrast;         /* CSS3 Proposed       */
   -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
 }
+
+/*text-scroll*/
+
+
+.text-scroll-container {
+    overflow: hidden;
+
+    /* To make the width of the text-scroll-container exact. */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.text-scroll-content {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;    /* Required to make ellipsis work */
+    text-overflow: ellipsis;
+
+    /* Starting transition */
+    left: 0%;
+    width: 100%;
+
+    transition-timing-function: linear;
+    /* Tweak 'till your heart's text-scroll-content */
+    -webkit-transition: left 6s, width 6s;
+    -moz-transition: left 6s, width 6s;
+    transition: left 6s, width 6s;
+}
+
+/* The magic! */
+.text-scroll-container:hover:not(.text-scroll-disable) .text-scroll-content {
+    /* This is not completely accurate. It resizes to 2x the current width. */
+    left: -100%;
+    width: 200%;
+}

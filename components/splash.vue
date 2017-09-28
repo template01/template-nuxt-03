@@ -4,22 +4,26 @@
 
   <div class="uk-visible@m uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport uk-padding" id="splashHugeLetters">
     <div class="">
-      <h1 class="hugeLetters uk-text-center" :style="{'color':slideContent[slideIndex].font_color}">
+      <h1 class="hugeLetters" :style="{'color':slideContent[slideIndex].font_color}">
+        <span v-html="!slideContent[slideIndex].background_image ? slideContent[slideIndex].slide[0].content : slideContent[slideIndex-1].slide[0].content"></span>
 
-      <span v-html="!slideContent[slideIndex].background_image ? slideContent[slideIndex].slide[0].content : slideContent[slideIndex-1].slide[0].content"></span>
-      <span style="padding-left:4vw">Studio</span>
-    </h1>
+      </h1>
+      <!-- <h1 class="hugeLetters uk-text-center" :style="{'color':slideContent[slideIndex].font_color}">
+        <span v-html="!slideContent[slideIndex].background_image ? slideContent[slideIndex].slide[0].content : slideContent[slideIndex-1].slide[0].content"></span>
+        <span style="padding-left:4vw">Studio</span>
+      </h1> -->
     </div>
-    <!-- <div class="">
+
+    <div class="">
       <h1 class="hugeLetters" style="padding-left:1vw" :style="{'color':slideContent[slideIndex].font_color}">
       <span >Studio</span>
     </h1>
-    </div> -->
+    </div>
 
   </div>
 
   <transition name="fade">
-    <div id="splashBackgroundImage" v-if="slideContent[slideIndex].background_image" class="" :style="{'background-image':'url('+slideContent[slideIndex].background_image.sizes.xlarge+')'}"></div>
+    <div id="splashBackgroundImage" v-if="slideContent[slideIndex].background_image" class="uk-visible@m" :style="{'background-image':'url('+slideContent[slideIndex].background_image.sizes.xlarge+')'}"></div>
   </transition>
 
 
@@ -34,25 +38,34 @@
 
     </div>
 
-    <!-- <div id="splashMobile" class="uk-hidden@m">
+
+  </div>
+
+
+  <div id="splashMobile" class="uk-padding uk-inline uk-hidden@m ">
+
+    <div id="">
       <div class="">
         <div v-if="slideContent[slideIndex].slide" class="" :class="{'uk-animation-slide-left-medium':begin, 'uk-animation-reverse':!begin, 'uk-animation-slide-right-medium':!begin, 'uk-animation-reverse':begin}">
           <h1 class="hugeLetters uk-padding-remove-horizontal uk-padding-remove-bottom uk-padding" :style="{'color':slideContent[slideIndex].font_color}">
             <span v-if="slideContent[slideIndex].slide[0].acf_fc_layout === 'string'" v-html="slideContent[slideIndex].slide[0].content"></span>
-            <img v-if="slideContent[slideIndex].slide[0].acf_fc_layout === 'image'" :class="{'forcestretch':slideContent[slideIndex].slide[0].force_stretch}" :src="slideContent[slideIndex].slide[0].content.sizes.large"/>
           </h1>
         </div>
       </div>
-    </div> -->
 
 
-
-    <div>
+      <div :style="{'color':slideContent[slideIndex].font_color}" class="uk-align-center uk-hidden@m">
+        <h1 class="hugeLetters" :style="{'color':slideContent[slideIndex].font_color}">Studio</h1>
+      </div>
     </div>
 
-
+    <div class="uk-padding  uk-position-bottom">
+      <menuitems :passedmenucolor="slideContent[slideIndex].font_color" :sidebar=true></menuitems>
+    </div>
 
   </div>
+
+
 
 
 
@@ -61,12 +74,14 @@
 <script>
 import splashtopmenu from '~/components/splashtopmenu.vue'
 import splashbottommenu from '~/components/splashbottommenu.vue'
+import menuitems from '~/components/menuitems.vue'
 
 
 export default {
   components: {
     splashtopmenu,
     splashbottommenu,
+    menuitems
   },
   props: ['slideContent'],
   data: function() {
@@ -82,7 +97,7 @@ export default {
     this.preloadImages(this.slideContent)
   },
 
-  destroyed(){
+  destroyed() {
     this.stopSlideshow()
   },
 
@@ -237,11 +252,10 @@ img {
 
 }
 #splashMobile {
+    height: 100%;
+    width: 100%;
 
     overflow: hidden;
-
-    .mobileStudio {
-        position: absolute;
-    }
+    position: fixed;
 }
 </style>

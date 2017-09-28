@@ -1,40 +1,41 @@
 <template>
 <!-- <transition name="fade"> -->
-<div id="contactslider" class=" beige-background" :class="slideout?'slideout':''">
+<div id="contactslider" class=" beige-background" :class="!showContact?'slideout':''">
+
 
   <div class="slantTopLeft" :style="{'border-color': 'transparent #fffef5 #fffef5 transparent'}"></div>
   <div class="uk-container beige-background" >
 
     <!-- hello
   {{getlocale}} -->
+    <!-- <nuxt-link :to="{hash:''}">CLOSE</nuxt-link> -->
 
-    <div class="uk-padding uk-padding-remove-horizontal uk-align-center ignoreWidthSmallScreen" :class="{'uk-width-1-1 ':!getsmallscreen}">
-      <div class="uk-grid">
-        <div class="uk-visible@m uk-width-1-3@m ">
-          <clock :footer="true"></clock>
-          <nowlistening :footer="true"></nowlistening>
-        </div>
-        <div class="uk-width-1-3@m">
-          <h4 v-html="$t('contact.a')"></h4></div>
-        <div class="uk-width-1-3@m">
-          <h4 v-html="$t('contact.b')"></h4></div>
-      </div>
-    </div>
+    <templatefooter ignoreFirstColumn=true passHeader="Contact"></templatefooter>
+
   </div>
 </div>
 
 <!-- </transition> -->
 </template>
 <script>
-import nowlistening from '~/components/nowlistening.vue'
-import clock from '~/components/clock.vue'
+import templatefooter from '~/components/templatefooter.vue'
 import computedlocalemixin from '~/mixins/computedlocalemixin.js'
+
+import {
+  mapGetters
+} from 'vuex'
+
 
 export default {
   components: {
-    nowlistening,
-    clock
+    templatefooter
   },
+  computed: {
+    ...mapGetters({
+     showContact: "showContact",
+   }),
+  },
+
   mixins: [computedlocalemixin],
   data: function() {
     return {
@@ -48,13 +49,19 @@ export default {
     }
 
   },
+  methods:{
+    // showContactMethod(){
+    //   this.$store.commit('SET_SHOWCONTACT')
+    // }
+  },
   watch: {
     '$route': function(to, from) {
       if (to.hash === "#contact") {
-        this.slideout = false
+        this.$store.commit('SET_SHOWCONTACT')
         console.log(this.getlocale)
+        window.scroll({ top: 0, behavior: 'smooth' });
       } else {
-        this.slideout = true
+        this.$store.commit('SET_HIDECONTACT')
 
       }
 
@@ -65,9 +72,22 @@ export default {
 <style lang="scss">
 #contactslider {
     position: fixed;
+    // position: absolute;
     bottom: 0;
     width: 100%;
-    height: calc(100% - 119px);
+    height: calc(100% - 159px);
+
+    @media (max-width: 1199px) {
+      height: calc(100% - 119px);
+
+    }
+    @media (max-width: 960px) {
+      height: calc(100%);
+      position: absolute;
+
+    }
+
+
     a {
         color: inherit;
     }
@@ -78,6 +98,7 @@ export default {
 
 .slideout {
     transform: translateY(100vh);
+    // position: fixed !important;
 
 }
 </style>

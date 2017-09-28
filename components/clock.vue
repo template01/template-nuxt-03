@@ -1,24 +1,30 @@
 <template>
 <div>
 
-  <div class="container">
-      <p class="uk-h4 content" ><span><transition name="fade"> <span v-if="clockloaded" v-html="' '+momentstamp"></span></transition>
-      </span></transition>
-      </span></p>
+  <div class="text-scroll-container">
+    <p class="uk-h4 text-scroll-content">
+      <span class="text-scroll-inner">
+        <span><transition name="fade"> <span v-if="clockloaded" v-html="' '+momentstamp"></span></transition>
+        </span>
+      </span>
+      </span>
+    </p>
   </div>
 
 
-  <div class="container">
-      <p class="uk-h4 content" ><span>{{$t("clock.statusdesc")}}<transition name="fade"> <span class="dontBreakString" v-if="clockloaded" v-html="' '+status"></span></transition>
-      </span></p>
+  <div class="text-scroll-container">
+    <p class="uk-h4 text-scroll-content">
+      <span class="text-scroll-inner">
+        <span>{{$t("clock.statusdesc")}}<transition name="fade"> <span class="dontBreakString" v-if="clockloaded" v-html="' '+status"></span></transition>
+        </span>
+      </span>
+    </p>
   </div>
 
 </div>
 </template>
 <script>
 import VueI18n from 'vue-i18n'
-
-
 
 export default {
   data: function() {
@@ -31,7 +37,20 @@ export default {
     }
   },
   props: ['footer'],
+
   methods: {
+
+    disableTextScroll() {
+
+      for (var i = 0, len = this.$el.querySelectorAll(".text-scroll-container").length; i < len; i++) {
+        if (this.$el.querySelectorAll(".text-scroll-container")[i].offsetWidth > this.$el.querySelectorAll(".text-scroll-inner")[i].offsetWidth) {
+          this.$el.querySelectorAll(".text-scroll-container")[i].classList.add("text-scroll-disable");
+        }else{
+          this.$el.querySelectorAll(".text-scroll-container")[i].classList.remove("text-scroll-disable");
+        }
+      }
+    },
+
     getTime: function() {
       return moment().tz('Europe/Amsterdam').format('MMMM Do YYYY, H:mm:ss')
     },
@@ -94,6 +113,12 @@ export default {
     this.momentstamp = this.getTime()
     this.setClock()
     this.clockloaded = true
+    var vm = this
+    window.setTimeout(function() {
+      vm.disableTextScroll()
+    }, 500)
+
+    window.addEventListener('resize', _.debounce(function(){vm.disableTextScroll()}, 100));
   },
   destroyed: function() {
     this.stopClock()
@@ -103,42 +128,6 @@ export default {
 </script>
 
 <style scoped>
-
-
-.container {
-    overflow: hidden;
-
-    /* To make the width of the container exact. */
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.content {
-    white-space: nowrap;
-    position: relative;
-    overflow: hidden;    /* Required to make ellipsis work */
-    text-overflow: ellipsis;
-
-    /* Starting transition */
-    left: 0%;
-    width: 100%;
-
-    transition-timing-function: linear;
-    /* Tweak 'till your heart's content */
-    -webkit-transition: left 6s, width 6s;
-    -moz-transition: left 6s, width 6s;
-    transition: left 6s, width 6s;
-}
-
-/* The magic! */
-.container:hover .content {
-    /* This is not completely accurate. It resizes to 2x the current width. */
-    left: -100%;
-    width: 200%;
-}
-
-
 .uk-h4,
 .uk-h5 {
   margin-bottom: 0;
