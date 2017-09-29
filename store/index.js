@@ -4,6 +4,7 @@ export const state = () => ({
   n: 1,
   smallscreen: null,
   initiated: false,
+  splashimagesloaded : false,
   showcontact: false
 })
 //
@@ -25,6 +26,9 @@ export const getters = {
 
   getinitiated(state) {
     return state.initiated
+  },
+  getsplashimagesloaded(state) {
+    return state.splashimagesloaded
   }
 }
 
@@ -45,6 +49,10 @@ export const mutations = {
 
   SET_SHOWCONTACT(state, showcontact) {
     state.showcontact = true;
+  },
+
+  SET_SPLASHIMAGESLOADED(state, splashimagesloaded) {
+    state.splashimagesloaded = true;
   },
 
 

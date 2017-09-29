@@ -35,7 +35,7 @@ html {
 
 .beige-color-force * {
   /*color: #ffffff;*/
-  color: #fffef5
+  color: #fffef5 !important;
 }
 
 .beige-border-color {
@@ -261,6 +261,17 @@ a:hover {
   box-shadow: inset 0px -3px 0px 0px;
   transition: box-shadow 0.25s;
 }
+
+@media (max-width: 640px) {
+
+  a:hover {
+    -webkit-box-shadow: inset 0px -2px 0px 0px;
+    -moz-box-shadow: inset 0px -2px 0px 0px;
+    box-shadow: inset 0px -2px 0px 0px;
+  }
+
+}
+
 
 /*.bounce-enter-active {
   animation: bounce-in .8s;

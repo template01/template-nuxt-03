@@ -91,6 +91,7 @@ module.exports = {
       ssr: false
     },
     '~/plugins/lodash-plugin.js',
+    '~/plugins/maps.js',
     '~/plugins/resizer.js',
     //GLOBAL MIXINS
     '~/mixins/computedresizerglobalmixin.js',

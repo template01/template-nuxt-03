@@ -1,24 +1,41 @@
 <template>
-  <section class="">
-    <splash :slideContent="content.acf.slides"></splash>
-  </section>
+  <div class="" style="background:white">
+
+    <splash v-if="!smallscreen" :slideContent="content.acf.slides"></splash>
+      <splashMobile v-else :slideContent="content.acf.slides_mobile"></splashMobile>
+  </div>
 </template>
 
 <script>
 import splash from '~/components/splash.vue'
+import splashMobile from '~/components/splashMobile.vue'
 import templatefooter from '~/components/templatefooter.vue'
 
 import axios from 'axios'
 
 export default {
   transition: 'bounce',
+  data: function() {
+    return {
+      smallscreen: null
+    }
+  },
+
+  watch:{
+    'getsmallscreen':function(){
+      this.smallscreen = this.getsmallscreen
+    }
+  },
+
 
   components: {
     splash,
+    splashMobile,
     templatefooter
   },
 
   mounted(){
+    this.smallscreen = this.getsmallscreen
     this.$store.commit('SET_INITIATED')
     window.scrollTo(0,0)
   },

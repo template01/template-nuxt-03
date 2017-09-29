@@ -78,15 +78,16 @@ export default {
     box-shadow: inset 0px -3px 0px 0px;
     transition: box-shadow 0.25s;
   }
-// }
 
-// #langChange .nuxt-link-active {
-//   display: inline-block;
-//   -webkit-box-shadow: inset 0px -3px 0px 0px;
-//   -moz-box-shadow: inset 0px -3px 0px 0px;
-//   box-shadow: inset 0px -3px 0px 0px;
-//   transition: box-shadow 0.25s;
-// }
+  @media (max-width: 640px) {
+
+    .nuxt-link-exact-active{
+      -webkit-box-shadow: inset 0px -2px 0px 0px;
+      -moz-box-shadow: inset 0px -2px 0px 0px;
+      box-shadow: inset 0px -2px 0px 0px;
+    }
+
+  }
 
 
 #menuitems{
