@@ -1,8 +1,8 @@
 <template>
 <defaultpage class="beige-background" id="over">
 
-  <div class="pink-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top  uk-hidden@m ">
-      <h1 class="uk-text-center uk-padding" style="text-decoration:underline">STUDIO</h1>
+  <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top  uk-hidden@m ">
+      <h1 class="uk-text-center uk-padding "><span class="mobilePageHeader">{{$t("menu.topmenu.services")}}</span></h1>
   </div>
 
 
@@ -10,7 +10,7 @@
 
     <div class="slantTopRight" :style="{'border-color': 'transparent '+content.acf.section_a.background_color+' '+content.acf.section_a.background_color+' transparent'}"></div>
 
-    <div class="uk-container" :style="{'color':content.acf.section_a.font_color}">
+    <div class="uk-container uk-padding uk-padding-remove-vertical" :style="{'color':content.acf.section_a.font_color}">
       <sectioncontent :acfsection="content.acf.section_a.content"></sectioncontent>
 
     </div>
@@ -22,7 +22,7 @@
 
     <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_b.background_color+' '+content.acf.section_b.background_color+' transparent'}"></div>
 
-    <div class="uk-container" :style="{'color':content.acf.section_b.font_color}">
+    <div class="uk-container uk-padding uk-padding-remove-vertical" :style="{'color':content.acf.section_b.font_color}">
       <sectioncontent :acfsection="content.acf.section_b.content"></sectioncontent>
 
     </div>
@@ -34,7 +34,7 @@
   <div id="" class="section section-last" :style="[getsmallscreen ? {} :{'margin-top':'-300px'},{'color':content.acf.section_c.background_color,'background-color':content.acf.section_c.background_color}]" :uk-parallax="getsmallscreen ? '' : 'y: 300,0; viewport: 0.5'" >
     <div class="slantTopRight" :style="{'border-color': 'transparent '+content.acf.section_c.background_color+' '+content.acf.section_c.background_color+' transparent'}"></div>
 
-    <div class="uk-container" :style="{'color':content.acf.section_c.font_color}">
+    <div class="uk-container uk-padding uk-padding-remove-vertical" :style="{'color':content.acf.section_c.font_color}">
       <sectioncontent :acfsection="content.acf.section_c.content"></sectioncontent>
 
     </div>

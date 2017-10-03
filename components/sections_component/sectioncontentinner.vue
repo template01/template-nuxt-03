@@ -23,7 +23,7 @@
     <img width="100%" :setwidth="section.content.sizes['large-width']" :setheight="section.content.sizes['large-height']" v-lazy="section.content.url" :class="{'forcestretch':section.force_stretch}" :data-srcset="section.content.sizes.small + ' 480w, ' + section.content.sizes.medium + ' 1024w, ' + section.content.sizes.large + ' 1600w, ' + section.content.sizes.xlarge + ' 1920w'" class="lazyload uk-padding uk-padding-remove-vertical uk-align-center"/>
 
     <div v-if="section.caption" class="caption uk-width-1-2@l uk-align-center uk-text-center">
-      <h4 v-html="section.caption"></h4>
+      <h5 v-html="section.caption"></h5>
     </div>
 
 
@@ -80,5 +80,11 @@ export default {
 }
 .forcestretch {
     width: 100% !important;
+}
+
+@media (max-width: 640px) {
+  img{
+    padding: 0;
+  }
 }
 </style>

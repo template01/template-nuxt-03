@@ -203,9 +203,36 @@ h2, .uk-h2 {
     font-size: 1.6rem !important;
   }
   @media (max-width: 640px) {
-    font-size: 1.2rem !important;
+    font-size: 1.15rem !important;
   }
 }
+
+
+h4, .uk-h4 {
+  @media (max-width: 960px) {
+    font-size: 1.6rem !important;
+  }
+  @media (max-width: 640px) {
+    font-size: 1.15rem !important;
+  }
+}
+
+
+h5, .uk-h5 {
+  /*font-family: 'Poppins', sans-serif !important;*/
+  /*font-family: 'Relative Book', sans-serif !important;*/
+  font-weight: normal !important;
+  @media (max-width: 1600px) {
+    font-size: 1.15rem !important;
+  }
+  @media (max-width: 960px) {
+    font-size: 1.05rem !important;
+  }
+  @media (max-width: 640px) {
+    font-size: 1rem !important;
+  }
+}
+
 
 .hugeLetters {
   line-height: 0.95;
@@ -253,6 +280,12 @@ h2, .uk-h2 {
   border-bottom-color: inherit;
 }*/
 
+.mobilePageHeader{
+  -webkit-box-shadow: inset 0px -2px 0px 0px;
+  -moz-box-shadow: inset 0px -2px 0px 0px;
+  box-shadow: inset 0px -2px 0px 0px;
+  text-transform: uppercase;
+}
 
 a:hover {
   text-decoration: none !important;

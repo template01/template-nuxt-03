@@ -1,9 +1,9 @@
 <template>
-<defaultpage class="pink-background" id="werk">
+<defaultpage class="beige-background" id="werk">
 
 
-  <div class="pink-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top  uk-hidden@m ">
-      <h1 class="uk-text-center uk-padding" style="text-decoration:underline">WERK</h1>
+  <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top  uk-hidden@m ">
+    <h1 class="uk-text-center uk-padding "><span class="mobilePageHeader">{{$t("menu.topmenu.work")}}</span></h1>
   </div>
 
 
@@ -13,7 +13,8 @@
     <div class="uk-container" :style="{'color':content.acf.section_a.font_color}">
         <sectioncontent :ignorePaddingBottom="true" :acfsection="content.acf.section_a.content"></sectioncontent>
         <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
-          <p class="uk-text-center uk-h2 uk-margin-remove uk-padding uk-padding-remove-top" style="padding-right:20px; user-select: none;"><span style="cursor:pointer;" @click="goToWorkItems" id="slideMeDownHover" >Recente projecten <span uk-icon="icon: arrow-down; ratio: 1.5" class="uk-icon"></span></span></p>
+          <!-- <p class="uk-text-center uk-h2 uk-margin-remove uk-padding uk-padding-remove-top" style="padding-right:20px; user-select: none;"><span style="cursor:pointer;" @click="goToWorkItems" id="slideMeDownHover" >Recente projecten <span uk-icon="icon: arrow-down; ratio: 1.5" class="uk-icon"></span></span></p> -->
+          <!-- <p class="uk-text-center uk-h2 uk-margin-remove uk-padding uk-padding-remove-top" style="padding-right:20px; user-select: none;"><span >Recente projecten <span uk-icon="icon: arrow-down; ratio: 1.5" class="uk-icon"></span></span></p> -->
         </div>
     </div>
 
@@ -90,7 +91,9 @@ export default {
 
   methods:{
     goToWorkItems: function(){
-      window.scroll({ top: this.$el.querySelector("#workitems").getBoundingClientRect().top + this.$el.querySelector("#workitems").offsetTop, left: 0, behavior: 'smooth' });
+      // window.scroll({ top: this.$el.querySelector("#workitems").getBoundingClientRect().top + this.$el.querySelector("#workitems").offsetTop, left: 0, behavior: 'smooth' });
+      window.scroll({ top: this.$el.querySelector("#workitems").getBoundingClientRect().top, left: 0, behavior: 'smooth' });
+
     }
   },
 
