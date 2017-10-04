@@ -1,6 +1,6 @@
 <template>
 <defaultpage class="beige-background" id="contact">
-  <div :style="{'background-color':content.acf.section_a.background_color, 'color':content.acf.section_a.font_color}" class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top  uk-hidden@m ">
+  <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top  uk-hidden@m ">
     <h1 class="uk-text-center uk-padding "><span class="mobilePageHeader">{{$t("menu.topmenu.contact")}}</span></h1>
   </div>
 

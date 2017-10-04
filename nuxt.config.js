@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Poppins'
+        href: 'https://fonts.googleapis.com/css?family=Poppins:500'
       }
     ],
     script:[

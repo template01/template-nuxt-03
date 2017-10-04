@@ -207,7 +207,6 @@ h2, .uk-h2 {
   }
 }
 
-
 h4, .uk-h4 {
   @media (max-width: 960px) {
     font-size: 1.6rem !important;
@@ -216,7 +215,6 @@ h4, .uk-h4 {
     font-size: 1.15rem !important;
   }
 }
-
 
 h5, .uk-h5 {
   /*font-family: 'Poppins', sans-serif !important;*/
@@ -233,20 +231,27 @@ h5, .uk-h5 {
   }
 }
 
-
 .hugeLetters {
-  line-height: 0.95;
-  font-size: 8vw !important;
+  line-height: 0.95  !important;
+  letter-spacing: -0.2vw !important;
+  font-size: 8.6vw !important;
   font-family: 'Poppins', sans-serif !important;
-  font-weight: 600 !important;
-  /*font-size: 9vw !important;
-  font-family: 'Relative', sans-serif !important;
-  font-weight: bold !important;*/
+  speak: none !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  -webkit-font-smoothing: antialiased !important;
+  /*-webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: inherit;*/
+
   @media (max-width: 960px) {
-    font-size: 12vw !important;
+    font-size: 13vw !important;
+    letter-spacing: -0.3vw !important;
   }
   @media (min-width: 1921px) {
-    font-size: 140px !important;
+    font-size: 150px !important;
+    letter-spacing: -4px !important;
+
   }
 }
 
@@ -280,7 +285,7 @@ h5, .uk-h5 {
   border-bottom-color: inherit;
 }*/
 
-.mobilePageHeader{
+.mobilePageHeader {
   -webkit-box-shadow: inset 0px -2px 0px 0px;
   -moz-box-shadow: inset 0px -2px 0px 0px;
   box-shadow: inset 0px -2px 0px 0px;
@@ -296,15 +301,12 @@ a:hover {
 }
 
 @media (max-width: 640px) {
-
   a:hover {
     -webkit-box-shadow: inset 0px -2px 0px 0px;
     -moz-box-shadow: inset 0px -2px 0px 0px;
     box-shadow: inset 0px -2px 0px 0px;
   }
-
 }
-
 
 /*.bounce-enter-active {
   animation: bounce-in .8s;
@@ -344,47 +346,52 @@ img[lazy=loaded] {
 }
 
 /*img optimization*/
-img{
-  image-rendering: optimizeSpeed;             /*                     */
-  image-rendering: -moz-crisp-edges;          /* Firefox             */
-  image-rendering: -o-crisp-edges;            /* Opera               */
-  image-rendering: -webkit-optimize-contrast; /* Chrome (and Safari) */
-  image-rendering: optimize-contrast;         /* CSS3 Proposed       */
-  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
+
+img {
+  image-rendering: optimizeSpeed;
+  /*                     */
+  image-rendering: -moz-crisp-edges;
+  /* Firefox             */
+  image-rendering: -o-crisp-edges;
+  /* Opera               */
+  image-rendering: -webkit-optimize-contrast;
+  /* Chrome (and Safari) */
+  image-rendering: optimize-contrast;
+  /* CSS3 Proposed       */
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE8+                */
 }
 
 /*text-scroll*/
 
-
 .text-scroll-container {
-    overflow: hidden;
-
-    /* To make the width of the text-scroll-container exact. */
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  overflow: hidden;
+  /* To make the width of the text-scroll-container exact. */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .text-scroll-content {
-    white-space: nowrap;
-    position: relative;
-    overflow: hidden;    /* Required to make ellipsis work */
-    text-overflow: ellipsis;
-
-    /* Starting transition */
-    left: 0%;
-    width: 100%;
-
-    transition-timing-function: linear;
-    /* Tweak 'till your heart's text-scroll-content */
-    -webkit-transition: left 6s, width 6s;
-    -moz-transition: left 6s, width 6s;
-    transition: left 6s, width 6s;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  /* Required to make ellipsis work */
+  text-overflow: ellipsis;
+  /* Starting transition */
+  left: 0%;
+  width: 100%;
+  transition-timing-function: linear;
+  /* Tweak 'till your heart's text-scroll-content */
+  -webkit-transition: left 6s, width 6s;
+  -moz-transition: left 6s, width 6s;
+  transition: left 6s, width 6s;
 }
 
 /* The magic! */
+
 .text-scroll-container:hover:not(.text-scroll-disable) .text-scroll-content {
-    /* This is not completely accurate. It resizes to 2x the current width. */
-    left: -100%;
-    width: 200%;
+  /* This is not completely accurate. It resizes to 2x the current width. */
+  left: -100%;
+  width: 200%;
 }

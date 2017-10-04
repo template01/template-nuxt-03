@@ -2,22 +2,22 @@
 <div id="splash" :style="{'background':slideContent[slideIndex].background_color}">
 
 
-  <div class="uk-visible@m uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport uk-padding" id="splashHugeLetters">
-    <div class="uk-padding">
-      <h1 class="hugeLetters " :style="{'color':slideContent[slideIndex].font_color}">
+  <div class="uk-visible@m uk-padding" id="splashHugeLetters">
+    <div class="uk-container uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-1-1 ">
+
+      <div class="uk-padding">
+        <h1 class="hugeLetters " :style="{'color':slideContent[slideIndex].font_color}">
         <span v-html="!slideContent[slideIndex].background_image ? slideContent[slideIndex].slide : slideContent[slideIndex-1].slide"></span>
-
       </h1>
-      <!-- <h1 class="hugeLetters uk-text-center" :style="{'color':slideContent[slideIndex].font_color}">
-        <span v-html="!slideContent[slideIndex].background_image ? slideContent[slideIndex].slide[0].content : slideContent[slideIndex-1].slide[0].content"></span>
-        <span style="padding-left:4vw">Studio</span>
-      </h1> -->
-    </div>
 
-    <div class="uk-padding">
-      <h1 class="hugeLetters " style="padding-left:1vw" :style="{'color':slideContent[slideIndex].font_color}">
+      </div>
+
+      <div class="uk-padding">
+        <h1 class="hugeLetters " style="padding-left:1vw" :style="{'color':slideContent[slideIndex].font_color}">
       <span >Studio</span>
     </h1>
+      </div>
+
     </div>
 
   </div>
@@ -31,7 +31,7 @@
     <splashtopmenu class="uk-visible@m" :menucolor="slideContent[slideIndex].font_color"></splashtopmenu>
     <splashbottommenu :menucolor="slideContent[slideIndex].font_color"></splashbottommenu>
 
-    <div class="uk-visible@m uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
+    <div class="uk-visible@m uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle">
 
     </div>
 
@@ -70,16 +70,16 @@ export default {
       slideIndex: 0,
       speed: 1200,
       slideshow: null,
-      preloadedImages:[]
+      preloadedImages: []
     }
   },
 
   mounted() {
     console.log(this.getsmallscreen)
-    if(!this.getsplashimagesloaded){
+    if (!this.getsplashimagesloaded) {
       this.$store.commit('SET_SPLASHIMAGESLOADED')
       this.preloadImages(this.slideContent)
-    }else{
+    } else {
       this.startSlideshow();
     }
   },
@@ -190,12 +190,13 @@ img {
 }
 
 #splash {
+
     #splashMainFrame {
-        // position: absolute;
-        // width: calc(100% - 80px);
+        // position: fixed;
         // top: 0;
-        // left:0;
-        position: relative;
+        // left: 0;
+        // width: 100%;
+        // height: 100%;
     }
 
     #splashHugeLetters {
@@ -232,22 +233,14 @@ img {
             // animation-duration: 1s;
         }
     }
-    // @keyframes example {
-    //     0% {
-    //         transform: translateY(100vh);
-    //     }
-    //     50% {
-    //         transform: translateY(0vh);
-    //     }
-    //     100% {
-    //         transform: translateY(100vh);
-    //     }
-    // }
 
-    position: relative;
-
-    // transition: background 1s, background-image 1s;
     overflow: hidden;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     @media (max-width: 960px) {
 
         width: 100%;

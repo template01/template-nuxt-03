@@ -35,6 +35,7 @@ export default {
 <style lang="scss">
 #splashbottommenu {
 
+  // display: NONE;
 
   #splashbottommenuDefault{
     transition: color 0.10s;
@@ -48,7 +49,7 @@ export default {
     }
 
 
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: calc(100% - 80px);
 

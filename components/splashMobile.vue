@@ -2,8 +2,9 @@
 <!-- <div id="splashMobile" class="uk-padding uk-inline "> -->
 <div id="splashMobile" class="uk-padding uk-inline " :style="{'background':slideContent[slideIndex].background_color}">
 
-
-  <div v-if="slideContent[slideIndex].slide" class="" :class="{'uk-animation-slide-left-medium':begin, 'uk-animation-reverse':!begin, 'uk-animation-slide-right-medium':!begin, 'uk-animation-reverse':begin}">
+  <!--
+  <div v-if="slideContent[slideIndex].slide" class="" :class="{'uk-animation-slide-left-medium':begin, 'uk-animation-reverse':!begin, 'uk-animation-slide-right-medium':!begin, 'uk-animation-reverse':begin}"> -->
+  <div v-if="slideContent[slideIndex].slide" class="slideinout">
     <h1 class="hugeLetters uk-padding-remove-horizontal uk-padding-remove-bottom uk-padding" :style="{'color':slideContent[slideIndex].font_color}">
             <span v-html="slideContent[slideIndex].slide"></span>
           </h1>
@@ -113,58 +114,42 @@ img {
     }
 }
 
-#splash {
-    #splashMainFrame {
-        // position: absolute;
-        // width: calc(100% - 80px);
-        // top: 0;
-        // left:0;
-        position: relative;
+.slideinout {
+    -webkit-animation-name: example;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3600ms;
+    /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 3600ms;
+    animation-iteration-count: infinite;
+}
+@keyframes example {
+    0% {
+        opacity: 0;
+        transform: translateX(-10vw);
     }
-
-    #splashHugeLetters {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        h1 {
-            transition: color 0.10s;
-            transition-delay: 0.25s;
-        }
+    20% {
+        opacity: 1;
+        transform: translateX(0px);
     }
-
-    #splashBackgroundImage {
-        // transition: background-image 1s, background-position 0s, background-attachment 0s, background-repeat 0s, background-size 0s;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    50% {
+        opacity: 1;
+        transform: translateX(0px);
     }
-
-    position: relative;
-
-    // transition: background 1s, background-image 1s;
-    overflow: hidden;
-    @media (max-width: 960px) {
-
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(25vw);
     }
 
 }
+
 #splashMobile {
     height: 100%;
     width: 100%;
-
+    transition: background 250ms;
     overflow: hidden;
     position: fixed;
 }
