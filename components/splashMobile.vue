@@ -5,7 +5,7 @@
   <!--
   <div v-if="slideContent[slideIndex].slide" class="" :class="{'uk-animation-slide-left-medium':begin, 'uk-animation-reverse':!begin, 'uk-animation-slide-right-medium':!begin, 'uk-animation-reverse':begin}"> -->
   <div v-if="slideContent[slideIndex].slide" class="slideinout">
-    <h1 class="hugeLetters uk-padding-remove-horizontal uk-padding-remove-bottom uk-padding" :style="{'color':slideContent[slideIndex].font_color}">
+    <h1 class="hugeLetters uk-padding-remove-horizontal uk-padding-remove-bottom uk-padding-remove-top uk-padding" :style="{'color':slideContent[slideIndex].font_color}">
             <span v-html="slideContent[slideIndex].slide"></span>
           </h1>
   </div>

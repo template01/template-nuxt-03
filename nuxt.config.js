@@ -27,18 +27,18 @@ module.exports = {
         href: 'https://fonts.googleapis.com/css?family=Poppins:500'
       }
     ],
-    script:[
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.js'}
-    ]
+    script: [{
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.js'
+    }]
 
   },
-  // watchers: {
-  //   webpack: {
-  //     aggregateTimeout: 300,
-  //     poll: 1000
-  //   },
-  //
-  // },
+
+  // PWA  Progressive Web Apps support (https://www.davidroyer.me/blog/nuxtjs-tips/)
+
+  modules: [
+    '@nuxtjs/pwa'
+  ],
+
   router: {
     middleware: 'i18n'
   },
@@ -50,7 +50,7 @@ module.exports = {
     // uikit customized
     '~assets/css/site.css',
     '~assets/fonts/relative/stylesheet.css',
-     'swiper/dist/css/swiper.css'
+    'swiper/dist/css/swiper.css'
     //'bootstrap/dist/css/bootstrap.css',
     //'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -110,7 +110,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    vendor: ['axios','vue-i18n','lodash', 'uikit','vue-lazyload']
+    vendor: ['axios', 'vue-i18n', 'lodash', 'uikit', 'vue-lazyload']
     /*
      ** Run ESLINT on save
      */

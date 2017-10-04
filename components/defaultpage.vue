@@ -292,10 +292,10 @@ export default {
     z-index: 99999 !important;
 }
 
+
 .toggle-button,
 .toggle-button-menu {
     cursor: pointer;
-    border: 0;
     color: beige;
     outline: none;
     border-radius: 100%;
@@ -315,8 +315,13 @@ export default {
 
 }
 
+.toggle-button{
+  border: 0;
+  
+}
 .toggle-button-menu {
     transform: rotate(90deg);
+    border: 0;
 }
 .toggle-button-menu:hover {
     transform: rotate(0deg);
