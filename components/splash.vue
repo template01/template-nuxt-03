@@ -71,7 +71,6 @@ export default {
       speed: 1200,
       initSlideSpeed: true,
       slideshow: null,
-      preloadedImages: []
     }
   },
 
@@ -99,35 +98,17 @@ export default {
 
         if (inputArray[i].background_image) {
           images.push(inputArray[i].background_image.sizes.xlarge)
-          this.preloadedImages.push(inputArray[i].background_image.sizes.xlarge)
         }
 
-        if (inputArray[i].slide) {
-          if (inputArray[i].slide[0].acf_fc_layout === 'image') {
-            images.push(inputArray[i].slide[0].content.sizes.xlarge)
-
-          }
-        }
       }
 
       var vm = this
-      var progressInt = 0
-      new preLoader(images, {
+      new preLoader(images.slice(0, 1), {
         onComplete: function(loaded, errors) {
           vm.startSlideshow();
+          new preLoader(images.slice(1));
         },
-        onProgress: function(progress){
-          console.log('progress')
-          console.log(progress)
-          if (progressInt == 0){
-            vm.startSlideshow();
-          }
-          progressInt++
-        }
       });
-
-
-      console.log(images)
 
 
 
