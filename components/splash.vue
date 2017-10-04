@@ -69,6 +69,7 @@ export default {
       begin: false,
       slideIndex: 0,
       speed: 1200,
+      initSlideSpeed: true,
       slideshow: null,
       preloadedImages: []
     }
@@ -110,9 +111,18 @@ export default {
       }
 
       var vm = this
+      var progressInt = 0
       new preLoader(images, {
         onComplete: function(loaded, errors) {
           vm.startSlideshow();
+        },
+        onProgress: function(progress){
+          console.log('progress')
+          console.log(progress)
+          if (progressInt == 0){
+            vm.startSlideshow();
+          }
+          progressInt++
         }
       });
 
@@ -146,9 +156,10 @@ export default {
           }
           vm.begin = !vm.begin
           inittimeout(vm.slideContent[vm.slideIndex].speed)
-        }, vm.slideContent[vm.slideIndex].speed)
+        }, vm.initSlideSpeed ? 0 : vm.slideContent[vm.slideIndex].speed)
 
-
+        console.log(vm.initSlideSpeed)
+        vm.initSlideSpeed = false
 
       };
 
