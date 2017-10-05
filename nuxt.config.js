@@ -8,6 +8,10 @@ module.exports = {
         charset: 'utf-8'
       },
       {
+        name: 'theme-color',
+        content : '#fffef5'
+      },
+      {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1'
       },

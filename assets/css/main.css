@@ -395,3 +395,22 @@ img {
   left: -100%;
   width: 200%;
 }
+
+
+
+
+.slide-item-right-small{
+  transition: transform 250ms ease-in-out;
+}
+.slide-item-right-small:hover{
+  transform: translateX(10px);
+}
+
+
+
+.slide-item-right{
+  transition: transform 250ms ease-in-out;
+}
+.slide-item-right:hover{
+  transform: translateX(20px);
+}
