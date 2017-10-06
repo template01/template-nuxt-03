@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 .my-swiper {
     position: relative;
-    max-height: 80vh;
+    max-height: 100vh;
     width: 100%;
     .swiper-slide {
         text-align: center;
@@ -53,7 +53,7 @@ export default {
         justify-content: center;
         align-items: center;
         img {
-            max-height: 80vh;
+            max-height: 100vh;
         }
     }
     .swiper-pagination {

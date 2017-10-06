@@ -36,7 +36,7 @@
   </div>
 
 
-  <div id="" class="section sendToBack" :style="{'color':content.acf.section_b.background_color,'background-color':content.acf.section_b.background_color}" :uk-parallax="getsmallscreen ? '' : 'y: -50,0%; viewport: 0.7'">
+  <div id="" class="section sendToBack" :style="{'color':content.acf.section_b.background_color,'background-color':content.acf.section_b.background_color}" :uk-parallax="getsmallscreen ? '' : 'y: -25,0%; viewport: 0.7'">
 
     <div class="uk-container" :style="{'color':content.acf.section_b.font_color}">
       <sectioncontent :ignorePaddingBottom="true" :acfsection="content.acf.section_b.content"></sectioncontent>
@@ -46,7 +46,7 @@
     <div class="uk-container" :style="{'color':content.acf.section_b.font_color}">
       <div class="uk-align-center uk-width-2-3@m">
         <div class="uk-text-center" uk-grid uk-height-match>
-          <werkarchiveitem class="uk-width-1-3@m" v-bind:key="archiveItem.id" v-for="archiveItem in archive" :datainput="archiveItem"></werkarchiveitem>
+          <werkarchiveitem class="uk-width-1-3@m" v-bind:key="archiveItem.id" v-for="(archiveItem, index) in archive" :index="index" :datainput="archiveItem" :fullArchive="archive"></werkarchiveitem>
         </div>
       </div>
       <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
@@ -68,8 +68,9 @@
 import axios from 'axios'
 import defaultpage from '~/components/defaultpage.vue'
 import sectioncontent from '~/components/sections_component/sectioncontent.vue'
-import werktileitem from '~/components/werktileitem.vue'
-import werkarchiveitem from '~/components/werkarchiveitem.vue'
+import werktileitem from '~/components/werk/werktileitem.vue'
+import werkarchiveitem from '~/components/werk/werkarchiveitem.vue'
+// import werkarchiveitem from '~/components/werk/werkarchiveitem.vue'
 
 
 
@@ -80,6 +81,7 @@ export default {
     sectioncontent,
     werktileitem,
     werkarchiveitem
+    // werkarchiveitem
   },
   data: function() {
     return {

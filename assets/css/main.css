@@ -4,6 +4,11 @@ html {
   overflow-x: hidden;
 }
 
+
+.uk-width-5-6 {
+    width: 1520px !important;
+}
+
 /* COLORS AND BACKGRONDCOLRS */
 
 /* NOTE: the slant classes does not work without paralax ( because position relative is not set)*/
