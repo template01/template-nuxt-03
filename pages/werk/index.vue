@@ -45,8 +45,16 @@
 
     <div class="uk-container" :style="{'color':content.acf.section_b.font_color}">
       <div class="uk-align-center uk-width-2-3@m">
-        <div class="uk-text-center" uk-grid uk-height-match>
-          <werkarchiveitem class="uk-width-1-3@m" v-bind:key="archiveItem.id" v-for="(archiveItem, index) in archive" :index="index" :datainput="archiveItem" :fullArchive="archive"></werkarchiveitem>
+        <div class="uk-text-center uk-grid-match uk-flex uk-flex-middle" uk-height-match uk-grid>
+          <div  class="uk-width-1-3@m"  v-for="yearItem in collectedYears">
+
+            <div v-if="Object.keys(yearItem).length === 1">
+              <h2 class="archiveYear" v-html="yearItem.year"></h2>
+            </div>
+            <div v-else>
+              <werkarchiveitem :datainput="yearItem" ></werkarchiveitem>
+            </div>
+          </div>
         </div>
       </div>
       <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
@@ -97,29 +105,55 @@ export default {
     error
   }) {
     if (query.hasOwnProperty('lang')) {
-      let [contentRes, tilesRes, archiveRes] = await Promise.all([
+      let [contentRes, tilesRes] = await Promise.all([
         axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_' + query.lang),
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang +'?featured=1&isfeatured=1'),
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang +'?featured=1&isfeatured=0'),
+        axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang ),
       ])
+
+      const res = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/categories?parent=19')
+      const categories = res.data.reverse()
+      const collectedYearsRes = (await axios.all(
+          categories.map(category => axios.get('http://api.template-studio.nl/wp-json/wp/v2/archiveitem_' + query.lang + '?categories=' + category.id))
+        ))
+        .map(result => result.data)
+        .reduce((acc, curr, index) => {
+          acc.push({"year" : categories[index].name}, ...curr)
+          // acc.push([categories[index].name, [...curr]])
+          return acc
+        }, [])
+
+
+
       return {
         content: contentRes.data[0],
         tiles: tilesRes.data,
-        archive: archiveRes.data,
-
+        collectedYears: collectedYearsRes,
       }
       // }
     } else {
 
-      let [contentRes, tilesRes, archiveRes] = await Promise.all([
+      let [contentRes, tilesRes] = await Promise.all([
         axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_nl'),
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_nl?featured=1&isfeatured=1'),
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_nl?featured=1&isfeatured=0'),
+        axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_nl'),
       ])
+
+
+      const res = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/categories?parent=19')
+      const categories = res.data.reverse()
+      const collectedYearsRes = (await axios.all(
+          categories.map(category => axios.get('http://api.template-studio.nl/wp-json/wp/v2/archiveitem_nl?categories=' + category.id))
+        ))
+        .map(result => result.data)
+        .reduce((acc, curr, index) => {
+          acc.push({"year" : categories[index].name}, ...curr)
+          // acc.push([categories[index].name, [...curr]])
+          return acc
+        }, [])
+
       return {
         content: contentRes.data[0],
         tiles: tilesRes.data,
-        archive: archiveRes.data,
+        collectedYears: collectedYearsRes,
       }
 
 
@@ -149,6 +183,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.archiveYear{
+  display: inline-block;
+  color: inherit;
+  -webkit-box-shadow: inset 0px -3px 0px 0px;
+  -moz-box-shadow: inset 0px -3px 0px 0px;
+  box-shadow: inset 0px -3px 0px 0px;
+}
+
+@media (max-width: 640px) {
+  .archiveYear{
+    -webkit-box-shadow: inset 0px -2px 0px 0px;
+    -moz-box-shadow: inset 0px -2px 0px 0px;
+    box-shadow: inset 0px -2px 0px 0px;
+  }
+}
+
 
 .sendToBack {
     z-index: 1;

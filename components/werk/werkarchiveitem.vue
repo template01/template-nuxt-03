@@ -31,7 +31,7 @@ export default {
   data: function() {
     return {}
   },
-  props: ['datainput', 'fullArchive', 'index'],
+  props: ['datainput'],
   mounted() {
     // var iDiv = document.createElement('div');
     // iDiv.id = 'block';
@@ -53,6 +53,14 @@ h2,
 h4 {
     margin: 0;
 }
+h2{
+  margin-bottom: 20px; 
+  line-height: 1;
+
+}
+h4{
+}
+
 a {
     box-shadow: inset 0 0 0 0;
     color: inherit;

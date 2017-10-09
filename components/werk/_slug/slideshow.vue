@@ -1,7 +1,11 @@
 <template>
 <div class="my-swiper" v-swiper:mySwiper="swiperOption">
   <div class="swiper-wrapper">
-    <!-- <div class="swiper-pagination swiper-pagination-bullets"></div> -->
+    <div class="navigation">
+
+      <div class="half left" style="cursor:url(/arrowLeftCircle.svg) 20 20, auto" @click="prevSlide()"></div>
+      <div class="half right" style="cursor:url(/arrowRightCircle.svg) 20 20, auto" @click="nextSlide()"></div>
+    </div>
     <div :style="{'background-color':backgroundcolor}" class="swiper-slide" v-for="slide in slides">
       <img :src="slide.url" :srcset="slide.sizes.small + ' 480w, ' + slide.sizes.medium + ' 1024w, ' + slide.sizes.large + ' 1600w, ' + slide.sizes.xlarge + ' 1920w'">
 
@@ -20,8 +24,6 @@ export default {
         preloadImages: false,
         lazyLoading: true,
         effect: 'fade',
-        pagination: '.swiper-pagination',
-        paginationElement: 'li',
         onSlideChangeEnd: swiper => {
           // console.log('onSlideChangeEnd', swiper.realIndex)
         },
@@ -29,19 +31,56 @@ export default {
           // console.log('onTap', swiper.realIndex)
         },
         onClick: swiper => {
-          swiper.slideNext();
+          // swiper.slideNext();
         },
       }
     }
   },
-
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper
+    }
+  },
   props: ['slides', 'backgroundcolor'],
-  mounted() {}
+  methods:{
+    nextSlide:function(){
+     this.mySwiper.slideNext()
+     console.log('next')
+    },
+    prevSlide:function(){
+     this.mySwiper.slidePrev()
+     console.log('prev')
+    },
+
+  },
+
 }
 </script>
 
 <style lang="scss" scoped>
 .my-swiper {
+
+
+  .navigation{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    .half{
+      width: 50%;
+      height: 100%;
+
+      float: left;
+
+      &.left{
+        // cursor: url('/arrowRightCircle.ico'), auto;
+      }
+      &.right{
+        // cursor: url('/arrowRightCircle.ico'), auto;
+      }
+    }
+  }
+
     position: relative;
     max-height: 100vh;
     width: 100%;
