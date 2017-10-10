@@ -13,21 +13,16 @@
 
     <!-- <div class="slantTopLeft"></div> -->
 
-    <div class="uk-container uk-padding uk-padding-remove-vertical" :style="{'color':content.acf.section_a.font_color}">
-      <sectioncontent :acfsection="content.acf.section_a.content"></sectioncontent>
-
-    </div>
     <div class="uk-container uk-padding uk-padding-remove-vertical ">
 
-
       <!-- {{content.acf.section_a}} -->
-      <!-- <div>
+      <div>
 
         <templatefooter ignoreFirstColumn=true passHeader="Contact" :style="{'color':content.acf.section_a.font_color}"></templatefooter>
-      </div> -->
+      </div>
 
 
-      <!-- <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+      <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
         <div uk-grid class="uk-padding uk-padding-remove-horizontal">
 
           <div class="uk-width-1-2@m">
@@ -40,7 +35,7 @@
             </gmap-map>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
 
   </div>
@@ -60,7 +55,6 @@
 
 <script>
 import axios from 'axios'
-import sectioncontent from '~/components/sections_component/sectioncontent.vue'
 
 import defaultpage from '~/components/defaultpage.vue'
 import templatefooter from '~/components/templatefooter.vue'
@@ -69,9 +63,7 @@ export default {
 
   components: {
     defaultpage,
-    templatefooter,
-    sectioncontent
-
+    templatefooter
   },
   transition: 'bounce',
 
@@ -281,12 +273,8 @@ export default {
 }
 </script>
 
-<style >
 
-#contact a{
-  color: inherit !important;
-}
-
+<style>
 .gmnoprint {
   display: none;
 }

@@ -80,7 +80,7 @@ export default {
       var slideout = new Slideout({
         'panel': document.getElementById('panel'),
         'menu': document.getElementById('menu'),
-        'padding': 256,
+        'padding': 280,
         'tolerance': 70,
         'side': 'right',
         'touch' : false
@@ -317,7 +317,7 @@ export default {
 
 .toggle-button{
   border: 0;
-  
+
 }
 .toggle-button-menu {
     transform: rotate(90deg);
@@ -334,7 +334,7 @@ export default {
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 256px;
+    width: 280px;
     min-height: 100vh;
     // overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -374,7 +374,7 @@ export default {
 //     position: fixed;
 //     top: 0;
 //     bottom: 0;
-//     width: 256px;
+//     width: 280px;
 //     height: 1000vh;
 //     overflow-y: auto;
 //     -webkit-overflow-scrolling: touch;

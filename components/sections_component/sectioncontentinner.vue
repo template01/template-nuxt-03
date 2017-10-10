@@ -12,25 +12,14 @@
   </div>
 
   <div v-if="section.acf_fc_layout === 'image'">
-    <!-- <img :class="{'forcestretch':section.force_stretch}" uk-scrollspy="cls: uk-animation-fade; repeat: true" class="uk-padding uk-padding-remove-vertical uk-align-center" :src="section.content.url" /> -->
-    <!-- {{section.content.}} -->
-
-    <!-- {{section.content.sizes.large}} -->
-    <!-- {{section.content.sizes['large-width']}} -->
-    <!-- {{section.content.sizes['large-height']}} -->
 
 
-    <img width="100%" :setwidth="section.content.sizes['large-width']" :setheight="section.content.sizes['large-height']" v-lazy="section.content.url" :class="{'forcestretch':section.force_stretch}" :data-srcset="section.content.sizes.small + ' 480w, ' + section.content.sizes.medium + ' 1024w, ' + section.content.sizes.large + ' 1600w, ' + section.content.sizes.xlarge + ' 1920w'" class="lazyload uk-padding uk-padding-remove-vertical uk-align-center"/>
+    <img width="100%" :setwidth="section.content.sizes['large-width']" :setheight="section.content.sizes['large-height']" v-lazy="section.content.url" :class="{'forcestretch':section.force_stretch,'uk-padding uk-padding-remove-vertical':!columnlayout}" :data-srcset="section.content.sizes.small + ' 480w, ' + section.content.sizes.medium + ' 1024w, ' + section.content.sizes.large + ' 1600w, ' + section.content.sizes.xlarge + ' 1920w'" class="lazyload uk-align-center"/>
 
     <div v-if="section.caption" class="caption uk-width-1-2@l uk-align-center uk-text-center">
       <h5 v-html="section.caption"></h5>
     </div>
 
-
-
-
-    <!-- <img  width="100%" height="20px" v-lazy="section.content.sizes.large" :class="{'forcestretch':section.force_stretch}" uk-scrollspy="cls: uk-animation-fade; repeat: true" class="uk-padding uk-padding-remove-vertical uk-align-center"/> -->
-    <!-- <img :class="{'forcestretch':section.force_stretch}" uk-scrollspy="cls: uk-animation-fade; repeat: true" class="uk-padding uk-padding-remove-vertical uk-align-center" :src="section.content.url" /> -->
   </div>
 </div>
 </template>
@@ -40,7 +29,7 @@
 export default {
 
 
-  props: ['section', 'topcontent'],
+  props: ['section', 'topcontent','columnlayout'],
 
 
   methods: {
@@ -74,9 +63,10 @@ export default {
 
 }
 </script>
+
 <style lang="scss" scoped>
 * {
-    color: inherit;
+    color: inherit !important;
 }
 .forcestretch {
     width: 100% !important;

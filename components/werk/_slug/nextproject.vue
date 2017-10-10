@@ -1,5 +1,5 @@
 <template>
-<div :uk-parallax="getsmallscreen ? '' : 'y: -50,0%; viewport: 0.7'">
+<div :uk-parallax="getsmallscreen ? '' : 'y: -50,0%; viewport: 0.5'">
 
   <div class="black-background uk-position-relative" :class="{'uk-padding ':getsmallscreen}">
     <div class="slantTopLeft"></div>

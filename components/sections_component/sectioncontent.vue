@@ -2,7 +2,10 @@
 <div class=" uk-padding uk-padding-remove-horizontal" :class="ignorePaddingBottom ? 'uk-padding-remove-bottom' : ''">
   <div class="uk-width-1-1@m"  v-for="section in acfsection">
     <div class="uk-align-center" :class="[setWidth(section.width)]">
-      <sectioncontentinner :topcontent="topcontent" :section="section"></sectioncontentinner>
+
+      <sectioncontentinner v-if="section.acf_fc_layout != 'column'" :topcontent="topcontent" :section="section"></sectioncontentinner>
+      <sectioncontentinnerColumn v-else :topcontent="topcontent" :section="section"></sectioncontentinnerColumn>
+
     </div>
   </div>
 
@@ -11,12 +14,14 @@
 </template>
 <script>
 import sectioncontentinner from '~/components/sections_component/sectioncontentinner.vue'
+import sectioncontentinnerColumn from '~/components/sections_component/sectioncontentinnerColumn.vue'
 
 
 export default {
   props: ['acfsection','topcontent','ignorePaddingBottom'],
   components: {
-    sectioncontentinner
+    sectioncontentinner,
+    sectioncontentinnerColumn
   },
   methods: {
     setWidth: function(width) {

@@ -1,8 +1,16 @@
 <template>
 <defaultpage class="beige-background" id="">
+  <div class="werkSplash uk-visible@m">
+    <div class="werkSplashContent">
+
+      <div class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.sizes.xlarge+')'}"></div>
+
+    </div>
+  </div>
   <div class="sendToFront">
 
-    <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+    <!-- <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top"> -->
+    <div class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
 
       <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top  uk-hidden@m ">
         <h1 class="uk-text-center uk-padding "><span class="mobilePageHeader">{{$t("menu.topmenu.case")}}</span></h1>
@@ -84,7 +92,7 @@
   </div>
 
 
-<!-- <div class="blue-background uk-position-relative" :class="{'uk-padding ':getsmallscreen}">
+  <!-- <div class="blue-background uk-position-relative" :class="{'uk-padding ':getsmallscreen}">
   <div class="slantTopLeft"></div>
 </div> -->
 
@@ -155,13 +163,40 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.werkSplash {
+    height: 50vh;
+
+    .werkSplashContent {
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        z-index: -1;
+        img {
+            width: 100vw;
+            position: fixed;
+        }
+    }
+    .werkSplashImage {
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+    }
+    @media (max-width: 1200px) {
+        height: 55vh;
+    }
+}
+
 .sendToBack {
     z-index: 1;
 }
 
-.sendToFront{
-  z-index: 2;
-  position: relative;
+.sendToFront {
+    z-index: 2;
+    position: relative;
 
 }
 .text-section {

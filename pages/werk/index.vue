@@ -36,7 +36,7 @@
   </div>
 
 
-  <div id="" class="section sendToBack" :style="{'color':content.acf.section_b.background_color,'background-color':content.acf.section_b.background_color}" :uk-parallax="getsmallscreen ? '' : 'y: -25,0%; viewport: 0.7'">
+  <div id="" class="section sendToBack" :style="{'color':content.acf.section_b.background_color,'background-color':content.acf.section_b.background_color}" :uk-parallax="getsmallscreen ? '' : 'y: -300,0px; viewport: 0.5'">
 
     <div class="uk-container" :style="{'color':content.acf.section_b.font_color}">
       <sectioncontent :ignorePaddingBottom="true" :acfsection="content.acf.section_b.content"></sectioncontent>
@@ -45,17 +45,28 @@
 
     <div class="uk-container" :style="{'color':content.acf.section_b.font_color}">
       <div class="uk-align-center uk-width-2-3@m">
-        <div class="uk-text-center uk-grid-match uk-flex uk-flex-middle" uk-height-match uk-grid>
-          <div  class="uk-width-1-3@m"  v-for="yearItem in collectedYears">
+        <!-- <div class="uk-text-center uk-grid-match uk-flex uk-flex-middle" > -->
+          <div  class="uk-text-center uk-grid-match uk-flex uk-flex-middle"  v-for="yearItem in collectedYears" uk-height-match uk-grid>
 
-            <div v-if="Object.keys(yearItem).length === 1">
+            <div class="uk-width-1-1@m">
+              <div class="archiveYear" >
+                <h4 v-html="yearItem[0]"></h4>
+              </div>
+            </div>
+            <div class="uk-width-1-3@m" v-for="item in yearItem[1]">
+              <werkarchiveitem :datainput="item" ></werkarchiveitem>
+            </div>
+
+            <!-- {{yearItem[1]}} -->
+
+            <!-- <div v-if="Object.keys(yearItem).length === 1">
               <h2 class="archiveYear" v-html="yearItem.year"></h2>
             </div>
             <div v-else>
               <werkarchiveitem :datainput="yearItem" ></werkarchiveitem>
-            </div>
+            </div> -->
           </div>
-        </div>
+        <!-- </div> -->
       </div>
       <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
       </div>
@@ -145,8 +156,8 @@ export default {
         ))
         .map(result => result.data)
         .reduce((acc, curr, index) => {
-          acc.push({"year" : categories[index].name}, ...curr)
-          // acc.push([categories[index].name, [...curr]])
+          // acc.push({"year" : categories[index].name}, ...curr)
+          acc.push([categories[index].name, [...curr]])
           return acc
         }, [])
 
@@ -186,17 +197,32 @@ export default {
 
 .archiveYear{
   display: inline-block;
-  color: inherit;
-  -webkit-box-shadow: inset 0px -3px 0px 0px;
-  -moz-box-shadow: inset 0px -3px 0px 0px;
-  box-shadow: inset 0px -3px 0px 0px;
+  -webkit-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
+  -moz-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
+  box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  *{
+    color: inherit;
+
+  }
+}
+
+@media (max-width: 959px) {
+  .archiveYear{
+    margin-left: 40px;
+    margin-right: 40px;
+    box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
+  }
 }
 
 @media (max-width: 640px) {
   .archiveYear{
-    -webkit-box-shadow: inset 0px -2px 0px 0px;
-    -moz-box-shadow: inset 0px -2px 0px 0px;
-    box-shadow: inset 0px -2px 0px 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+    -webkit-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
+    -moz-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
+    box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
   }
 }
 

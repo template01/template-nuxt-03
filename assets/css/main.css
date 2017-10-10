@@ -160,7 +160,8 @@ html {
 }
 
 .offsetSlantTop {
-  padding-top: 60px;
+  margin-top: 60px;
+  margin-bottom: -60px;
 }
 
 .section {
@@ -213,6 +214,10 @@ h2, .uk-h2 {
 }
 
 h4, .uk-h4 {
+  @media (min-width: 1600px) {
+    font-size: 1.6rem !important;
+    line-height: 1.9rem !important;
+  }
   @media (max-width: 960px) {
     font-size: 1.6rem !important;
   }

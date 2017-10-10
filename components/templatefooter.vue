@@ -1,5 +1,5 @@
 <template>
-<div class="uk-container" id="templatefooter">
+<div class="uk-container beige-background" id="templatefooter">
 
   <div class="uk-padding uk-padding-remove-horizontal uk-align-center ignoreWidthSmallScreen" :class="{'uk-width-1-1 ':!getsmallscreen}">
     <div class="uk-grid-match" uk-grid>
@@ -43,10 +43,20 @@ export default {
 </script>
 <style lang="scss">
 #templatefooter {
+
+
+
+    @media (min-width: 960px) {
+      padding-top: 60px;
+
+    }
+
+
     * {
         color: inherit;
     }
-    background-color: inherit;
+
+
     &:not(#firstColContact a){
 
       a {

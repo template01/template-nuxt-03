@@ -7,7 +7,7 @@
   <br />
   </span>
   <div class="">
-    <h2 class="" v-html="datainput.title.rendered" style="color:inherit;"></h2>
+    <h4 class="" v-html="datainput.title.rendered" style="color:inherit;"></h4>
   </div>
   <h4 style="color:inherit;">
     <span v-for="(type,index) in datainput.pure_taxonomies.tags">
@@ -54,7 +54,7 @@ h4 {
     margin: 0;
 }
 h2{
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
   line-height: 1;
 
 }
