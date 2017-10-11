@@ -9,7 +9,7 @@
     </div>
 
 
-    <div id="" class="section" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}" :uk-parallax="getsmallscreen ? 'y: 0,0; viewport: 0.4' : 'y: 0,0; viewport: 0.4'">
+    <div id="" class="section" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}" :uk-parallax="issmallscreen ? 'y: 0,0; viewport: 0.4' : 'y: 0,0; viewport: 0.4'">
       <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_a.background_color+' '+content.acf.section_a.background_color+' transparent'}"></div>
 
       <div class="uk-container" :style="{'color':content.acf.section_a.font_color}">
@@ -23,9 +23,9 @@
     <div class="section" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}">
 
       <div class="uk-container " :style="{'background':content.acf.section_a.background_color}">
-        <div class="killPadding " id="workitems" :uk-parallax="getsmallscreen ? '' : 'y: 300,0; viewport: 0.2'" :style="getsmallscreen ? {} :{'margin-top':'-300px'}">
+        <div class="killPadding " id="workitems" :uk-parallax="issmallscreen ? '' : 'y: 300,0; viewport: 0.2'" :style="issmallscreen ? {} :{'margin-top':'-300px'}">
 
-          <div class=" uk-grid-collapse uk-text-center" uk-grid uk-height-match>
+          <div class=" uk-grid-collapse uk-text-center" uk-grid >
             <werktileitem v-bind:key="tile.id" v-for="tile in tiles" :datainput="tile"></werktileitem>
 
           </div>
@@ -36,7 +36,7 @@
   </div>
 
 
-  <div id="" class="section sendToBack" :style="{'color':content.acf.section_b.background_color,'background-color':content.acf.section_b.background_color}" :uk-parallax="getsmallscreen ? '' : 'y: -300,0px; viewport: 0.5'">
+  <div id="" class="section sendToBack" :style="{'color':content.acf.section_b.background_color,'background-color':content.acf.section_b.background_color}" :uk-parallax="issmallscreen ? '' : 'y: -300,0px; viewport: 0.5'">
 
     <div class="uk-container" :style="{'color':content.acf.section_b.font_color}">
       <sectioncontent :ignorePaddingBottom="true" :acfsection="content.acf.section_b.content"></sectioncontent>

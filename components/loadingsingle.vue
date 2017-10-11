@@ -97,7 +97,7 @@ export default {
       // The amount of segment points we want to create:
       var amount = 10;
 
-      if(this.getsmallscreen){
+      if(this.issmallscreen){
         var height = 20
       }else{
         var height = 40;

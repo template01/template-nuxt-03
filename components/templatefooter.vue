@@ -1,7 +1,7 @@
 <template>
 <div class="uk-container beige-background" id="templatefooter">
 
-  <div class="uk-padding uk-padding-remove-horizontal uk-align-center ignoreWidthSmallScreen" :class="{'uk-width-1-1 ':!getsmallscreen}">
+  <div class="uk-padding uk-padding-remove-horizontal uk-align-center ignoreWidthSmallScreen" :class="{'uk-width-1-1 ':!issmallscreen}">
     <div class="uk-grid-match" uk-grid>
       <h1 v-if="ignoreFirstColumn " class="uk-visible@m hugeLetters uk-width-1-2@m" v-html="passHeader"></h1>
       <div id="firstColContact" v-if="!ignoreFirstColumn" class="uk-visible@m uk-width-1-2@m ">
@@ -15,11 +15,11 @@
       </div>
       <div v-if="!ignoreSecondColumn" class="uk-width-1-4@m">
         <div class="uk-inline">
-          <h4 :class="{'uk-position-bottom ':!getsmallscreen}" v-html="$t('contact.a')"></h4></div>
+          <h4 :class="{'uk-position-bottom ':!issmallscreen}" v-html="$t('contact.a')"></h4></div>
       </div>
       <div v-if="!ignoreSecondColumn" class="uk-width-1-4@m">
         <div class="uk-inline">
-          <h4 :class="{'uk-position-bottom ':!getsmallscreen}" v-html="$t('contact.b')"></h4></div>
+          <h4 :class="{'uk-position-bottom ':!issmallscreen}" v-html="$t('contact.b')"></h4></div>
       </div>
     </div>
   </div>

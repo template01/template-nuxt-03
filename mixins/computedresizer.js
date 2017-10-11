@@ -6,7 +6,7 @@ import {
 export default {
   computed: {
     ...mapGetters({
-     getsmallscreen: "getsmallscreen",
+     issmallscreen: "issmallscreen",
    }),
   },
 

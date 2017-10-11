@@ -18,7 +18,7 @@
   </div>
 
 
-  <div id="" class="section"  :style="[getsmallscreen ? {} :{'margin-top':'-300px'},{'color':content.acf.section_b.background_color,'background-color':content.acf.section_b.background_color}]" :uk-parallax="getsmallscreen ? '' : 'y: 300,0; viewport: 0.5'" >
+  <div id="" class="section"  :style="[issmallscreen ? {} :{'margin-top':'-300px'},{'color':content.acf.section_b.background_color,'background-color':content.acf.section_b.background_color}]" :uk-parallax="issmallscreen ? '' : 'y: 300,0; viewport: 0.5'" >
 
     <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_b.background_color+' '+content.acf.section_b.background_color+' transparent'}"></div>
 
@@ -31,7 +31,7 @@
 
 
 
-  <div id="" class="section section-last" :style="[getsmallscreen ? {} :{'margin-top':'-300px'},{'color':content.acf.section_c.background_color,'background-color':content.acf.section_c.background_color}]" :uk-parallax="getsmallscreen ? '' : 'y: 300,0; viewport: 0.5'" >
+  <div id="" class="section section-last" :style="[issmallscreen ? {} :{'margin-top':'-300px'},{'color':content.acf.section_c.background_color,'background-color':content.acf.section_c.background_color}]" :uk-parallax="issmallscreen ? '' : 'y: 300,0; viewport: 0.5'" >
     <div class="slantTopRight" :style="{'border-color': 'transparent '+content.acf.section_c.background_color+' '+content.acf.section_c.background_color+' transparent'}"></div>
 
     <div class="uk-container uk-padding uk-padding-remove-vertical" :style="{'color':content.acf.section_c.font_color}">
@@ -42,7 +42,7 @@
   </div>
 
 
-  <div class="beige-background uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative" :class="{'uk-padding ':getsmallscreen}">
+  <div class="beige-background uk-padding-remove-horizontal uk-padding-remove-top uk-position-relative" :class="{'uk-padding ':issmallscreen}">
     <div class="slantTopLeft"></div>
   </div>
 

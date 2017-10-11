@@ -22,8 +22,8 @@ export default {
   },
 
   watch:{
-    'getsmallscreen':function(){
-      this.smallscreen = this.getsmallscreen
+    'issmallscreen':function(){
+      this.smallscreen = this.issmallscreen
     }
   },
 
@@ -35,7 +35,7 @@ export default {
   },
 
   mounted(){
-    this.smallscreen = this.getsmallscreen
+    this.smallscreen = this.issmallscreen
     this.$store.commit('SET_INITIATED')
     window.scrollTo(0,0)
   },

@@ -5,7 +5,7 @@ export default ({
   store
 }) => {
   if (isClient) {
-    const detectSmallDevice = () => {
+    const detectScreensize = () => {
 
       if (window.innerWidth < 960) {
         store.commit('SET_SMALLSCREEN', true)
@@ -14,22 +14,31 @@ export default ({
         store.commit('SET_SMALLSCREEN', false)
       }
 
+      if (window.innerWidth > 1920) {
+        store.commit('SET_XLSCREEN', true)
+      } else {
+        store.commit('SET_XLSCREEN', false)
+      }
+
       console.log('heya')
 
     };
 
 
-    detectSmallDevice();
+    detectScreensize();
 
-    window.addEventListener('resize', _.debounce(detectSmallDevice, 100));
+    window.addEventListener('resize', _.debounce(detectScreensize, 100));
 
 
     if (window.innerWidth < 960) {
       store.commit('SET_SMALLSCREEN', true)
-
-
     } else {
       store.commit('SET_SMALLSCREEN', false)
+    }
+    if (window.innerWidth > 1920) {
+      store.commit('SET_XLSCREEN', true)
+    } else {
+      store.commit('SET_XLSCREEN', false)
     }
 
   }

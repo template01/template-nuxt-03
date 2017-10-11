@@ -2,8 +2,8 @@
 <defaultpage class="beige-background" id="">
   <div class="werkSplash uk-visible@m">
     <div class="werkSplashContent">
-
-      <div class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.sizes.xlarge+')'}"></div>
+      <div v-if="!xlscreen" class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.sizes.xlarge+')'}"></div>
+      <div  v-else class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.url+')'}"></div>
 
     </div>
   </div>
@@ -19,7 +19,7 @@
       <div class="uk-padding">
 
         <!-- <div></div> -->
-        <div class="uk-align-center" :class="{'uk-width-2-3':!getsmallscreen}">
+        <div class="uk-align-center" :class="{'uk-width-2-3':!issmallscreen}">
 
           <!-- <div :class="wide ? 'uk-width-3-4' : 'uk-width-1-1'"> -->
           <div>
@@ -31,28 +31,33 @@
       </div>
     </div>
 
-    <div id="" class="section section-last uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :style="[getsmallscreen ? {} :{'margin-top':'-300px'},{'background-color':content.acf['background-color'], 'color':content.acf['font_color']}]" :uk-parallax="getsmallscreen ? '' : 'y: 300,0; viewport: 0.2'">
+    <div id="" class="section section-last uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :style="[issmallscreen ? {} :{'margin-top':'-300px'},{'background-color':content.acf['background-color'], 'color':content.acf['font_color']}]" :uk-parallax="issmallscreen ? '' : 'y: 300,0; viewport: 0.2'">
 
       <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf['background-color']+' '+content.acf['background-color']+' transparent'}"></div>
 
       <div class="uk-container uk-padding uk-padding-remove-horizontal">
+
+        <div class="uk-width-2-3@m uk-padding uk-padding-remove-bottom uk-align-center uk-text-center" >
+          <werkmeta :datainput="content" :singlepage=true></werkmeta>
+        </div>
+
         <div v-for="item in content.acf.single">
 
           <div class="uk-width-1-1@m uk-padding" :class="!item.addpaddingbottom ? 'uk-padding-remove-bottom' : '' ">
 
             <div class="text-section" v-if="item.acf_fc_layout === 'single_large_text_centered'">
-              <div style="margin-bottom:0;" class="uk-align-center" :class="{'uk-width-2-3':!getsmallscreen}">
+              <div style="margin-bottom:0;" class="uk-align-center" :class="{'uk-width-2-3':!issmallscreen}">
                 <div class="uk-padding uk-padding-remove-horizontal uk-h2" v-html="item.large_text_centered" style="color:inherit; margin-bottom:0;"></div>
               </div>
             </div>
 
-            <div v-if="item.acf_fc_layout === 'slideshow'" :class="{'uk-width-5-6':!getsmallscreen}" class="uk-align-center uk-margin-remove-bottom">
+            <div v-if="item.acf_fc_layout === 'slideshow'" :class="{'uk-width-5-6':!issmallscreen}" class="uk-align-center uk-margin-remove-bottom">
               <slideshow :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshow>
             </div>
 
 
 
-            <div v-if="item.acf_fc_layout === 'single_gallery'" :class="{'uk-width-5-6':!getsmallscreen}" class="uk-align-center uk-margin-remove-bottom">
+            <div v-if="item.acf_fc_layout === 'single_gallery'" :class="{'uk-width-5-6':!issmallscreen}" class="uk-align-center uk-margin-remove-bottom">
 
               <div class="uk-visible@m uk-child-width-expand uk-flex uk-flex-middle" :class="item.collapsed_gallery ? 'uk-grid-collapse':''" uk-grid>
 
@@ -92,7 +97,7 @@
   </div>
 
 
-  <!-- <div class="blue-background uk-position-relative" :class="{'uk-padding ':getsmallscreen}">
+  <!-- <div class="blue-background uk-position-relative" :class="{'uk-padding ':issmallscreen}">
   <div class="slantTopLeft"></div>
 </div> -->
 
@@ -109,6 +114,7 @@
 import defaultpage from '~/components/defaultpage.vue'
 import slideshow from '~/components/werk/_slug/slideshow.vue'
 import nextproject from '~/components/werk/_slug/nextproject.vue'
+import werkmeta from '~/components/werk/werkmeta.vue'
 import axios from 'axios'
 
 export default {
@@ -116,12 +122,22 @@ export default {
   components: {
     defaultpage,
     slideshow,
-    nextproject
+    nextproject,
+    werkmeta
   },
   transition: 'bounce',
   data: function() {
     return {
+      xlscreen: false,
       wide: null,
+    }
+  },
+  mounted(){
+    this.xlscreen = this.isxlscreen
+  },
+  watch:{
+    'isxlscreen':function(){
+      this.xlscreen = this.isxlscreen
     }
   },
 

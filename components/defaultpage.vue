@@ -31,7 +31,7 @@
       </div>
 
       <div class="">
-        <div :class="getsmallscreen ? '':'offsetSlantTop'">
+        <div :class="issmallscreen ? '':'offsetSlantTop'">
           <slot>
 
           </slot>
@@ -137,7 +137,7 @@ export default {
 
     handleScroll() {
       this.scrolled = window.scrollY > 0;
-      if (!this.getsmallscreen) {
+      if (!this.issmallscreen) {
         if (window.scrollY > 100) {
           this.menuopenshow = true
         } else {
@@ -176,7 +176,7 @@ export default {
 
 
     window.addEventListener('scroll', this.handleScroll);
-    if (this.getsmallscreen) {
+    if (this.issmallscreen) {
       this.menuopenshow = true
     }
 
@@ -189,7 +189,7 @@ export default {
     })
 
 
-    if(this.getsmallscreen && !this.getinitiated){
+    if(this.issmallscreen && !this.getinitiated){
       var vm = this
       var savedScrollPos = window.scrollY
       vm.reinitiateUikit = false
@@ -209,7 +209,7 @@ export default {
 
 
   watch: {
-    getsmallscreen: function(val) {
+    issmallscreen: function(val) {
 
 
       if (val) {

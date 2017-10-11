@@ -75,7 +75,7 @@ export default {
   },
 
   mounted() {
-    console.log(this.getsmallscreen)
+    console.log(this.issmallscreen)
     if (!this.getsplashimagesloaded) {
       this.$store.commit('SET_SPLASHIMAGESLOADED')
       this.preloadImages(this.slideContent)

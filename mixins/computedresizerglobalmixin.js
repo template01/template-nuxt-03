@@ -7,7 +7,8 @@ import {
 Vue.mixin({
   computed: {
     ...mapGetters({
-     getsmallscreen: "getsmallscreen",
-   }),
+      issmallscreen: "issmallscreen",
+      isxlscreen: "isxlscreen"
+    }),
   }
 })

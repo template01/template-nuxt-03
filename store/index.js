@@ -3,6 +3,7 @@ export const state = () => ({
   locale: 'nl',
   n: 1,
   smallscreen: null,
+  xlscreen: false,
   initiated: false,
   splashimagesloaded : false,
   showcontact: false
@@ -10,12 +11,15 @@ export const state = () => ({
 //
 // export const getters = () => ({
 //   getN: state => () => state.n,
-//   getsmallscreen: state => () => state.smallscreen,
+//   issmallscreen: state => () => state.smallscreen,
 // })
 
 export const getters = {
-  getsmallscreen(state) {
+  issmallscreen(state) {
     return state.smallscreen
+  },
+  isxlscreen(state) {
+    return state.xlscreen
   },
   getlocale(state) {
     return state.locale
@@ -41,6 +45,10 @@ export const mutations = {
 
   SET_SMALLSCREEN(state, small) {
     state.smallscreen = small;
+  },
+
+  SET_XLSCREEN(state, xl) {
+    state.xlscreen = xl;
   },
 
   SET_HIDECONTACT(state, showcontact) {

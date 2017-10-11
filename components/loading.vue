@@ -110,7 +110,7 @@ export default {
 
       // The maximum height of the wave:
 
-      if(this.getsmallscreen){
+      if(this.issmallscreen){
         var height = 20
       }else{
         var height = 40;
