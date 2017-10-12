@@ -9,7 +9,7 @@
         <button class="toggle-button-menu black-background"><img class="uk-visible@l" src="/hamburger.svg"/><img class="uk-hidden@l" src="/hamburgerSm.svg"/></button>
       </div>
       <div style="padding:15px;">
-        <menuitems :sidebar=true></menuitems>
+        <menuitems class="black-color-force" :sidebar="true"></menuitems>
       </div>
 
     </div>
@@ -25,7 +25,7 @@
       <div class="uk-container uk-visible@m" id="">
         <div class="uk-padding uk-padding-remove-horizontal" id="menudefault">
           <div class="uk-width-1-1 uk-align-center ignoreWidthSmallScreen" >
-            <menuitems></menuitems>
+            <menuitems class="black-color-force"></menuitems>
           </div>
         </div>
       </div>
@@ -38,8 +38,8 @@
         </div>
 
       </div>
-      <templatefooter v-if="$route.path != '/contact'"></templatefooter>
-      <templatefooter v-else ignoreSecondColumn=true></templatefooter>
+      <templatefooter class="black-color-force" v-if="$route.path != '/contact'"></templatefooter>
+      <templatefooter class="black-color-force" v-else ignoreSecondColumn=true></templatefooter>
     </section>
 
   </main>

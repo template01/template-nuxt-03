@@ -1,9 +1,10 @@
 <template>
 <defaultpage class="beige-background" id="">
-  <div class="werkSplash uk-visible@m">
+  <div v-if="content.acf.single_background_image" class="werkSplash uk-visible@m">
     <div class="werkSplashContent">
-      <div v-if="!xlscreen" class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.sizes.xlarge+')'}"></div>
-      <div  v-else class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.url+')'}"></div>
+      <!-- <div v-if="!xlscreen" class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.sizes.xlarge+')'}"></div> -->
+      <!-- <div  v-else class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.url+')'}"></div> -->
+      <div class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.url+')'}"></div>
 
     </div>
   </div>
@@ -38,7 +39,7 @@
       <div class="uk-container uk-padding uk-padding-remove-horizontal">
 
         <div class="uk-width-2-3@m uk-padding uk-padding-remove-bottom uk-align-center uk-text-center" >
-          <werkmeta :datainput="content" :singlepage=true></werkmeta>
+          <werkmeta :datainput="content" :singlepage="true"></werkmeta>
         </div>
 
         <div v-for="item in content.acf.single">
@@ -200,6 +201,19 @@ export default {
         position: fixed;
         height: 100vh;
         width: 100vw;
+          image-rendering: optimizeSpeed;
+          /*                     */
+          image-rendering: -moz-crisp-edges;
+          /* Firefox             */
+          image-rendering: -o-crisp-edges;
+          /* Opera               */
+          image-rendering: -webkit-optimize-contrast;
+          /* Chrome (and Safari) */
+          image-rendering: optimize-contrast;
+          /* CSS3 Proposed       */
+          -ms-interpolation-mode: nearest-neighbor;
+          /* IE8+                */
+
     }
     @media (max-width: 1200px) {
         height: 55vh;

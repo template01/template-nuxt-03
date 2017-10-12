@@ -54,6 +54,10 @@ module.exports = {
     // uikit customized
     '~assets/css/site.css',
     '~assets/fonts/relative/stylesheet.css',
+    '~assets/fonts/fontello-6d6d4103/css/fontello.css',
+    '~assets/fonts/radnika/stylesheet.css',
+    '~assets/fonts/cerebri/stylesheet.css',
+
     'swiper/dist/css/swiper.css'
     //'bootstrap/dist/css/bootstrap.css',
     //'bootstrap-vue/dist/bootstrap-vue.css'

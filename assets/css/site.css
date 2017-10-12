@@ -10,7 +10,7 @@
  */
 html {
   /* 1 */
-  font-family: "Relative Book", sans-serif;
+  font-family: "Cerebri Sans Book", sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
@@ -19,7 +19,7 @@ html {
   -ms-text-size-adjust: 100%;
   /* 3 */
   background: #fff;
-  color: #101010; }
+  color: #666; }
 
 /*
  * Removes default margin.
@@ -51,7 +51,7 @@ a:hover {
  */
 a,
 .uk-link {
-  color: #1e87f0;
+  color: #101010;
   text-decoration: none;
   cursor: pointer; }
 
@@ -117,7 +117,7 @@ em {
  */
 ins {
   background: #ffd;
-  color: #101010;
+  color: #666;
   text-decoration: none; }
 
 /*
@@ -125,7 +125,7 @@ ins {
  */
 mark {
   background: #ffd;
-  color: #101010; }
+  color: #666; }
 
 /*
  * Quote
@@ -232,9 +232,9 @@ h4, .uk-h4,
 h5, .uk-h5,
 h6, .uk-h6 {
   margin: 0 0 20px 0;
-  font-family: "Relative Book", sans-serif;
+  font-family: "Cerebri Sans Book", sans-serif;
   font-weight: normal;
-  color: #101010;
+  color: #333;
   text-transform: none; }
 
 /* Add margin if adjacent element */
@@ -334,7 +334,7 @@ blockquote {
   font-size: 1.3rem;
   line-height: 1.5;
   font-style: italic;
-  color: #101010; }
+  color: #333; }
 
 /* Add margin if adjacent element */
 * + blockquote {
@@ -350,7 +350,7 @@ blockquote footer {
   margin-top: 10px;
   font-size: 0.875rem;
   line-height: 1.5;
-  color: #101010; }
+  color: #666; }
   blockquote footer::before {
     content: "— "; }
 
@@ -362,7 +362,7 @@ blockquote footer {
  */
 pre {
   font: 0.875rem / 1.5 Consolas, monaco, monospace;
-  color: #101010;
+  color: #666;
   -moz-tab-size: 4;
   tab-size: 4;
   /* 1 */
@@ -471,7 +471,7 @@ a.uk-link-muted,
 
 a.uk-link-muted:hover,
 .uk-link-muted a:hover {
-  color: #101010; }
+  color: #666; }
 
 /* Text
  ========================================================================== */
@@ -683,7 +683,7 @@ a.uk-link-reset:hover,
  */
 .uk-list ul {
   margin: 0;
-  padding-left: 20px;
+  padding-left: 30px;
   list-style: none; }
 
 /*
@@ -732,7 +732,7 @@ a.uk-link-reset:hover,
   left: 0;
   width: 1.5em;
   height: 1.5em;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23101010%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%3E%3C%2Fcircle%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23666%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%3E%3C%2Fcircle%3E%0A%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   float: left; }
@@ -769,7 +769,7 @@ a.uk-link-reset:hover,
  * Term
  */
 .uk-description-list > dt {
-  color: #101010;
+  color: #333;
   font-size: 0.875rem;
   font-weight: normal;
   text-transform: uppercase; }
@@ -1056,13 +1056,13 @@ button.uk-icon:not(:disabled) {
 
 .uk-icon-link:hover,
 .uk-icon-link:focus {
-  color: #101010;
+  color: #666;
   outline: none; }
 
 /* OnClick + Active */
 .uk-icon-link:active,
 .uk-active > .uk-icon-link {
-  color: #030303; }
+  color: #595959; }
 
 /*
  * Button
@@ -1095,14 +1095,14 @@ button.uk-icon:not(:disabled) {
 .uk-icon-button:hover,
 .uk-icon-button:focus {
   background-color: #ebebeb;
-  color: #101010;
+  color: #666;
   outline: none; }
 
 /* OnClick + Active */
 .uk-icon-button:active,
 .uk-active > .uk-icon-button {
   background-color: #dfdfdf;
-  color: #101010; }
+  color: #666; }
 
 /* ========================================================================
    Component: Form Range
@@ -1370,7 +1370,7 @@ button.uk-icon:not(:disabled) {
   /* 4 */
   padding: 0 10px;
   background: #fff;
-  color: #101010;
+  color: #666;
   border: 1px solid #e5e5e5;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -1411,7 +1411,7 @@ button.uk-icon:not(:disabled) {
 .uk-textarea:focus {
   outline: none;
   background-color: #fff;
-  color: #101010;
+  color: #666;
   border-color: #1e87f0; }
 
 /* Disabled */
@@ -1536,7 +1536,7 @@ select.uk-form-width-xsmall {
   -moz-appearance: none;
   /* 2 */
   padding-right: 20px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23101010%22%20points%3D%2212%201%209%206%2015%206%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23101010%22%20points%3D%2212%2013%209%208%2015%208%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E%0A");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%201%209%206%2015%206%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%2013%209%208%2015%208%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E%0A");
   background-repeat: no-repeat;
   background-position: 100% 50%; }
 
@@ -1709,7 +1709,7 @@ select.uk-form-width-xsmall {
 /* Label
  ========================================================================== */
 .uk-form-label {
-  color: #101010;
+  color: #333;
   font-size: 0.875rem; }
 
 /* Layout
@@ -1776,7 +1776,7 @@ select.uk-form-width-xsmall {
  * Required for `a`.
  */
 .uk-form-icon:hover {
-  color: #101010; }
+  color: #666; }
 
 /*
  * Make `input` element clickable through icon, e.g. if it's a `span`
@@ -1830,7 +1830,7 @@ select.uk-form-width-xsmall {
   /* 6 */
   display: inline-block;
   box-sizing: border-box;
-  padding: 0 20px;
+  padding: 0 30px;
   vertical-align: middle;
   font-size: 0.875rem;
   /* 7 */
@@ -1872,21 +1872,21 @@ select.uk-form-width-xsmall {
  */
 .uk-button-default {
   background-color: transparent;
-  color: #101010;
+  color: #333;
   border: 1px solid #e5e5e5; }
 
 /* Hover + Focus */
 .uk-button-default:hover,
 .uk-button-default:focus {
   background-color: transparent;
-  color: #101010;
+  color: #333;
   border-color: #b2b2b2; }
 
 /* OnClick + Active */
 .uk-button-default:active,
 .uk-button-default.uk-active {
   background-color: transparent;
-  color: #101010;
+  color: #333;
   border-color: #999999; }
 
 /*
@@ -1986,7 +1986,7 @@ select.uk-form-width-xsmall {
   line-height: 1.5;
   background: none;
   /* 2 */
-  color: #101010;
+  color: #333;
   position: relative; }
   .uk-button-text::before {
     content: "";
@@ -1994,14 +1994,14 @@ select.uk-form-width-xsmall {
     bottom: 0;
     left: 0;
     right: 100%;
-    border-bottom: 1px solid #101010;
+    border-bottom: 1px solid #333;
     -webkit-transition: right 0.3s ease-out;
     transition: right 0.3s ease-out; }
 
 /* Hover + Focus */
 .uk-button-text:hover,
 .uk-button-text:focus {
-  color: #101010; }
+  color: #333; }
   .uk-button-text:hover::before,
   .uk-button-text:focus::before {
     right: 0; }
@@ -2023,7 +2023,7 @@ select.uk-form-width-xsmall {
   line-height: 1.5;
   background: none;
   /* 2 */
-  color: #1e87f0; }
+  color: #101010; }
 
 /* Hover + Focus */
 .uk-button-link:hover,
@@ -2203,8 +2203,8 @@ select.uk-form-width-xsmall {
 /* Phone landscape and bigger */
 @media (min-width: 640px) {
   .uk-container {
-    padding-left: 20px;
-    padding-right: 20px; } }
+    padding-left: 30px;
+    padding-right: 30px; } }
 /* Tablet landscape and bigger */
 @media (min-width: 960px) {
   .uk-container {
@@ -2286,16 +2286,16 @@ select.uk-form-width-xsmall {
  */
 /* Horizontal */
 .uk-grid {
-  margin-left: -20px; }
+  margin-left: -30px; }
 
 .uk-grid > * {
-  padding-left: 20px; }
+  padding-left: 30px; }
 
 /* Vertical */
 .uk-grid + .uk-grid,
 .uk-grid > .uk-grid-margin,
 * + .uk-grid-margin {
-  margin-top: 20px; }
+  margin-top: 30px; }
 
 /* Desktop and bigger */
 @media (min-width: 1200px) {
@@ -2332,16 +2332,16 @@ select.uk-form-width-xsmall {
  */
 /* Horizontal */
 .uk-grid-medium {
-  margin-left: -20px; }
+  margin-left: -30px; }
 
 .uk-grid-medium > * {
-  padding-left: 20px; }
+  padding-left: 30px; }
 
 /* Vertical */
 .uk-grid + .uk-grid-medium,
 .uk-grid-medium > .uk-grid-margin,
 * + .uk-grid-margin-medium {
-  margin-top: 20px; }
+  margin-top: 30px; }
 
 /*
  * Large
@@ -2413,21 +2413,21 @@ select.uk-form-width-xsmall {
  */
 /* Horizontal */
 .uk-grid-divider {
-  margin-left: -40px; }
+  margin-left: -60px; }
 
 .uk-grid-divider > * {
-  padding-left: 40px; }
+  padding-left: 60px; }
 
 .uk-grid-divider > :not(.uk-first-column)::before {
-  left: 20px; }
+  left: 30px; }
 
 /* Vertical */
 .uk-grid-divider.uk-grid-stack > .uk-grid-margin {
-  margin-top: 40px; }
+  margin-top: 60px; }
 
 .uk-grid-divider.uk-grid-stack > .uk-grid-margin::before {
-  top: -20px;
-  left: 40px; }
+  top: -30px;
+  left: 60px; }
 
 /* Desktop and bigger */
 @media (min-width: 1200px) {
@@ -2474,21 +2474,21 @@ select.uk-form-width-xsmall {
  */
 /* Horizontal */
 .uk-grid-divider.uk-grid-medium {
-  margin-left: -40px; }
+  margin-left: -60px; }
 
 .uk-grid-divider.uk-grid-medium > * {
-  padding-left: 40px; }
+  padding-left: 60px; }
 
 .uk-grid-divider.uk-grid-medium > :not(.uk-first-column)::before {
-  left: 20px; }
+  left: 30px; }
 
 /* Vertical */
 .uk-grid-divider.uk-grid-medium.uk-grid-stack > .uk-grid-margin {
-  margin-top: 40px; }
+  margin-top: 60px; }
 
 .uk-grid-divider.uk-grid-medium.uk-grid-stack > .uk-grid-margin::before {
-  top: -20px;
-  left: 40px; }
+  top: -30px;
+  left: 60px; }
 
 /*
  * Large
@@ -2572,8 +2572,8 @@ select.uk-form-width-xsmall {
 /* Phone landscape and bigger */
 @media (min-width: 640px) {
   .uk-tile {
-    padding-left: 20px;
-    padding-right: 20px; } }
+    padding-left: 30px;
+    padding-right: 30px; } }
 /* Tablet landscape and bigger */
 @media (min-width: 960px) {
   .uk-tile {
@@ -2676,13 +2676,13 @@ select.uk-form-width-xsmall {
 /* Sections
  ========================================================================== */
 .uk-card-body {
-  padding: 20px 20px; }
+  padding: 30px 30px; }
 
 .uk-card-header {
-  padding: 10px 20px; }
+  padding: 15px 30px; }
 
 .uk-card-footer {
-  padding: 10px 20px; }
+  padding: 15px 30px; }
 
 /* Desktop and bigger */
 @media (min-width: 1200px) {
@@ -2735,8 +2735,8 @@ select.uk-form-width-xsmall {
  ========================================================================== */
 .uk-card-badge {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 30px;
   z-index: 1; }
 
 /*
@@ -2759,11 +2759,11 @@ select.uk-form-width-xsmall {
  */
 .uk-card-default {
   background: #fff;
-  color: #101010;
+  color: #666;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
 
 .uk-card-default .uk-card-title {
-  color: #101010; }
+  color: #333; }
 
 .uk-card-default.uk-card-hover:hover {
   background-color: #fff;
@@ -2838,7 +2838,7 @@ select.uk-form-width-xsmall {
  * Default
  */
 .uk-card-body .uk-nav-default {
-  margin: -5px -20px; }
+  margin: -15px -30px; }
 
 .uk-card-title + .uk-nav-default {
   margin-top: 0; }
@@ -2846,11 +2846,11 @@ select.uk-form-width-xsmall {
 .uk-card-body .uk-nav-default > li > a,
 .uk-card-body .uk-nav-default .uk-nav-header,
 .uk-card-body .uk-nav-default .uk-nav-divider {
-  padding-left: 20px;
-  padding-right: 20px; }
+  padding-left: 30px;
+  padding-right: 30px; }
 
 .uk-card-body .uk-nav-default .uk-nav-sub {
-  padding-left: 35px; }
+  padding-left: 45px; }
 
 /* Desktop and bigger */
 @media (min-width: 1200px) {
@@ -2912,7 +2912,7 @@ select.uk-form-width-xsmall {
 /* Hover + Focus */
 .uk-close:hover,
 .uk-close:focus {
-  color: #101010;
+  color: #666;
   outline: none; }
 
 /* ========================================================================
@@ -2982,12 +2982,12 @@ select.uk-form-width-xsmall {
 /* Hover + Focus */
 .uk-totop:hover,
 .uk-totop:focus {
-  color: #101010;
+  color: #666;
   outline: none; }
 
 /* OnClick */
 .uk-totop:active {
-  color: #101010; }
+  color: #333; }
 
 /* ========================================================================
    Component: Marker
@@ -3015,7 +3015,7 @@ select.uk-form-width-xsmall {
   margin-bottom: 20px;
   padding: 15px 29px 15px 15px;
   background: #f8f8f8;
-  color: #101010; }
+  color: #666; }
 
 /* Add margin if adjacent element */
 * + .uk-alert {
@@ -3181,7 +3181,7 @@ select.uk-form-width-xsmall {
    Component: Overlay
  ========================================================================== */
 .uk-overlay {
-  padding: 20px 20px; }
+  padding: 30px 30px; }
 
 /*
  * Remove margin from the last-child
@@ -3245,7 +3245,7 @@ select.uk-form-width-xsmall {
   .uk-article-meta a {
     color: #999; }
   .uk-article-meta a:hover {
-    color: #101010;
+    color: #666;
     text-decoration: none; }
 
 /* ========================================================================
@@ -3322,7 +3322,7 @@ select.uk-form-width-xsmall {
 /* Style modifier
  ========================================================================== */
 .uk-comment-primary {
-  padding: 20px;
+  padding: 30px;
   background-color: #f8f8f8; }
 
 /* ========================================================================
@@ -3389,7 +3389,7 @@ select.uk-form-width-xsmall {
   width: 100%;
   /* 9 */
   border: none;
-  color: #101010; }
+  color: #666; }
 
 .uk-search-input:focus {
   outline: none; }
@@ -3581,7 +3581,7 @@ select.uk-form-width-xsmall {
 /* Hover + Focus */
 .uk-search-toggle:hover,
 .uk-search-toggle:focus {
-  color: #101010; }
+  color: #666; }
 
 /* ========================================================================
    Component: Nav
@@ -3643,12 +3643,12 @@ ul.uk-nav-sub {
   width: 1.5em;
   height: 1.5em;
   float: right;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23101010%22%20stroke-width%3D%221.1%22%20points%3D%2210%201%204%207%2010%2013%22%3E%3C%2Fpolyline%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%221.1%22%20points%3D%2210%201%204%207%2010%2013%22%3E%3C%2Fpolyline%3E%0A%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 50% 50%; }
 
 .uk-nav-parent-icon > .uk-parent.uk-open > a::after {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23101010%22%20stroke-width%3D%221.1%22%20points%3D%221%204%207%2010%2013%204%22%3E%3C%2Fpolyline%3E%0A%3C%2Fsvg%3E"); }
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%221.1%22%20points%3D%221%204%207%2010%2013%204%22%3E%3C%2Fpolyline%3E%0A%3C%2Fsvg%3E"); }
 
 /* Header
  ========================================================================== */
@@ -3679,17 +3679,17 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-nav-default > li > a:hover,
 .uk-nav-default > li > a:focus {
-  color: #101010; }
+  color: #666; }
 
 /* Active */
 .uk-nav-default > li.uk-active > a {
-  color: #101010; }
+  color: #333; }
 
 /*
  * Header
  */
 .uk-nav-default .uk-nav-header {
-  color: #101010; }
+  color: #333; }
 
 /*
  * Divider
@@ -3705,7 +3705,7 @@ ul.uk-nav-sub {
 
 .uk-nav-default .uk-nav-sub a:hover,
 .uk-nav-default .uk-nav-sub a:focus {
-  color: #101010; }
+  color: #666; }
 
 /* Primary modifier
  ========================================================================== */
@@ -3720,17 +3720,17 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-nav-primary > li > a:hover,
 .uk-nav-primary > li > a:focus {
-  color: #101010; }
+  color: #666; }
 
 /* Active */
 .uk-nav-primary > li.uk-active > a {
-  color: #101010; }
+  color: #333; }
 
 /*
  * Header
  */
 .uk-nav-primary .uk-nav-header {
-  color: #101010; }
+  color: #333; }
 
 /*
  * Divider
@@ -3746,7 +3746,7 @@ ul.uk-nav-sub {
 
 .uk-nav-primary .uk-nav-sub a:hover,
 .uk-nav-primary .uk-nav-sub a:focus {
-  color: #101010; }
+  color: #666; }
 
 /* Alignment modifier
  ========================================================================== */
@@ -3906,7 +3906,7 @@ ul.uk-nav-sub {
   padding: 0 15px;
   /* 3 */
   font-size: 0.875rem;
-  font-family: "Relative Book", sans-serif;
+  font-family: "Cerebri Sans Book", sans-serif;
   /* 4 */
   text-decoration: none; }
 
@@ -3928,21 +3928,21 @@ ul.uk-nav-sub {
 .uk-navbar-nav > li:hover > a,
 .uk-navbar-nav > li > a:focus,
 .uk-navbar-nav > li > a.uk-open {
-  color: #101010;
+  color: #666;
   outline: none; }
 
 /* OnClick */
 .uk-navbar-nav > li > a:active {
-  color: #101010; }
+  color: #333; }
 
 /* Active */
 .uk-navbar-nav > li.uk-active > a {
-  color: #101010; }
+  color: #333; }
 
 /* Item
  ========================================================================== */
 .uk-navbar-item {
-  color: #101010; }
+  color: #666; }
 
 /* Toggle
  ========================================================================== */
@@ -3952,7 +3952,7 @@ ul.uk-nav-sub {
 .uk-navbar-toggle:hover,
 .uk-navbar-toggle:focus,
 .uk-navbar-toggle.uk-open {
-  color: #101010;
+  color: #666;
   outline: none;
   text-decoration: none; }
 
@@ -3989,7 +3989,7 @@ ul.uk-nav-sub {
   /* 4 */
   padding: 25px;
   background: #fff;
-  color: #101010;
+  color: #666;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15); }
 
 /* Show */
@@ -4070,17 +4070,17 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-navbar-dropdown-nav > li > a:hover,
 .uk-navbar-dropdown-nav > li > a:focus {
-  color: #101010; }
+  color: #666; }
 
 /* Active */
 .uk-navbar-dropdown-nav > li.uk-active > a {
-  color: #101010; }
+  color: #333; }
 
 /*
  * Header
  */
 .uk-navbar-dropdown-nav .uk-nav-header {
-  color: #101010; }
+  color: #333; }
 
 /*
  * Divider
@@ -4096,7 +4096,7 @@ ul.uk-nav-sub {
 
 .uk-navbar-dropdown-nav .uk-nav-sub a:hover,
 .uk-navbar-dropdown-nav .uk-nav-sub a:focus {
-  color: #101010; }
+  color: #666; }
 
 /* Dropbar
  ========================================================================== */
@@ -4208,13 +4208,13 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-subnav > * > a:hover,
 .uk-subnav > * > a:focus {
-  color: #101010;
+  color: #666;
   text-decoration: none;
   outline: none; }
 
 /* Active */
 .uk-subnav > .uk-active > a {
-  color: #101010; }
+  color: #333; }
 
 /* Divider modifier
  ========================================================================== */
@@ -4252,12 +4252,12 @@ ul.uk-nav-sub {
 .uk-subnav-pill > * > a:hover,
 .uk-subnav-pill > * > a:focus {
   background-color: #f8f8f8;
-  color: #101010; }
+  color: #666; }
 
 /* OnClick */
 .uk-subnav-pill > * > a:active {
   background-color: #f8f8f8;
-  color: #101010; }
+  color: #666; }
 
 /* Active */
 .uk-subnav-pill > .uk-active > a {
@@ -4307,13 +4307,13 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-breadcrumb > * > :hover,
 .uk-breadcrumb > * > :focus {
-  color: #101010;
+  color: #666;
   text-decoration: none; }
 
 /* Disabled */
 /* Active */
 .uk-breadcrumb > :last-child > * {
-  color: #101010; }
+  color: #666; }
 
 /*
  * Divider
@@ -4379,12 +4379,12 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-pagination > * > :hover,
 .uk-pagination > * > :focus {
-  color: #101010;
+  color: #666;
   text-decoration: none; }
 
 /* Active */
 .uk-pagination > .uk-active > * {
-  color: #101010; }
+  color: #666; }
 
 /* Disabled */
 .uk-pagination > .uk-disabled > * {
@@ -4458,12 +4458,12 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-tab > * > a:hover,
 .uk-tab > * > a:focus {
-  color: #101010;
+  color: #666;
   text-decoration: none; }
 
 /* Active */
 .uk-tab > .uk-active > a {
-  color: #101010;
+  color: #333;
   border-color: #1e87f0; }
 
 /* Disabled */
@@ -4537,19 +4537,19 @@ ul.uk-nav-sub {
  */
 .uk-slidenav {
   padding: 5px;
-  color: rgba(16, 16, 16, 0.6);
+  color: rgba(102, 102, 102, 0.6);
   -webkit-transition: color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out; }
 
 /* Hover + Focus */
 .uk-slidenav:hover,
 .uk-slidenav:focus {
-  color: rgba(16, 16, 16, 0.8);
+  color: rgba(102, 102, 102, 0.8);
   outline: none; }
 
 /* OnClick */
 .uk-slidenav:active {
-  color: rgba(16, 16, 16, 0.9); }
+  color: rgba(102, 102, 102, 0.9); }
 
 /* Icon modifier
  ========================================================================== */
@@ -4613,7 +4613,7 @@ ul.uk-nav-sub {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: rgba(16, 16, 16, 0.1);
+  background: rgba(102, 102, 102, 0.1);
   /* 1 */
   text-indent: 100%;
   overflow: hidden;
@@ -4624,16 +4624,16 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-dotnav > * > :hover,
 .uk-dotnav > * > :focus {
-  background-color: rgba(16, 16, 16, 0.4);
+  background-color: rgba(102, 102, 102, 0.4);
   outline: none; }
 
 /* OnClick */
 .uk-dotnav > * > :active {
-  background-color: rgba(16, 16, 16, 0.6); }
+  background-color: rgba(102, 102, 102, 0.6); }
 
 /* Active */
 .uk-dotnav > .uk-active > * {
-  background-color: rgba(16, 16, 16, 0.4); }
+  background-color: rgba(102, 102, 102, 0.4); }
 
 /* Modifier: 'uk-dotnav-vertical'
  ========================================================================== */
@@ -4680,11 +4680,11 @@ ul.uk-nav-sub {
     width: 1.4em;
     height: 1.4em;
     float: right;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23101010%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23101010%22%20width%3D%221%22%20height%3D%2213%22%20x%3D%226%22%20y%3D%220%22%3E%3C%2Frect%3E%0A%3C%2Fsvg%3E");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23666%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23666%22%20width%3D%221%22%20height%3D%2213%22%20x%3D%226%22%20y%3D%220%22%3E%3C%2Frect%3E%0A%3C%2Fsvg%3E");
     background-repeat: no-repeat;
     background-position: 50% 50%; }
   .uk-open > .uk-accordion-title::after {
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23101010%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%3E%3C%2Frect%3E%0A%3C%2Fsvg%3E"); }
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23666%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%3E%3C%2Frect%3E%0A%3C%2Fsvg%3E"); }
 
 /* Content
  ========================================================================== */
@@ -4771,7 +4771,7 @@ ul.uk-nav-sub {
   /* 4 */
   padding: 25px;
   background: #fff;
-  color: #101010;
+  color: #666;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15); }
 
 /* Show */
@@ -4795,13 +4795,13 @@ ul.uk-nav-sub {
 .uk-dropdown-nav > li > a:hover,
 .uk-dropdown-nav > li > a:focus,
 .uk-dropdown-nav > li.uk-active > a {
-  color: #101010; }
+  color: #666; }
 
 /*
  * Header
  */
 .uk-dropdown-nav .uk-nav-header {
-  color: #101010; }
+  color: #333; }
 
 /*
  * Divider
@@ -4817,7 +4817,7 @@ ul.uk-nav-sub {
 
 .uk-dropdown-nav .uk-nav-sub a:hover,
 .uk-dropdown-nav .uk-nav-sub a:focus {
-  color: #101010; }
+  color: #666; }
 
 /* Direction / Alignment modifiers
  ========================================================================== */
@@ -4875,7 +4875,7 @@ ul.uk-nav-sub {
 /* Phone landscape and bigger */
 @media (min-width: 640px) {
   .uk-modal {
-    padding: 50px 20px; } }
+    padding: 50px 30px; } }
 /* Tablet landscape and bigger */
 @media (min-width: 960px) {
   .uk-modal {
@@ -4960,15 +4960,15 @@ ul.uk-nav-sub {
 /* Sections
  ========================================================================== */
 .uk-modal-body {
-  padding: 20px 20px; }
+  padding: 30px 30px; }
 
 .uk-modal-header {
-  padding: 10px 20px;
+  padding: 15px 30px;
   background: #fff;
   border-bottom: 1px solid #e5e5e5; }
 
 .uk-modal-footer {
-  padding: 10px 20px;
+  padding: 15px 30px;
   background: #fff;
   border-top: 1px solid #e5e5e5; }
 
@@ -5506,12 +5506,12 @@ ul.uk-nav-sub {
 /* Hover + Focus */
 .uk-iconnav > * > :hover,
 .uk-iconnav > * > :focus {
-  color: #101010;
+  color: #666;
   outline: none; }
 
 /* Active */
 .uk-iconnav > .uk-active > * {
-  color: #101010; }
+  color: #666; }
 
 /* Modifier: 'uk-iconnav-vertical'
  ========================================================================== */
@@ -5584,7 +5584,7 @@ ul.uk-nav-sub {
   margin-bottom: 10px;
   padding: 15px;
   background: #f8f8f8;
-  color: #101010;
+  color: #666;
   font-size: 1.3rem;
   line-height: 1.4;
   cursor: pointer; }
@@ -5647,7 +5647,7 @@ ul.uk-nav-sub {
   max-width: 200px;
   padding: 3px 6px;
   /* 4 */
-  background: #101010;
+  background: #666;
   border-radius: 2px;
   color: #fff;
   font-size: 12px; }
@@ -5676,7 +5676,7 @@ ul.uk-nav-sub {
  ========================================================================== */
 .uk-placeholder {
   margin-bottom: 20px;
-  padding: 20px 20px;
+  padding: 30px 30px;
   background: transparent;
   border: 1px dashed #e5e5e5; }
 
@@ -6840,7 +6840,7 @@ ul.uk-nav-sub {
 .uk-text-lead {
   font-size: 1.5rem;
   line-height: 1.5;
-  color: #101010; }
+  color: #333; }
 
 .uk-text-meta {
   font-size: 0.875rem;
@@ -6849,7 +6849,7 @@ ul.uk-nav-sub {
   .uk-text-meta a {
     color: #999; }
   .uk-text-meta a:hover {
-    color: #101010;
+    color: #666;
     text-decoration: none; }
 
 /* Size modifiers
@@ -7037,9 +7037,9 @@ td.uk-text-break {
    Component: Column
  ========================================================================== */
 [class*='uk-column-'] {
-  -webkit-column-gap: 20px;
-  -moz-column-gap: 20px;
-  column-gap: 20px; }
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px; }
 
 /* Desktop and bigger */
 @media (min-width: 1200px) {
@@ -7063,9 +7063,9 @@ td.uk-text-break {
   -moz-column-rule: 1px solid #e5e5e5;
   column-rule: 1px solid #e5e5e5;
   /* 1 */
-  -webkit-column-gap: 40px;
-  -moz-column-gap: 40px;
-  column-gap: 40px; }
+  -webkit-column-gap: 60px;
+  -moz-column-gap: 60px;
+  column-gap: 60px; }
 
 /* Desktop and bigger */
 @media (min-width: 1200px) {
@@ -7392,10 +7392,10 @@ td.uk-text-break {
  */
 [class*='uk-align'] {
   display: block;
-  margin-bottom: 20px; }
+  margin-bottom: 30px; }
 
 * + [class*='uk-align'] {
-  margin-top: 20px; }
+  margin-top: 30px; }
 
 /*
  * Center
@@ -7409,35 +7409,35 @@ td.uk-text-break {
  */
 .uk-align-left {
   margin-top: 0;
-  margin-right: 20px;
+  margin-right: 30px;
   float: left; }
 
 .uk-align-right {
   margin-top: 0;
-  margin-left: 20px;
+  margin-left: 30px;
   float: right; }
 
 /* Phone landscape and bigger */
 @media (min-width: 640px) {
   .uk-align-left\@s {
     margin-top: 0;
-    margin-right: 20px;
+    margin-right: 30px;
     float: left; }
 
   .uk-align-right\@s {
     margin-top: 0;
-    margin-left: 20px;
+    margin-left: 30px;
     float: right; } }
 /* Tablet landscape and bigger */
 @media (min-width: 960px) {
   .uk-align-left\@m {
     margin-top: 0;
-    margin-right: 20px;
+    margin-right: 30px;
     float: left; }
 
   .uk-align-right\@m {
     margin-top: 0;
-    margin-left: 20px;
+    margin-left: 30px;
     float: right; } }
 /* Desktop and bigger */
 @media (min-width: 1200px) {
@@ -7815,15 +7815,15 @@ td.uk-text-break {
  */
 .uk-logo {
   font-size: 1.5rem;
-  font-family: "Relative Book", sans-serif;
-  color: #101010;
+  font-family: "Cerebri Sans Book", sans-serif;
+  color: #666;
   /* 1 */
   text-decoration: none; }
 
 /* Hover + Focus */
 .uk-logo:hover,
 .uk-logo:focus {
-  color: #101010;
+  color: #666;
   outline: none;
   /* 1 */
   text-decoration: none; }
@@ -8506,7 +8506,7 @@ td.uk-text-break {
    Component: Padding
  ========================================================================== */
 .uk-padding {
-  padding: 20px; }
+  padding: 30px; }
 
 /* Desktop and bigger */
 @media (min-width: 1200px) {
@@ -8520,7 +8520,7 @@ td.uk-text-break {
 /* Large
  ========================================================================== */
 .uk-padding-large {
-  padding: 20px; }
+  padding: 30px; }
 
 /* Desktop and bigger */
 @media (min-width: 1200px) {
@@ -8697,21 +8697,21 @@ td.uk-text-break {
  * Medium
  */
 .uk-position-medium {
-  margin: 20px; }
+  margin: 30px; }
 
 .uk-position-medium.uk-position-center {
-  -webkit-transform: translate(-50%, -50%) translate(-20px, -20px);
-  transform: translate(-50%, -50%) translate(-20px, -20px); }
+  -webkit-transform: translate(-50%, -50%) translate(-30px, -30px);
+  transform: translate(-50%, -50%) translate(-30px, -30px); }
 
 .uk-position-medium.uk-position-center-left,
 .uk-position-medium.uk-position-center-right {
-  -webkit-transform: translateY(-50%) translateY(-20px);
-  transform: translateY(-50%) translateY(-20px); }
+  -webkit-transform: translateY(-50%) translateY(-30px);
+  transform: translateY(-50%) translateY(-30px); }
 
 .uk-position-medium.uk-position-top-center,
 .uk-position-medium.uk-position-bottom-center {
-  -webkit-transform: translateX(-50%) translateX(-20px);
-  transform: translateX(-50%) translateX(-20px); }
+  -webkit-transform: translateX(-50%) translateX(-30px);
+  transform: translateX(-50%) translateX(-30px); }
 
 /* ========================================================================
    Component: Transition
@@ -9319,11 +9319,11 @@ td.uk-text-break {
   .uk-offcanvas-bar .uk-checkbox:indeterminate:focus {
     background-color: #e6e6e6; }
   .uk-light .uk-radio:checked, .uk-section-primary:not(.uk-preserve-color) .uk-radio:checked, .uk-section-secondary:not(.uk-preserve-color) .uk-radio:checked, .uk-tile-primary:not(.uk-preserve-color) .uk-radio:checked, .uk-tile-secondary:not(.uk-preserve-color) .uk-radio:checked, .uk-card-primary.uk-card-body .uk-radio:checked, .uk-card-primary > :not([class*='uk-card-media']) .uk-radio:checked, .uk-card-secondary.uk-card-body .uk-radio:checked, .uk-card-secondary > :not([class*='uk-card-media']) .uk-radio:checked, .uk-overlay-primary .uk-radio:checked, .uk-offcanvas-bar .uk-radio:checked {
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23101010%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%3E%3C%2Fcircle%3E%0A%3C%2Fsvg%3E"); }
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23666%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%3E%3C%2Fcircle%3E%0A%3C%2Fsvg%3E"); }
   .uk-light .uk-checkbox:checked, .uk-section-primary:not(.uk-preserve-color) .uk-checkbox:checked, .uk-section-secondary:not(.uk-preserve-color) .uk-checkbox:checked, .uk-tile-primary:not(.uk-preserve-color) .uk-checkbox:checked, .uk-tile-secondary:not(.uk-preserve-color) .uk-checkbox:checked, .uk-card-primary.uk-card-body .uk-checkbox:checked, .uk-card-primary > :not([class*='uk-card-media']) .uk-checkbox:checked, .uk-card-secondary.uk-card-body .uk-checkbox:checked, .uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:checked, .uk-overlay-primary .uk-checkbox:checked, .uk-offcanvas-bar .uk-checkbox:checked {
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23101010%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%2F%3E%0A%3C%2Fsvg%3E"); }
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%2F%3E%0A%3C%2Fsvg%3E"); }
   .uk-light .uk-checkbox:indeterminate, .uk-section-primary:not(.uk-preserve-color) .uk-checkbox:indeterminate, .uk-section-secondary:not(.uk-preserve-color) .uk-checkbox:indeterminate, .uk-tile-primary:not(.uk-preserve-color) .uk-checkbox:indeterminate, .uk-tile-secondary:not(.uk-preserve-color) .uk-checkbox:indeterminate, .uk-card-primary.uk-card-body .uk-checkbox:indeterminate, .uk-card-primary > :not([class*='uk-card-media']) .uk-checkbox:indeterminate, .uk-card-secondary.uk-card-body .uk-checkbox:indeterminate, .uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:indeterminate, .uk-overlay-primary .uk-checkbox:indeterminate, .uk-offcanvas-bar .uk-checkbox:indeterminate {
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23101010%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%3E%3C%2Frect%3E%0A%3C%2Fsvg%3E"); }
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23666%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%3E%3C%2Frect%3E%0A%3C%2Fsvg%3E"); }
   .uk-light .uk-form-label, .uk-section-primary:not(.uk-preserve-color) .uk-form-label, .uk-section-secondary:not(.uk-preserve-color) .uk-form-label, .uk-tile-primary:not(.uk-preserve-color) .uk-form-label, .uk-tile-secondary:not(.uk-preserve-color) .uk-form-label, .uk-card-primary.uk-card-body .uk-form-label, .uk-card-primary > :not([class*='uk-card-media']) .uk-form-label, .uk-card-secondary.uk-card-body .uk-form-label, .uk-card-secondary > :not([class*='uk-card-media']) .uk-form-label, .uk-overlay-primary .uk-form-label, .uk-offcanvas-bar .uk-form-label {
     color: #fff; }
   .uk-light .uk-button-default, .uk-section-primary:not(.uk-preserve-color) .uk-button-default, .uk-section-secondary:not(.uk-preserve-color) .uk-button-default, .uk-tile-primary:not(.uk-preserve-color) .uk-button-default, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-default, .uk-card-primary.uk-card-body .uk-button-default, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-default, .uk-card-secondary.uk-card-body .uk-button-default, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-default, .uk-overlay-primary .uk-button-default, .uk-offcanvas-bar .uk-button-default {
@@ -9362,7 +9362,7 @@ td.uk-text-break {
     border-color: #fff; }
   .uk-light .uk-button-primary, .uk-section-primary:not(.uk-preserve-color) .uk-button-primary, .uk-section-secondary:not(.uk-preserve-color) .uk-button-primary, .uk-tile-primary:not(.uk-preserve-color) .uk-button-primary, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-primary, .uk-card-primary.uk-card-body .uk-button-primary, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-primary, .uk-card-secondary.uk-card-body .uk-button-primary, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-primary, .uk-overlay-primary .uk-button-primary, .uk-offcanvas-bar .uk-button-primary {
     background-color: #fff;
-    color: #101010; }
+    color: #666; }
   .uk-light .uk-button-primary:hover, .uk-section-primary:not(.uk-preserve-color) .uk-button-primary:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-button-primary:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-button-primary:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-primary:hover, .uk-card-primary.uk-card-body .uk-button-primary:hover, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-primary:hover, .uk-card-secondary.uk-card-body .uk-button-primary:hover, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-primary:hover, .uk-overlay-primary .uk-button-primary:hover, .uk-offcanvas-bar .uk-button-primary:hover,
   .uk-light .uk-button-primary:focus,
   .uk-section-primary:not(.uk-preserve-color) .uk-button-primary:focus,
@@ -9376,7 +9376,7 @@ td.uk-text-break {
   .uk-overlay-primary .uk-button-primary:focus,
   .uk-offcanvas-bar .uk-button-primary:focus {
     background-color: #f2f2f2;
-    color: #101010; }
+    color: #666; }
   .uk-light .uk-button-primary:active, .uk-section-primary:not(.uk-preserve-color) .uk-button-primary:active, .uk-section-secondary:not(.uk-preserve-color) .uk-button-primary:active, .uk-tile-primary:not(.uk-preserve-color) .uk-button-primary:active, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-primary:active, .uk-card-primary.uk-card-body .uk-button-primary:active, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-primary:active, .uk-card-secondary.uk-card-body .uk-button-primary:active, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-primary:active, .uk-overlay-primary .uk-button-primary:active, .uk-offcanvas-bar .uk-button-primary:active,
   .uk-light .uk-button-primary.uk-active,
   .uk-section-primary:not(.uk-preserve-color) .uk-button-primary.uk-active,
@@ -9390,10 +9390,10 @@ td.uk-text-break {
   .uk-overlay-primary .uk-button-primary.uk-active,
   .uk-offcanvas-bar .uk-button-primary.uk-active {
     background-color: #e6e6e6;
-    color: #101010; }
+    color: #666; }
   .uk-light .uk-button-secondary, .uk-section-primary:not(.uk-preserve-color) .uk-button-secondary, .uk-section-secondary:not(.uk-preserve-color) .uk-button-secondary, .uk-tile-primary:not(.uk-preserve-color) .uk-button-secondary, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-secondary, .uk-card-primary.uk-card-body .uk-button-secondary, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-secondary, .uk-card-secondary.uk-card-body .uk-button-secondary, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-secondary, .uk-overlay-primary .uk-button-secondary, .uk-offcanvas-bar .uk-button-secondary {
     background-color: #fff;
-    color: #101010; }
+    color: #666; }
   .uk-light .uk-button-secondary:hover, .uk-section-primary:not(.uk-preserve-color) .uk-button-secondary:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-button-secondary:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-button-secondary:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-secondary:hover, .uk-card-primary.uk-card-body .uk-button-secondary:hover, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-secondary:hover, .uk-card-secondary.uk-card-body .uk-button-secondary:hover, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-secondary:hover, .uk-overlay-primary .uk-button-secondary:hover, .uk-offcanvas-bar .uk-button-secondary:hover,
   .uk-light .uk-button-secondary:focus,
   .uk-section-primary:not(.uk-preserve-color) .uk-button-secondary:focus,
@@ -9407,7 +9407,7 @@ td.uk-text-break {
   .uk-overlay-primary .uk-button-secondary:focus,
   .uk-offcanvas-bar .uk-button-secondary:focus {
     background-color: #f2f2f2;
-    color: #101010; }
+    color: #666; }
   .uk-light .uk-button-secondary:active, .uk-section-primary:not(.uk-preserve-color) .uk-button-secondary:active, .uk-section-secondary:not(.uk-preserve-color) .uk-button-secondary:active, .uk-tile-primary:not(.uk-preserve-color) .uk-button-secondary:active, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-secondary:active, .uk-card-primary.uk-card-body .uk-button-secondary:active, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-secondary:active, .uk-card-secondary.uk-card-body .uk-button-secondary:active, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-secondary:active, .uk-overlay-primary .uk-button-secondary:active, .uk-offcanvas-bar .uk-button-secondary:active,
   .uk-light .uk-button-secondary.uk-active,
   .uk-section-primary:not(.uk-preserve-color) .uk-button-secondary.uk-active,
@@ -9421,7 +9421,7 @@ td.uk-text-break {
   .uk-overlay-primary .uk-button-secondary.uk-active,
   .uk-offcanvas-bar .uk-button-secondary.uk-active {
     background-color: #e6e6e6;
-    color: #101010; }
+    color: #666; }
   .uk-light .uk-button-text, .uk-section-primary:not(.uk-preserve-color) .uk-button-text, .uk-section-secondary:not(.uk-preserve-color) .uk-button-text, .uk-tile-primary:not(.uk-preserve-color) .uk-button-text, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-text, .uk-card-primary.uk-card-body .uk-button-text, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-text, .uk-card-secondary.uk-card-body .uk-button-text, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-text, .uk-overlay-primary .uk-button-text, .uk-offcanvas-bar .uk-button-text {
     color: #fff; }
     .uk-light .uk-button-text::before, .uk-section-primary:not(.uk-preserve-color) .uk-button-text::before, .uk-section-secondary:not(.uk-preserve-color) .uk-button-text::before, .uk-tile-primary:not(.uk-preserve-color) .uk-button-text::before, .uk-tile-secondary:not(.uk-preserve-color) .uk-button-text::before, .uk-card-primary.uk-card-body .uk-button-text::before, .uk-card-primary > :not([class*='uk-card-media']) .uk-button-text::before, .uk-card-secondary.uk-card-body .uk-button-text::before, .uk-card-secondary > :not([class*='uk-card-media']) .uk-button-text::before, .uk-overlay-primary .uk-button-text::before, .uk-offcanvas-bar .uk-button-text::before {
@@ -9494,7 +9494,7 @@ td.uk-text-break {
     color: #fff; }
   .uk-light .uk-badge, .uk-section-primary:not(.uk-preserve-color) .uk-badge, .uk-section-secondary:not(.uk-preserve-color) .uk-badge, .uk-tile-primary:not(.uk-preserve-color) .uk-badge, .uk-tile-secondary:not(.uk-preserve-color) .uk-badge, .uk-card-primary.uk-card-body .uk-badge, .uk-card-primary > :not([class*='uk-card-media']) .uk-badge, .uk-card-secondary.uk-card-body .uk-badge, .uk-card-secondary > :not([class*='uk-card-media']) .uk-badge, .uk-overlay-primary .uk-badge, .uk-offcanvas-bar .uk-badge {
     background-color: #fff;
-    color: #101010; }
+    color: #666; }
   .uk-light .uk-badge:hover, .uk-section-primary:not(.uk-preserve-color) .uk-badge:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-badge:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-badge:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-badge:hover, .uk-card-primary.uk-card-body .uk-badge:hover, .uk-card-primary > :not([class*='uk-card-media']) .uk-badge:hover, .uk-card-secondary.uk-card-body .uk-badge:hover, .uk-card-secondary > :not([class*='uk-card-media']) .uk-badge:hover, .uk-overlay-primary .uk-badge:hover, .uk-offcanvas-bar .uk-badge:hover,
   .uk-light .uk-badge:focus,
   .uk-section-primary:not(.uk-preserve-color) .uk-badge:focus,
@@ -9507,10 +9507,10 @@ td.uk-text-break {
   .uk-card-secondary > :not([class*='uk-card-media']) .uk-badge:focus,
   .uk-overlay-primary .uk-badge:focus,
   .uk-offcanvas-bar .uk-badge:focus {
-    color: #101010; }
+    color: #666; }
   .uk-light .uk-label, .uk-section-primary:not(.uk-preserve-color) .uk-label, .uk-section-secondary:not(.uk-preserve-color) .uk-label, .uk-tile-primary:not(.uk-preserve-color) .uk-label, .uk-tile-secondary:not(.uk-preserve-color) .uk-label, .uk-card-primary.uk-card-body .uk-label, .uk-card-primary > :not([class*='uk-card-media']) .uk-label, .uk-card-secondary.uk-card-body .uk-label, .uk-card-secondary > :not([class*='uk-card-media']) .uk-label, .uk-overlay-primary .uk-label, .uk-offcanvas-bar .uk-label {
     background-color: #fff;
-    color: #101010; }
+    color: #666; }
   .uk-light .uk-article-meta, .uk-section-primary:not(.uk-preserve-color) .uk-article-meta, .uk-section-secondary:not(.uk-preserve-color) .uk-article-meta, .uk-tile-primary:not(.uk-preserve-color) .uk-article-meta, .uk-tile-secondary:not(.uk-preserve-color) .uk-article-meta, .uk-card-primary.uk-card-body .uk-article-meta, .uk-card-primary > :not([class*='uk-card-media']) .uk-article-meta, .uk-card-secondary.uk-card-body .uk-article-meta, .uk-card-secondary > :not([class*='uk-card-media']) .uk-article-meta, .uk-overlay-primary .uk-article-meta, .uk-offcanvas-bar .uk-article-meta {
     color: rgba(255, 255, 255, 0.5); }
   .uk-light .uk-search-input, .uk-section-primary:not(.uk-preserve-color) .uk-search-input, .uk-section-secondary:not(.uk-preserve-color) .uk-search-input, .uk-tile-primary:not(.uk-preserve-color) .uk-search-input, .uk-tile-secondary:not(.uk-preserve-color) .uk-search-input, .uk-card-primary.uk-card-body .uk-search-input, .uk-card-primary > :not([class*='uk-card-media']) .uk-search-input, .uk-card-secondary.uk-card-body .uk-search-input, .uk-card-secondary > :not([class*='uk-card-media']) .uk-search-input, .uk-overlay-primary .uk-search-input, .uk-offcanvas-bar .uk-search-input {
@@ -9724,7 +9724,7 @@ td.uk-text-break {
     color: rgba(255, 255, 255, 0.7); }
   .uk-light .uk-subnav-pill > .uk-active > a, .uk-section-primary:not(.uk-preserve-color) .uk-subnav-pill > .uk-active > a, .uk-section-secondary:not(.uk-preserve-color) .uk-subnav-pill > .uk-active > a, .uk-tile-primary:not(.uk-preserve-color) .uk-subnav-pill > .uk-active > a, .uk-tile-secondary:not(.uk-preserve-color) .uk-subnav-pill > .uk-active > a, .uk-card-primary.uk-card-body .uk-subnav-pill > .uk-active > a, .uk-card-primary > :not([class*='uk-card-media']) .uk-subnav-pill > .uk-active > a, .uk-card-secondary.uk-card-body .uk-subnav-pill > .uk-active > a, .uk-card-secondary > :not([class*='uk-card-media']) .uk-subnav-pill > .uk-active > a, .uk-overlay-primary .uk-subnav-pill > .uk-active > a, .uk-offcanvas-bar .uk-subnav-pill > .uk-active > a {
     background-color: #fff;
-    color: #101010; }
+    color: #666; }
   .uk-light .uk-subnav > .uk-disabled > a, .uk-section-primary:not(.uk-preserve-color) .uk-subnav > .uk-disabled > a, .uk-section-secondary:not(.uk-preserve-color) .uk-subnav > .uk-disabled > a, .uk-tile-primary:not(.uk-preserve-color) .uk-subnav > .uk-disabled > a, .uk-tile-secondary:not(.uk-preserve-color) .uk-subnav > .uk-disabled > a, .uk-card-primary.uk-card-body .uk-subnav > .uk-disabled > a, .uk-card-primary > :not([class*='uk-card-media']) .uk-subnav > .uk-disabled > a, .uk-card-secondary.uk-card-body .uk-subnav > .uk-disabled > a, .uk-card-secondary > :not([class*='uk-card-media']) .uk-subnav > .uk-disabled > a, .uk-overlay-primary .uk-subnav > .uk-disabled > a, .uk-offcanvas-bar .uk-subnav > .uk-disabled > a {
     color: rgba(255, 255, 255, 0.5); }
   .uk-light .uk-breadcrumb > * > *, .uk-section-primary:not(.uk-preserve-color) .uk-breadcrumb > * > *, .uk-section-secondary:not(.uk-preserve-color) .uk-breadcrumb > * > *, .uk-tile-primary:not(.uk-preserve-color) .uk-breadcrumb > * > *, .uk-tile-secondary:not(.uk-preserve-color) .uk-breadcrumb > * > *, .uk-card-primary.uk-card-body .uk-breadcrumb > * > *, .uk-card-primary > :not([class*='uk-card-media']) .uk-breadcrumb > * > *, .uk-card-secondary.uk-card-body .uk-breadcrumb > * > *, .uk-card-secondary > :not([class*='uk-card-media']) .uk-breadcrumb > * > *, .uk-overlay-primary .uk-breadcrumb > * > *, .uk-offcanvas-bar .uk-breadcrumb > * > * {

@@ -21,7 +21,7 @@
     </span>
   </h4>
   <h4 class="slide-item-right-small" style="color:inherit;" v-if="datainput.acf['meta_link']">
-    <a :href="datainput.acf['meta_link']" target="_blank">{{$t("visit")}}<span class="uk-icon uk-icon-image" style="background-image: url('arrowRight.svg');"></span></a>
+    <a :href="datainput.acf['meta_link']" target="_blank">{{$t("visit")}} <i class="icon-right-1" style=""></i></a>
   </h4>
 
 </div>

@@ -9,7 +9,7 @@
     <div class="uk-container uk-padding">
       <nuxt-link class="" :to="$i18n.locale === 'en' ? {path:this.nextProject, query: { lang: $i18n.locale }}:{path:nextProject ? nextProject : firstProject }">
         <div class="slide-item-right">
-          <h2 class="uk-text-center">Next Project <span class="uk-icon uk-icon-image" style="background-image: url(/arrowRight.svg);"></span><br /><br /></h2>
+          <h2 class="uk-text-center">Next Project <i class="icon-right-1" style=""></i></span><br /><br /></h2>
         </div>
       </nuxt-link>
     </div>

@@ -31,7 +31,7 @@
 
   </div>
   <div class="uk-width-1-1@m uk-padding  uk-transition-slide-right-medium uk-position-bottom">
-    <p class="uk-text-left uk-h2 uk-text-right uk-margin-remove-bottom" style="color:inherit;">{{$t("readmore")}}<span uk-icon="icon: arrow-right; ratio: 1.5"></span></p>
+    <p class="uk-text-left uk-h2 uk-text-right uk-margin-remove-bottom" style="color:inherit;">{{$t("readmore")}} <i class="icon-right-1" style=""></i></span></p>
   </div>
 
 
