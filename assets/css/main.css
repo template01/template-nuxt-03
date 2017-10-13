@@ -245,12 +245,22 @@ h5, .uk-h5 {
 
 .hugeLetters {
   line-height: 0.95 !important;
-  letter-spacing: -0.2vw !important;
-  font-size: 8.6vw !important;
-  font-family: 'Cerebri Sans', sans-serif !important;
-  font-weight: 500;
-
+  font-size: 9.6vw !important;
   /*font-family: 'Poppins', sans-serif !important;*/
+  /*letter-spacing: -0.2vw !important;*/
+  /*font-weight: 500;*/
+
+  /*font-family: 'Cerebri Sans', sans-serif !important;
+  font-weight: 400;*/
+
+  /*font-family: 'Cerebri Sans Book', sans-serif !important;
+  letter-spacing: -0.6vw !important;*/
+
+  font-family: 'Cerebri Sans', sans-serif !important;
+  letter-spacing: -0.45vw !important;
+  font-weight:400 !important;
+
+
 
   /*speak: none !important;
   font-style: normal !important;

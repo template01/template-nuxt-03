@@ -234,7 +234,7 @@ h6, .uk-h6 {
   margin: 0 0 20px 0;
   font-family: "Cerebri Sans Book", sans-serif;
   font-weight: normal;
-  color: #333;
+  color: #101010;
   text-transform: none; }
 
 /* Add margin if adjacent element */
@@ -334,7 +334,7 @@ blockquote {
   font-size: 1.3rem;
   line-height: 1.5;
   font-style: italic;
-  color: #333; }
+  color: #101010; }
 
 /* Add margin if adjacent element */
 * + blockquote {
@@ -769,7 +769,7 @@ a.uk-link-reset:hover,
  * Term
  */
 .uk-description-list > dt {
-  color: #333;
+  color: #101010;
   font-size: 0.875rem;
   font-weight: normal;
   text-transform: uppercase; }
@@ -1709,7 +1709,7 @@ select.uk-form-width-xsmall {
 /* Label
  ========================================================================== */
 .uk-form-label {
-  color: #333;
+  color: #101010;
   font-size: 0.875rem; }
 
 /* Layout
@@ -1872,21 +1872,21 @@ select.uk-form-width-xsmall {
  */
 .uk-button-default {
   background-color: transparent;
-  color: #333;
+  color: #101010;
   border: 1px solid #e5e5e5; }
 
 /* Hover + Focus */
 .uk-button-default:hover,
 .uk-button-default:focus {
   background-color: transparent;
-  color: #333;
+  color: #101010;
   border-color: #b2b2b2; }
 
 /* OnClick + Active */
 .uk-button-default:active,
 .uk-button-default.uk-active {
   background-color: transparent;
-  color: #333;
+  color: #101010;
   border-color: #999999; }
 
 /*
@@ -1986,7 +1986,7 @@ select.uk-form-width-xsmall {
   line-height: 1.5;
   background: none;
   /* 2 */
-  color: #333;
+  color: #101010;
   position: relative; }
   .uk-button-text::before {
     content: "";
@@ -1994,14 +1994,14 @@ select.uk-form-width-xsmall {
     bottom: 0;
     left: 0;
     right: 100%;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #101010;
     -webkit-transition: right 0.3s ease-out;
     transition: right 0.3s ease-out; }
 
 /* Hover + Focus */
 .uk-button-text:hover,
 .uk-button-text:focus {
-  color: #333; }
+  color: #101010; }
   .uk-button-text:hover::before,
   .uk-button-text:focus::before {
     right: 0; }
@@ -2763,7 +2763,7 @@ select.uk-form-width-xsmall {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
 
 .uk-card-default .uk-card-title {
-  color: #333; }
+  color: #101010; }
 
 .uk-card-default.uk-card-hover:hover {
   background-color: #fff;
@@ -2987,7 +2987,7 @@ select.uk-form-width-xsmall {
 
 /* OnClick */
 .uk-totop:active {
-  color: #333; }
+  color: #101010; }
 
 /* ========================================================================
    Component: Marker
@@ -3683,13 +3683,13 @@ ul.uk-nav-sub {
 
 /* Active */
 .uk-nav-default > li.uk-active > a {
-  color: #333; }
+  color: #101010; }
 
 /*
  * Header
  */
 .uk-nav-default .uk-nav-header {
-  color: #333; }
+  color: #101010; }
 
 /*
  * Divider
@@ -3724,13 +3724,13 @@ ul.uk-nav-sub {
 
 /* Active */
 .uk-nav-primary > li.uk-active > a {
-  color: #333; }
+  color: #101010; }
 
 /*
  * Header
  */
 .uk-nav-primary .uk-nav-header {
-  color: #333; }
+  color: #101010; }
 
 /*
  * Divider
@@ -3933,11 +3933,11 @@ ul.uk-nav-sub {
 
 /* OnClick */
 .uk-navbar-nav > li > a:active {
-  color: #333; }
+  color: #101010; }
 
 /* Active */
 .uk-navbar-nav > li.uk-active > a {
-  color: #333; }
+  color: #101010; }
 
 /* Item
  ========================================================================== */
@@ -4074,13 +4074,13 @@ ul.uk-nav-sub {
 
 /* Active */
 .uk-navbar-dropdown-nav > li.uk-active > a {
-  color: #333; }
+  color: #101010; }
 
 /*
  * Header
  */
 .uk-navbar-dropdown-nav .uk-nav-header {
-  color: #333; }
+  color: #101010; }
 
 /*
  * Divider
@@ -4214,7 +4214,7 @@ ul.uk-nav-sub {
 
 /* Active */
 .uk-subnav > .uk-active > a {
-  color: #333; }
+  color: #101010; }
 
 /* Divider modifier
  ========================================================================== */
@@ -4463,7 +4463,7 @@ ul.uk-nav-sub {
 
 /* Active */
 .uk-tab > .uk-active > a {
-  color: #333;
+  color: #101010;
   border-color: #1e87f0; }
 
 /* Disabled */
@@ -4801,7 +4801,7 @@ ul.uk-nav-sub {
  * Header
  */
 .uk-dropdown-nav .uk-nav-header {
-  color: #333; }
+  color: #101010; }
 
 /*
  * Divider
@@ -6840,7 +6840,7 @@ ul.uk-nav-sub {
 .uk-text-lead {
   font-size: 1.5rem;
   line-height: 1.5;
-  color: #333; }
+  color: #101010; }
 
 .uk-text-meta {
   font-size: 0.875rem;

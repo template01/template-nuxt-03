@@ -1,6 +1,6 @@
 <template>
 <div :class="{'uk-grid-collapse':section.collapse_column }"  uk-grid>
-    <div v-for="sectionColumn in section.content" :class="'uk-width-1-'+section.content.length" >
+    <div v-for="sectionColumn in section.content" :class="'uk-width-1-'+section.content.length+'@m'" >
       <sectioncontentinner :columnlayout=true :section="sectionColumn"></sectioncontentinner>
     </div>
 </div>

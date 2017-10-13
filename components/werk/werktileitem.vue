@@ -1,6 +1,9 @@
 <template>
-<nuxt-link :to="$i18n.locale === 'en' ? {path:'/werk/item', query: { lang: $i18n.locale }}:{path:'werk/'+datainput.slug}" class="werktile uk-width-1-2@m pink-background uk-padding uk-inline uk-transition-toggle" :style="{'background-color':datainput.acf['background-color'], 'color':datainput.acf['font_color']}">
-
+<nuxt-link :to="$i18n.locale === 'en' ? {path:'/werk/item', query: { lang: $i18n.locale }}:{path:'werk/'+datainput.slug}" class="werktile uk-width-1-2@m uk-padding uk-inline uk-transition-toggle" :style="!inheritcolor ? {'background-color':datainput.acf['background-color'], 'color':datainput.acf['font_color']} : {'color': inheritcolorfont}">
+  <div v-if="inheritcolor" :style="{'background': index % 2 == 0 ? inheritcolorfont : ''}" style="position:absolute; right:0; top:30px; width: 3px; height: calc(100% - 60px); ">
+  </div>
+  <div v-if="inheritcolor"  :style="{'background': inheritcolorfont }"  style="position:absolute; bottom:0; right:30px; height: 3px; width: calc(100% - 60px); ">
+  </div>
 <!--
   <h4 style="color:inherit;">
     <span v-for="(type,index) in datainput.pure_taxonomies.tags">
@@ -14,7 +17,6 @@
     </span>
   </h4> -->
   <werkmeta :datainput="datainput"></werkmeta>
-
 
   <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-bottom">
 
@@ -50,7 +52,7 @@ export default {
   components:{
     werkmeta
   },
-  props: ['datainput']
+  props: ['datainput','inheritcolor','inheritcolorfont','inheritcolorbackground','index']
 
 }
 </script>
@@ -59,6 +61,9 @@ export default {
     overflow-x: hidden;
     text-decoration: none;
     color: #101010;
+    &:hover{
+      box-shadow: inset 0 -0px 0 0 !important;
+    }
 }
 
 .tileContent{

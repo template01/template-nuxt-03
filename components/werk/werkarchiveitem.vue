@@ -10,14 +10,14 @@
     <h4 class="" v-html="datainput.title.rendered" style="color:inherit;"></h4>
   </div>
   <h4 style="color:inherit;">
-    <span v-for="(type,index) in datainput.pure_taxonomies.tags">
-      <span v-if="index<datainput.pure_taxonomies.tags.length - 1" v-html="type.name+ ' / ' "></span>
-      <span v-else v-html="type.name"></span>
-    </span>
     <span v-if="datainput.acf['meta_what']">
       <br />
       <span v-html="datainput.acf['meta_what']"></span>
       <br />
+    </span>
+    <span v-for="(type,index) in datainput.pure_taxonomies.tags">
+      <span v-if="index<datainput.pure_taxonomies.tags.length - 1" v-html="type.name+ ' / ' "></span>
+      <span v-else v-html="type.name"></span>
     </span>
   </h4>
   <h4 class="slide-item-right-small" style="color:inherit;" v-if="datainput.acf['meta_link']">

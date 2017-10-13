@@ -9,38 +9,12 @@
     <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_a.background_color+' '+content.acf.section_a.background_color+' transparent'}"></div>
 
 
-    <!-- <div id="" class="section section-last blue-background beige-color-force uk-padding uk-padding-remove-horizontal uk-padding-remove-top"> -->
-
-    <!-- <div class="slantTopLeft"></div> -->
-
     <div class="uk-container uk-padding uk-padding-remove-vertical" :style="{'color':content.acf.section_a.font_color}">
       <sectioncontent :acfsection="content.acf.section_a.content"></sectioncontent>
 
     </div>
     <div class="uk-container uk-padding uk-padding-remove-vertical ">
 
-
-      <!-- {{content.acf.section_a}} -->
-      <!-- <div>
-
-        <templatefooter ignoreFirstColumn=true passHeader="Contact" :style="{'color':content.acf.section_a.font_color}"></templatefooter>
-      </div> -->
-
-
-      <!-- <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
-        <div uk-grid class="uk-padding uk-padding-remove-horizontal">
-
-          <div class="uk-width-1-2@m">
-            <div class="uk-h2" :style="{'color':content.acf.section_a.font_color}" v-html="content.acf.section_a.content[0].content">
-            </div>
-          </div>
-          <div class="featuremap uk-width-1-2@m">
-            <gmap-map :options="{styles: styles}" :center="{lat:51.9103455, lng:4.448183420}" :zoom="15" style="height: 500px">
-              <gmap-marker :icon="'pointer.svg'" :position="{lat:51.9103455, lng:4.448183420}" :clickable="true" :draggable="true" @click="center={lat:51.9103946, lng:4.44620217}"></gmap-marker>
-            </gmap-map>
-          </div>
-        </div>
-      </div> -->
     </div>
 
   </div>

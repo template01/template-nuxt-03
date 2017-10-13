@@ -101,7 +101,7 @@ export default {
 }
 
 * {
-    text-transform: uppercase;
+    // text-transform: uppercase;
     margin: 0;
 }
 
