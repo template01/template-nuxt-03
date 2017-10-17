@@ -14,8 +14,7 @@
 
       <div class="uk-container" :style="{'color':content.acf.section_a.font_color}">
         <sectioncontent :ignorePaddingBottom="true" :acfsection="content.acf.section_a.content"></sectioncontent>
-        <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
-        </div>
+
       </div>
 
     </div>
@@ -23,10 +22,10 @@
     <div class="section" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}">
 
       <div class="uk-container " :style="{'background':content.acf.section_a.background_color}">
-        <div class="killPadding " id="workitems" :uk-parallax="issmallscreen ? '' : 'y: 300,0; viewport: 0.2'" :style="issmallscreen ? {} :{'margin-top':'-300px'}">
+        <div class="killPadding " id="workitems">
 
           <div class=" uk-grid-collapse uk-text-center" uk-grid >
-            <werktileitem v-bind:key="tile.id" v-for="tile in tiles" :datainput="tile"></werktileitem>
+            <werktileitem :inheritcolorfont="content.acf.section_a.font_color" :inheritcolorbackground="content.acf.section_a.font_color"  :inheritcolor="true" v-bind:key="index" :index="index" v-for="(tile,index) in tiles" :datainput="tile"></werktileitem>
 
           </div>
         </div>
@@ -68,11 +67,7 @@
           </div>
         <!-- </div> -->
       </div>
-      <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
-      </div>
-      <!-- <sectioncontent :ignorePaddingBottom="true" :acfsection="content.acf.section_a.content"></sectioncontent> -->
-      <!-- <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-top"> -->
-      <!-- </div> -->
+
     </div>
 
     <div class="slantTopLeft uk-position-relative" :style="{'top':'0px','border-color': '#fffef5'+' '+'#fffef5'+' '+'#fffef5'+' '+content.acf.section_b.background_color}"></div>
