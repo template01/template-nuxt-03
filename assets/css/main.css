@@ -1,3 +1,49 @@
+@font-face {
+	font-family: 'Cerebri Sans Book';
+	src: url('./fonts/cerebri/hinted-CerebriSans-Book.eot');
+	src: url('./fonts/cerebri/hinted-CerebriSans-Book.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/cerebri/hinted-CerebriSans-Book.woff2') format('woff2'),
+		url('./fonts/cerebri/hinted-CerebriSans-Book.ttf') format('truetype'),
+		url('./fonts/cerebri/hinted-CerebriSans-Book.svg#CerebriSans-Book') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cerebri Sans';
+	src: url('./fonts/cerebri/hinted-CerebriSans-Medium.eot');
+	src: url('./fonts/cerebri/hinted-CerebriSans-Medium.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/cerebri/hinted-CerebriSans-Medium.woff2') format('woff2'),
+		url('./fonts/cerebri/hinted-CerebriSans-Medium.ttf') format('truetype'),
+		url('./fonts/cerebri/hinted-CerebriSans-Medium.svg#CerebriSans-Medium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cerebri Sans Medium';
+	src: url('./fonts/cerebri/hinted-CerebriSans-MediumItalic.eot');
+	src: url('./fonts/cerebri/hinted-CerebriSans-MediumItalic.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/cerebri/hinted-CerebriSans-MediumItalic.woff2') format('woff2'),
+		url('./fonts/cerebri/hinted-CerebriSans-MediumItalic.ttf') format('truetype'),
+		url('./fonts/cerebri/hinted-CerebriSans-MediumItalic.svg#CerebriSans-MediumItalic') format('svg');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Cerebri Sans Book';
+	src: url('./fonts/cerebri/hinted-CerebriSans-BookItalic.eot');
+	src: url('./fonts/cerebri/hinted-CerebriSans-BookItalic.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/cerebri/hinted-CerebriSans-BookItalic.woff2') format('woff2'),
+		url('./fonts/cerebri/hinted-CerebriSans-BookItalic.ttf') format('truetype'),
+		url('./fonts/cerebri/hinted-CerebriSans-BookItalic.svg#CerebriSans-BookItalic') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+
+
+
 html {
   background: black !important;
   width: 100%;

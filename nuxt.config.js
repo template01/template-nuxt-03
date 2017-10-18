@@ -26,10 +26,10 @@ module.exports = {
         type: 'image/x-icon',
         href: '/favicon.ico'
       },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Poppins:500'
-      }
+      //{
+      //  rel: 'stylesheet',
+      //  href: 'https://fonts.googleapis.com/css?family=Poppins:500'
+      //}
     ],
     script: [{
       src: 'https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.js'
@@ -40,7 +40,7 @@ module.exports = {
   // PWA  Progressive Web Apps support (https://www.davidroyer.me/blog/nuxtjs-tips/)
 
   modules: [
-    '@nuxtjs/pwa'
+    //'@nuxtjs/pwa'
   ],
 
   router: {
@@ -48,19 +48,12 @@ module.exports = {
   },
 
   css: [
-    // { src: '~assets/css/main1.scss', lang: 'scss' },
-    // 'uikit/dist/css/uikit.css',
     '~assets/css/main.css',
     // uikit customized
     '~assets/css/site.css',
-    '~assets/fonts/relative/stylesheet.css',
-    '~assets/fonts/fontello-6d6d4103/css/fontello.css',
-    '~assets/fonts/radnika/stylesheet.css',
-    '~assets/fonts/cerebri/stylesheet.css',
-
+    '~assets/css/fonts/fontello-6d6d4103/css/fontello.css',
     'swiper/dist/css/swiper.css'
-    //'bootstrap/dist/css/bootstrap.css',
-    //'bootstrap-vue/dist/bootstrap-vue.css'
+
 
   ],
   plugins: [{
