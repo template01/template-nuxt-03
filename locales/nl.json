@@ -14,22 +14,22 @@
   },
   "clock":{
     "modes": {
-      "sleep": ["Sleeping.", "Dreaming...zzz..."],
-      "beforework": ["Just getting up.", "Dressing for work."],
-      "morning": ["Probably having coffee. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "Pre-work discussion xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.", "Just spacing out xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."],
-      "lunch": ["lunchen", "Eteen."],
-      "work": ["Diep werken.", "GoT an het dissusieren tidens \"werk\"...", "Te hard starren aan de schrem."],
-      "afterwork": ["Chilling after work.", "2% chance that we\"re partying."]
+      "sleep": ["Zzz."],
+      "beforework": ["Wakker worden.", "Op weg naar de studio~"],
+      "morning": ["Koffie drinken!", "", "Croissantje eten, werk bespreken."],
+      "lunch": ["Lunchtijd.", "Stokbrood eten."],
+      "work": ["Doorwerken.", "TV series aan het discussiëren...", "Teveel naar een scherm aan het staren.", "Real, actual work."],
+      "afterwork": ["Gymmen.", "Geen werk, ha!"]
     },
     "timedesc":"Lokale tijd:",
     "statusdesc":"Aan het doen:"
   },
   "nowlistening":{
-    "desc":"Nu aan het luisteren:",
+    "desc":"Aan het luisteren:",
     "none":"Niets..."
   },
   "contact":{
-    "a":"Bereijk ons hier:<br><a href='mailto:hoi@template-studio.nl'>hoi@template-studio.nl</a><br><a href='tel:06 5777 2891'>06 5777 2891</a>",
+    "a":"Bereik ons via:<br><a href='mailto:hoi@template-studio.nl'>hoi@template-studio.nl</a><br><a href='tel:06 5777 2891'>06 5777 2891</a>",
     "b":"Studio adres:<br><a href='https://www.google.nl/maps/place/Mathenesserdijk+416,+3026+Rotterdam/@51.9103946,4.446202,17z/data=!3m1!4b1!4m5!3m4!1s0x47c434ecbd645e93:0x894648c2f46b6b77!8m2!3d51.9103946!4d4.4483907?hl=en' target='blank'>Mathenesserdijk 416H<br>3026 GV Rotterdam</a>",
     "thanks":"Bedankt voor het bezoek"
   },
