@@ -17,9 +17,6 @@ Vue.mixin({
 
         el.style.height = elementWidth*(el.getAttribute('setheight')/el.getAttribute('setwidth')) + 'px'
 
-
-
-
     })
 
     this.$Lazyload.$on('loaded', function ({ el, src }) {

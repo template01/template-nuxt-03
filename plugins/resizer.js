@@ -20,6 +20,8 @@ export default ({
         store.commit('SET_XLSCREEN', false)
       }
 
+      store.commit('SET_SCREENSIZE', window.innerWidth)
+
       console.log('heya')
 
     };

@@ -40,7 +40,7 @@ module.exports = {
   // PWA  Progressive Web Apps support (https://www.davidroyer.me/blog/nuxtjs-tips/)
 
   modules: [
-    //'@nuxtjs/pwa'
+    '@nuxtjs/pwa'
   ],
 
   router: {

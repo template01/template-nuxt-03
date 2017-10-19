@@ -270,7 +270,8 @@ h4, .uk-h4 {
     font-size: 1.6rem !important;
   }
   @media (max-width: 640px) {
-    font-size: 1.15rem !important;
+		font-size: 1.3rem !important;
+    line-height: 1.1 !important;
   }
 }
 
@@ -503,6 +504,15 @@ img {
   left: -100%;
   width: 200%;
 }
+
+.slide-item-down-small {
+  transition: transform 250ms ease-in-out;
+}
+
+.slide-item-down-small:hover {
+  transform: translateY(10px);
+}
+
 
 .slide-item-right-small {
   transition: transform 250ms ease-in-out;

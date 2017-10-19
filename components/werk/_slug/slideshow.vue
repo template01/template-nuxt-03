@@ -3,8 +3,19 @@
   <div class="swiper-wrapper">
     <div class="navigation">
 
-      <div class="half left" style="cursor:url(/arrowLeftCircle.svg) 20 20, auto" @click="prevSlide()"></div>
-      <div class="half right" style="cursor:url(/arrowRightCircle.svg) 20 20, auto" @click="nextSlide()"></div>
+      <div class="mobileNavLeft uk-hidden-notouch uk-inline" @click="prevSlide()">
+        <h1 class="uk-position-center-left">
+          <i class="icon-left"></i>
+        </h1>
+      </div>
+      <div class="mobileNavRight uk-hidden-notouch uk-inline" @click="nextSlide()">
+        <h1 class="uk-position-center-right">
+          <i class="icon-right-1"></i>
+        </h1>
+      </div>
+
+      <div class="half left uk-hidden-touch" style="cursor:url(/arrowLeftCircle.svg) 20 20, auto" @click="prevSlide()"></div>
+      <div class="half right uk-hidden-touch" style="cursor:url(/arrowRightCircle.svg) 20 20, auto" @click="nextSlide()"></div>
     </div>
     <div :style="{'background-color':backgroundcolor}" class="swiper-slide" v-for="slide in slides">
       <img :src="slide.url" :srcset="slide.sizes.small + ' 480w, ' + slide.sizes.medium + ' 1024w, ' + slide.sizes.large + ' 1600w, ' + slide.sizes.xlarge + ' 1920w'">
@@ -60,6 +71,19 @@ export default {
 <style lang="scss" scoped>
 .my-swiper {
 
+
+  .mobileNavLeft,.mobileNavRight{
+    width: 50%;
+    height: 40px;
+    bottom: -40px;
+    position: absolute;
+  }
+  .mobileNavRight{
+    right: 0;
+  }
+  .mobileNavLeft{
+    left: 0;
+  }
 
   .navigation{
     width: 100%;

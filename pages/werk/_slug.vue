@@ -1,17 +1,22 @@
 <template>
 <defaultpage class="beige-background" id="">
-  <div v-if="content.acf.single_background_image" class="werkSplash uk-visible@m">
-    <div class="werkSplashContent">
-      <!-- <div v-if="!xlscreen" class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.sizes.xlarge+')'}"></div> -->
-      <!-- <div  v-else class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.url+')'}"></div> -->
-      <div class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.url+')'}"></div>
+  <div v-if="content.acf.single_background_image" class="werkSplash uk-visible@m" :style="{'height':setWerkSplashHeight}">
+    <div class="werkSplashInner">
+      <div class="werkSplashNavigation uk-padding" :style="{'top':setWerkSplashNavigation}">
+        <div class="">
+          <a class="" href="#werkContent" uk-scroll><img class="slide-item-down-small uk-align-center" width="40px" src="/arrowDownCircle.svg" /></a>
 
+        </div>
+      </div>
+      <div class="werkSplashContent" uk-parallax="opacity: 1,0.3; viewport: 0.3;">
+        <div class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.url+')'}"></div>
+      </div>
     </div>
   </div>
-  <div class="sendToFront">
+  <div class="sendToFront" id="werkContent" v-if="initWerkContent">
 
     <!-- <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top"> -->
-    <div class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
+    <div class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :uk-parallax="issmallscreen ? '' : 'y: 150,0; viewport: 0.3'">
 
       <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top  uk-hidden@m ">
         <h1 class="uk-text-center uk-padding "><span class="mobilePageHeader">{{$t("menu.topmenu.case")}}</span></h1>
@@ -32,13 +37,15 @@
       </div>
     </div>
 
-    <div id="" class="section section-last uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :style="[issmallscreen ? {} :{'margin-top':'-300px'},{'background-color':content.acf['background-color'], 'color':content.acf['font_color']}]" :uk-parallax="issmallscreen ? '' : 'y: 300,0; viewport: 0.2'">
+    <!-- <div id="" class="section section-last uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :style="[{'background-color':content.acf['background-color'], 'color':content.acf['font_color']}]" :uk-parallax="issmallscreen ? '' : 'y: 310,0; viewport: 0.9'"> -->
+    <div id="" class="section section-last uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :style="[issmallscreen ? {} :{'margin-top':'-300px'},{'background-color':content.acf['background-color'], 'color':content.acf['font_color']}]" :uk-parallax="issmallscreen ? '' : 'y: 300,0; viewport: 0.8'">
+
 
       <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf['background-color']+' '+content.acf['background-color']+' transparent'}"></div>
 
       <div class="uk-container uk-padding uk-padding-remove-horizontal">
 
-        <div class="uk-width-2-3@m uk-padding uk-padding-remove-bottom uk-align-center uk-text-center" >
+        <div class="uk-width-2-3@m uk-padding uk-padding-remove-bottom uk-align-center uk-text-center">
           <werkmeta :datainput="content" :singlepage="true"></werkmeta>
         </div>
 
@@ -64,7 +71,7 @@
 
                 <div v-for="image in item.gallery">
 
-                  <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
+                  <img width="100%" :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
                   />
                   <p v-if="image.caption" style="color:inherit" class="uk-h5 uk-text-center uk-margin uk-margin-remove-horizontal uk-margin-remove-bottom" v-html="image.caption"></p>
 
@@ -76,7 +83,7 @@
 
                 <div v-for="image in item.gallery" class="uk-align-center uk-width-1-1@s">
 
-                  <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
+                  <img width="100%" :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
                   />
                   <p v-if="image.caption" style="color:inherit" class="uk-h5 uk-text-center uk-margin uk-margin-remove-horizontal uk-margin-remove-bottom" v-html="image.caption"></p>
 
@@ -93,16 +100,8 @@
       </div>
 
     </div>
-    <!-- <div class="slantTopLeft uk-position-relative" :style="{'border-color': 'transparent '+content.acf['background-color']+' '+content.acf['background-color']+' transparent'}"></div> -->
     <div class="slantTopLeft uk-position-relative" :style="{'top':'0px','border-color': content.acf['background-color']+' '+'transparent'+' '+'transparent'+' '+content.acf['background-color']}"></div>
   </div>
-
-
-  <!-- <div class="blue-background uk-position-relative" :class="{'uk-padding ':issmallscreen}">
-  <div class="slantTopLeft"></div>
-</div> -->
-
-
 
   <nextproject :firstProject="content.first_post" :nextProject="content.next_post" :prevProject="content.previous_post" class="sendToBack"></nextproject>
 
@@ -131,10 +130,19 @@ export default {
     return {
       xlscreen: false,
       wide: null,
+      setWerkSplashHeight: '1000px',
+      setWerkSplashNavigation: '1000px',
+      initWerkContent: false,
     }
   },
 
   methods: {
+
+    resetSetWerkSplashHeight: function() {
+      this.setWerkSplashHeight = window.innerHeight - this.$el.querySelector('.werkSplash').offsetTop + 'px'
+      this.setWerkSplashNavigation = window.innerHeight - this.$el.querySelector('.werkSplashNavigation').clientHeight + 'px'
+    },
+
     setWidth: function(width) {
       if (width === "1/3") {
         return {
@@ -168,12 +176,20 @@ export default {
 
   },
 
-  mounted(){
+  mounted() {
     this.xlscreen = this.isxlscreen
+
+    // initWerkContent HACK to fix grid layout
+    this.resetSetWerkSplashHeight()
+    this.initWerkContent = true
+    
   },
-  watch:{
-    'isxlscreen':function(){
+  watch: {
+    'isxlscreen': function() {
       this.xlscreen = this.isxlscreen
+    },
+    'getscreensize': function() {
+      this.resetSetWerkSplashHeight()
     }
   },
 
@@ -216,43 +232,56 @@ export default {
 </script>
 <style lang="scss" scoped>
 .werkSplash {
-    height: 50vh;
-
-    .werkSplashContent {
-        position: absolute;
-        top: 0;
-        height: 100vh;
-        z-index: -1;
-        img {
-            width: 100vw;
-            position: fixed;
+    height: 100vh;
+    z-index: 0;
+    .werkSplashInner {
+        // position: absolute;
+        // top: 0;
+        // height: 100vh;
+        // width: 100%;
+        .werkSplashContent {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
         }
-    }
-    .werkSplashImage {
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-          image-rendering: optimizeSpeed;
-          /*                     */
-          image-rendering: -moz-crisp-edges;
-          /* Firefox             */
-          image-rendering: -o-crisp-edges;
-          /* Opera               */
-          image-rendering: -webkit-optimize-contrast;
-          /* Chrome (and Safari) */
-          image-rendering: optimize-contrast;
-          /* CSS3 Proposed       */
-          -ms-interpolation-mode: nearest-neighbor;
-          /* IE8+                */
+
+        .werkSplashNavigation {
+            position: absolute;
+            width: 100%;
+            height: 120px;
+            bottom: 0;
+            cursor: pointer;
+        }
+
+        .werkSplashImage {
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            // z-index: 1;
+
+            image-rendering: optimizeSpeed;
+            /*                     */
+            image-rendering: -moz-crisp-edges;
+            /* Firefox             */
+            image-rendering: -o-crisp-edges;
+            /* Opera               */
+            image-rendering: -webkit-optimize-contrast;
+            /* Chrome (and Safari) */
+            image-rendering: optimize-contrast;
+            /* CSS3 Proposed       */
+            -ms-interpolation-mode: nearest-neighbor;
+            /* IE8+                */
+
+        }
 
     }
-    @media (max-width: 1200px) {
-        height: 55vh;
-    }
+
 }
 
 .sendToBack {

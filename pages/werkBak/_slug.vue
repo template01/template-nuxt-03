@@ -64,7 +64,7 @@
 
                 <div v-for="image in item.gallery">
 
-                  <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
+                  <img width="100%"  :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
                   />
                   <p v-if="image.caption" style="color:inherit" class="uk-h5 uk-text-center uk-margin uk-margin-remove-horizontal uk-margin-remove-bottom" v-html="image.caption"></p>
 
@@ -76,7 +76,7 @@
 
                 <div v-for="image in item.gallery" class="uk-align-center uk-width-1-1@s">
 
-                  <img :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
+                  <img width="100%"  :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
                   />
                   <p v-if="image.caption" style="color:inherit" class="uk-h5 uk-text-center uk-margin uk-margin-remove-horizontal uk-margin-remove-bottom" v-html="image.caption"></p>
 

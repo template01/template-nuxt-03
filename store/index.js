@@ -3,6 +3,7 @@ export const state = () => ({
   locale: 'nl',
   n: 1,
   smallscreen: null,
+  screensize: 0,
   xlscreen: false,
   initiated: false,
   splashimagesloaded : false,
@@ -20,6 +21,9 @@ export const getters = {
   },
   isxlscreen(state) {
     return state.xlscreen
+  },
+  getscreensize(state) {
+    return state.screensize
   },
   getlocale(state) {
     return state.locale
@@ -45,6 +49,10 @@ export const mutations = {
 
   SET_SMALLSCREEN(state, small) {
     state.smallscreen = small;
+  },
+
+  SET_SCREENSIZE(state, screensize) {
+    state.screensize = screensize;
   },
 
   SET_XLSCREEN(state, xl) {
