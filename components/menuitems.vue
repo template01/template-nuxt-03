@@ -79,7 +79,7 @@ export default {
     transition: box-shadow 0.25s;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 959px) {
 
     .nuxt-link-exact-active{
       -webkit-box-shadow: inset 0px -2px 0px 0px;

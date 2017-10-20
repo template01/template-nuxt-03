@@ -16,8 +16,13 @@
   </nav>
 
   <main class="" id="panel" v-if="reinitiateUikit">
-    <div id="fixme" class="slide-button" @click="toggleMenu" :class="{ 'slide-out-button': !menuopenshow }">
-      <button class="toggle-button black-background"><img class="uk-visible@l"  src="/hamburger.svg"/><img class="uk-hidden@l" src="/hamburgerSm.svg"/></button>
+    <div id="fixme">
+      <div  class="slide-button" @click="toggleMenu" :class="{ 'slide-out-button': !menuopenshow }">
+        <button class="toggle-button black-background"><img class="uk-visible@l"  src="/hamburger.svg"/><img class="uk-hidden@l" src="/hamburgerSm.svg"/></button>
+      </div>
+      <div  class="slide-button slide-button-delay uk-visible@m" @click="scrollToTop()" :class="{ 'slide-out-button': !menuopenshow }">
+        <button class="toggle-button black-background ignoreHover slide-item-up-xsmall "><img class="uk-visible@l"  src="/arrowUp.svg"/><img class="uk-hidden@l" src="/arrowUpSm.svg"/></button>
+      </div>
     </div>
 
 
@@ -115,6 +120,10 @@ export default {
 
     toggleMenu: function() {
       this.slideoutObj.toggle();
+    },
+
+    scrollToTop: function(){
+      window.scroll({ top: 0, left: 0, behavior: 'smooth' })
     },
 
     //
@@ -278,6 +287,10 @@ export default {
 
 .slide-button {
     transition: opacity 0.25s, transform 0.25s;
+    padding-bottom: 7px;
+}
+.slide-button-delay{
+  transition-delay: 0.125s
 }
 
 .slide-out-button {
@@ -327,7 +340,10 @@ export default {
     transform: rotate(0deg);
 }
 .toggle-button:hover {
-    transform: rotate(90deg);
+    &:not(.ignoreHover){
+      transform: rotate(90deg);
+
+    }
 }
 
 .slideout-menu {

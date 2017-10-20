@@ -216,7 +216,7 @@ html {
   position: relative;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 959px) {
   .slantTopLeft {
     border-width: 0 0 20px 100vw;
     top: -20px;
@@ -239,11 +239,11 @@ h1, .uk-h1 {
     font-size: 2.3rem !important;
   }
   @media (max-width: 960px) {
-    font-size: 2rem !important;
+    font-size: 1.15rem !important;
   }
-  @media (max-width: 640px) {
+  /*@media (max-width: 640px) {
     font-size: 1.4rem !important;
-  }
+  }*/
 }
 
 h2, .uk-h2 {
@@ -254,11 +254,10 @@ h2, .uk-h2 {
     font-size: 1.8rem !important;
   }
   @media (max-width: 960px) {
-    font-size: 1.6rem !important;
+		font-size: 1.15rem !important;
   }
-  @media (max-width: 640px) {
-    font-size: 1.15rem !important;
-  }
+  /*@media (max-width: 640px) {
+  }*/
 }
 
 h4, .uk-h4 {
@@ -267,12 +266,12 @@ h4, .uk-h4 {
     line-height: 2.0rem !important;
   }
   @media (max-width: 960px) {
-    font-size: 1.6rem !important;
+    /*font-size: 1.6rem !important;*/
+		font-size: 1.15rem !important;
+		line-height: 1.1 !important;
   }
-  @media (max-width: 640px) {
-		font-size: 1.3rem !important;
-    line-height: 1.1 !important;
-  }
+  /*@media (max-width: 640px) {
+  }*/
 }
 
 h5, .uk-h5 {
@@ -283,11 +282,11 @@ h5, .uk-h5 {
     font-size: 1.15rem !important;
   }
   @media (max-width: 960px) {
-    font-size: 1.05rem !important;
+    /*font-size: 1.05rem !important;*/
+		font-size: 1rem !important;
   }
-  @media (max-width: 640px) {
-    font-size: 1rem !important;
-  }
+  /*@media (max-width: 640px) {
+  }*/
 }
 
 .hugeLetters {
@@ -349,6 +348,16 @@ h5, .uk-h5 {
   }
 }
 
+@media (max-width: 959px) {
+	.uk-padding{
+		padding: 20px !important;
+	}
+	[class*=uk-align] {
+		margin-bottom: 10px !important;
+	}
+}
+
+
 /*.nuxt-link-active>*{
 
   border-bottom-style: solid;
@@ -409,7 +418,7 @@ a:hover {
   transition: box-shadow 0.25s;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 959px) {
   a:hover {
     -webkit-box-shadow: inset 0px -2px 0px 0px;
     -moz-box-shadow: inset 0px -2px 0px 0px;
@@ -503,6 +512,22 @@ img {
   /* This is not completely accurate. It resizes to 2x the current width. */
   left: -100%;
   width: 200%;
+}
+
+.slide-item-up-xsmall {
+  transition: transform 250ms ease-in-out;
+}
+
+.slide-item-up-xsmall:hover {
+  transform: translateY(-5px);
+}
+
+.slide-item-up-small {
+  transition: transform 250ms ease-in-out;
+}
+
+.slide-item-up-small:hover {
+  transform: translateY(-10px);
 }
 
 .slide-item-down-small {

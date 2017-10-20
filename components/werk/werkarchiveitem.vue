@@ -9,9 +9,9 @@
   <div class="">
     <h4 class="" v-html="datainput.title.rendered" style="color:inherit;"></h4>
   </div>
-  <h4 style="color:inherit;">
+  <h4 style="color:inherit; margin-top:14px">
     <span v-if="datainput.acf['meta_what']">
-      <br />
+      <!-- <br /> -->
       <span v-html="datainput.acf['meta_what']"></span>
       <br />
     </span>

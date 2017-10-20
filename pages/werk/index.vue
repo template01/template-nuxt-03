@@ -22,7 +22,7 @@
     <div class="section" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}">
 
       <div class="uk-container " :style="{'background':content.acf.section_a.background_color}">
-        <div class="killPadding " id="workitems">
+        <div class="killPadding uk-padding uk-padding-remove-horizontal uk-padding-remove-top" id="workitems">
 
           <div class=" uk-grid-collapse uk-text-center" uk-grid >
             <werktileitem :inheritcolorfont="content.acf.section_a.font_color" :inheritcolorbackground="content.acf.section_a.font_color"  :inheritcolor="true" v-bind:key="index" :index="index" v-for="(tile,index) in tiles" :datainput="tile"></werktileitem>
@@ -42,10 +42,10 @@
 
     </div>
 
-    <div class="uk-container" :style="{'color':content.acf.section_b.font_color}">
-      <div class="uk-align-center uk-width-2-3@m">
+    <div class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :style="{'color':content.acf.section_b.font_color}">
+      <div class="uk-align-center uk-width-2-3@m uk-padding uk-padding-remove-top" :class="issmallscreen ? '':'uk-padding-remove-horizontal ' ">
         <!-- <div class="uk-text-center uk-grid-match uk-flex uk-flex-middle" > -->
-          <div  class="uk-text-center uk-grid-match uk-flex uk-flex-middle"  v-for="yearItem in collectedYears" uk-height-match uk-grid>
+          <div  class="uk-text-center uk-grid-match uk-flex"  v-for="yearItem in collectedYears" uk-height-match uk-grid>
 
             <div class="uk-width-1-1@m">
               <div class="archiveYear" >
@@ -55,15 +55,6 @@
             <div class="uk-width-1-3@m" v-for="item in yearItem[1]">
               <werkarchiveitem :datainput="item" ></werkarchiveitem>
             </div>
-
-            <!-- {{yearItem[1]}} -->
-
-            <!-- <div v-if="Object.keys(yearItem).length === 1">
-              <h2 class="archiveYear" v-html="yearItem.year"></h2>
-            </div>
-            <div v-else>
-              <werkarchiveitem :datainput="yearItem" ></werkarchiveitem>
-            </div> -->
           </div>
         <!-- </div> -->
       </div>
@@ -192,9 +183,9 @@ export default {
 
 .archiveYear{
   display: inline-block;
-  -webkit-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
-  -moz-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
-  box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
+  -webkit-box-shadow: inset 0px -3px 0px 0px, inset 0px 3px 0px 0px;
+  -moz-box-shadow: inset 0px -3px 0px 0px, inset 0px 3px 0px 0px;
+  box-shadow: inset 0px -3px 0px 0px, inset 0px 3px 0px 0px;
   padding-top: 10px;
   padding-bottom: 10px;
   *{
@@ -205,21 +196,19 @@ export default {
 
 @media (max-width: 959px) {
   .archiveYear{
-    margin-left: 40px;
-    margin-right: 40px;
-    box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
-  }
-}
-
-@media (max-width: 640px) {
-  .archiveYear{
-    margin-left: 40px;
-    margin-right: 40px;
     -webkit-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
     -moz-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
     box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
   }
 }
+
+// @media (max-width: 640px) {
+//   .archiveYear{
+//     -webkit-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
+//     -moz-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
+//     box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
+//   }
+// }
 
 
 .sendToBack {

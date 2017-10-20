@@ -1,22 +1,17 @@
-<template>
+xp<template>
 <nuxt-link :to="$i18n.locale === 'en' ? {path:'/werk/item', query: { lang: $i18n.locale }}:{path:'werk/'+datainput.slug}" class="werktile uk-width-1-2@m uk-padding uk-inline uk-transition-toggle" :style="!inheritcolor ? {'background-color':datainput.acf['background-color'], 'color':datainput.acf['font_color']} : {'color': inheritcolorfont}">
-  <div v-if="inheritcolor" :style="{'background': index % 2 == 0 ? inheritcolorfont : ''}" style="position:absolute; right:0; top:30px; width: 3px; height: calc(100% - 60px); ">
+  <div :class="issmallscreen ? 'uk-padding uk-padding-remove-horizontal':''">
+
+
+
+  <div v-if="inheritcolor && index == 0" class="uk-hidden@m" :style="{'background': inheritcolorfont, 'height': issmallscreen ? '2px' : '3px'}"  style="position:absolute; top:0; right:30px; width: calc(100% - 60px); ">
   </div>
-  <div v-if="inheritcolor"  :style="{'background': inheritcolorfont }"  style="position:absolute; bottom:0; right:30px; height: 3px; width: calc(100% - 60px); ">
+  <div class="uk-visible@m" v-if="inheritcolor" :style="{'background': index % 2 == 0 ? inheritcolorfont : '', 'width': issmallscreen ? '2px' : '3px'}" style="position:absolute; right:0; top:30px; height: calc(100% - 60px); ">
   </div>
-<!--
-  <h4 style="color:inherit;">
-    <span v-for="(type,index) in datainput.pure_taxonomies.tags">
-      <span v-if="index<datainput.pure_taxonomies.tags.length - 1" v-html="type.name+ ' / ' "></span>
-      <span v-else v-html="type.name"></span>
-    </span>
-    <span v-if="datainput.acf['meta_what']">
-      <br />
-      <span v-html="datainput.acf['meta_what']"></span>
-      <br />
-    </span>
-  </h4> -->
-  <werkmeta :datainput="datainput"></werkmeta>
+  <div v-if="inheritcolor"  :style="{'background': inheritcolorfont, 'height': issmallscreen ? '2px' : '3px' }"  style="position:absolute; bottom:0; right:30px; width: calc(100% - 60px); ">
+  </div>
+
+  <werkmeta class="werkmeta" :datainput="datainput"></werkmeta>
 
   <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-bottom">
 
@@ -36,7 +31,7 @@
     <p class="uk-text-left uk-h2 uk-text-right uk-margin-remove-bottom" style="color:inherit;">{{$t("readmore")}} <i class="icon-right-1" style=""></i></span></p>
   </div>
 
-
+</div>
 </nuxt-link>
 </template>
 <script>
@@ -47,7 +42,8 @@ import werkmeta from '~/components/werk/werkmeta.vue'
 
 export default {
   data: function() {
-    return {}
+    return {
+    }
   },
   components:{
     werkmeta
@@ -76,5 +72,9 @@ export default {
 }
 .uk-grid > * {
     // padding-left: 0px !important;
+}
+
+.werkmeta{
+    margin-top: 0 !important;
 }
 </style>

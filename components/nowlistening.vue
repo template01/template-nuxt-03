@@ -119,9 +119,21 @@ export default {
 }
 
 a {
-  -webkit-box-shadow: inset 0px -2px 0px 0px;
-  -moz-box-shadow: inset 0px -2px 0px 0px;
-  box-shadow: inset 0px -2px 0px 0px;
+  -webkit-box-shadow: inset 0px -3px 0px 0px;
+  -moz-box-shadow: inset 0px -3px 0px 0px;
+  box-shadow: inset 0px -3px 0px 0px;
   color: inherit;
+}
+
+
+@media (max-width: 959px) {
+
+  a {
+    -webkit-box-shadow: inset 0px -2px 0px 0px;
+    -moz-box-shadow: inset 0px -2px 0px 0px;
+    box-shadow: inset 0px -2px 0px 0px;
+    color: inherit;
+  }
+
 }
 </style>
