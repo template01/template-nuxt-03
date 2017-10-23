@@ -348,7 +348,7 @@ h5, .uk-h5 {
   }
 }
 
-@media (max-width: 959px) {
+@media (max-width: 640px) {
 	.uk-padding{
 		padding: 20px !important;
 	}

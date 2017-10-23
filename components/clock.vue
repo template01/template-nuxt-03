@@ -4,7 +4,7 @@
   <div class="text-scroll-container">
     <p class="uk-h4 text-scroll-content">
       <span class="text-scroll-inner">
-        <span><transition name="fade"> <span v-if="clockloaded" v-html="' '+momentstamp"></span></transition>
+        <span ><transition name="fade"> <span v-if="clockloaded" v-html="' '+momentstamp"></span></transition>
         </span>
       </span>
       </span>
@@ -25,8 +25,11 @@
 </template>
 <script>
 import VueI18n from 'vue-i18n'
+import computedlocalemixin from '~/mixins/computedlocalemixin.js'
+
 
 export default {
+  mixins: [computedlocalemixin],
   data: function() {
     return {
       momentstamp: '',
@@ -52,7 +55,15 @@ export default {
     },
 
     getTime: function() {
-      return moment().tz('Europe/Amsterdam').format('MMMM Do YYYY, H:mm:ss')
+      if(this.getlocale === 'nl'){
+        return moment().locale(this.getlocale).tz('Europe/Amsterdam').format('D MMMM YYYY, H:mm:ss')
+      }
+      if(this.getlocale === 'dk'){
+        return moment().locale(this.getlocale).tz('Europe/Amsterdam').format('Do MMMM YYYY, H:mm:ss')
+      }
+      if(this.getlocale === 'en'){
+        return moment().locale(this.getlocale).tz('Europe/Amsterdam').format('MMMM Do YYYY, H:mm:ss')
+      }
     },
     getTimeHour: function() {
       return moment().tz('Europe/Amsterdam').format('H')

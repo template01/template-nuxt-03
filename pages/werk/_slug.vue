@@ -5,7 +5,6 @@
       <div class="werkSplashNavigation uk-padding" :style="{'top':setWerkSplashNavigation}">
         <div class="">
           <a class="" href="#werkContent" uk-scroll><img class="slide-item-down-small uk-align-center" width="40px" src="/arrowDownCircle.svg" /></a>
-
         </div>
       </div>
       <div class="werkSplashContent" uk-parallax="opacity: 1,0.3; viewport: 0.3;">
@@ -37,7 +36,6 @@
       </div>
     </div>
 
-    <!-- <div id="" class="section section-last uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :style="[{'background-color':content.acf['background-color'], 'color':content.acf['font_color']}]" :uk-parallax="issmallscreen ? '' : 'y: 310,0; viewport: 0.9'"> -->
     <div id="" class="section section-last uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :style="[issmallscreen ? {} :{'margin-top':'-300px'},{'background-color':content.acf['background-color'], 'color':content.acf['font_color']}]" :uk-parallax="issmallscreen ? '' : 'y: 300,0; viewport: 0.8'">
 
 
@@ -182,7 +180,7 @@ export default {
     // initWerkContent HACK to fix grid layout
     this.resetSetWerkSplashHeight()
     this.initWerkContent = true
-    
+
   },
   watch: {
     'isxlscreen': function() {
@@ -243,13 +241,13 @@ export default {
             position: absolute;
             top: 0;
             height: 100%;
-            width: 100%;
+            width: 100vw;
             z-index: -1;
         }
 
         .werkSplashNavigation {
             position: absolute;
-            width: 100%;
+            width: 100vw;
             height: 120px;
             bottom: 0;
             cursor: pointer;
@@ -257,9 +255,11 @@ export default {
 
         .werkSplashImage {
             background-position: center;
-            background-attachment: fixed;
+            // background-attachment: fixed;
             background-repeat: no-repeat;
             background-size: cover;
+            top: 0;
+            left: 0;
             position: fixed;
             height: 100vh;
             width: 100vw;
