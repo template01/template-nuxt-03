@@ -15,6 +15,21 @@ import axios from 'axios'
 
 export default {
   transition: 'bounce',
+
+  head() {
+    return {
+      title: 'Template Studio - ' + this.$t('menu.topmenu.index'),
+      meta: [
+          {
+           hid: 'description',
+           name: 'description',
+           content: this.$t('meta.index.content')
+          }
+        ]
+    }
+  },
+
+
   data: function() {
     return {
       smallscreen: null

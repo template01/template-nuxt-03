@@ -1,6 +1,5 @@
 <template>
-<div class=" beige-background">
-
+<div class=" beige-background" :style="iserrorpage ? {'position':'absolute','bottom':'0','width':'100%'}:{}">
   <div class="uk-container" id="templatefooter">
 
     <div class="uk-padding uk-padding-remove-horizontal uk-align-center ignoreWidthSmallScreen" :class="{'uk-width-1-1 ':!issmallscreen}">
@@ -40,8 +39,12 @@ export default {
   data: function() {
     return {}
   },
-  props: ['ignoreFirstColumn', 'ignoreSecondColumn', 'passHeader'],
-  mounted() {}
+  props: ['ignoreFirstColumn', 'ignoreSecondColumn', 'passHeader','iserrorpage'],
+  mounted() {
+
+    console.log(this.$route)
+
+  }
 }
 </script>
 <style lang="scss">

@@ -56,7 +56,7 @@ export default {
 
       setTimeout(function() {
         vm.loading = false
-      }, 1500)
+      }, 1000)
 
     },
 

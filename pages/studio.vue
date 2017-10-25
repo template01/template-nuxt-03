@@ -32,6 +32,20 @@ import sectioncontent from '~/components/sections_component/sectioncontent.vue'
 import axios from 'axios'
 
 export default {
+
+  head() {
+    return {
+      title: 'Template Studio - ' + this.$t('menu.topmenu.about'),
+      meta: [
+          {
+           hid: 'description',
+           name: 'description',
+           content: this.$t('meta.about.content')
+          }
+        ]
+    }
+  },
+
   components: {
     defaultpage,
     sectioncontent

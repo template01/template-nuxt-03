@@ -122,6 +122,19 @@ import {
 
 export default {
 
+  head() {
+    return {
+      title: 'Template Studio - ' + this.$t('menu.topmenu.case') + ' - ' + this.content.title.rendered,
+      meta: [
+          {
+           hid: 'description',
+           name: 'description',
+           content: this.$t('menu.topmenu.case') + ' - ' + this.content.title.rendered + ': ' +this.content.acf['meta_what']
+          }
+        ]
+    }
+  },
+
   components: {
     defaultpage,
     slideshow,

@@ -43,8 +43,8 @@
         </div>
 
       </div>
-      <templatefooter class="black-color-force" v-if="$route.path != '/contact'"></templatefooter>
-      <templatefooter class="black-color-force" v-else ignoreSecondColumn=true></templatefooter>
+      <templatefooter :iserrorpage="iserrorpage" class="black-color-force" v-if="$route.path != '/contact'"></templatefooter>
+      <templatefooter :iserrorpage="iserrorpage" class="black-color-force" v-else ignoreSecondColumn=true></templatefooter>
     </section>
 
   </main>
@@ -77,6 +77,8 @@ export default {
       getinitiated: "getinitiated",
     }),
   },
+
+  props:['iserrorpage'],
 
   methods: {
 

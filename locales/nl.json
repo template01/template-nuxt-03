@@ -35,5 +35,22 @@
   },
   "readmore":"Lees meer",
   "visit":"Link",
-  "inintializing":"Aan het laden"
+  "inintializing":"Aan het laden",
+  "meta":{
+    "work":{
+      "content":"WE WERKEN AAN - Brand identiteit + visuele strategie. Print en redactioneel ontwerp. (Hybride) publicaties en websites."
+    },
+    "about":{
+      "content":"WE ZIJN - Lasse en Marlon. Half Deens, half Nederlands. Gevestigd in Rotterdam."
+    },
+    "services":{
+      "content":"WE BIEDEN - Een visueel plan van aanpak. Inventieve ideeën voor web en print. Strakke vormgeving."
+    },
+    "contact":{
+      "content":"Let's Talk - Neem contact met ons op voor een kennismaking of meer informatie over een van onze projecten. We vinden het heel leuk nieuwe mensen te ontmoeten en staan altijd open voor interessante projecten. Tot snel!"
+    },
+    "index":{
+      "content":"Een visueel plan van aanpak. Inventieve ideeën voor web en print. Strakke vormgeving"
+    }
+  }
 }

@@ -81,6 +81,21 @@ import werkarchiveitem from '~/components/werk/werkarchiveitem.vue'
 
 export default {
 
+
+  head() {
+    return {
+      title: 'Template Studio - ' + this.$t('menu.topmenu.work'),
+      meta: [
+          {
+           hid: 'description',
+           name: 'description',
+           content: this.$t('meta.work.content')
+          }
+        ]
+    }
+  },
+
+
   components: {
     defaultpage,
     sectioncontent,
