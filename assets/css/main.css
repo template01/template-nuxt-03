@@ -231,6 +231,8 @@ em {
   color: inherit !important;
 }
 
+
+
 h1, .uk-h1 {
   /*font-family: 'Poppins', sans-serif !important;*/
   /*font-family: 'Relative Book', sans-serif !important;*/
@@ -410,6 +412,9 @@ h5, .uk-h5 {
   text-transform: uppercase;
 }
 
+
+
+
 a:hover {
   text-decoration: none !important;
   -webkit-box-shadow: inset 0px -3px 0px 0px;
@@ -425,6 +430,61 @@ a:hover {
     box-shadow: inset 0px -2px 0px 0px;
   }
 }
+
+#werkContent .text-section a {
+  color: inherit !important;
+  text-decoration: none !important;
+  -webkit-box-shadow: inset 0px -3px 0px 0px;
+  -moz-box-shadow: inset 0px -3px 0px 0px;
+  box-shadow: inset 0px -3px 0px 0px;
+  transition: box-shadow 0.25s;
+}
+
+
+@media (max-width: 959px) {
+  #werkContent .text-section a {
+    -webkit-box-shadow: inset 0px -2px 0px 0px;
+    -moz-box-shadow: inset 0px -2px 0px 0px;
+    box-shadow: inset 0px -2px 0px 0px;
+  }
+}
+
+#werkContent .text-section a {
+  color: inherit !important;
+  text-decoration: none !important;
+  -webkit-box-shadow: inset 0px -3px 0px 0px;
+  -moz-box-shadow: inset 0px -3px 0px 0px;
+  box-shadow: inset 0px -3px 0px 0px;
+  transition: box-shadow 0.25s;
+}
+
+
+@media (max-width: 959px) {
+  #werkContent .text-section a {
+    -webkit-box-shadow: inset 0px -2px 0px 0px;
+    -moz-box-shadow: inset 0px -2px 0px 0px;
+    box-shadow: inset 0px -2px 0px 0px;
+  }
+}
+
+.sectionPart a {
+  color: inherit !important;
+  text-decoration: none !important;
+  -webkit-box-shadow: inset 0px -3px 0px 0px;
+  -moz-box-shadow: inset 0px -3px 0px 0px;
+  box-shadow: inset 0px -3px 0px 0px;
+  transition: box-shadow 0.25s;
+}
+
+
+@media (max-width: 959px) {
+  .sectionPart a {
+    -webkit-box-shadow: inset 0px -2px 0px 0px;
+    -moz-box-shadow: inset 0px -2px 0px 0px;
+    box-shadow: inset 0px -2px 0px 0px;
+  }
+}
+
 
 /*.bounce-enter-active {
   animation: bounce-in .8s;

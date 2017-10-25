@@ -8,7 +8,6 @@
 
     <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_a.background_color+' '+content.acf.section_a.background_color+' transparent'}"></div>
 
-
     <div class="uk-container uk-padding uk-padding-remove-vertical" :style="{'color':content.acf.section_a.font_color}">
       <sectioncontent :acfsection="content.acf.section_a.content"></sectioncontent>
 

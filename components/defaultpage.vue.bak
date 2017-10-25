@@ -5,7 +5,7 @@
   </transition> -->
   <nav id="menu">
     <div :class="{'hideSidebarContent':!mounted}">
-      <div class="uk-padding-small uk-padding-remove-bottom" @click="toggleMenu">
+      <div class="uk-padding-small uk-padding-remove-bottom" @click="openMenu">
         <button class="toggle-button-menu black-background"><img class="uk-visible@l" src="/hamburger.svg"/><img class="uk-hidden@l" src="/hamburgerSm.svg"/></button>
       </div>
       <div style="padding:15px;">
@@ -17,7 +17,7 @@
 
   <main class="" id="panel" v-if="reinitiateUikit">
     <div id="fixme">
-      <div  class="slide-button" @click="toggleMenu" :class="{ 'slide-out-button': !menuopenshow }">
+      <div  class="slide-button" @click="closeMenu" :class="{ 'slide-out-button': !menuopenshow }">
         <button class="toggle-button black-background"><img class="uk-visible@l"  src="/hamburger.svg"/><img class="uk-hidden@l" src="/hamburgerSm.svg"/></button>
       </div>
       <div  class="slide-button slide-button-delay uk-visible@m" @click="scrollToTop()" :class="{ 'slide-out-button': !menuopenshow }">
@@ -110,17 +110,20 @@ export default {
     },
 
     closeMenu: function() {
-      this.slideoutObj.close();
-
+      this.slideoutObj.toggle();
+      this.$store.commit('SET_SIDEBAROPEN')
+      // this.$store.commit('SET_SHOWCONTACT')
     },
 
     openMenu: function() {
-      this.slideoutObj.open();
+      this.slideoutObj.toggle();
+      this.$store.commit('SET_SIDEBARCLOSE')
+      // this.$store.commit('SET_SHOWCONTACT')
+
     },
 
     toggleMenu: function() {
       this.slideoutObj.toggle();
-      this.$store.commit('SET_SIDEBARTOGGLE')
     },
 
     scrollToTop: function(){
@@ -195,7 +198,7 @@ export default {
       vm.loaded = true
       setTimeout(function() {
         vm.$store.commit('SET_INITIATED')
-      }, 3000)
+      }, 1500)
     })
 
 
@@ -357,7 +360,9 @@ export default {
     -webkit-overflow-scrolling: touch;
     z-index: 0;
     display: none;
-    background: #ffd573;
+    // background: #fffef5;
+    background: #fbf3df;
+
 }
 
 .slideout-menu-left {

@@ -1,7 +1,7 @@
 <template>
 <div class=" uk-padding uk-padding-remove-horizontal" :class="ignorePaddingBottom ? 'uk-padding-remove-bottom' : ''">
   <div class="uk-width-1-1@m"  v-for="section in acfsection">
-    <div class="uk-align-center" :class="[setWidth(section.width)]">
+    <div class="uk-align-center sectionPart" :class="[setWidth(section.width)]">
 
       <sectioncontentinner v-if="section.acf_fc_layout != 'column'" :topcontent="topcontent" :section="section"></sectioncontentinner>
       <sectioncontentinnerColumn v-else :topcontent="topcontent" :section="section"></sectioncontentinnerColumn>

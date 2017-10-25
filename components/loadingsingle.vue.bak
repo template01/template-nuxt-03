@@ -1,63 +1,91 @@
 <template>
-<div class="loading-page beige-background" >
-  <div class="uk-padding" style="width:100vw">
-    <div class="uk-text-center">
-      <div class="uk-visible@m ">
-        <p class="uk-h2  uk-text-center inintializing">
-          {{$t("inintializing")}}
-        </p>
-      </div>
-      <div class="uk-hidden@m ">
-        <p class="uk-h1 uk-text-center"><span class="mobilePageHeader">{{$t("inintializing")}}</span></p>
-      </div>
-
-
-
-    </div>
-  </div>
+<div class="loading-page black-background" >
   <!-- <div class="uk-padding uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle uk-height-viewport"> -->
   <div class="opacityWrapper">
 
     <div class="uk-padding uk-height-viewport">
+<!--
+      <div id="toploading" style="height:33vh;" class="uk-flex uk-flex-center uk-flex-middle " >
+
+        <h1 class=" uk-text-center loading green-color" >Initiating awesome</h1>
+      </div>
+ -->
+
 
     </div>
     <div>
-      <canvas id="myCanvas" resize ></canvas>
+
+      <canvas id="myCanvas" resize :class="{expandtoTop:totop}" :style="{'opacity':opacity}"></canvas>
+      <!-- <canvas id="myCanvas" resize :class="{expandtoMiddle:tomiddle,expandtoTop:totop}" :style="{'opacity':opacity}"></canvas> -->
     </div>
   </div>
 
+  <!-- <div v-if="initWave" id="svgwrapper" :class="{'slideoutbottom':tomiddle}">
+      <svg height="210" width="500">
+            <defs>
+              <pattern id="wave" x="0" y="0" width="120" height="24" patternUnits="userSpaceOnUse">
+                <path id="wavePath" d="M-80 2 Q-30 7 -20 2 T0 2 T20 2 T80 2 T60 2 T80 2 T100 2 T120 2 V20 H-80z" mask="url(#mask)" fill="#075945">
+                  <animateTransform
+                      attributeName="transform"
+                      begin="0s"
+                      dur="1.5s"
+                      type="translate"
+                      from="0,0"
+                      to="40,0"
+                      repeatCount="indefinite" />
+                </path>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#wave)" />
+          </svg>
+
+    </div> -->
 </div>
 </template>
 
 <script>
 export default {
 
+  components: {},
+
+  data: () => ({
+    tomiddle: true,
+    totop: true,
+    loading: false,
+    fadeloadcontaineractive: false,
+    opacity: 0,
+  }),
+  transition: 'bounce',
   destroyed(){
-    this.finish()
+    this.tomiddle = false
+    this.totop = false
+    this.fadeloadcontaineractive = false
   },
+
   mounted(){
-    this.start()
+
+    this.paperjs()
+
+    this.tomiddle = false
+    this.totop = false
+
+    var vm = this
+
+
+    // setTimeout(function(){
+    //
+    //   vm.tomiddle = true
+    // },1000)
+
+    setTimeout(function(){
+      vm.totop = true
+    },1500)
   },
+
   methods: {
-    start() {
 
-      var vm = this
-      vm.loading = true
-      setTimeout(function() {
-        vm.paperjs()
-        vm.opacity = 1
-        // vm.initWave = true
-      }, 1)
-
-
-    },
-    finish() {
-      var vm = this
-
-      setTimeout(function() {
-        vm.loading = false
-      }, 1500)
-
+    test: function() {
+      alert('heyeyey')
     },
 
     paperjs: function() {
@@ -69,17 +97,16 @@ export default {
       // The amount of segment points we want to create:
       var amount = 10;
 
-      // The maximum height of the wave:
-
       if(this.issmallscreen){
         var height = 20
       }else{
         var height = 40;
       }
 
+
       // Create a new path and style it:
       var path = new paper.Path({
-        fillColor: '#101010'
+        fillColor: '#fffef5'
       });
 
       for (var i = 0; i <= amount; i++) {
@@ -113,6 +140,9 @@ export default {
       }
 
       paper.view.draw();
+      var vm = this
+
+      vm.opacity = 1
     }
 
   }
@@ -124,17 +154,25 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
-
+<style scoped>
 #myCanvas {
-  transform: scaleX(2);
+  transform: scaleX(2) translateY(120vh);
   width: 100vw;
-  height: 65vh;
+  height:120vh;
   position: absolute;
   bottom: 0;
   left: 0;
-  transition: all 1000ms;
+  transition: all 1s;
+}
+
+.expandtoMiddle {
+  height: 75vh !important;
+}
+
+
+.expandtoTop {
+    transform: scaleX(2) translateY(0) !important;
+
 }
 
 .fadeloadcontainer{
@@ -143,32 +181,10 @@ export default {
 
 .loading-page {
   transition: all 0.4s !important;
-  top: 0;
   position: fixed;
   z-index: 9999999999999;
   width: 100%;
-  height: 100%;
-
-
-  .inintializing{
-    display: inline-block;
-    -webkit-box-shadow: inset 0px -3px 0px 0px;
-    -moz-box-shadow: inset 0px -3px 0px 0px;
-    box-shadow: inset 0px -3px 0px 0px;
-    transition: box-shadow 0.25s;
-  }
-
-  @media (max-width: 959px) {
-
-    .inintializing{
-      -webkit-box-shadow: inset 0px -2px 0px 0px;
-      -moz-box-shadow: inset 0px -2px 0px 0px;
-      box-shadow: inset 0px -2px 0px 0px;
-    }
-
-  }
-
-
+  height: 100%
 }
 
 .opacityWrapper{
@@ -200,18 +216,7 @@ export default {
   }
 }
 
-#toploading {
-  transition: all 1000ms;
-}
 
-.slideoutbottom {
-  transform: translateY(100vh) scaleX(2) !important;
-  transition-delay: 300ms;
-}
-
-.slideouttop {
-  transform: translateY(-100vh)
-}
 
 svg {
   font-weight: bold;

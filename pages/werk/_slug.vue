@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="werkSplashContent" uk-parallax="opacity: 1,0.3; viewport: 0.3;">
-        <div class="werkSplashImage" :style="{'background-image':'url('+content.acf.single_background_image.url+')'}"></div>
+        <div class="werkSplashImage" :class="sidebaropen ? 'werkSplashImageFadeout':'werkSplashImageFadein'" :style="[{'background-image':'url('+content.acf.single_background_image.url+')'}]"></div>
       </div>
     </div>
   </div>
@@ -115,6 +115,11 @@ import nextproject from '~/components/werk/_slug/nextproject.vue'
 import werkmeta from '~/components/werk/werkmeta.vue'
 import axios from 'axios'
 
+import {
+  mapGetters
+} from 'vuex'
+
+
 export default {
 
   components: {
@@ -124,6 +129,12 @@ export default {
     werkmeta
   },
   transition: 'bounce',
+  computed: {
+    ...mapGetters({
+      sidebaropen: "sidebaropen",
+    }),
+  },
+
   data: function() {
     return {
       xlscreen: false,
@@ -228,9 +239,12 @@ export default {
   // },
 }
 </script>
+
 <style lang="scss" scoped>
 .werkSplash {
+
     height: 100vh;
+
     z-index: 0;
     .werkSplashInner {
         // position: absolute;
@@ -254,6 +268,18 @@ export default {
         }
 
         .werkSplashImage {
+
+            &.werkSplashImageFadeout {
+                opacity: 0;
+                transition: opacity 0s !important;
+
+            }
+            &.werkSplashImageFadein {
+                opacity: 1;
+                transition-delay: 0.5s;
+            }
+            transition: opacity 0.25s;
+
             background-position: center;
             // background-attachment: fixed;
             background-repeat: no-repeat;

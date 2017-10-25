@@ -61,8 +61,8 @@ export default {
       if(this.getlocale === 'dk'){
         return moment().locale(this.getlocale).tz('Europe/Amsterdam').format('Do MMMM YYYY, H:mm:ss')
       }
-      if(this.getlocale === 'en'){
-        return moment().locale(this.getlocale).tz('Europe/Amsterdam').format('MMMM Do YYYY, H:mm:ss')
+      if(this.getlocale != 'nl' || this.getlocale != 'dk' ){
+        return moment().tz('Europe/Amsterdam').format('MMMM Do YYYY, H:mm:ss')
       }
     },
     getTimeHour: function() {

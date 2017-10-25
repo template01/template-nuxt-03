@@ -6,8 +6,9 @@ export const state = () => ({
   screensize: 0,
   xlscreen: false,
   initiated: false,
-  splashimagesloaded : false,
-  showcontact: false
+  splashimagesloaded: false,
+  showcontact: false,
+  sidebarOpen: false
 })
 //
 // export const getters = () => ({
@@ -16,6 +17,10 @@ export const state = () => ({
 // })
 
 export const getters = {
+
+  sidebaropen(state) {
+    return state.sidebarOpen
+  },
   issmallscreen(state) {
     return state.smallscreen
   },
@@ -44,6 +49,14 @@ export const mutations = {
   SET_LANG(state, locale) {
     if (state.locales.indexOf(locale) !== -1) {
       state.locale = locale;
+    }
+  },
+
+  SET_SIDEBARTOGGLE(state, sidebarOpen) {
+    if(state.sidebarOpen){
+      state.sidebarOpen = false;
+    }else{
+      state.sidebarOpen = true;
     }
   },
 
