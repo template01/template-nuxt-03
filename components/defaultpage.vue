@@ -1,8 +1,8 @@
 <template>
 <div>
-  <!-- <transition name="fade">
+  <transition name="fade">
     <loadingsingle class="loadingsingle" v-if="!getinitiated"></loadingsingle>
-  </transition> -->
+  </transition>
   <nav id="menu">
     <div :class="{'hideSidebarContent':!mounted}">
       <div class="uk-padding-small uk-padding-remove-bottom" @click="toggleMenu">

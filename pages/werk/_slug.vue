@@ -28,7 +28,7 @@
 
           <!-- <div :class="wide ? 'uk-width-3-4' : 'uk-width-1-1'"> -->
           <div>
-            <h1 class="hugeLetters" v-html="content.title.rendered"></h1>
+            <h1 class="hugeLetters" :class="{'uk-text-center':issmallscreen}" v-html="content.title.rendered"></h1>
           </div>
 
         </div>
