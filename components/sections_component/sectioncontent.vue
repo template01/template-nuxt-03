@@ -1,7 +1,7 @@
 <template>
 <div class=" uk-padding uk-padding-remove-horizontal" :class="ignorePaddingBottom ? 'uk-padding-remove-bottom' : ''">
   <div class="uk-width-1-1@m"  v-for="section in acfsection">
-    <div class="uk-align-center sectionPart" :class="[setWidth(section.width)]">
+    <div class="uk-align-center sectionPart" :class="[setWidth(section.width),ignoreunderline ? 'sectionPartIgnoreHrefUnderline':'']">
 
       <sectioncontentinner v-if="section.acf_fc_layout != 'column'" :topcontent="topcontent" :section="section"></sectioncontentinner>
       <sectioncontentinnerColumn v-else :topcontent="topcontent" :section="section"></sectioncontentinnerColumn>
@@ -18,7 +18,7 @@ import sectioncontentinnerColumn from '~/components/sections_component/sectionco
 
 
 export default {
-  props: ['acfsection','topcontent','ignorePaddingBottom'],
+  props: ['acfsection','topcontent','ignorePaddingBottom','ignoreunderline'],
   components: {
     sectioncontentinner,
     sectioncontentinnerColumn

@@ -467,7 +467,7 @@ a:hover {
   }
 }
 
-.sectionPart a {
+.sectionPart:not(.sectionPartIgnoreHrefUnderline) a {
   color: inherit !important;
   text-decoration: none !important;
   -webkit-box-shadow: inset 0px -3px 0px 0px;
@@ -478,7 +478,7 @@ a:hover {
 
 
 @media (max-width: 959px) {
-  .sectionPart a {
+  .sectionPart:not(.sectionPartIgnoreHrefUnderline) a {
     -webkit-box-shadow: inset 0px -2px 0px 0px;
     -moz-box-shadow: inset 0px -2px 0px 0px;
     box-shadow: inset 0px -2px 0px 0px;
