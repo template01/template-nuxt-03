@@ -197,7 +197,7 @@ export default {
       vm.loaded = true
       setTimeout(function() {
         vm.$store.commit('SET_INITIATED')
-      }, 3000)
+      }, 1500)
     })
 
 

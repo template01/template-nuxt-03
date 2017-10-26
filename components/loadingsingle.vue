@@ -43,11 +43,11 @@ export default {
 
       var vm = this
       vm.loading = true
-      setTimeout(function() {
+      // setTimeout(function() {
         vm.paperjs()
         vm.opacity = 1
         // vm.initWave = true
-      }, 1)
+      // }, 1)
 
 
     },
@@ -134,7 +134,7 @@ export default {
   position: absolute;
   bottom: 0;
   left: 0;
-  transition: all 1000ms;
+  // transition: all 1000ms;
 }
 
 .fadeloadcontainer{
