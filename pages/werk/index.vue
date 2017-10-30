@@ -39,14 +39,12 @@
 
     <div class="uk-container" :style="{'color':content.acf.section_b.font_color}">
       <sectioncontent :ignorePaddingBottom="true" :acfsection="content.acf.section_b.content"></sectioncontent>
-
     </div>
 
     <div class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :style="{'color':content.acf.section_b.font_color}">
       <div class="uk-align-center uk-width-2-3@m uk-padding uk-padding-remove-top" :class="issmallscreen ? '':'uk-padding-remove-horizontal ' ">
         <!-- <div class="uk-text-center uk-grid-match uk-flex uk-flex-middle" > -->
           <div  class="uk-text-center uk-grid-match uk-flex"  v-for="yearItem in collectedYears" uk-height-match uk-grid>
-
             <div class="uk-width-1-1@m">
               <div class="archiveYear" >
                 <h4 v-html="yearItem[0]"></h4>
@@ -75,7 +73,6 @@ import defaultpage from '~/components/defaultpage.vue'
 import sectioncontent from '~/components/sections_component/sectioncontent.vue'
 import werktileitem from '~/components/werk/werktileitem.vue'
 import werkarchiveitem from '~/components/werk/werkarchiveitem.vue'
-// import werkarchiveitem from '~/components/werk/werkarchiveitem.vue'
 
 
 
@@ -126,11 +123,11 @@ export default {
       const categories = res.data.reverse()
       const collectedYearsRes = (await axios.all(
           categories.map(category => axios.get('http://api.template-studio.nl/wp-json/wp/v2/archiveitem_' + query.lang + '?categories=' + category.id))
+
         ))
         .map(result => result.data)
         .reduce((acc, curr, index) => {
-          acc.push({"year" : categories[index].name}, ...curr)
-          // acc.push([categories[index].name, [...curr]])
+          acc.push([categories[index].name, [...curr]])
           return acc
         }, [])
 
@@ -157,7 +154,6 @@ export default {
         ))
         .map(result => result.data)
         .reduce((acc, curr, index) => {
-          // acc.push({"year" : categories[index].name}, ...curr)
           acc.push([categories[index].name, [...curr]])
           return acc
         }, [])

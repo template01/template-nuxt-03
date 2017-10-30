@@ -526,11 +526,11 @@ img[lazy=loaded] {
 /*img optimization*/
 
 img {
-  image-rendering: optimizeSpeed;
+  /*image-rendering: optimizeSpeed;*/
   /*                     */
-  image-rendering: -moz-crisp-edges;
+  /*image-rendering: -moz-crisp-edges;*/
   /* Firefox             */
-  image-rendering: -o-crisp-edges;
+  /*image-rendering: -o-crisp-edges;*/
   /* Opera               */
   image-rendering: -webkit-optimize-contrast;
   /* Chrome (and Safari) */

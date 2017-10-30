@@ -1,15 +1,14 @@
 <template>
-<div :uk-parallax="issmallscreen ? '' : 'y: -50,0%; viewport: 0.5'">
-
-  <div class="black-background uk-position-relative" >
+<div class="nextProject" :uk-parallax="issmallscreen ? '' : 'y: -50,0%; viewport: 0.5'" :style="{'background':backgroundcolor}">
+  <div class="" >
     <div class="slantTopLeft"></div>
   </div>
 
-  <div class="black-background beige-color-force">
+  <div class="">
     <div class="uk-container uk-padding">
       <nuxt-link class="" :to="$i18n.locale === 'en' ? {path:this.nextProject, query: { lang: $i18n.locale }}:{path:nextProject ? nextProject : firstProject }">
         <div class="slide-item-right">
-          <h2 :style="issmallscreen ? {'line-height ':'0','margin-bottom':'0'}:{'margin-bottom':'0'}" class="uk-text-center">Next Project <i class="icon-right-1" style=""></i></span><br /><br /></h2>
+          <h2 :style="[issmallscreen ? {'line-height ':'0','margin-bottom':'0'}:{'margin-bottom':'0'},{'color':fontcolor}]" class="uk-text-center">Next Project <i class="icon-right-1" style=""></i></span><br /><br /></h2>
         </div>
       </nuxt-link>
     </div>
@@ -26,9 +25,14 @@ export default {
     return {}
   },
 
-  props: ['nextProject', 'prevProject', 'firstProject'],
+  props: ['nextProject', 'prevProject', 'firstProject','backgroundcolor','fontcolor'],
 }
 </script>
-<style lang="scss">
-
+<style lang="scss" scoped>
+  .nextProject{
+    background: inherit;
+    *{
+      color: inherit;
+    }
+  }
 </style>

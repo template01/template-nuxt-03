@@ -98,10 +98,10 @@
       </div>
 
     </div>
-    <div class="slantTopLeft uk-position-relative" :style="{'top':'0px','border-color': content.acf['background-color']+' '+'transparent'+' '+'transparent'+' '+content.acf['background-color']}"></div>
+    <!-- <div class="slantTopLeft uk-position-relative" :style="{'top':'0px','border-color': content.acf['background-color']+' '+'transparent'+' '+'transparent'+' '+content.acf['background-color']}"></div> -->
   </div>
 
-  <nextproject :firstProject="content.first_post" :nextProject="content.next_post" :prevProject="content.previous_post" class="sendToBack"></nextproject>
+  <nextproject :backgroundcolor="content.acf['background-color']" :fontcolor="content.acf['font_color']" :firstProject="content.first_post" :nextProject="content.next_post" :prevProject="content.previous_post" class="sendToBack"></nextproject>
 
 
 
@@ -223,18 +223,16 @@ export default {
   }) {
     if (query.hasOwnProperty('lang')) {
       let [contentRes] = await Promise.all([
-        // axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_' + query.lang),
-        // axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_' + query.lang),
         axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang + '?slug=' + params.slug + '&featured=1&isfeatured=1'),
 
       ])
       return {
         content: contentRes.data[0],
+        p: params
       }
     } else {
 
       let [contentRes] = await Promise.all([
-        // axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_nl'),
         axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_nl?slug=' + params.slug + '&featured=1&isfeatured=1'),
 
       ])

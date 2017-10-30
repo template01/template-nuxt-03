@@ -1,5 +1,5 @@
-xp<template>
-<nuxt-link :to="$i18n.locale === 'en' ? {path:'/werk/item', query: { lang: $i18n.locale }}:{path:'werk/'+datainput.slug}" class="werktile uk-width-1-2@m uk-padding uk-inline uk-transition-toggle" :style="!inheritcolor ? {'background-color':datainput.acf['background-color'], 'color':datainput.acf['font_color']} : {'color': inheritcolorfont}">
+<template>
+  <nuxt-link :to="$i18n.locale = 'nl' ? {path:'/werk/item', query: { lang: $i18n.locale }}:{path:'werk/'+datainput.slug}" class="werktile uk-width-1-2@m uk-padding uk-inline uk-transition-toggle" :style="!inheritcolor ? {'background-color':datainput.acf['background-color'], 'color':datainput.acf['font_color']} : {'color': inheritcolorfont}">
   <div :class="issmallscreen ? 'uk-padding uk-padding-remove-horizontal':''">
 
 
@@ -14,8 +14,6 @@ xp<template>
   <werkmeta class="werkmeta" :datainput="datainput"></werkmeta>
 
   <div class="uk-padding uk-padding-remove-horizontal uk-padding-remove-bottom uk-flex uk-flex-column">
-
-
     <div v-for="(item,index) in datainput.acf.tile" class="tileContent" :class="[item.size === 'half' ? {'uk-width-1-2@m':true}:{'uk-width-1-1@m':true}, item.acf_fc_layout === 'image' ? 'uk-flex uk-flex-center uk-flex-middle':'', item.acf_fc_layout === 'image' && issmallscreen ? 'uk-flex-last':'uk-padding uk-padding-remove-horizontal uk-padding-remove-top',  index===0 & !issmallscreen ? {'uk-padding uk-padding-remove-horizontal uk-padding-remove-top':true}:{'':true}]">
       <h1 v-if="item.acf_fc_layout === 'header'" class="uk-text-left hugeLetters"  :class="{'uk-text-center':issmallscreen}" v-html="datainput.title.rendered" style="color:inherit;"></h1>
 
