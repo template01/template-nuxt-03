@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="$i18n.locale === 'nl' ? {path:'/werk/item', query: { lang: $i18n.locale }}:{path:'werk/'+datainput.slug}" class="werktile uk-width-1-2@m uk-padding uk-inline uk-transition-toggle" :style="!inheritcolor ? {'background-color':datainput.acf['background-color'], 'color':datainput.acf['font_color']} : {'color': inheritcolorfont}">
+  <nuxt-link :to="$i18n.locale != 'nl' ? {path:'/werk/'+datainput.slug, query: { lang: $i18n.locale }}:{path:'werk/'+datainput.slug}" class="werktile uk-width-1-2@m uk-padding uk-inline uk-transition-toggle" :style="!inheritcolor ? {'background-color':datainput.acf['background-color'], 'color':datainput.acf['font_color']} : {'color': inheritcolorfont}">
 <!-- <nuxt-link :to="$i18n.locale === 'en' ? {path:'/werk/item', query: { lang: $i18n.locale }}:{path:'werk/'+datainput.slug}" class="werktile uk-width-1-2@m uk-padding uk-inline uk-transition-toggle" :style="!inheritcolor ? {'background-color':datainput.acf['background-color'], 'color':datainput.acf['font_color']} : {'color': inheritcolorfont}"> -->
   <div :class="issmallscreen ? 'uk-padding uk-padding-remove-horizontal':''">
 
