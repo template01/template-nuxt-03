@@ -1,5 +1,6 @@
 <template>
 <defaultpage class="beige-background" id="">
+  <template v-if="!error">
   <div v-if="content.acf.single_background_image" class="werkSplash uk-visible@m" :style="{'height':setWerkSplashHeight}">
     <div class="werkSplashInner">
       <div class="werkSplashNavigation uk-padding" :style="{'top':setWerkSplashNavigation}">
@@ -28,7 +29,7 @@
 
           <!-- <div :class="wide ? 'uk-width-3-4' : 'uk-width-1-1'"> -->
           <div>
-            <h1 class="hugeLetters" :class="{'uk-text-center':issmallscreen}" v-html="content.title.rendered"></h1>
+            <h1 class="hugeLetters" :class="{'uk-text-center':issmallscreen}" v-html="error ? '':content.title.rendered"></h1>
           </div>
 
         </div>
@@ -102,8 +103,7 @@
   </div>
 
   <nextproject :backgroundcolor="content.acf['background-color']" :fontcolor="content.acf['font_color']" :firstProject="content.first_post" :nextProject="content.next_post" :prevProject="content.previous_post" class="sendToBack"></nextproject>
-
-
+</template>
 
 </defaultpage>
 </template>
@@ -124,14 +124,12 @@ export default {
 
   head() {
     return {
-      title: 'Template Studio - ' + this.$t('menu.topmenu.case') + ' - ' + this.content.title.rendered,
-      meta: [
-          {
-           hid: 'description',
-           name: 'description',
-           content: this.$t('menu.topmenu.case') + ' - ' + this.content.title.rendered + ': ' +this.content.acf['meta_what']
-          }
-        ]
+      title: 'Template Studio - ' + this.$t('menu.topmenu.case') + ' - ' + this.error ? '' : this.content.title.rendered,
+      meta: [{
+        hid: 'description',
+        name: 'description',
+        content: this.$t('menu.topmenu.case') + ' - ' + this.error ? '' : this.content.title.rendered + ': ' + this.error ? '' : this.content.acf['meta_what']
+      }]
     }
   },
 
@@ -150,6 +148,7 @@ export default {
 
   data: function() {
     return {
+      error: true,
       xlscreen: false,
       wide: null,
       setWerkSplashHeight: '1000px',
@@ -206,6 +205,9 @@ export default {
     this.initWerkContent = true
 
   },
+  beforeCreate() {
+    // console.log(this.content)
+  },
   watch: {
     'isxlscreen': function() {
       this.xlscreen = this.isxlscreen
@@ -219,15 +221,24 @@ export default {
   async asyncData({
     params,
     query,
-    error
+    error,
+    router
   }) {
     if (query.hasOwnProperty('lang')) {
       let [contentRes] = await Promise.all([
         axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang + '?slug=' + params.slug + '&featured=1&isfeatured=1'),
 
       ])
+
+      if (contentRes.data[0] == null) {
+        var errorTemp = true
+      }else{
+        var errorTemp = false
+      }
+
       return {
         content: contentRes.data[0],
+        error: errorTemp,
         p: params
       }
     } else {
@@ -236,8 +247,18 @@ export default {
         axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_nl?slug=' + params.slug + '&featured=1&isfeatured=1'),
 
       ])
+      // console.log(contentRes.data[0])
+      // router.go(1)
+      if (contentRes.data[0] == null) {
+        var errorTemp = true
+      }else{
+        var errorTemp = false
+      }
+
+
       return {
         content: contentRes.data[0],
+        error: errorTemp,
         p: params
       }
     }

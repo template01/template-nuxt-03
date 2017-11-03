@@ -46,7 +46,7 @@
         <!-- <div class="uk-text-center uk-grid-match uk-flex uk-flex-middle" > -->
           <div  class="uk-text-center uk-grid-match uk-flex"  v-for="yearItem in collectedYears" uk-height-match uk-grid>
             <div class="uk-width-1-1@m">
-              <div class="archiveYear" >
+              <div class="archiveYear uk-padding-remove-horizontal uk-padding-remove-bottom uk-padding" >
                 <h4 v-html="yearItem[0]"></h4>
               </div>
             </div>
@@ -194,10 +194,10 @@ export default {
 
 .archiveYear{
   display: inline-block;
-  -webkit-box-shadow: inset 0px -3px 0px 0px, inset 0px 3px 0px 0px;
-  -moz-box-shadow: inset 0px -3px 0px 0px, inset 0px 3px 0px 0px;
-  box-shadow: inset 0px -3px 0px 0px, inset 0px 3px 0px 0px;
-  padding-top: 10px;
+  -webkit-box-shadow: inset 0px -0px 0px 0px, inset 0px 3px 0px 0px;
+  -moz-box-shadow: inset 0px -0px 0px 0px, inset 0px 3px 0px 0px;
+  box-shadow: inset 0px -0px 0px 0px, inset 0px 3px 0px 0px;
+  // padding-top: 10px;
   padding-bottom: 10px;
   *{
     color: inherit;
@@ -207,9 +207,9 @@ export default {
 
 @media (max-width: 959px) {
   .archiveYear{
-    -webkit-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
-    -moz-box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
-    box-shadow: inset 0px -2px 0px 0px, inset 0px 2px 0px 0px;
+    -webkit-box-shadow: inset 0px -0px 0px 0px, inset 0px 2px 0px 0px;
+    -moz-box-shadow: inset 0px -0px 0px 0px, inset 0px 2px 0px 0px;
+    box-shadow: inset 0px -0px 0px 0px, inset 0px 2px 0px 0px;
   }
 }
 

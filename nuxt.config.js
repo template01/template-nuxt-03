@@ -115,7 +115,8 @@ module.exports = {
         type: 'image/png',
         sizes: '128x128',
         href: '/favicon-128.png'
-      }],
+      }
+    ],
     script: [{
       src: 'https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.js'
     }]
@@ -126,6 +127,7 @@ module.exports = {
 
   modules: [
     '@nuxtjs/pwa'
+    '@nuxtjs/axios',
   ],
 
   router: {
@@ -192,11 +194,18 @@ module.exports = {
   // },
 
   loading: '~/components/loading.vue',
+  axios: {
+    redirectError: {
+      500: '/login',
+      404: '/login'.
+    }
+  },
   /*
    ** Build configuration
    */
   build: {
-    vendor: ['axios', 'vue-i18n', 'lodash', 'uikit', 'vue-lazyload']
+    // vendor: ['axios', 'vue-i18n', 'lodash', 'uikit', 'vue-lazyload']
+    vendor: ['vue-i18n', 'lodash', 'uikit', 'vue-lazyload']
     /*
      ** Run ESLINT on save
      */

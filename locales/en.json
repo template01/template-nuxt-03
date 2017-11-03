@@ -16,12 +16,12 @@
   "clock":{
 
     "modes": {
-      "sleep": ["Sleeping.", "Dreaming...zzz..."],
-      "beforework": ["Just getting up.", "Dressing for work."],
-      "morning": ["Probably having coffee.", "Pre-work discussion.", "Just spacing out..."],
-      "lunch": ["Having eats...", "Eating a cucumber."],
-      "work": ["Deep work session.", "GoT.... \"work\"...", "Staring at the screen. Too hard."],
-      "afterwork": ["Chilling after work.", "2% chance that we're partying."]
+      "sleep": ["Zzz."],
+      "beforework": ["Waking up.", "On our way~"],
+      "morning": ["Coffee first!", "Discussing work, while eating croissants."],
+      "lunch": ["Lunch!", "LUNCH.", "Lunching."],
+      "work": ["Real, actual work.", "Busy, busy!", "Too much computer."],
+      "afterwork": ["Watching more series.", "At the gym.", "Byeeee!"]
     },
     "timedesc":"Local time:",
     "statusdesc":"Now up to:"
