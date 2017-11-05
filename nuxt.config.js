@@ -126,8 +126,8 @@ module.exports = {
   // PWA  Progressive Web Apps support (https://www.davidroyer.me/blog/nuxtjs-tips/)
 
   modules: [
-    '@nuxtjs/pwa'
-    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    '@nuxtjs/axios'
   ],
 
   router: {
@@ -197,7 +197,7 @@ module.exports = {
   axios: {
     redirectError: {
       500: '/login',
-      404: '/login'.
+      404: '/login'
     }
   },
   /*
