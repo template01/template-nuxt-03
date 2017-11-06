@@ -13,7 +13,8 @@
       <span v-if="datainput.pure_taxonomies['categories'] && singlepage" :class="{ 'metapadding': singlepage }" >
         <span v-html="datainput.pure_taxonomies['categories'][0].name"></span>
       </span>
-    <span v-if="datainput.acf['meta_link'] && singlepage" :class="{ 'metapadding': singlepage }">
+      <br v-if="issmallscreen"/>
+    <span v-if="datainput.acf['meta_link'] && singlepage" :class="{ 'metapadding': !issmallscreen }">
       <span><a :href="datainput.acf['meta_link']">{{$t("visit")}}
         <span class="">
         <i class="icon-right-1" style=""></i>

@@ -123,6 +123,7 @@ a {
   -moz-box-shadow: inset 0px -3px 0px 0px;
   box-shadow: inset 0px -3px 0px 0px;
   color: inherit;
+  transition: box-shadow 0.0s;
 }
 
 

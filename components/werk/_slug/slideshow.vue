@@ -1,5 +1,5 @@
 <template>
-<div class="my-swiper" v-swiper:mySwiper="swiperOption">
+<div class="my-swiper uk-padding uk-padding-remove-horizontal uk-padding-remove-top" v-swiper:mySwiper="swiperOption">
   <div class="swiper-wrapper">
 
     <div class="navigation uk-hidden-touch">
@@ -8,7 +8,7 @@
       <div class="half right " style="cursor:url(/arrowRightCircle.svg) 20 20, auto" @click="nextSlide()"></div>
     </div>
 
-    <div class="navigationTouch uk-hidden-notouch">
+    <div v-if="hidemobilenav" class="navigationTouch uk-hidden-notouch">
 
       <div class="mobileNavLeft uk-inline" @click="prevSlide()">
         <h1 class="uk-position-center-left">
@@ -57,7 +57,7 @@ export default {
       return this.$refs.mySwiper.swiper
     }
   },
-  props: ['slides', 'backgroundcolor'],
+  props: ['slides', 'backgroundcolor','hidemobilenav'],
   methods:{
     nextSlide:function(){
      this.mySwiper.slideNext()

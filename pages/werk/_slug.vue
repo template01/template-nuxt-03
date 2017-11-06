@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <div id="" class="section section-last uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :style="[issmallscreen ? {} :{'margin-top':'-300px'},{'background-color':content.acf['background-color'], 'color':content.acf['font_color']}]" :uk-parallax="issmallscreen ? '' : 'y: 300,0; viewport: 0.8'">
+    <div id="" class="section section-last" :style="[issmallscreen ? {} :{'margin-top':'-300px'},{'background-color':content.acf['background-color'], 'color':content.acf['font_color']}]" :uk-parallax="issmallscreen ? '' : 'y: 300,0; viewport: 0.8'">
 
 
       <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf['background-color']+' '+content.acf['background-color']+' transparent'}"></div>
@@ -45,16 +45,16 @@
       <div class="uk-container uk-padding uk-padding-remove-horizontal">
 
         <div class="uk-width-2-3@m uk-padding uk-padding-remove-bottom uk-align-center uk-text-center">
-          <werkmeta :datainput="content" :singlepage="true"></werkmeta>
+          <werkmeta :class="issmallscreen ? 'uk-padding uk-padding-remove-top uk-padding-remove-horizontal':''" :datainput="content" :singlepage="true"></werkmeta>
         </div>
 
         <div v-for="item in content.acf.single">
 
-          <div class="uk-width-1-1@m uk-padding" :class="!item.addpaddingbottom ? 'uk-padding-remove-bottom' : '' ">
+          <div class="uk-width-1-1@m uk-padding" :class="[!item.addpaddingbottom ? 'uk-padding-remove-bottom' : '',issmallscreen ? 'uk-padding-remove-top':'' ]">
 
             <div class="text-section" v-if="item.acf_fc_layout === 'single_large_text_centered'">
               <div style="margin-bottom:0;" class="uk-align-center" :class="{'uk-width-2-3':!issmallscreen}">
-                <div class="uk-padding uk-padding-remove-horizontal uk-h2" v-html="item.large_text_centered" style="color:inherit; margin-bottom:0;"></div>
+                <div class="uk-padding-remove-horizontal uk-h2" :class="issmallscreen ? '':'uk-padding'" v-html="item.large_text_centered" style="color:inherit; margin-bottom:0;"></div>
               </div>
             </div>
 
@@ -64,7 +64,7 @@
 
 
 
-            <div v-if="item.acf_fc_layout === 'single_gallery'" :class="[setWidth(item.width)]" class="uk-align-center uk-margin-remove-bottom">
+            <div v-if="item.acf_fc_layout === 'single_gallery'" :class="[setWidth(item.width)]" class="gallery uk-align-center uk-margin-remove-bottom">
 
               <div class="uk-visible@m uk-child-width-expand uk-flex uk-flex-middle" :class="item.collapsed_gallery ? 'uk-grid-collapse':''" uk-grid>
 
@@ -80,7 +80,7 @@
 
               <div class="uk-hidden@m ">
 
-                <div v-for="image in item.gallery" class="uk-align-center uk-width-1-1@s">
+                <div v-for="image in item.gallery" class="uk-align-center uk-width-1-1@s noMarginTop">
 
                   <img width="100%" :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
                   />
@@ -273,6 +273,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.gallery{
+  img{
+    display: inline-block;
+    margin-top: 0 !important;
+    // margin-bottom: 0 !important;
+  }
+  .noMarginTop:last-of-type {
+    img{
+      // margin-bottom: initial !important
+    }
+  }
+
+  .noMarginTop{
+    margin-top: 0;
+  }
+}
 .werkSplash {
 
     height: 100vh;
@@ -351,9 +368,12 @@ export default {
     position: relative;
 
 }
+
+</style>
+<style lang="scss">
 .text-section {
     p:last-of-type {
-        margin: 0 !important;
+        // margin: 0 !important;
     }
 }
 </style>

@@ -20,8 +20,7 @@
     <div v-for="(item,index) in datainput.acf.tile" class="tileContent" :class="[item.size === 'half' ? {'uk-width-1-2@m':true}:{'uk-width-1-1@m':true}, item.acf_fc_layout === 'image' ? 'uk-flex uk-flex-center uk-flex-middle':'', item.acf_fc_layout === 'image' && issmallscreen ? 'uk-flex-last':'uk-padding uk-padding-remove-horizontal uk-padding-remove-top',  index===0 & !issmallscreen ? {'uk-padding uk-padding-remove-horizontal uk-padding-remove-top':true}:{'':true}]">
       <h1 v-if="item.acf_fc_layout === 'header'" class="uk-text-left hugeLetters"  :class="{'uk-text-center':issmallscreen}" v-html="datainput.title.rendered" style="color:inherit;"></h1>
 
-      <img width="100%" v-if="item.acf_fc_layout  === 'image' && item.image.sizes" :setwidth="item.image.sizes['large-width']" :setheight="item.image.sizes['large-height']" v-lazy="item.image.sizes.large" :data-srcset="item.image.sizes.medium + ' 480w, ' + item.image.sizes.medium + ' 1024w, ' + item.image.sizes.large + ' 1600w, ' + item.image.sizes.xlarge + ' 1920w'"
-      class="lazyload" :class="item.size === 'full' ? '' : ''"  />
+      <img width="100%" v-if="item.acf_fc_layout  === 'image' && item.image.sizes" :setwidth="item.image.sizes['large-width']" :setheight="item.image.sizes['large-height']" v-lazy="item.image.sizes.large" :data-srcset="item.image.sizes.medium + ' 480w, ' + item.image.sizes.medium + ' 1024w, ' + item.image.sizes.large + ' 1600w, ' + item.image.sizes.xlarge + ' 1920w'" class="lazyload" :class="[item.size === 'full' ? '' : '', issmallscreen ? 'uk-padding-remove-horizontal uk-padding-remove-bottom uk-padding-small':'']"  />
 
       <div v-if="item.acf_fc_layout === 'text'" class="uk-text-left uk-h4" v-html="item.text" style="color:inherit;"></div>
     </div>

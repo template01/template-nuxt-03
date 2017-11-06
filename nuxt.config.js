@@ -127,11 +127,11 @@ module.exports = {
 
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/axios'
+    // '@nuxtjs/axios'
   ],
 
   router: {
-    middleware: 'i18n'
+    middleware: ['i18n','nonExcistingLang']
   },
 
   css: [
@@ -194,18 +194,12 @@ module.exports = {
   // },
 
   loading: '~/components/loading.vue',
-  axios: {
-    redirectError: {
-      500: '/login',
-      404: '/login'
-    }
-  },
+
   /*
    ** Build configuration
    */
   build: {
-    // vendor: ['axios', 'vue-i18n', 'lodash', 'uikit', 'vue-lazyload']
-    vendor: ['vue-i18n', 'lodash', 'uikit', 'vue-lazyload']
+    vendor: ['axios', 'vue-i18n', 'lodash', 'uikit', 'vue-lazyload']
     /*
      ** Run ESLINT on save
      */

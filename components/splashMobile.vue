@@ -16,7 +16,7 @@
   </div>
 
   <div class="uk-padding  uk-position-bottom">
-    <menuitems :passedmenucolor="slideContent[slideIndex].font_color" :sidebar="true"></menuitems>
+    <menuitems :passedmenucolor="slideContent[slideIndex].font_color" :indexMobile="true" :sidebar="true"></menuitems>
   </div>
 
 

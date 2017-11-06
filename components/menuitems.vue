@@ -1,5 +1,5 @@
  <template>
-<div id="menuitems" :style="{'color':passedmenucolor}" :class="sidebar ? 'sidebar':''">
+<div id="menuitems" :style="{'color':passedmenucolor}" :class="[sidebar ? 'sidebar':'',indexMobile ? 'indexMobile':'']">
   <div id="mainMenuItems">
 
     <!-- {{getlocale}} -->
@@ -55,7 +55,6 @@
 </div>
 </template>
 <script>
-
 import computedlocalemixin from '~/mixins/computedlocalemixin.js'
 
 export default {
@@ -63,41 +62,72 @@ export default {
     return {}
   },
   mixins: [computedlocalemixin],
-  props: ['passedmenucolor', 'sidebar'],
+  props: ['passedmenucolor', 'sidebar','indexMobile'],
   mounted() {}
 }
 </script>
 <style lang="scss" scoped>
-
-
 // #mainMenuItems{
-  .nuxt-link-exact-active{
+.nuxt-link-exact-active {
     display: inline-block;
-    -webkit-box-shadow: inset 0px -3px 0px 0px;
-    -moz-box-shadow: inset 0px -3px 0px 0px;
-    box-shadow: inset 0px -3px 0px 0px;
-    transition: box-shadow 0.25s;
-  }
+    -webkit-box-shadow: inset 0 -3px 0 0;
+    -moz-box-shadow: inset 0 -3px 0 0;
+    box-shadow: inset 0 -3px 0 0;
+    transition: box-shadow 0.0s;
+}
+@media (max-width: 959px) {
 
-  @media (max-width: 959px) {
-
-    .nuxt-link-exact-active{
-      -webkit-box-shadow: inset 0px -2px 0px 0px;
-      -moz-box-shadow: inset 0px -2px 0px 0px;
-      box-shadow: inset 0px -2px 0px 0px;
+    .nuxt-link-exact-active {
+        -webkit-box-shadow: inset 0 -2px 0 0;
+        -moz-box-shadow: inset 0 -2px 0 0;
+        box-shadow: inset 0 -2px 0 0;
     }
 
-  }
+}
 
-
-#menuitems{
+#menuitems {
     transition: color 1s;
-
-    .sidebarItem{
-      padding-bottom: 10px;
-      display: block;
-      clear: both;
+    // &.mobileMenuIndex{
+    //   // display: none;
+    //
+    //       .sidebarItem{
+    //         float: left;
+    //         padding-right: 10px;
+    //       }
+    // }
+    //
+    &:not(.indexMobile){
+      .sidebarItem{
+        padding-bottom: 10px;
+        display: block;
+        clear: both;
+      }
     }
+
+    &.indexMobile {
+        @media all and (orientation:portrait) {
+            /* Style adjustments for portrait mode goes here */
+            .sidebarItem {
+                padding-bottom: 10px;
+                display: block;
+                clear: both;
+            }
+        }
+        @media all and (orientation:landscape) {
+            /* Style adjustments for landscape mode goes here */
+            .sidebarItem {
+                // padding-bottom: 10px;
+                float: left;
+                padding-right: 10px;
+
+                // display: block;
+                // clear: both;
+
+            }
+        }
+
+    }
+
 }
 
 * {
@@ -109,9 +139,9 @@ export default {
     text-decoration: none;
 }
 
-p,
 h2,
-h4 {
+h4,
+p {
     color: inherit;
 }
 a {

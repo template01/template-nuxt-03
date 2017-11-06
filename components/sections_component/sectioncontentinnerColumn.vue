@@ -1,5 +1,5 @@
 <template>
-<div :class="{'uk-grid-collapse':section.collapse_column }"  uk-grid>
+<div :class="{'uk-grid-collapse':section.collapse_column }"  :uk-grid="!issmallscreen">
     <div v-for="sectionColumn in section.content" :class="'uk-width-1-'+section.content.length+'@m'" >
       <sectioncontentinner :columnlayout=true :section="sectionColumn"></sectioncontentinner>
     </div>
