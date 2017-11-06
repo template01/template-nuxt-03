@@ -226,6 +226,9 @@ h1, .uk-h1 {
     font-size: 2.3rem !important;
   }
   @media (max-width: 960px) {
+    font-size: 1.15rem !important;
+  }
+  @media (max-width: 640px) {
     font-size: 1rem !important;
   }
   /*@media (max-width: 640px) {
@@ -241,10 +244,10 @@ h2, .uk-h2 {
     font-size: 1.8rem !important;
   }
   @media (max-width: 960px) {
+  }
+  @media (max-width: 640px) {
     font-size: 0.8rem !important;
   }
-  /*@media (max-width: 640px) {
-  }*/
 }
 
 h4, .uk-h4 {
@@ -254,9 +257,13 @@ h4, .uk-h4 {
   }
   @media (max-width: 960px) {
     /*font-size: 1.6rem !important;*/
-    font-size: 0.8rem !important;
+    font-size: 1.15rem !important;
     /*line-height: 1.1 !important;*/
   }
+  @media (max-width: 640px) {
+    font-size: 0.8rem !important;
+  }
+
   /*@media (max-width: 640px) {
   }*/
 }
@@ -269,9 +276,12 @@ h5, .uk-h5 {
     font-size: 1.15rem !important;
   }
   @media (max-width: 960px) {
-    /*font-size: 1.05rem !important;*/
+    font-size: 1.0rem !important;
+  }
+  @media (max-width: 640px) {
     font-size: 0.6rem !important;
   }
+
   /*@media (max-width: 640px) {
   }*/
 }

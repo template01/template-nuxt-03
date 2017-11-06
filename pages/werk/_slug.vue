@@ -1,6 +1,6 @@
 <template>
 <defaultpage class="beige-background" id="">
-  <template v-if="!error">
+  <template>
   <div v-if="content.acf.single_background_image" class="werkSplash uk-visible@m" :style="{'height':setWerkSplashHeight}">
     <div class="werkSplashInner">
       <div class="werkSplashNavigation uk-padding" :style="{'top':setWerkSplashNavigation}">
@@ -29,7 +29,7 @@
 
           <!-- <div :class="wide ? 'uk-width-3-4' : 'uk-width-1-1'"> -->
           <div>
-            <h1 class="hugeLetters" :class="{'uk-text-center':issmallscreen}" v-html="error ? '':content.title.rendered"></h1>
+            <h1 class="hugeLetters" :class="{'uk-text-center':issmallscreen}" v-html="content.title.rendered"></h1>
           </div>
 
         </div>
@@ -68,7 +68,7 @@
 
               <div class="uk-visible@m uk-child-width-expand uk-flex uk-flex-middle" :class="item.collapsed_gallery ? 'uk-grid-collapse':''" uk-grid>
 
-                <div v-for="image in item.gallery">
+                <div v-for="image in item.gallery" class="">
 
                   <img width="100%" :setwidth="image.sizes['large-width']" :setheight="image.sizes['large-height']" class="lazyload uk-align-center" v-lazy="image.sizes.large" :data-srcset="image.sizes.medium + ' 480w, ' + image.sizes.large + ' 1024w, ' + image.sizes.xlarge + ' 1600w, ' + image.sizes.xlarge + ' 1920w'"
                   />
@@ -124,11 +124,11 @@ export default {
 
   head() {
     return {
-      title: 'Template Studio - ' + this.$t('menu.topmenu.case') + ' - ' + this.error ? '' : this.content.title.rendered,
+      title: 'Template Studio - ' + this.$t('menu.topmenu.case') + ' - ' + this.content.title.rendered,
       meta: [{
         hid: 'description',
         name: 'description',
-        content: this.$t('menu.topmenu.case') + ' - ' + this.error ? '' : this.content.title.rendered + ': ' + this.error ? '' : this.content.acf['meta_what']
+        content: this.$t('menu.topmenu.case') + ' - ' + this.content.title.rendered + ': ' + this.content.acf['meta_what']
       }]
     }
   },
@@ -148,7 +148,6 @@ export default {
 
   data: function() {
     return {
-      error: true,
       xlscreen: false,
       wide: null,
       setWerkSplashHeight: '1000px',
@@ -222,7 +221,8 @@ export default {
     params,
     query,
     error,
-    router
+    route,
+    redirect
   }) {
     if (query.hasOwnProperty('lang')) {
       let [contentRes] = await Promise.all([
@@ -231,14 +231,10 @@ export default {
       ])
 
       if (contentRes.data[0] == null) {
-        var errorTemp = true
-      }else{
-        var errorTemp = false
+        redirect("/404")
       }
-
       return {
         content: contentRes.data[0],
-        error: errorTemp,
         p: params
       }
     } else {
@@ -249,16 +245,14 @@ export default {
       ])
       // console.log(contentRes.data[0])
       // router.go(1)
+
       if (contentRes.data[0] == null) {
-        var errorTemp = true
-      }else{
-        var errorTemp = false
+        redirect("/werk")
       }
 
 
       return {
         content: contentRes.data[0],
-        error: errorTemp,
         p: params
       }
     }
@@ -273,22 +267,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.gallery{
-  img{
-    display: inline-block;
-    margin-top: 0 !important;
-    // margin-bottom: 0 !important;
-  }
-  .noMarginTop:last-of-type {
-    img{
-      // margin-bottom: initial !important
+.gallery {
+    img {
+        // display: inline-block;
+        // margin-top: 0 !important;
+        // margin-bottom: 0 !important;
     }
-  }
+    .noMarginTop:last-of-type {
+        img {
+            // margin-bottom: initial !important
+        }
+    }
 
-  .noMarginTop{
-    margin-top: 0;
-  }
+    .noMarginTop {
+        margin-top: 10px !important;
+        margin-bottom: 20px !important;
+    }
 }
 .werkSplash {
 
@@ -368,10 +362,11 @@ export default {
     position: relative;
 
 }
-
 </style>
 <style lang="scss">
 .text-section {
+    margin-top: 10px;
+    margin-bottom: 10px;
     p:last-of-type {
         // margin: 0 !important;
     }
