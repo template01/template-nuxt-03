@@ -58,11 +58,15 @@
               </div>
             </div>
 
-            <div v-if="item.acf_fc_layout === 'slideshow'" :class="[setWidth(item.width)]" class="uk-align-center uk-margin-remove-bottom">
+            <div v-if="item.acf_fc_layout === 'slideshow' && item.browser_frame === false" :class="[setWidth(item.width)]" class="uk-align-center uk-margin-remove-bottom">
               <slideshow :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshow>
+              <!-- <slideshowbrowser :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshowbrowser> -->
+
             </div>
 
-
+            <div v-if="item.acf_fc_layout === 'slideshow' && item.browser_frame === true" :class="[setWidth(item.width)]" class="uk-align-center uk-margin-remove-bottom">
+              <slideshowbrowser :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshowbrowser>
+            </div>
 
             <div v-if="item.acf_fc_layout === 'single_gallery'" :class="[setWidth(item.width)]" class="gallery uk-align-center uk-margin-remove-bottom">
 
@@ -111,6 +115,7 @@
 <script>
 import defaultpage from '~/components/defaultpage.vue'
 import slideshow from '~/components/werk/_slug/slideshow.vue'
+import slideshowbrowser from '~/components/werk/_slug/slideshow_browser.vue'
 import nextproject from '~/components/werk/_slug/nextproject.vue'
 import werkmeta from '~/components/werk/werkmeta.vue'
 import axios from 'axios'
@@ -136,6 +141,7 @@ export default {
   components: {
     defaultpage,
     slideshow,
+    slideshowbrowser,
     nextproject,
     werkmeta
   },

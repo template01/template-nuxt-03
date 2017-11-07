@@ -27,8 +27,8 @@
 
 
   </div>
-  <div class="uk-width-1-1@m uk-padding  uk-transition-slide-right-medium uk-position-bottom">
-    <p class="uk-text-left uk-h2 uk-text-right uk-margin-remove-bottom uk-visible@m" style="color:inherit;">{{$t("readmore")}} <i class="icon-right-1" style=""></i></span></p>
+  <div class="uk-width-1-1@m uk-transition-slide-right-medium uk-position-bottom uk-hidden-touch" :style="{ 'padding-right': issmallscreen ? '15px' : '30px', 'padding-bottom': issmallscreen ? '10px' : '15px'}">
+    <p class="uk-text-left uk-h2 uk-text-right uk-margin-remove-bottom " style="color:inherit;">{{$t("readmore")}} <i class="icon-right-1" style=""></i></span></p>
   </div>
 
 </div>

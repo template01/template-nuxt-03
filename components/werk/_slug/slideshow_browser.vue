@@ -22,10 +22,22 @@
       </div>
 
     </div>
-    <div :style="{'background-color':backgroundcolor}" class="swiper-slide" v-for="slide in slides">
+    <!-- <div :style="{'background-color':backgroundcolor}">
       <img :src="slide.url" :srcset="slide.sizes.small + ' 480w, ' + slide.sizes.medium + ' 1024w, ' + slide.sizes.large + ' 1600w, ' + slide.sizes.xlarge + ' 1920w'">
 
+    </div> -->
+    <div class="swiper-slide" v-for="slide in slides">
+    <div class="fake-browser-ui ">
+        <div class="frame">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <img :src="slide.url" :srcset="slide.sizes.small + ' 480w, ' + slide.sizes.medium + ' 1024w, ' + slide.sizes.large + ' 1600w, ' + slide.sizes.xlarge + ' 1920w'">
+        <!-- <img src="/screenshot.jpg" width="691" height="500" alt="A nice description"> -->
+      </div>
     </div>
+
   </div>
 </div>
 </template>
@@ -34,7 +46,7 @@ export default {
   data: function() {
     return {
       swiperOption: {
-        autoplay: 2000,
+        // autoplay: 2000,
         // initialSlide: 1,
         loop: true,
         preloadImages: false,
@@ -74,6 +86,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.fake-browser-ui {
+    padding: 24px 0 0;
+    border-radius: 3px;
+    border-bottom: 2px solid #ccc;
+    background: #ddd;
+    display: inline-block;
+    position: relative;
+    line-height: 0;
+}
+
+.fake-browser-ui .frame {
+    display: block;
+    height: 15px;
+    position: absolute;
+    top: 7px;
+    left: 1px;
+}
+
+.fake-browser-ui span {
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    background-color: #eee;
+    border: 1px solid #dadada;
+    float: left;
+    margin: 0 0 0 4px;
+    &:nth-of-type(1){
+      background-color:#fc625d;
+    }
+    &:nth-of-type(2){
+      background-color:#fdbc40;
+    }
+    &:nth-of-type(3){
+      background-color:#35cc4b;
+    }
+}
+
+
 .my-swiper {
 
 
@@ -131,6 +182,7 @@ export default {
         justify-content: center;
         align-items: center;
         img {
+          max-width: 100%;
             // max-height: 100vh;
         }
     }

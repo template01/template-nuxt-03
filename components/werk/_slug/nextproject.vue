@@ -6,7 +6,7 @@
 
   <div class="">
     <div class="uk-container uk-padding">
-      <nuxt-link class="" :to="$i18n.locale === 'en' ? {path:this.nextProject, query: { lang: $i18n.locale }}:{path:nextProject ? nextProject : firstProject }">
+      <nuxt-link class="" :to="$i18n.locale === 'en' ? {path:nextProject ? nextProject : firstProject, query: { lang: $i18n.locale }}:{path:nextProject ? nextProject : firstProject }">
         <div class="slide-item-right">
           <h2 :style="[issmallscreen ? {'line-height ':'0','margin-bottom':'0'}:{'margin-bottom':'0'},{'color':fontcolor}]" class="uk-text-center">{{$t("nextproject")}} <i class="icon-right-1" style=""></i></span><br /><br /></h2>
         </div>
