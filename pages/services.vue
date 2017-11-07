@@ -88,26 +88,26 @@ export default {
     query,
     error
   }) {
-    if (query.hasOwnProperty('lang')) {
-      let [contentRes] = await Promise.all([
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=services_' + query.lang),
-      ])
-      return {
-        content: contentRes.data[0],
-      }
-      // }
-    } else {
 
-      let [contentRes] = await Promise.all([
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=services_nl'),
-      ])
-      return {
-        content: contentRes.data[0],
-      }
+    // hardcoded slug
+    const slugname = 'services'
+
+    // determain lang. If no query lang then 'nl'
+    const currentLanguage = query.hasOwnProperty('lang') ? query.lang : 'nl'
+
+    // fetch page with slugname => get translation/language ids
+    const getLanguageIdsRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=' + slugname + '&fields=polylang_langs')
+    const getLanguageIds = getLanguageIdsRes.data
+
+    // return content for selected language
+    const contentLangRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages/' + getLanguageIds[0].polylang_langs[currentLanguage])
 
 
+    return {
+      content: contentLangRes.data,
     }
   },
+
 
 }
 </script>

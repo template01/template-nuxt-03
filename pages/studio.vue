@@ -1,12 +1,9 @@
 <template>
 <defaultpage class="beige-background" id="studio">
 
-
   <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top  uk-hidden@m ">
     <h1 class="uk-text-center uk-padding "><span class="mobilePageHeader">{{$t("menu.topmenu.about")}}</span></h1>
   </div>
-
-
 
   <div id="" class="section section-last" :style="{'color':content.acf.section_a.background_color,'background-color':content.acf.section_a.background_color}">
     <div class="slantTopLeft" :style="{'border-color': 'transparent '+content.acf.section_a.background_color+' '+content.acf.section_a.background_color+' transparent'}"></div>
@@ -36,13 +33,11 @@ export default {
   head() {
     return {
       title: 'Template Studio - ' + this.$t('menu.topmenu.about'),
-      meta: [
-          {
-           hid: 'description',
-           name: 'description',
-           content: this.$t('meta.about.content')
-          }
-        ]
+      meta: [{
+        hid: 'description',
+        name: 'description',
+        content: this.$t('meta.about.content')
+      }]
     }
   },
 
@@ -65,24 +60,23 @@ export default {
     query,
     error
   }) {
-    if (query.hasOwnProperty('lang')) {
-      let [contentRes] = await Promise.all([
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=studio_' + query.lang),
-      ])
-      return {
-        content: contentRes.data[0],
-      }
-      // }
-    } else {
 
-      let [contentRes] = await Promise.all([
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=studio_nl'),
-      ])
-      return {
-        content: contentRes.data[0],
-      }
+    // hardcoded slug
+    const slugname = 'studio'
+
+    // determain lang. If no query lang then 'nl'
+    const currentLanguage = query.hasOwnProperty('lang') ? query.lang : 'nl'
+
+    // fetch page with slugname => get translation/language ids
+    const getLanguageIdsRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=' + slugname + '&fields=polylang_langs')
+    const getLanguageIds = getLanguageIdsRes.data
+
+    // return content for selected language
+    const contentLangRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages/' + getLanguageIds[0].polylang_langs[currentLanguage])
 
 
+    return {
+      content: contentLangRes.data,
     }
   },
 
@@ -90,20 +84,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 #studio {
 
-    .section{
-      &:not(.section-last){
-        -webkit-box-shadow: 0 300px 0 0;
-        -moz-box-shadow: 0 300px 0 0;
-        box-shadow: 0 300px 0 0;
+    .section {
+        &:not(.section-last) {
+            -webkit-box-shadow: 0 300px 0 0;
+            -moz-box-shadow: 0 300px 0 0;
+            box-shadow: 0 300px 0 0;
 
-      }
+        }
 
-      &.section-last{
-        padding-bottom: 40px;
-      }
+        &.section-last {
+            padding-bottom: 40px;
+        }
     }
 
     #intro {

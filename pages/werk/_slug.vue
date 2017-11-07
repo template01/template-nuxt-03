@@ -222,53 +222,76 @@ export default {
     }
   },
 
+  //
+  // async asyncData({
+  //   params,
+  //   query,
+  //   error,
+  //   route,
+  //   redirect
+  // }) {
+  //   if (query.hasOwnProperty('lang')) {
+  //     let [contentRes] = await Promise.all([
+  //       axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang + '?slug=' + params.slug + '&featured=1&isfeatured=1'),
+  //
+  //     ])
+  //
+  //     if (contentRes.data[0] == null) {
+  //       redirect("/404")
+  //     }
+  //     return {
+  //       content: contentRes.data[0],
+  //       p: params
+  //     }
+  //   } else {
+  //
+  //     let [contentRes] = await Promise.all([
+  //       axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_nl?slug=' + params.slug + '&featured=1&isfeatured=1'),
+  //
+  //     ])
+  //     // console.log(contentRes.data[0])
+  //     // router.go(1)
+  //
+  //     if (contentRes.data[0] == null) {
+  //       redirect("/werk")
+  //     }
+  //
+  //
+  //     return {
+  //       content: contentRes.data[0],
+  //       p: params
+  //     }
+  //   }
+  //
+  // }
 
   async asyncData({
-    params,
-    query,
-    error,
-    route,
-    redirect
+      params,
+      query,
+      error,
+      route,
+      redirect
   }) {
-    if (query.hasOwnProperty('lang')) {
-      let [contentRes] = await Promise.all([
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang + '?slug=' + params.slug + '&featured=1&isfeatured=1'),
 
-      ])
+    // hardcoded slug
+    // const slugname = 'studio'
 
-      if (contentRes.data[0] == null) {
-        redirect("/404")
-      }
-      return {
-        content: contentRes.data[0],
-        p: params
-      }
-    } else {
+    // determain lang. If no query lang then 'nl'
+    const currentLanguage = query.hasOwnProperty('lang') ? query.lang : 'nl'
 
-      let [contentRes] = await Promise.all([
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_nl?slug=' + params.slug + '&featured=1&isfeatured=1'),
+    // fetch page with slugname => get translation/language ids
+    // http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang + '?slug=' + params.slug + '&featured=1&isfeatured=1
+    const getLanguageIdsRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem?slug=' + params.slug + '&fields=polylang_langs')
+    const getLanguageIds = getLanguageIdsRes.data
 
-      ])
-      // console.log(contentRes.data[0])
-      // router.go(1)
-
-      if (contentRes.data[0] == null) {
-        redirect("/werk")
-      }
+    // return content for selected language
+    const contentLangRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem/' + getLanguageIds[0].polylang_langs[currentLanguage])
 
 
-      return {
-        content: contentRes.data[0],
-        p: params
-      }
+    return {
+      content: contentLangRes.data,
     }
-
-  }
-
-  // transition(to, from) {
-  //   if (!from) return 'slide-left'
-  //   return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
-  // },
+  },
 }
 </script>
 

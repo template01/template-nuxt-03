@@ -67,205 +67,205 @@ export default {
   //   if (!from) return 'slide-left'
   //   return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
   // },
-  data() {
-    return {
-      styles: [{
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#fffef5"
-          }]
-        },
-        {
-          "elementType": "labels.icon",
-          "stylers": [{
-            "visibility": "off"
-          }]
-        },
-        {
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#616161"
-          }]
-        },
-        {
-          "elementType": "labels.text.stroke",
-          "stylers": [{
-            "color": "#f5f5f5"
-          }]
-        },
-        {
-          "featureType": "administrative",
-          "elementType": "geometry",
-          "stylers": [{
-            "visibility": "off"
-          }]
-        },
-        {
-          "featureType": "administrative.land_parcel",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#bdbdbd"
-          }]
-        },
-        {
-          "featureType": "poi",
-          "stylers": [{
-            "visibility": "off"
-          }]
-        },
-        {
-          "featureType": "poi",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#eeeeee"
-          }]
-        },
-        {
-          "featureType": "poi",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#757575"
-          }]
-        },
-        {
-          "featureType": "poi.park",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#e5e5e5"
-          }]
-        },
-        {
-          "featureType": "poi.park",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#9e9e9e"
-          }]
-        },
-        {
-          "featureType": "road",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#ffffff"
-          }]
-        },
-        {
-          "featureType": "road",
-          "elementType": "labels.icon",
-          "stylers": [{
-            "visibility": "off"
-          }]
-        },
-        {
-          "featureType": "road.arterial",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#dadada"
-          }]
-        },
-        {
-          "featureType": "road.arterial",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#757575"
-          }]
-        },
-        {
-          "featureType": "road.highway",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#dadada"
-          }]
-        },
-        {
-          "featureType": "road.highway",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#616161"
-          }]
-        },
-        {
-          "featureType": "road.local",
-          "elementType": "geometry.fill",
-          "stylers": [{
-            "color": "#dadada"
-          }]
-        },
-        {
-          "featureType": "road.local",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#9e9e9e"
-          }]
-        },
-        {
-          "featureType": "transit",
-          "stylers": [{
-            "visibility": "off"
-          }]
-        },
-        {
-          "featureType": "transit.line",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#e5e5e5"
-          }]
-        },
-        {
-          "featureType": "transit.station",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#eeeeee"
-          }]
-        },
-        {
-          "featureType": "water",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#808080"
-          }]
-        },
-        {
-          "featureType": "water",
-          "elementType": "geometry.stroke",
-          "stylers": [{
-            "visibility": "off"
-          }]
-        },
-        {
-          "featureType": "water",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#fffef5"
-          }]
-        }
-      ]
-    }
-  },
+  // data() {
+  //   return {
+  //     styles: [{
+  //         "elementType": "geometry",
+  //         "stylers": [{
+  //           "color": "#fffef5"
+  //         }]
+  //       },
+  //       {
+  //         "elementType": "labels.icon",
+  //         "stylers": [{
+  //           "visibility": "off"
+  //         }]
+  //       },
+  //       {
+  //         "elementType": "labels.text.fill",
+  //         "stylers": [{
+  //           "color": "#616161"
+  //         }]
+  //       },
+  //       {
+  //         "elementType": "labels.text.stroke",
+  //         "stylers": [{
+  //           "color": "#f5f5f5"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "administrative",
+  //         "elementType": "geometry",
+  //         "stylers": [{
+  //           "visibility": "off"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "administrative.land_parcel",
+  //         "elementType": "labels.text.fill",
+  //         "stylers": [{
+  //           "color": "#bdbdbd"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "poi",
+  //         "stylers": [{
+  //           "visibility": "off"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "poi",
+  //         "elementType": "geometry",
+  //         "stylers": [{
+  //           "color": "#eeeeee"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "poi",
+  //         "elementType": "labels.text.fill",
+  //         "stylers": [{
+  //           "color": "#757575"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "poi.park",
+  //         "elementType": "geometry",
+  //         "stylers": [{
+  //           "color": "#e5e5e5"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "poi.park",
+  //         "elementType": "labels.text.fill",
+  //         "stylers": [{
+  //           "color": "#9e9e9e"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "road",
+  //         "elementType": "geometry",
+  //         "stylers": [{
+  //           "color": "#ffffff"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "road",
+  //         "elementType": "labels.icon",
+  //         "stylers": [{
+  //           "visibility": "off"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "road.arterial",
+  //         "elementType": "geometry",
+  //         "stylers": [{
+  //           "color": "#dadada"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "road.arterial",
+  //         "elementType": "labels.text.fill",
+  //         "stylers": [{
+  //           "color": "#757575"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "road.highway",
+  //         "elementType": "geometry",
+  //         "stylers": [{
+  //           "color": "#dadada"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "road.highway",
+  //         "elementType": "labels.text.fill",
+  //         "stylers": [{
+  //           "color": "#616161"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "road.local",
+  //         "elementType": "geometry.fill",
+  //         "stylers": [{
+  //           "color": "#dadada"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "road.local",
+  //         "elementType": "labels.text.fill",
+  //         "stylers": [{
+  //           "color": "#9e9e9e"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "transit",
+  //         "stylers": [{
+  //           "visibility": "off"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "transit.line",
+  //         "elementType": "geometry",
+  //         "stylers": [{
+  //           "color": "#e5e5e5"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "transit.station",
+  //         "elementType": "geometry",
+  //         "stylers": [{
+  //           "color": "#eeeeee"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "water",
+  //         "elementType": "geometry",
+  //         "stylers": [{
+  //           "color": "#808080"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "water",
+  //         "elementType": "geometry.stroke",
+  //         "stylers": [{
+  //           "visibility": "off"
+  //         }]
+  //       },
+  //       {
+  //         "featureType": "water",
+  //         "elementType": "labels.text.fill",
+  //         "stylers": [{
+  //           "color": "#fffef5"
+  //         }]
+  //       }
+  //     ]
+  //   }
+  // },
   async asyncData({
     params,
     query,
     error
   }) {
-    if (query.hasOwnProperty('lang')) {
-      let [contentRes] = await Promise.all([
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=contact_' + query.lang),
-      ])
-      return {
-        content: contentRes.data[0],
-      }
-      // }
-    } else {
 
-      let [contentRes] = await Promise.all([
-        axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=contact_nl'),
-      ])
-      return {
-        content: contentRes.data[0],
-      }
+    // hardcoded slug
+    const slugname = 'contact'
+
+    // determain lang. If no query lang then 'nl'
+    const currentLanguage = query.hasOwnProperty('lang') ? query.lang : 'nl'
+
+    // fetch page with slugname => get translation/language ids
+    const getLanguageIdsRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=' + slugname + '&fields=polylang_langs')
+    const getLanguageIds = getLanguageIdsRes.data
+
+    // return content for selected language
+    const contentLangRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages/' + getLanguageIds[0].polylang_langs[currentLanguage])
 
 
+    return {
+      content: contentLangRes.data,
     }
-  }
+  },
+
 }
 </script>
 
