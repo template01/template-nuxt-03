@@ -1,20 +1,15 @@
 <template>
-<div class="" style="background:white">
+<div class="beige-background">
 
-  <div v-if="confetti" @click="confetti=!confetti; $router.push('/')">
-      <confettiComp  v-if="confetti"></confettiComp>
-    </div>
+        <splash v-if="!smallscreen" :slideContent="content.acf.slides"></splash>
+        <splashMobile v-if=" smallscreen" :slideContent="content.acf.slides_mobile"></splashMobile>
 
-  <div v-if="!confetti">
-      <splash v-if="!smallscreen && !confetti" :slideContent="content.acf.slides"></splash>
-      <splashMobile v-if=" smallscreen && !confetti" :slideContent="content.acf.slides_mobile"></splashMobile>
-    </div>
 </div>
 </template>
 
 <script>
 import splash from '~/components/splash.vue'
-import confettiComp from '~/components/confetti.vue'
+// import confettiComp from '~/components/confetti.vue'
 import splashMobile from '~/components/splashMobile.vue'
 import templatefooter from '~/components/templatefooter.vue'
 
@@ -58,25 +53,25 @@ export default {
   components: {
     splash,
     splashMobile,
-    confettiComp,
+    // confettiComp,
     templatefooter
   },
-
-  created() {
-    if (this.$route.hash === '#pop') {
-      this.confetti = true
-    } else {
-
-      this.confetti = false
-
-    }
-  },
+  //
+  // created() {
+  //   if (this.$route.hash === '#pop') {
+  //     this.confetti = true
+  //   } else {
+  //
+  //     this.confetti = false
+  //
+  //   }
+  // },
 
   mounted() {
     this.smallscreen = this.issmallscreen
     this.$store.commit('SET_INITIATED')
     window.scrollTo(0, 0)
-    console.log(this.$route.hash)
+    // console.log(this.$route.hash)
   },
 
   async asyncData({
@@ -88,16 +83,16 @@ export default {
     let [contentRes] = await Promise.all([
       axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=splash'),
     ])
-    console.log(route)
-    var pop = null
-    if (route.hash === '#pop') {
-      pop = true
-    }else{
-      pop = false
-    }
+    // console.log(route)
+    // var pop = null
+    // if (route.hash === '#pop') {
+    //   pop = true
+    // }else{
+    //   pop = false
+    // }
 
     return {
-      confetti : pop,
+      // confetti : pop,
       content: contentRes.data[0],
     }
     // }
