@@ -107,7 +107,6 @@
   </div>
 
   <nextproject :backgroundcolor="content.acf['background-color']" :fontcolor="content.acf['font_color']" :firstProject="content.first_post" :nextProject="content.next_post" :prevProject="content.previous_post" class="sendToBack"></nextproject>
-  {{content.next_post}}
 
   <!-- solution with acf -->
     <!-- <nextproject :backgroundcolor="content.acf['background-color']" :fontcolor="content.acf['font_color']" :firstProject="content.first_post" :nextProject="content.acf.next_project.post_name" class="sendToBack"></nextproject> -->
