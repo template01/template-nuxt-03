@@ -25,7 +25,7 @@
         <div class="killPadding uk-padding uk-padding-remove-horizontal uk-padding-remove-top" id="workitems">
 
           <div class=" uk-grid-collapse uk-text-center" uk-grid>
-            <werktileitem :inheritcolorfont="content.acf.section_a.font_color" :inheritcolorbackground="content.acf.section_a.font_color" :inheritcolor="true" v-bind:key="index" :index="index" v-for="(tile,index) in tiles" :datainput="tile"></werktileitem>
+            <werktileitem :inheritcolorfont="content.acf.section_a.font_color" :inheritcolorbackground="content.acf.section_a.font_color" :inheritcolor="true" v-bind:key="index" :index="index" v-for="(tile,index) in orderedWerkTiles" :datainput="tile"></werktileitem>
 
           </div>
         </div>
@@ -67,7 +67,7 @@ import defaultpage from '~/components/defaultpage.vue'
 import sectioncontent from '~/components/sections_component/sectioncontent.vue'
 import werktileitem from '~/components/werk/werktileitem.vue'
 import werkarchiveitem from '~/components/werk/werkarchiveitem.vue'
-
+import _ from 'lodash'
 
 
 export default {
@@ -158,6 +158,20 @@ export default {
   //
   //   }
   // },
+
+  computed: {
+    orderedWerkTiles: function() {
+
+      var orderedWerkTilesTemp = this.tiles
+      // var removeIndex = _.remove(menuitemsTemp, {
+      //   slug: 'index'
+      // });
+      var orderedWerkTilesReturn = _.sortBy(orderedWerkTilesTemp, 'menu_order')
+
+      return orderedWerkTilesReturn
+    }
+  },
+
 
 
   async asyncData({

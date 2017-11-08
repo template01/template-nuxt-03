@@ -11,6 +11,15 @@
           <h2 :style="[issmallscreen ? {'line-height ':'0','margin-bottom':'0'}:{'margin-bottom':'0'},{'color':fontcolor}]" class="uk-text-center">{{$t("nextproject")}} <i class="icon-right-1" style=""></i></span><br /><br /></h2>
         </div>
       </nuxt-link>
+
+      <!-- solution with acf -->
+
+      <!-- <nuxt-link class="" :to="{path:nextProject, query: { lang: $i18n.locale }}">
+        <div class="slide-item-right">
+          <h2 :style="[issmallscreen ? {'line-height ':'0','margin-bottom':'0'}:{'margin-bottom':'0'},{'color':fontcolor}]" class="uk-text-center">{{$t("nextproject")}} <i class="icon-right-1" style=""></i></span><br /><br /></h2>
+        </div>
+      </nuxt-link> -->
+
     </div>
   </div>
 

@@ -103,10 +103,14 @@
       </div>
 
     </div>
-    <!-- <div class="slantTopLeft uk-position-relative" :style="{'top':'0px','border-color': content.acf['background-color']+' '+'transparent'+' '+'transparent'+' '+content.acf['background-color']}"></div> -->
+
   </div>
 
   <nextproject :backgroundcolor="content.acf['background-color']" :fontcolor="content.acf['font_color']" :firstProject="content.first_post" :nextProject="content.next_post" :prevProject="content.previous_post" class="sendToBack"></nextproject>
+  {{content.next_post}}
+
+  <!-- solution with acf -->
+    <!-- <nextproject :backgroundcolor="content.acf['background-color']" :fontcolor="content.acf['font_color']" :firstProject="content.first_post" :nextProject="content.acf.next_project.post_name" class="sendToBack"></nextproject> -->
 </template>
 
 </defaultpage>
@@ -280,11 +284,12 @@ export default {
     const currentLanguage = query.hasOwnProperty('lang') ? query.lang : 'nl'
 
     // fetch page with slugname => get translation/language ids
-    // http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang + '?slug=' + params.slug + '&featured=1&isfeatured=1
     const getLanguageIdsRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem?slug=' + params.slug + '&fields=polylang_langs')
     const getLanguageIds = getLanguageIdsRes.data
+    if(getLanguageIds.length<1){
+      redirect('/404')
+    }
 
-    // return content for selected language
     const contentLangRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem/' + getLanguageIds[0].polylang_langs[currentLanguage])
 
 
