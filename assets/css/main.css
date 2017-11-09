@@ -261,7 +261,7 @@ h4, .uk-h4 {
     /*line-height: 1.1 !important;*/
   }
   @media (max-width: 640px) {
-    font-size: 0.8rem !important;
+    font-size: 1.15rem !important;
   }
 
   /*@media (max-width: 640px) {
@@ -279,7 +279,7 @@ h5, .uk-h5 {
     font-size: 1.0rem !important;
   }
   @media (max-width: 640px) {
-    font-size: 0.6rem !important;
+    font-size: 0.8rem !important;
   }
 
   /*@media (max-width: 640px) {
@@ -306,10 +306,17 @@ h5, .uk-h5 {
   -webkit-font-smoothing: antialiased !important;*/
   /*-webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: inherit;*/
+
   @media (max-width: 960px) {
-    font-size: 13vw !important;
+    font-size: 75px !important;
     line-height: 1 !important;
-    letter-spacing: -0.3vw !important;
+    letter-spacing: -3px !important;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 50px !important;
+    line-height: 1 !important;
+    letter-spacing: -2px !important;
   }
   @media (min-width: 1921px) {
     font-size: 150px !important;

@@ -59,7 +59,7 @@
             </div>
 
             <div v-if="item.acf_fc_layout === 'slideshow' && item.browser_frame === false" :class="[setWidth(item.width)]" class="uk-align-center uk-margin-remove-bottom">
-              <slideshow :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshow>
+              <slideshow hidemobilenav="false" :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshow>
               <!-- <slideshowbrowser :slides="item.slides" :backgroundcolor="content.acf['background-color']"></slideshowbrowser> -->
 
             </div>
@@ -82,7 +82,7 @@
               </div>
 
 
-              <div class="uk-hidden@m ">
+              <div class="uk-hidden@m uk-padding ">
 
                 <div v-for="image in item.gallery" class="uk-align-center uk-width-1-1@s noMarginTop">
 

@@ -26,7 +26,7 @@
       <img :src="slide.url" :srcset="slide.sizes.small + ' 480w, ' + slide.sizes.medium + ' 1024w, ' + slide.sizes.large + ' 1600w, ' + slide.sizes.xlarge + ' 1920w'">
 
     </div> -->
-    <div class="swiper-slide" v-for="slide in slides">
+    <div class="swiper-slide uk-padding uk-padding-remove-horizontal uk-padding-remove-top" v-for="slide in slides">
     <div class="fake-browser-ui ">
         <div class="frame">
             <span></span>
@@ -46,7 +46,7 @@ export default {
   data: function() {
     return {
       swiperOption: {
-        // autoplay: 2000,
+        autoplay: 2000,
         // initialSlide: 1,
         loop: true,
         preloadImages: false,
@@ -128,12 +128,12 @@ export default {
 .my-swiper {
 
 
-  .mobileNavLeft,.mobileNavRight{
-    width: 50%;
-    height: 40px;
-    bottom: -40px;
-    position: absolute;
-  }
+    .mobileNavLeft,.mobileNavRight{
+      width: 50%;
+      // height: 15px;
+      bottom: -0px;
+      position: absolute;
+    }
   .mobileNavRight{
     right: 0;
   }
