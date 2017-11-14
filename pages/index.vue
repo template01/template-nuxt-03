@@ -39,7 +39,6 @@ export default {
 
   watch: {
     'issmallscreen': function() {
-      alert('change')
       this.smallscreen = this.issmallscreen
     },
     // '$route': function(to, from) {
