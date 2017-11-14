@@ -1,6 +1,6 @@
 <template>
 <div class="my-swiper uk-padding uk-padding-remove-horizontal uk-padding-remove-top" v-swiper:mySwiper="swiperOption">
-  <div class="swiper-wrapper " >
+  <div class="swiper-wrapper">
 
     <div class="navigation uk-hidden-touch">
 
@@ -8,24 +8,23 @@
       <div class="half right " style="cursor:url(/arrowRightCircle.svg) 20 20, auto" @click="nextSlide()"></div>
     </div>
 
-    <div v-if="hidemobilenav" class="navigationTouch uk-hidden-notouch">
-
-      <div class="mobileNavLeft uk-inline" @click="prevSlide()">
-        <h1 class="uk-position-center-left">
-          <i class="icon-left"></i>
-        </h1>
+    <div class="swiper-slide uk-padding uk-padding-remove-horizontal uk-padding-remove-top" v-for="slide in slides">
+      <h1 class="mobileNavNew mobileNavNewRight  uk-hidden-notouch" @click="prevSlide()">
+        <i class="icon-left"></i>
+      </h1>
+      <div class="fake-browser-ui" :class="ignoreFrame === 'true' ? 'ignoreFrame':''">
+        <div v-if="ignoreFrame != 'true'" class="frame">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <img :src="slide.url" :srcset="slide.sizes.small + ' 480w, ' + slide.sizes.medium + ' 1024w, ' + slide.sizes.large + ' 1600w, ' + slide.sizes.xlarge + ' 1920w'">
       </div>
-      <div class="mobileNavRight uk-inline" @click="nextSlide()">
-        <h1 class="uk-position-center-right">
-          <i class="icon-right-1"></i>
-        </h1>
-      </div>
-
+      <h1 class="mobileNavNew mobileNavNewLeft  uk-hidden-notouch" @click="nextSlide()">
+        <i class="icon-right-1"></i>
+      </h1>
     </div>
-    <div :style="{'background-color':backgroundcolor}" class="swiper-slide uk-padding uk-padding-remove-horizontal uk-padding-remove-top" v-for="slide in slides">
-      <img :src="slide.url" :srcset="slide.sizes.small + ' 480w, ' + slide.sizes.medium + ' 1024w, ' + slide.sizes.large + ' 1600w, ' + slide.sizes.xlarge + ' 1920w'">
 
-    </div>
   </div>
 </div>
 </template>
@@ -57,15 +56,15 @@ export default {
       return this.$refs.mySwiper.swiper
     }
   },
-  props: ['slides', 'backgroundcolor','hidemobilenav'],
-  methods:{
-    nextSlide:function(){
-     this.mySwiper.slideNext()
-     console.log('next')
+  props: ['slides', 'backgroundcolor', 'hidemobilenav', 'ignoreFrame'],
+  methods: {
+    nextSlide: function() {
+      this.mySwiper.slideNext()
+      console.log('next')
     },
-    prevSlide:function(){
-     this.mySwiper.slidePrev()
-     console.log('prev')
+    prevSlide: function() {
+      this.mySwiper.slidePrev()
+      console.log('prev')
     },
 
   },
@@ -74,51 +73,99 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fake-browser-ui {
+    display: inline-block;
+    position: relative;
+    line-height: 0;
+
+
+    &:not(.ignoreFrame)  {
+      padding: 24px 0 0;
+      border-radius: 3px;
+      border-bottom: 2px solid #ccc;
+      background: #ddd;
+
+    }
+
+}
+//
+// .fake-browser-ui:not(.ignoreFrame) {
+//
+//       border-radius: 3px;
+//       border-bottom: 2px solid #ccc;
+//       background: #ddd;
+//
+// }
+
+.fake-browser-ui .frame {
+    display: block;
+    height: 15px;
+    position: absolute;
+    top: 7px;
+    left: 1px;
+}
+
+.fake-browser-ui span {
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    background-color: #eee;
+    border: 1px solid #dadada;
+    float: left;
+    margin: 0 0 0 4px;
+    &:nth-of-type(1) {
+        background-color: #fc625d;
+    }
+    &:nth-of-type(2) {
+        background-color: #fdbc40;
+    }
+    &:nth-of-type(3) {
+        background-color: #35cc4b;
+    }
+}
+
 .my-swiper {
 
-
-  .mobileNavLeft,.mobileNavRight{
-    width: 50%;
-    // height: 15px;
-    bottom: -0px;
-    position: absolute;
-  }
-  .mobileNavRight{
-    right: 0;
-  }
-  .mobileNavLeft{
-    left: 0;
-  }
-
-  .navigation{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    .half{
-      width: 50%;
-      height: 100%;
-
-      float: left;
-
-      &.left{
-        // cursor: url('/arrowRightCircle.ico'), auto;
-      }
-      &.right{
-        // cursor: url('/arrowRightCircle.ico'), auto;
-      }
-    }
-  }
-
-
-    .navigationTouch{
-      width: 100%;
-      height: 100%;
-      // position: absolute;
-      z-index: 1;
-
+    .mobileNavNew {
+        margin: 0;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
+    .mobileNavNewLeft {
+        margin-left: 5px;
+    }
+    .mobileNavNewRight {
+        margin-right: 5px;
+    }
+
+    .navigation {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        .half {
+            width: 50%;
+            height: 100%;
+
+            float: left;
+
+            &.left {
+                // cursor: url('/arrowRightCircle.ico'), auto;
+            }
+            &.right {
+                // cursor: url('/arrowRightCircle.ico'), auto;
+            }
+        }
+    }
+
+    .navigationTouch {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+
+    }
 
     position: relative;
     // max-height: 100vh;

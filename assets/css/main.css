@@ -32,6 +32,10 @@
 
 html {
   background: black !important;
+  @media (max-width: 960px) {
+    background: #fffef5 !important;
+
+  }
   width: 100%;
   overflow-x: hidden;
 }
@@ -390,13 +394,13 @@ h5, .uk-h5 {
 }*/
 
 .icon-right-1 {
-  font-size: 60%;
+  font-size: 70%;
   transform: translateY(-10%);
   display: inline-block;
 }
 
 .icon-left {
-  font-size: 60%;
+  font-size: 70%;
   transform: translateY(-10%);
   display: inline-block;
 }

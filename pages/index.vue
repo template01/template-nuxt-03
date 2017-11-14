@@ -1,8 +1,8 @@
 <template>
 <div class="beige-background">
 
-        <splash v-if="!smallscreen" :slideContent="content.acf.slides"></splash>
-        <splashMobile v-if=" smallscreen" :slideContent="content.acf.slides_mobile"></splashMobile>
+    <splash class="fadein" v-if="!issmallscreen" :slideContent="content.acf.slides"></splash>
+    <splashMobile class="fadein" v-if="issmallscreen" :slideContent="content.acf.slides_mobile"></splashMobile>
 
 </div>
 </template>
@@ -32,15 +32,15 @@ export default {
 
   data: function() {
     return {
-      smallscreen: null,
+      smallscreen: true,
       // confetti: true
     }
   },
 
   watch: {
-    'issmallscreen': function() {
-      this.smallscreen = this.issmallscreen
-    },
+    // 'issmallscreen': function() {
+    //   alert('change')
+    // },
     // '$route': function(to, from) {
     //   console.log(from)
     //   if (from.hash === '#wow') {
@@ -100,3 +100,42 @@ export default {
 
 }
 </script>
+<style scoped>
+.fadein{
+  -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 0.5s; /* Firefox < 16 */
+     -ms-animation: fadein 0.5s; /* Internet Explorer */
+      -o-animation: fadein 0.5s; /* Opera < 12.1 */
+         animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+</style>

@@ -36,6 +36,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
+h4{
+  @media (max-width: 640px) {
+    font-size: 0.8rem !important;
+  }
+
+}
 .metapadding {
     // padding-right: 20px;
     &::before {

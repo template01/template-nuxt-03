@@ -13,7 +13,7 @@
 
   <!-- <div v-if="section.acf_fc_layout === 'slideshow'" :class="[setWidth(item.width)]" class="uk-align-center uk-margin-remove-bottom"> -->
   <div v-if="section.acf_fc_layout === 'slideshow'" class="uk-align-center uk-margin-remove-bottom">
-    <slideshow :hidemobilenav="true" :slides="section.slides"></slideshow>
+    <slideshow :ignoreFrame="true" :hidemobilenav="true" :slides="section.slides"></slideshow>
   </div>
 
 
