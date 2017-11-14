@@ -22,7 +22,7 @@ export default ({
 
       store.commit('SET_SCREENSIZE', window.innerWidth)
 
-      console.log('heya')
+      console.log('resize')
 
     };
 

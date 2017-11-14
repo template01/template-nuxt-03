@@ -12,7 +12,7 @@
           <span v-if="showtune">
         <span v-if="tune.playing">
         <span>
-          <a :href="'https://www.google.nl/search?q='+tune.artist+', '+tune.song" target="_blank">{{tune.artist}}, {{tune.song}}</a>
+          <a :style="setBoxShadowColor" :href="'https://www.google.nl/search?q='+tune.artist+', '+tune.song" target="_blank">{{tune.artist}}, {{tune.song}}</a>
         </span>
       <!-- <span v-html="tune.song"></span> -->
       </span>
@@ -45,6 +45,21 @@ export default {
     }
   },
   props: ['footer'],
+
+  computed:{
+
+    setBoxShadowWidth: function(){
+      if(this.issmallscreen){
+        return 2
+      }else{
+        return 3
+      }
+    },
+
+    setBoxShadowColor: function(){
+      return `{'box-shadow':'inset 0 `+this.setBoxShadowWidth+`px 0 0 `+this.passedmenucolor+`}`
+    }
+  },
 
   methods: {
 
