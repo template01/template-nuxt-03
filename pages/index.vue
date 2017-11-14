@@ -1,8 +1,8 @@
 <template>
 <div class="beige-background">
 
-    <splash class="fadein" v-if="!issmallscreen" :slideContent="content.acf.slides"></splash>
-    <splashMobile class="fadein" v-if="issmallscreen" :slideContent="content.acf.slides_mobile"></splashMobile>
+    <splash class="fadein" v-if="!smallscreen" :slideContent="content.acf.slides"></splash>
+    <splashMobile class="fadein" v-if="smallscreen" :slideContent="content.acf.slides_mobile"></splashMobile>
 
 </div>
 </template>
@@ -38,9 +38,10 @@ export default {
   },
 
   watch: {
-    // 'issmallscreen': function() {
-    //   alert('change')
-    // },
+    'issmallscreen': function() {
+      alert('change')
+      this.smallscreen = this.issmallscreen
+    },
     // '$route': function(to, from) {
     //   console.log(from)
     //   if (from.hash === '#wow') {
