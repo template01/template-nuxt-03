@@ -113,7 +113,7 @@ export default {
 
     closeMenu: function() {
       this.slideoutObj.close();
-
+      this.$store.commit('SET_SIDEBARCLOSE')
     },
 
     openMenu: function() {
@@ -176,7 +176,6 @@ export default {
   destroyed() {
 
     this.closeMenu()
-
     window.removeEventListener('scroll', this.handleScroll);
   },
 

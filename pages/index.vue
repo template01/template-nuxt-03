@@ -1,6 +1,5 @@
 <template>
 <div class="beige-background">
-
     <splash class="fadein" v-if="!smallscreen" :slideContent="content.acf.slides"></splash>
     <splashMobile class="fadein" v-if="smallscreen" :slideContent="content.acf.slides_mobile"></splashMobile>
 
@@ -32,7 +31,7 @@ export default {
 
   data: function() {
     return {
-      smallscreen: true,
+      smallscreen: null,
       // confetti: true
     }
   },

@@ -2,7 +2,7 @@ export const state = () => ({
   locales: ['en', 'nl'],
   locale: 'nl',
   n: 1,
-  smallscreen: null,
+  smallscreen: false,
   screensize: 0,
   xlscreen: false,
   initiated: false,
@@ -59,6 +59,11 @@ export const mutations = {
       state.sidebarOpen = true;
     }
   },
+
+  SET_SIDEBARCLOSE(state, sidebarOpen) {
+    state.sidebarOpen = false;
+  },
+
 
   SET_SMALLSCREEN(state, small) {
     state.smallscreen = small;

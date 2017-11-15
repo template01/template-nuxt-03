@@ -1,13 +1,13 @@
-import {
-  mapGetters
-} from 'vuex'
-
-
-export default {
-  computed: {
-    ...mapGetters({
-     issmallscreen: "issmallscreen",
-   }),
-  },
-
-}
+// import {
+//   mapGetters
+// } from 'vuex'
+//
+//
+// export default {
+//   computed: {
+//     ...mapGetters({
+//      issmallscreen: "issmallscreen",
+//    }),
+//   },
+//
+// }

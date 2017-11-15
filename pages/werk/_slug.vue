@@ -10,11 +10,11 @@
       </div>
       <div class="werkSplashContent" uk-parallax="opacity: 1,0.3; viewport: 0.3;">
         <div class="werkSplashImage" :class="sidebaropen ? 'werkSplashImageFadeout':'werkSplashImageFadein'" :style="[{'background-image':'url('+content.acf.single_background_image.url+')'}]"></div>
+                <!-- <div class="werkSplashImage" :style="[{'background-image':'url('+content.acf.single_background_image.url+')'}]"></div> -->
       </div>
     </div>
   </div>
   <div class="sendToFront" id="werkContent" v-if="initWerkContent">
-
     <!-- <div class="beige-background uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top"> -->
     <div class="uk-container uk-padding uk-padding-remove-horizontal uk-padding-remove-top" :uk-parallax="issmallscreen ? '' : 'y: 150,0; viewport: 0.3'">
 
@@ -30,6 +30,7 @@
           <!-- <div :class="wide ? 'uk-width-3-4' : 'uk-width-1-1'"> -->
           <div>
             <h1 class="hugeLetters" :class="{'uk-text-center':issmallscreen}" v-html="content.title.rendered"></h1>
+
           </div>
 
         </div>
@@ -153,6 +154,8 @@ export default {
     }),
   },
 
+
+
   data: function() {
     return {
       xlscreen: false,
@@ -220,8 +223,11 @@ export default {
     },
     'getscreensize': function() {
       this.resetSetWerkSplashHeight()
-    }
+    },
+    // 'sidebaropen'
   },
+
+
 
   //
   // async asyncData({

@@ -24,6 +24,8 @@
       <div class="uk-container " :style="{'background':content.acf.section_a.background_color}">
         <div class="killPadding uk-padding uk-padding-remove-horizontal uk-padding-remove-top" id="workitems">
 
+          <!-- <h1>hello world {{issmallscreen}}</h1> -->
+
           <div class=" uk-grid-collapse uk-text-center" uk-grid>
             <werktileitem :inheritcolorfont="content.acf.section_a.font_color" :inheritcolorbackground="content.acf.section_a.font_color" :inheritcolor="true" v-bind:key="index" :index="index" v-for="(tile,index) in orderedWerkTiles" :datainput="tile"></werktileitem>
 
@@ -83,6 +85,7 @@ export default {
       }]
     }
   },
+
 
 
   components: {
