@@ -29,7 +29,7 @@
     "none":"Niets..."
   },
   "contact":{
-    "a":"Bereik ons via:<br><a href='mailto:hoi@template-studio.nl'>hoi@template-studio.nl</a><br><a href='tel:06 5777 2891'>06 5777 2891</a>",
+    "a":"Bereik ons via:<br><a href='mailto:hoi@template-studio.nl'>hello@template-studio.nl</a><br><a href='tel:06 5777 2891'>06 5777 2891</a>",
     "b":"Studio adres:<br><a href='https://www.google.nl/maps/place/Mathenesserdijk+416,+3026+Rotterdam/@51.9103946,4.446202,17z/data=!3m1!4b1!4m5!3m4!1s0x47c434ecbd645e93:0x894648c2f46b6b77!8m2!3d51.9103946!4d4.4483907?hl=en' target='blank'>Mathenesserdijk 416H<br>3026 GV Rotterdam</a>",
     "thanks":"Bedankt voor het bezoek"
   },
@@ -51,7 +51,7 @@
       "content":"Let's Talk - Neem contact met ons op voor een kennismaking of meer informatie over een van onze projecten. We vinden het heel leuk nieuwe mensen te ontmoeten en staan altijd open voor interessante projecten. Tot snel!"
     },
     "index":{
-      "content":"Een visueel plan van aanpak. Inventieve ideeën voor web en print. Strakke vormgeving"
+      "content":"Template Studio is een studio voor concept, design en code. We werken aan brand identiteit en visuele strategie, we doen grafisch en redactioneel (print) ontwerp, we maken van alles voor het web. 🖐 "
     }
   }
 }
