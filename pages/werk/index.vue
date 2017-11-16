@@ -109,14 +109,14 @@ export default {
   // }) {
   //   if (query.hasOwnProperty('lang')) {
   //     let [contentRes, tilesRes] = await Promise.all([
-  //       axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_' + query.lang),
-  //       axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang ),
+  //       axios.get('https://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_' + query.lang),
+  //       axios.get('https://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang ),
   //     ])
   //
-  //     const res = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/categories?parent=19')
+  //     const res = await axios.get('https://api.template-studio.nl/wp-json/wp/v2/categories?parent=19')
   //     const categories = res.data.reverse()
   //     const collectedYearsRes = (await axios.all(
-  //         categories.map(category => axios.get('http://api.template-studio.nl/wp-json/wp/v2/archiveitem_' + query.lang + '?categories=' + category.id))
+  //         categories.map(category => axios.get('https://api.template-studio.nl/wp-json/wp/v2/archiveitem_' + query.lang + '?categories=' + category.id))
   //
   //       ))
   //       .map(result => result.data)
@@ -136,15 +136,15 @@ export default {
   //   } else {
   //
   //     let [contentRes, tilesRes] = await Promise.all([
-  //       axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_nl'),
-  //       axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_nl'),
+  //       axios.get('https://api.template-studio.nl/wp-json/wp/v2/pages?slug=werk_nl'),
+  //       axios.get('https://api.template-studio.nl/wp-json/wp/v2/werkitem_nl'),
   //     ])
   //
   //
-  //     const res = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/categories?parent=19')
+  //     const res = await axios.get('https://api.template-studio.nl/wp-json/wp/v2/categories?parent=19')
   //     const categories = res.data.reverse()
   //     const collectedYearsRes = (await axios.all(
-  //         categories.map(category => axios.get('http://api.template-studio.nl/wp-json/wp/v2/archiveitem_nl?categories=' + category.id))
+  //         categories.map(category => axios.get('https://api.template-studio.nl/wp-json/wp/v2/archiveitem_nl?categories=' + category.id))
   //       ))
   //       .map(result => result.data)
   //       .reduce((acc, curr, index) => {
@@ -190,38 +190,38 @@ export default {
     const currentLanguage = query.hasOwnProperty('lang') ? query.lang : 'nl'
 
     // fetch page with slugname => get translation/language ids
-    const getLanguageIdsRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=' + slugname + '&fields=polylang_langs')
+    const getLanguageIdsRes = await axios.get('https://api.template-studio.nl/wp-json/wp/v2/pages?slug=' + slugname + '&fields=polylang_langs')
     const getLanguageIds = getLanguageIdsRes.data
 
     // return content for selected language
-    const contentLangRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages/' + getLanguageIds[0].polylang_langs[currentLanguage])
+    const contentLangRes = await axios.get('https://api.template-studio.nl/wp-json/wp/v2/pages/' + getLanguageIds[0].polylang_langs[currentLanguage])
 
 
 
     // get work tiles content
 
     let [tilesRes] = await Promise.all([
-      axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem?lang=' + currentLanguage),
+      axios.get('https://api.template-studio.nl/wp-json/wp/v2/werkitem?lang=' + currentLanguage),
     ])
 
 
 
     // get archive content
-    // http://api.template-studio.nl/wp-json/wp/v2/categories?lang=en&parent=77
+    // https://api.template-studio.nl/wp-json/wp/v2/categories?lang=en&parent=77
 
     // YOU HAVE TO HARDCODE catagoriy parent id for each lang.
     var res
     if (query.hasOwnProperty('lang') && query.lang != 'nl') {
       // NOW we only have EN which has has a parent of the id 77
-      res = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/categories?lang=en&parent=77')
+      res = await axios.get('https://api.template-studio.nl/wp-json/wp/v2/categories?lang=en&parent=77')
     } else {
       // fallback to NL parent
-      res = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/categories?parent=19')
+      res = await axios.get('https://api.template-studio.nl/wp-json/wp/v2/categories?parent=19')
     }
 
     const categories = res.data.reverse()
     const collectedYearsRes = (await axios.all(
-        categories.map(category => axios.get('http://api.template-studio.nl/wp-json/wp/v2/archiveitem?lang=' + currentLanguage + '&categories=' + category.id))
+        categories.map(category => axios.get('https://api.template-studio.nl/wp-json/wp/v2/archiveitem?lang=' + currentLanguage + '&categories=' + category.id))
       ))
       .map(result => result.data)
       .reduce((acc, curr, index) => {

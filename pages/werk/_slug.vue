@@ -239,7 +239,7 @@ export default {
   // }) {
   //   if (query.hasOwnProperty('lang')) {
   //     let [contentRes] = await Promise.all([
-  //       axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang + '?slug=' + params.slug + '&featured=1&isfeatured=1'),
+  //       axios.get('https://api.template-studio.nl/wp-json/wp/v2/werkitem_' + query.lang + '?slug=' + params.slug + '&featured=1&isfeatured=1'),
   //
   //     ])
   //
@@ -253,7 +253,7 @@ export default {
   //   } else {
   //
   //     let [contentRes] = await Promise.all([
-  //       axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem_nl?slug=' + params.slug + '&featured=1&isfeatured=1'),
+  //       axios.get('https://api.template-studio.nl/wp-json/wp/v2/werkitem_nl?slug=' + params.slug + '&featured=1&isfeatured=1'),
   //
   //     ])
   //     // console.log(contentRes.data[0])
@@ -287,13 +287,13 @@ export default {
     const currentLanguage = query.hasOwnProperty('lang') ? query.lang : 'nl'
 
     // fetch page with slugname => get translation/language ids
-    const getLanguageIdsRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem?slug=' + params.slug + '&fields=polylang_langs')
+    const getLanguageIdsRes = await axios.get('https://api.template-studio.nl/wp-json/wp/v2/werkitem?slug=' + params.slug + '&fields=polylang_langs')
     const getLanguageIds = getLanguageIdsRes.data
     if(getLanguageIds.length<1){
       redirect('/404')
     }
 
-    const contentLangRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/werkitem/' + getLanguageIds[0].polylang_langs[currentLanguage])
+    const contentLangRes = await axios.get('https://api.template-studio.nl/wp-json/wp/v2/werkitem/' + getLanguageIds[0].polylang_langs[currentLanguage])
 
 
     return {

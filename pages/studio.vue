@@ -68,11 +68,11 @@ export default {
     const currentLanguage = query.hasOwnProperty('lang') ? query.lang : 'nl'
 
     // fetch page with slugname => get translation/language ids
-    const getLanguageIdsRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=' + slugname + '&fields=polylang_langs')
+    const getLanguageIdsRes = await axios.get('https://api.template-studio.nl/wp-json/wp/v2/pages?slug=' + slugname + '&fields=polylang_langs')
     const getLanguageIds = getLanguageIdsRes.data
 
     // return content for selected language
-    const contentLangRes = await axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages/' + getLanguageIds[0].polylang_langs[currentLanguage])
+    const contentLangRes = await axios.get('https://api.template-studio.nl/wp-json/wp/v2/pages/' + getLanguageIds[0].polylang_langs[currentLanguage])
 
 
     return {

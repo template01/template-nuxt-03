@@ -61,7 +61,7 @@ export default {
 //     route
 //   }) {
 //     let [contentRes] = await Promise.all([
-//       axios.get('http://api.template-studio.nl/wp-json/wp/v2/pages?slug=splash'),
+//       axios.get('https://api.template-studio.nl/wp-json/wp/v2/pages?slug=splash'),
 //     ])
 //     console.log(route)
 //     var pop = null
