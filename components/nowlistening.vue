@@ -77,7 +77,7 @@ export default {
 
 
     getTune: function() {
-      axios.get('http://spotify.template01.info/output/output.json')
+      axios.get('https://spotify.template-studio.nl/output/output.json')
         .then((res) => {
           console.log(res)
           this.tune = res.data
