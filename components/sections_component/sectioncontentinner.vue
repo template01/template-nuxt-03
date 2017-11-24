@@ -11,10 +11,20 @@
     <h1 v-else class="" :style="{'color':'inherit'}" v-html="section.content"></h1>
   </div>
 
-  <!-- <div v-if="section.acf_fc_layout === 'slideshow'" :class="[setWidth(item.width)]" class="uk-align-center uk-margin-remove-bottom"> -->
-  <div v-if="section.acf_fc_layout === 'slideshow'" class="uk-align-center uk-margin-remove-bottom">
+  <!-- <div v-if="section.acf_fc_layout === 'slideshow'" class="uk-align-center uk-margin-remove-bottom">
     <slideshow :ignoreFrame="true" :hidemobilenav="true" :slides="section.slides"></slideshow>
+  </div> -->
+
+  <div v-if="section.acf_fc_layout === 'slideshow' && section.browser_frame === false" class="uk-align-center uk-margin-remove-bottom">
+    <slideshow ignoreFrame="true" hidemobilenav="false" :slides="section.slides"></slideshow>
+
   </div>
+
+  <div v-if="section.acf_fc_layout === 'slideshow' && section.browser_frame === true" class="uk-align-center uk-margin-remove-bottom">
+    <slideshow ignoreFrame="false" :slides="section.slides"></slideshow>
+  </div>
+
+
 
 
   <div v-if="section.acf_fc_layout === 'image'">

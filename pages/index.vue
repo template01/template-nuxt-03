@@ -19,7 +19,7 @@ export default {
 
   head() {
     return {
-      title: 'Template Studio - ' + this.$t('menu.topmenu.index'),
+      title: 'Template Studio',
       meta: [{
         hid: 'description',
         name: 'description',

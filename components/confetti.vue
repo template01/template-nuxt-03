@@ -1,27 +1,47 @@
 
 <template>
 <div id="confetti beigeBackground">
-  <div class="uk-container uk-height-viewport">
-    <div class="uk-inline  uk-height-viewport  uk-height-viewport uk-width-1-1">
+  <div class="uk-container">
+    <div class=" uk-width-1-1 uk-padding">
 
       <!-- Place any content, like an image, here -->
 
-      <div class="uk-position-center">
-        <h1 class="uk-text-center">
+      <div class="uk-padding">
+        <h2 class="uk-text-center">
           Template Studio
-        </h1>
-        <h1 class="hugeLetters">
+        </h2>
+        <h2 class="hugeLetters uk-text-center">
         POP! POP! POP!
-        </h1>
-        <h1 class="uk-text-center">
+      </h2>
+        <h2 class="uk-text-center">
          Website Launch
-        </h1>
+       </h2>
       </div>
 
-      <div class="uk-position-bottom uk-margin-large">
-        <h4 class="uk-text-center">
-          Accompanying borrel November 20'th
-        </h4>
+      <div class="uk-align-center " :class="issmallscreen?'':'uk-position-bottom'" >
+        <div class="uk-width-2-3@m uk-align-center">
+        <div class="" uk-grid>
+
+          <div class="uk-width-1-2@m">
+            <h4 class="">
+              Template is nu Template Studio. Dit markeren we met een nieuwe identiteit en re-launch van onze website. Verder nog werken we sinds maart van dit jaar vanuit de Fabriek van Delfshaven. This calls for a frimibo.
+          </h4>
+          </div>
+          <div class="uk-width-1-2@m ">
+            <h4 class="">
+              Template is Template Studio. We're marking this with the launch of our new identity and website. Topping this off, we rescently relocated to the Fabriek van Delfshaven. All in all it really only calls for a dutch borrel.
+
+          </h4>
+
+          </div>
+          <div class="uk-width-1-1@m ">
+          <h2 class="uk-text-center uk-padding uk-padding-remove-bottom uk-padding-remove-horizontal">
+           Borrel - 15/12/17 - 17:00 ~ 20:00 - Fabriek van Delfshaven
+         </h2>
+          </div>
+        </div>
+        </div>
+
       </div>
 
     </div>
@@ -32,72 +52,6 @@
 </template>
 
 
-<style lang="scss">
-* {
-    cursor: pointer;
-}
-#confetti {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    // z-index: 999999999;
-}
-@keyframes confetti-slow {
-    0% {
-        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
-    }
-    100% {
-        transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg);
-    }
-}
-@keyframes confetti-medium {
-    0% {
-        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
-    }
-    100% {
-        transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg);
-    }
-}
-@keyframes confetti-fast {
-    0% {
-        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
-    }
-    100% {
-        transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg);
-    }
-}
-.confettiWrapper {
-    width: 100%;
-    height: 100%;
-}
-
-.confetti-confettiWrapper {
-    perspective: 700px;
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.confetti {
-    position: absolute;
-    z-index: 1;
-    top: -10px;
-    border-radius: 0;
-}
-.confetti--animation-slow {
-    animation: confetti-slow 2.25s linear 1 forwards;
-}
-.confetti--animation-medium {
-    animation: confetti-medium 1.75s linear 1 forwards;
-}
-.confetti--animation-fast {
-    animation: confetti-fast 1.25s linear 1 forwards;
-}
-</style>
 
 <script>
 export default {
@@ -197,3 +151,70 @@ export default {
 
 }
 </script>
+
+<style lang="scss">
+* {
+    cursor: pointer;
+}
+#confetti {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    // z-index: 999999999;
+}
+@keyframes confetti-slow {
+    0% {
+        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    }
+    100% {
+        transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg);
+    }
+}
+@keyframes confetti-medium {
+    0% {
+        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    }
+    100% {
+        transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg);
+    }
+}
+@keyframes confetti-fast {
+    0% {
+        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    }
+    100% {
+        transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg);
+    }
+}
+.confettiWrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.confetti-confettiWrapper {
+    perspective: 700px;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.confetti {
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    border-radius: 0;
+}
+.confetti--animation-slow {
+    animation: confetti-slow 2.25s linear 1 forwards;
+}
+.confetti--animation-medium {
+    animation: confetti-medium 1.75s linear 1 forwards;
+}
+.confetti--animation-fast {
+    animation: confetti-fast 1.25s linear 1 forwards;
+}
+</style>
