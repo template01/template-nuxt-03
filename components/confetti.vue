@@ -1,21 +1,22 @@
 
 <template>
-<div id="confetti beigeBackground">
-  <div class="uk-container">
+<div id="confetti" class="black-background beige-color-force" v-if="reinitiateUikit">
+
+  <div class="uk-container uk-height-viewport">
     <div class=" uk-width-1-1 uk-padding">
 
-      <!-- Place any content, like an image, here -->
 
       <div class="uk-padding">
-        <h2 class="uk-text-center">
+        <p :class="issmallscreen?'uk-h4':'uk-h2'" class=" uk-text-center">
           Template Studio
-        </h2>
-        <h2 class="hugeLetters uk-text-center">
-        POP! POP! POP!
-      </h2>
-        <h2 class="uk-text-center">
-         Website Launch
-       </h2>
+        </p>
+        <h1 class="hugeLetters uk-text-center">
+          Hurrah!
+      </h1>
+      <p :class="issmallscreen?'uk-h4':'uk-h2'" class=" uk-text-center slide-item-right-small" :style="{'margin-top':issmallscreen?'40px':'50px'}">
+       <nuxt-link style="box-shadow: inset 0 0 0 0;" :to="{path:'/'}">Website launch<i class="icon-right-1"></i></nuxt-link>
+
+     </p>
       </div>
 
       <div class="uk-align-center " :class="issmallscreen?'':'uk-position-bottom'" >
@@ -23,21 +24,22 @@
         <div class="" uk-grid>
 
           <div class="uk-width-1-2@m">
-            <h4 class="">
-              Template is nu Template Studio. Dit markeren we met een nieuwe identiteit en re-launch van onze website. Verder nog werken we sinds maart van dit jaar vanuit de Fabriek van Delfshaven. This calls for a frimibo.
-          </h4>
+            <p class="uk-h4">
+              Template is nu Template Studio. We vieren dit met een nieuwe identiteit en website launch. Ook best nieuw: sinds maart werken we vanuit de Fabriek van Delfshaven. Tijd voor een borrel!
+          </p>
           </div>
           <div class="uk-width-1-2@m ">
-            <h4 class="">
-              Template is Template Studio. We're marking this with the launch of our new identity and website. Topping this off, we rescently relocated to the Fabriek van Delfshaven. All in all it really only calls for a dutch borrel.
+            <p class="uk-h4">
 
-          </h4>
+Template is now Template Studio. We're marking this with the launch of our new identity and website. We also recently relocated to a new studio in the Fabriek van Delfshaven. This calls for a Dutch borrel!
+
+          </p>
 
           </div>
           <div class="uk-width-1-1@m ">
-          <h2 class="uk-text-center uk-padding uk-padding-remove-bottom uk-padding-remove-horizontal">
-           Borrel - 15/12/17 - 17:00 ~ 20:00 - Fabriek van Delfshaven
-         </h2>
+          <p :class="issmallscreen?'uk-h4':'uk-h2'"  class="uk-h2 uk-text-center uk-padding uk-padding-remove-bottom uk-padding-remove-horizontal">
+           Borrel - 15/12/17 - 17:00 ~ 20:00 - <a href="https://www.google.nl/maps/place/Mathenesserdijk+416,+3026+Rotterdam/@51.9103946,4.446202,17z/data=!3m1!4b1!4m5!3m4!1s0x47c434ecbd645e93:0x894648c2f46b6b77!8m2!3d51.9103946!4d4.4483907?hl=en" target="_blank">Fabriek van Delfshaven</a>
+         </p>
           </div>
         </div>
         </div>
@@ -74,7 +76,8 @@ export default {
       // smallscreen: null,
       // confetti: false
       removeTimeout: null,
-      confettiInterval: null
+      confettiInterval: null,
+      reinitiateUikit: true,
     }
   },
 
@@ -85,6 +88,11 @@ export default {
     },
 
   },
+  computed:{
+    computedconfettisize(){
+      return this.issmallscreen ? 8 : 14
+    }
+  },
 
   destroyed() {
     this.stopConfetti()
@@ -93,12 +101,18 @@ export default {
 
 
   mounted() {
+    if(this.issmallscreen){
+        this.reinitiateUikit = false
+        this.reinitiateUikit = true
+    }
+
     const Confettiful = function(el) {
       this.el = el;
       this.confettiWrapperEl = null;
 
       this.confettiFrequency = 3;
-      this.confettiColors = ['#fce18a', '#ff726d', '#b48def', '#f4306d'];
+      this.confettiColors = ['#0000ff', '#00FF00','#e8f7fc', '#ff7768'];
+
       this.confettiAnimations = ['slow', 'medium'];
 
       this._setupElements();
@@ -125,7 +139,7 @@ export default {
     Confettiful.prototype._renderConfetti = function() {
       vm.confettiInterval = setInterval(() => {
         const confettiEl = document.createElement('div');
-        const confettiSize = (Math.floor(Math.random() * 30) + 7) + 'px';
+        const confettiSize = (Math.floor(Math.random() * (vm.computedconfettisize*2)) + vm.computedconfettisize) + 'px';
         const confettiBackground = this.confettiColors[Math.floor(Math.random() * this.confettiColors.length)];
         const confettiLeft = (Math.floor(Math.random() * this.el.offsetWidth)) + 'px';
         const confettiAnimation = this.confettiAnimations[Math.floor(Math.random() * this.confettiAnimations.length)];
@@ -149,19 +163,17 @@ export default {
 
   },
 
+
+
+
 }
 </script>
 
 <style lang="scss">
 * {
-    cursor: pointer;
 }
 #confetti {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    // z-index: 999999999;
+
 }
 @keyframes confetti-slow {
     0% {
@@ -193,7 +205,10 @@ export default {
 }
 
 .confetti-confettiWrapper {
+
     perspective: 700px;
+    pointer-events: none;
+
     position: fixed;
     overflow: hidden;
     top: 0;
@@ -206,7 +221,7 @@ export default {
     position: absolute;
     z-index: 1;
     top: -10px;
-    border-radius: 0;
+    border-radius: 100%;
 }
 .confetti--animation-slow {
     animation: confetti-slow 2.25s linear 1 forwards;

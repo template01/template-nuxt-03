@@ -126,6 +126,8 @@ module.exports = {
   // PWA  Progressive Web Apps support (https://www.davidroyer.me/blog/nuxtjs-tips/)
 
   modules: [
+
+	// PWA CAUSES SLOW INITIAL LOAD????
     //'@nuxtjs/pwa',
     '@nuxtjs/sitemap'
     // '@nuxtjs/axios'
