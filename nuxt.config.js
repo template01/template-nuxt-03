@@ -129,7 +129,11 @@ module.exports = {
 
 	// PWA CAUSES SLOW INITIAL LOAD????
     //'@nuxtjs/pwa',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-110333908-1'
+    }]
+
     // '@nuxtjs/axios'
   ],
 
@@ -182,7 +186,7 @@ module.exports = {
       ssr: false
     },
     '~/plugins/lodash-plugin.js',
-    '~/plugins/maps.js',
+    //'~/plugins/maps.js',
     '~/plugins/resizer.js',
     //GLOBAL MIXINS
     '~/mixins/computedresizerglobalmixin.js',
