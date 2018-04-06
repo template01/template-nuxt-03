@@ -94,9 +94,8 @@ export default {
           this.status = this.$t("clock.modes.afterwork")[this.pickRandomStatus(this.$t("clock.modes.afterwork"))]
         else if (time >= 23)
           this.status = this.$t("clock.modes.sleep")[this.pickRandomStatus(this.$t("clock.modes.sleep"))]
-
       } else {
-        this.status = 'Enjoying the weekend!'
+        this.status = this.$t("clock.modes.weekend")[this.pickRandomStatus(this.$t("clock.modes.weekend"))]
       }
 
 

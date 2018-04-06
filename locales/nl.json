@@ -14,19 +14,20 @@
   },
   "clock":{
     "modes": {
-      "sleep": ["Zzz."],
-      "beforework": ["Wakker worden.", "Op weg naar de studio~"],
+      "sleep": ["Zzz...zzz..."],
+      "beforework": ["Wakker worden.", "Op weg naar de studio."],
       "morning": ["Koffie drinken!", "", "Croissantje eten, werk bespreken."],
       "lunch": ["Lunchtijd.", "Stokbrood eten."],
       "work": ["Doorwerken.", "TV series aan het discussiëren...", "Teveel naar een scherm aan het staren.", "Real, actual work."],
-      "afterwork": ["Gymmen.", "Geen werk, ha!"]
+      "afterwork": ["Gymmen.", "Geen werk, ha!"],
+      "weekend": ["Enjoying the weekend"]
     },
     "timedesc":"Lokale tijd:",
     "statusdesc":"Aan het doen:"
   },
   "nowlistening":{
     "desc":"Aan het luisteren:",
-    "none":"Niets..."
+    "none":"Niets. Maar eerder dit."
   },
   "contact":{
     "a":"Bereik ons via:<br><a href='mailto:hello@template-studio.nl'>hello@template-studio.nl</a><br><a href='tel:06 5777 2891'>06 5777 2891</a>",

@@ -19,8 +19,8 @@
       </span>
       </transition>
       <transition name="fade">
-        <span v-if="!showtune">
-        <span>{{$t("nowlistening.none")}}</span>
+        <span v-if="!showtune && init">
+        <span><nuxt-link to="/weplayed">{{$t("nowlistening.none")}}</nuxt-link></span>
         </span>
       </transition>
       </span>
@@ -40,7 +40,8 @@ export default {
     return {
       tune: Object,
       showtune: false,
-      tuneInterval: null
+      tuneInterval: null,
+      init: false
 
     }
   },
@@ -79,9 +80,8 @@ export default {
     getTune: function() {
       axios.get('https://spotify.template-studio.nl/output/output.json')
         .then((res) => {
-          console.log(res)
           this.tune = res.data
-          console.log(res.data.artist)
+          this.init = true
 
           if (res.data.artist != null) {
             if (res.data.artist.length > 0 && res.data.playing) {

@@ -14,19 +14,20 @@
   },
   "clock": {
     "modes": {
-      "sleep": ["Zzz."],
-      "beforework": ["Waking up.", "On our way~"],
+      "sleep": ["Zzz...zzz..."],
+      "beforework": ["Waking up.", "On our way!!!"],
       "morning": ["Coffee first!", "Discussing work, while eating croissants."],
       "lunch": ["Lunch!", "LUNCH.", "Lunching."],
       "work": ["Real, actual work.", "Busy, busy!", "Too much computer."],
-      "afterwork": ["Watching more series.", "At the gym.", "Byeeee!"]
+      "afterwork": ["Watching more series.", "At the gym.", "Byeeee!"],
+      "weekend": ["Enjoying the weekend"]
     },
     "timedesc": "Local time:",
     "statusdesc": "Now up to:"
   },
   "nowlistening": {
     "desc": "Now listening:",
-    "none": "Nothing... Just brainwaves."
+    "none": "Nothing. But recently we enjoyed this."
   },
   "contact": {
     "a": "Reach us here:<br><a href='mailto:hello@template-studio.nl'>hello@template-studio.nl</a><br><a href='tel:06 5777 2891'>06 5777 2891</a>",
