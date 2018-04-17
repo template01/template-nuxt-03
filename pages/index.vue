@@ -23,7 +23,7 @@ export default {
       meta: [{
         hid: 'description',
         name: 'description',
-        content: this.$t('meta.index.content'),
+        content: this.$t('meta.index.content')
       }]
     }
   },
