@@ -50,7 +50,12 @@ module.exports = {
       {
         name: 'msapplication-square310x310logo',
         content: '/mstile-310x310.png'
-      }
+      },
+
+	{
+		name: 'og:image',
+		content: '/templatestudioindex.png'
+	}
     ],
     link: [{
         rel: 'apple-touch-icon-precomposed',
